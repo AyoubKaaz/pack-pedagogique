@@ -101,7 +101,7 @@ Donc $S = \{valeur\}$.
 ### Exemple 1 — Équation simple
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Exemple}[Correction — Application X]
+\begin{Solution}[Correction — Application X]
 \textbf{Résoudre dans $\R$ :} $3x - 7 = 2x + 5$
 
 On a :
@@ -110,13 +110,13 @@ On a :
   \qquad \text{(on regroupe les termes semblables)}\]
 \[\Leftrightarrow x = 12\]
 Donc $S = \{12\}$.
-\end{Exemple}
+\end{Solution}
 ```
 
 ### Exemple 2 — Équation avec développement
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Exemple}[Correction — Application X]
+\begin{Solution}[Correction — Application X]
 \textbf{Résoudre dans $\R$ :} $2(3x-1) = 4x + 6$
 
 On a :
@@ -129,13 +129,13 @@ On a :
 \[\Leftrightarrow x = 4
   \qquad \text{(on divise par $2$, $2 > 0$)}\]
 Donc $S = \{4\}$.
-\end{Exemple}
+\end{Solution}
 ```
 
 ### Exemple 3 — Inéquation avec division par négatif
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Exemple}[Correction — Application X]
+\begin{Solution}[Correction — Application X]
 \textbf{Résoudre dans $\R$ :} $-4x + 1 \leq 2x - 11$
 
 On a :
@@ -147,13 +147,13 @@ On a :
   \qquad \text{(on divise par $-6 < 0$,
   le sens de l'inégalité s'inverse)}\]
 Donc $S = [2 \; ; \; +\infty[$.
-\end{Exemple}
+\end{Solution}
 ```
 
 ### Exemple 4 — Équation avec fractions
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Exemple}[Correction — Application X]
+\begin{Solution}[Correction — Application X]
 \textbf{Résoudre dans $\R$ :}
 $\dfrac{x+1}{3} - \dfrac{x-2}{2} = 1$
 
@@ -170,13 +170,13 @@ On a :
 \[\Leftrightarrow x = 2
   \qquad \text{(on multiplie par $-1$)}\]
 Donc $S = \{2\}$.
-\end{Exemple}
+\end{Solution}
 ```
 
 ### Exemple 5 — Taux de variation
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Exemple}[Correction — Application X]
+\begin{Solution}[Correction — Application X]
 Soient $a$ et $b$ deux réels distincts de $\R$.
 
 On a :
@@ -194,7 +194,7 @@ T(a\,;\,b) = \frac{f(b)-f(a)}{b-a}
 \qquad \text{(simplification, $b-a \neq 0$)}
 \]
 D'où $T(a\,;\,b) = 2(a+b)$.
-\end{Exemple}
+\end{Solution}
 ```
 
 ---

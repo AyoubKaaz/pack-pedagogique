@@ -65,7 +65,7 @@ Syntaxe : \begin{Nom}[titre][durée]
 
 Disponibles :
 Activite  Application  Exercice  Definition  Propriete
-Theoreme  Exemple  Techniques  Remarque  Corollaire  Preuve
+Theoreme  Exemple  Techniques  Remarque  Corollaire  Preuve  Solution
 
 ---
 

@@ -133,6 +133,7 @@
 \definecolor{CApp}{HTML}{0078D7}    % Application (Thomas Bright Blue)
 \definecolor{CExer}{HTML}{004DA0}   % Exercice (Thomas Dark Blue)
 \definecolor{CTech}{HTML}{8B1A1A}   % Techniques (Dark Red / Burgundy)
+\definecolor{CSol}{HTML}{4A8C5C}    % Solution (Soft Forest Green)
 
 % --- STYLE DE BASE DES BOÎTES (Option B Modifiée - 3 param) ---
 \tcbset{
@@ -430,5 +431,7 @@
 % ENVIRONNEMENTS TEXTUELS SIMPLES RESTANTS
 % ==========================================
 
-% Solution
-\newenvironment{Solution}{\par\vspace{2mm}\noindent\textit{SOLUTION.}\ }{\par\vspace{2mm}}
+% 14. Solution
+\NewTColorBox{Solution}{ O{} O{} }{
+    emptyboxstyle={CSol}{SOLUTION\ifstrempty{#1}{}{~(#1)}}{#2}
+}
