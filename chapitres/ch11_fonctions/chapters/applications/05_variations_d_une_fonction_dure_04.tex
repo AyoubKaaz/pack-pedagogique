@@ -1,0 +1,65 @@
+\begin{Application}[][10 min]
+\noindent
+\begin{minipage}[t]{0.7\linewidth}
+\vspace{0pt}
+La représentation graphique ci-contre, représente la courbe d'une fonction $f$.
+
+Répondre, par lecture graphique aux questions suivantes :
+\begin{enumerate}
+    \item Préciser l'ensemble de définition $D_f$ de $f$.
+    \item Déterminer les images par $f$ de $-1$ ; $0$ ; $1$ et $2$.
+    \item Dresser le tableau de variation de $f$ sur $D_f$.
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.35\linewidth}
+\vspace{0pt}
+\begin{center}
+\begin{tikzpicture}[x=0.85cm, y=0.85cm]
+
+    % Grille de fond alignée sur les graduations
+    \draw[black!12, step=1, solid] (-1.5,-2.5) grid (3.6,2.8);
+
+    % Axes
+    \draw[->, >=stealth, thick, black] (-2,0) -- (4,0)
+        node[below right, font=\small\sffamily] {$x$};
+    \draw[->, >=stealth, thick, black] (0,-2.5) -- (0,3)
+        node[left, font=\small\sffamily] {$y$};
+
+    % Graduations X
+    \foreach \x in {-1,1,2,3} {
+        \draw[PrimaryColor] (\x, 0.07) -- (\x, -0.07);
+    }
+    \node[below left,  font=\small\sffamily] at (-1, 0) {$-1$};
+    \node[below right, font=\small\sffamily] at ( 1, 0) {$1$};
+    \node[below right, font=\small\sffamily] at ( 2, 0) {$2$};
+    \node[below right, font=\small\sffamily] at ( 3, 0) {$3$};
+    \node[below left,  font=\small\sffamily] at (  0, 0) {$O$};
+
+    % Graduations Y
+    \foreach \y in {-2,-1,1,2} {
+        \draw[PrimaryColor] (0.07, \y) -- (-0.07, \y);
+    }
+    \node[left, font=\small\sffamily] at (0,  2) {$2$};
+    \node[left, font=\small\sffamily] at (0,  1) {$1$};
+    \node[left, font=\small\sffamily] at (0, -1) {$-1$};
+    \node[left, font=\small\sffamily] at (0, -2) {$-2$};
+
+    % Courbe exacte : f(x) = x^3 - 3x^2 + 2  sur [-1 ; 3]
+    \draw[very thick, SecondaryColor, smooth, samples=100, domain=-1:3]
+        plot (\x, {\x*\x*\x - 3*\x*\x + 2});
+
+    % Points fermes aux extremites
+    % f(-1) = (-1)^3 - 3*(-1)^2 + 2 = -1 - 3 + 2 = -2
+    % f( 3) = (3)^3  - 3*(3)^2  + 2 = 27 - 27 + 2 = 2
+    \filldraw[black] (-1, -2) circle (2pt);
+    \filldraw[black] ( 3,  2) circle (2pt);
+
+    % Etiquette courbe
+    \node[above right, font=\small\sffamily\itshape, color=SecondaryColor]
+        at (0.3, 1.7) {$(C_f)$};
+
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{Application}

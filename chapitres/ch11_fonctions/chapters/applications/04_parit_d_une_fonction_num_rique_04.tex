@@ -1,0 +1,64 @@
+\begin{Application}[][10 min]
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\vspace{0pt}
+Soit $f$ une fonction impaire définie sur $D = [-4 ; -1] \cup [1 ; 4]$ :
+\begin{enumerate}
+    \item Compléter le tracé de $(C_f)$.
+    \item Déterminer $f(4)$ et $f(2)$.
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.45\linewidth}
+\vspace{0pt}
+\begin{center}
+\begin{tikzpicture}[x=0.72cm, y=0.72cm]
+
+    % Grille de fond (couvrant toute la figure jusqu'aux extrémités des axes)
+    \draw[black!12, step=1, solid] (-4.8,-0.5) grid (4.7,4.5);
+
+    % Axes principaux
+    \draw[->, >=stealth, thick, black] (-5,0) -- (5,0)
+        node[below right, font=\small\sffamily] {$x$};
+    % Modification ici : l'axe y commence à -2.2
+    \draw[->, >=stealth, thick, black] (0,-1) -- (0,4.5)
+        node[right, font=\small\sffamily] {$y$};
+
+    % Graduations X
+    \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+        \draw[PrimaryColor] (\x, 0.08) -- (\x, -0.08);
+    }
+    \node[above left,  font=\small\sffamily, color=black] at (-4, 0) {$-4$};
+    \node[below left,  font=\small\sffamily, color=black] at (-2, 0) {$-2$};
+    \node[below left,  font=\small\sffamily, color=black] at (-1, 0) {$-1$};
+    \node[below right, font=\small\sffamily, color=black] at ( 1, 0) {$1$};
+    \node[below right, font=\small\sffamily, color=black] at ( 4, 0) {$4$};
+    \node[below left,  font=\small\sffamily, color=black] at ( 0, 0) {$O$};
+
+    % Graduations Y (retrait de -4)
+    \foreach \y in {1,2,4} {
+        \draw[PrimaryColor] (0.08, \y) -- (-0.08, \y);
+    }
+    \node[left, font=\small\sffamily, color=black] at (0,  4) {$4$};
+    \node[left, font=\small\sffamily, color=black] at (0,  1) {$1$};
+    %\node[left, font=\small\sffamily, color=black] at (0, -1) {$-1$};
+    % Le label -4 a été supprimé
+
+    % Lignes de rappel supprimées : la grille rend les coordonnées lisibles directement
+
+    % Courbe f(x) — partie donnée sur [-4 ; -1]
+    \draw[very thick, SecondaryColor] (-4, 0) -- (-2, 3) -- (-1, 1);
+
+    % Points remarquables (partie donnée)
+    \filldraw[black] (-4, 0) circle (2pt);
+    \filldraw[black] (-2,  3) circle (2pt);
+    \filldraw[black] (-1,  1) circle (2pt);
+
+    % Label courbe
+    \node[right, font=\small\sffamily\itshape, color=SecondaryColor]
+        at (-4, 2) {$(C_f)$};
+
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{Application}
