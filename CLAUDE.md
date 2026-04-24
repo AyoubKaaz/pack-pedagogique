@@ -44,16 +44,16 @@ Un bloc = sa balise %% + son contenu jusqu'à la balise suivante.
 
 ```
 %% ACTIVITE              → td ✓   fiche_prof ✓
-%% SOLUTION_ACTIVITE     → td_correction ✓   fiche_prof ✓
+%% SOLUTION_ACTIVITE     → td_correction ✓  seulement
 %% DEFINITION            → fiche_prof ✓   seulement
 %% PROPRIETE             → fiche_prof ✓   seulement
 %% TECHNIQUES            → fiche_prof ✓   seulement
 %% EXEMPLE               → fiche_prof ✓   seulement
 %% REMARQUE              → fiche_prof ✓   seulement
 %% APPLICATION           → td ✓   fiche_prof ✓
-%% SOLUTION_APPLICATION  → td_correction ✓   fiche_prof ✓
+%% SOLUTION_APPLICATION  → td_correction ✓  seulement
 %% EXERCICE              → td ✓   fiche_prof ✓
-%% SOLUTION_EXERCICE     → td_correction ✓   fiche_prof ✓
+%% SOLUTION_EXERCICE     → td_correction ✓  seulement
 ```
 
 ---

@@ -5,6 +5,10 @@ description: Générer les 3 documents (fiche_prof, td, td_correction) depuis so
 
 # /generer — Génération des 3 documents
 
+Ignorer tout ce qui se trouve entre
+%% HEADER_APERCU et %% FIN_HEADER_APERCU
+et entre %% FOOTER_APERCU et %% FIN_FOOTER_APERCU
+
 ## Étape 0 — Identifier le chapitre
 Si le chapitre n'est pas précisé dans la commande, demande :
 "Quel chapitre veux-tu générer ? (ex: ch11_fonctions)"
@@ -19,7 +23,11 @@ Si des corrections sont manquantes, demander :
 "Il manque X corrections. Je génère quand même ou tu veux les compléter d'abord ?"
 
 ## Étape 2 — Générer fiche_prof.tex
-Contenu : TOUS les blocs de source.tex dans l'ordre d'apparition.
+Balises incluses : ACTIVITE, DEFINITION, PROPRIETE,
+                   TECHNIQUES, EXEMPLE, REMARQUE,
+                   APPLICATION, EXERCICE
+Balises exclues  : SOLUTION_ACTIVITE, SOLUTION_APPLICATION,
+                   SOLUTION_EXERCICE
 
 Structure du fichier :
 ```
