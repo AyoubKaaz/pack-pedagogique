@@ -1,0 +1,481 @@
+% ============================================================
+% SOURCE.TEX — Chapitre 11 : Fonctions numériques
+% Niveau    : Tronc Commun Scientifique/Technologique
+% Auteur    : Kaazouzi Ayyoub
+% ============================================================
+% CE FICHIER EST LA SOURCE UNIQUE. Ne jamais modifier les
+% fichiers générés (fiche_prof.tex, td.tex, td_correction.tex).
+% Toute correction se fait ici → regénération → recompilation.
+%
+% BALISES DISPONIBLES (commentaires %% en début de ligne) :
+%   %% ACTIVITE
+%   %% SOLUTION_ACTIVITE
+%   %% DEFINITION
+%   %% PROPRIETE
+%   %% TECHNIQUES
+%   %% EXEMPLE
+%   %% APPLICATION
+%   %% SOLUTION_APPLICATION
+%   %% EXERCICE
+%   %% SOLUTION_EXERCICE
+%   %% REMARQUE
+% ============================================================
+
+% ────────────────────────────────────────────
+%  1. FONCTION NUMÉRIQUE D'UNE VARIABLE RÉELLE
+% ────────────────────────────────────────────
+
+%% ACTIVITE
+\begin{Activite}[][5 min]
+Ahmed dispose d'un morceau de fil de fer de $20\text{ cm}$ de longueur.
+Il le plie pour former un rectangle de longueur $x$ et de largeur $y$.
+\begin{enumerate}
+    \item Exprimer la largeur $y$ en fonction de la longueur $x$.
+    \item Déterminer l'intervalle $D$ auquel doit appartenir $x$ pour que ce rectangle puisse exister.
+    \item Montrer que la surface du rectangle, notée $S(x)$, s'écrit $S(x) = 10x - x^2$
+    \item Calculer la surface lorsque $x = 2$, puis lorsque $x = 8$.
+    \item Pour quelle(s) valeur(s) de $x$ la surface est-elle égale à $25\text{ cm}^2$ ?
+\end{enumerate}
+\end{Activite}
+
+%% SOLUTION_ACTIVITE
+\begin{Exemple}[Correction — Activité 1]
+\begin{enumerate}
+    \item Le périmètre vaut $20$ cm, donc $2x + 2y = 20$, d'où $y = 10 - x$.
+    \item Pour que le rectangle existe : $x > 0$ et $y > 0$, soit $x > 0$ et $10 - x > 0$.
+    Donc $x \in ]0\,;\,10[$.
+    \item $S(x) = x \times y = x(10 - x) = 10x - x^2$. \checkmark
+    \item $S(2) = 10(2) - 4 = 16\text{ cm}^2$ \quad et \quad $S(8) = 10(8) - 64 = 16\text{ cm}^2$.
+    \item $S(x) = 25 \Leftrightarrow 10x - x^2 = 25 \Leftrightarrow x^2 - 10x + 25 = 0
+    \Leftrightarrow (x-5)^2 = 0 \Leftrightarrow x = 5$.
+    La surface est égale à $25\text{ cm}^2$ lorsque $x = 5$ cm.
+\end{enumerate}
+\end{Exemple}
+
+%% DEFINITION
+\begin{Definition}[Fonction numérique]
+\begin{itemize}
+    \item On appelle \textbf{fonction numérique} d'une variable réelle $x$ toute relation
+    $x \mapsto f(x)$ qui associe à chaque $x$ au plus une valeur.
+    \item Si $f(x)$ existe, on dit que $f(x)$ est \textbf{l'image} de $x$.
+    \item L'ensemble des nombres réels $x$ qui ont une image par $f$ est appelé
+    \textbf{ensemble de définition} de $f$ et se note $D_f$.
+\end{itemize}
+\end{Definition}
+
+%% EXEMPLE
+\begin{Exemple}[][10 min]
+\textbf{1.} Soit la fonction : $f(x) = \frac{2x}{x-1}$
+
+L'expression est définie si $x - 1 \neq 0$, c'est-à-dire $x \neq 1$.
+Donc $D_f = ]-\infty\,;\,1[\,\cup\,]1\,;\,+\infty[ = \R \setminus \{1\}$
+
+\medskip
+
+\textbf{2.} Soit $g$ la fonction : $g(x) = \sqrt{2x-3}$
+
+L'expression est définie si $2x - 3 \geq 0$, c'est-à-dire $x \geq \frac{3}{2}$.
+Donc $D_g = \left[\frac{3}{2}\,;\,+\infty\right[$
+\end{Exemple}
+
+%% TECHNIQUES
+\begin{Techniques}
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|Sc|Sc|}
+\hline
+\theadrow Fonction & Ensemble de définition \\
+\hline
+$x \mapsto P(x)$ & $D_f = \R$ \\
+$x \mapsto \frac{P(x)}{Q(x)}$ & $D_f = \{x \in \R \mid Q(x) \neq 0\}$ \\
+$x \mapsto \sqrt{P(x)}$ & $D_f = \{x \in \R \mid P(x) \geq 0\}$ \\
+$x \mapsto \frac{P(x)}{\sqrt{Q(x)}}$ & $D_f = \{x \in \R \mid Q(x) > 0\}$ \\
+$x \mapsto \sqrt{\frac{P(x)}{Q(x)}}$ & $D_f = \left\{x \in \R \;\middle|\; \frac{P(x)}{Q(x)} \geq 0 \text{ et } Q(x) \neq 0\right\}$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{Techniques}
+
+%% APPLICATION
+\begin{Application}[][10 min]
+Déterminer l'ensemble de définition de la fonction $f$ dans chacun des cas suivants :
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(x) = x^2 - 2x + 1$
+    \item $f(x) = \frac{x+1}{2x-8}$
+    \item $f(x) = \sqrt{2-x}$
+    \item $f(x) = \sqrt{x^2 - 5x + 6}$
+    \item $f(x) = \frac{\sqrt{x}}{x^2 - 2x + 1}$
+    \item $f(x) = \frac{x+4}{|x| - 3}$
+    \item $f(x) = \frac{\sqrt{2-x}}{\sqrt{4x+2}}$
+    \item $f(x) = \sqrt{\frac{2-x}{4x+2}}$
+\end{enumerate}
+\end{multicols}
+\end{Application}
+
+%% SOLUTION_APPLICATION
+\begin{Exemple}[Correction — Application 1]
+\begin{enumerate}
+    \item $P(x) = x^2 - 2x + 1$ est un polynôme, donc $D_f = \R$.
+    \item $2x - 8 \neq 0 \Leftrightarrow x \neq 4$. Donc $D_f = \R \setminus \{4\}$.
+    \item $2 - x \geq 0 \Leftrightarrow x \leq 2$. Donc $D_f = ]-\infty\,;\,2]$.
+    \item $x^2 - 5x + 6 \geq 0 \Leftrightarrow (x-2)(x-3) \geq 0$.
+    Donc $D_f = ]-\infty\,;\,2] \cup [3\,;\,+\infty[$.
+    \item $x \geq 0$ et $x^2 - 2x + 1 \neq 0 \Leftrightarrow x \geq 0$ et $x \neq 1$.
+    Donc $D_f = [0\,;\,1[\,\cup\,]1\,;\,+\infty[$.
+    \item $|x| - 3 \neq 0 \Leftrightarrow x \neq 3$ et $x \neq -3$.
+    Donc $D_f = \R \setminus \{-3\,;\,3\}$.
+    \item $2 - x \geq 0$ et $4x + 2 > 0 \Leftrightarrow x \leq 2$ et $x > -\frac{1}{2}$.
+    Donc $D_f = \left]-\frac{1}{2}\,;\,2\right]$.
+    \item $\frac{2-x}{4x+2} \geq 0$ et $4x + 2 \neq 0$.
+    Tableau de signes : $D_f = \left]-\frac{1}{2}\,;\,2\right]$.
+\end{enumerate}
+\end{Exemple}
+
+%% APPLICATION
+\begin{Application}[][5 min]
+On considère les fonctions numériques $f$ et $g$ définies par :
+$$f(x) = \frac{1}{\sqrt{x}-2} \quad \text{et} \quad g(x) = \frac{\sqrt{x}+2}{x-4}$$
+Montrer que $f = g$.
+\end{Application}
+
+%% SOLUTION_APPLICATION
+\begin{Exemple}[Correction — Application 2]
+\textbf{Domaines :} $D_f$ : $x \geq 0$ et $\sqrt{x} \neq 2$, soit $x \geq 0$ et $x \neq 4$.
+Donc $D_f = [0\,;\,4[\,\cup\,]4\,;\,+\infty[$.
+
+$D_g$ : $x \geq 0$ et $x \neq 4$. Donc $D_g = [0\,;\,4[\,\cup\,]4\,;\,+\infty[$.
+
+On a $D_f = D_g$. \checkmark
+
+\textbf{Égalité des expressions :} Pour tout $x \in D_f$, $\sqrt{x} \neq 2$ donc $\sqrt{x} + 2 \neq 0$ et $\sqrt{x} - 2 \neq 0$.
+\[
+g(x) = \frac{\sqrt{x}+2}{x-4} = \frac{\sqrt{x}+2}{(\sqrt{x}-2)(\sqrt{x}+2)} = \frac{1}{\sqrt{x}-2} = f(x)
+\]
+Donc $f = g$. \checkmark
+\end{Exemple}
+
+%% APPLICATION
+\begin{Application}[][5 min]
+Considérons la fonction $f$ définie par $f(x) = \frac{x^2}{x+1}$
+
+Parmi les points $A(0\,;\,0)$, $B(-1\,;\,1)$, $C\!\left(3\,;\,\frac{9}{4}\right)$ et $D(2\,;\,4)$,
+déterminer ceux qui appartiennent à $(C_f)$.
+\end{Application}
+
+%% SOLUTION_APPLICATION
+\begin{Exemple}[Correction — Application 3]
+$D_f = \R \setminus \{-1\}$.
+
+$f(0) = 0$ donc $A(0\,;\,0) \in (C_f)$. \checkmark
+
+$-1 \notin D_f$ donc $B \notin (C_f)$.
+
+$f(3) = \frac{9}{4}$ donc $C\!\left(3\,;\,\frac{9}{4}\right) \in (C_f)$. \checkmark
+
+$f(2) = \frac{4}{3} \neq 4$ donc $D \notin (C_f)$.
+\end{Exemple}
+
+% ────────────────────────────────────────────
+%  2. ÉGALITÉ DE DEUX FONCTIONS
+% ────────────────────────────────────────────
+
+%% DEFINITION
+\begin{Definition}[Égalité de deux fonctions]
+Soient $f$ et $g$ deux fonctions et $D_f$, $D_g$ leurs ensembles de définition.
+On dit que $f$ et $g$ sont \textbf{égales} et on écrit $f = g$ si :
+\[
+D_f = D_g \quad \text{et} \quad \forall x \in D_f : f(x) = g(x)
+\]
+\end{Definition}
+
+% ────────────────────────────────────────────
+%  3. PARITÉ D'UNE FONCTION
+% ────────────────────────────────────────────
+
+%% ACTIVITE
+\begin{Activite}[][10 min]
+\begin{enumerate}
+    \item Soit $f$ la fonction définie sur $\R$ par $f(x) = 3x^2$.
+        \begin{enumerate}
+            \item Vérifier que pour tout $x \in D_f$ : $f(-x) = f(x)$
+            \item Quelle est la propriété géométrique vérifiée par $\mathcal{C}_f$ ?
+        \end{enumerate}
+    \item Soit $g$ la fonction définie sur $\R^*$ par $g(x) = x^3$.
+        \begin{enumerate}
+            \item Vérifier que pour tout $x \in D_g$ : $g(-x) = -g(x)$
+            \item Quelle est la propriété géométrique vérifiée par $\mathcal{C}_g$ ?
+        \end{enumerate}
+\end{enumerate}
+
+\begin{center}
+\begin{minipage}{0.45\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=1.1]
+        \begin{axis}[
+            width=\linewidth, height=\linewidth,
+            axis lines=middle,
+            axis line style={thick, black, -stealth},
+            xmin=-2, xmax=2, ymin=-0.5, ymax=3.5,
+            xtick={-1,1}, ytick={1,2,3},
+            tick label style={font=\footnotesize\sffamily},
+            clip=false
+        ]
+        \addplot[thick, color=SecondaryColor, smooth, domain=-1.05:1.05, samples=50] {3*x^2};
+        \node[right, font=\footnotesize\sffamily\itshape, color=SecondaryColor]
+            at (axis cs: 0.5,3) {$\mathcal{C}_f$};
+        \node[below left, font=\footnotesize\sffamily] at (axis cs: 0,0) {$O$};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=1.1]
+        \begin{axis}[
+            width=\linewidth, height=\linewidth,
+            axis lines=middle,
+            axis line style={thick, black, -stealth},
+            xmin=-2, xmax=2, ymin=-2.5, ymax=2.5,
+            xtick={-1,1}, ytick={-1,1},
+            tick label style={font=\footnotesize\sffamily},
+            clip=false
+        ]
+        \addplot[thick, color=SecondaryColor, smooth, domain=-1.3:1.3, samples=60] {x^3};
+        \node[right, font=\footnotesize\sffamily\itshape, color=SecondaryColor]
+            at (axis cs: 0.8,1) {$\mathcal{C}_g$};
+        \node[below right, font=\footnotesize\sffamily] at (axis cs: 0,0) {$O$};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+\end{center}
+\end{Activite}
+
+%% SOLUTION_ACTIVITE
+\begin{Exemple}[Correction — Activité 2]
+\begin{enumerate}
+    \item $f(-x) = 3(-x)^2 = 3x^2 = f(x)$ pour tout $x \in \R$. \checkmark
+    La courbe $\mathcal{C}_f$ est symétrique par rapport à l'axe des ordonnées.
+    \item $g(-x) = (-x)^3 = -x^3 = -g(x)$ pour tout $x \in \R^*$. \checkmark
+    La courbe $\mathcal{C}_g$ est symétrique par rapport à l'origine $O$.
+\end{enumerate}
+\end{Exemple}
+
+%% DEFINITION
+\begin{Definition}[Parité d'une fonction]
+Soit $f$ une fonction et $D_f$ son ensemble de définition.
+\begin{itemize}
+    \item $f$ est \textbf{paire} si et seulement si : pour tout $x \in D_f$ : $-x \in D_f$ et $f(-x) = f(x)$
+    \item $f$ est \textbf{impaire} si et seulement si : pour tout $x \in D_f$ : $-x \in D_f$ et $f(-x) = -f(x)$
+\end{itemize}
+\end{Definition}
+
+%% REMARQUE
+\begin{Remarque}
+$x \in D_f$ et $-x \in D_f$ signifie que $D_f$ est \textbf{symétrique par rapport à zéro}.
+\end{Remarque}
+
+%% PROPRIETE
+\begin{Propriete}[Interprétation géométrique]
+Soit $f$ une fonction et $(C_f)$ sa courbe dans un repère orthogonal $(O\,;\,\vec{i}\,;\,\vec{j})$.
+\begin{itemize}
+    \item $f$ est \textbf{paire} $\Leftrightarrow$ $(C_f)$ est symétrique par rapport à l'axe des ordonnées.
+    \item $f$ est \textbf{impaire} $\Leftrightarrow$ $(C_f)$ est symétrique par rapport au point $O$.
+\end{itemize}
+\end{Propriete}
+
+%% EXEMPLE
+\begin{Exemple}[][10 min]
+\textbf{1.} Soit $f(x) = x^4 - x^2$, $D_f = \R$.
+
+$f(-x) = (-x)^4 - (-x)^2 = x^4 - x^2 = f(x)$ pour tout $x \in \R$. Donc $f$ est \textbf{paire}.
+
+\medskip
+
+\textbf{2.} Soit $g(x) = x + x^3$, $D_g = \R$.
+
+$g(-x) = -x + (-x)^3 = -x - x^3 = -(x + x^3) = -g(x)$. Donc $g$ est \textbf{impaire}.
+\end{Exemple}
+
+%% APPLICATION
+\begin{Application}[][10 min]
+Étudier la parité de la fonction $f$ dans chacun des cas suivants :
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(x) = x^2 - 3|x| + 2$
+    \item $f(x) = 2x^3 - 5x$
+    \item $f(x) = \sqrt{x-1}$
+\end{enumerate}
+\end{multicols}
+\end{Application}
+
+%% SOLUTION_APPLICATION
+\begin{Exemple}[Correction — Application 4]
+\textbf{1.} $D_f = \R$, symétrique par rapport à $0$.
+$f(-x) = (-x)^2 - 3|-x| + 2 = x^2 - 3|x| + 2 = f(x)$. Donc $f$ est \textbf{paire}.
+
+\medskip
+
+\textbf{2.} $D_f = \R$, symétrique par rapport à $0$.
+$f(-x) = 2(-x)^3 - 5(-x) = -2x^3 + 5x = -(2x^3 - 5x) = -f(x)$. Donc $f$ est \textbf{impaire}.
+
+\medskip
+
+\textbf{3.} $D_f = [1\,;\,+\infty[$. Ce domaine n'est pas symétrique par rapport à $0$.
+Donc $f$ n'est \textbf{ni paire, ni impaire}.
+\end{Exemple}
+
+% ────────────────────────────────────────────
+%  4. VARIATIONS D'UNE FONCTION
+% ────────────────────────────────────────────
+
+%% DEFINITION
+\begin{Definition}[Monotonie]
+Soit $f$ une fonction et $I$ un intervalle inclus dans $D_f$.
+\begin{itemize}
+    \item $f$ est \textbf{strictement croissante} sur $I$ si pour tous $a, b \in I$ :
+    $a < b \Rightarrow f(a) < f(b)$
+    \item $f$ est \textbf{strictement décroissante} sur $I$ si pour tous $a, b \in I$ :
+    $a < b \Rightarrow f(a) > f(b)$
+    \item $f$ est \textbf{constante} sur $I$ si pour tous $a, b \in I$ : $f(a) = f(b)$
+\end{itemize}
+\end{Definition}
+
+%% DEFINITION
+\begin{Definition}[Taux de variation]
+Soit $f$ une fonction et $a, b$ deux éléments distincts de $D_f$.
+Le nombre réel $T(a\,;\,b) = \frac{f(b) - f(a)}{b - a}$ est appelé
+\textbf{taux de variation} de $f$ entre $a$ et $b$.
+\end{Definition}
+
+%% PROPRIETE
+\begin{Propriete}[Taux de variation et monotonie]
+Soit $f$ une fonction et $T$ son taux de variation entre deux réels distincts $a$ et $b$ d'un intervalle $I \subset D_f$.
+\begin{itemize}
+    \item Si $T > 0$ pour tous $a, b \in I$ alors $f$ est \textbf{strictement croissante} sur $I$.
+    \item Si $T < 0$ pour tous $a, b \in I$ alors $f$ est \textbf{strictement décroissante} sur $I$.
+\end{itemize}
+\end{Propriete}
+
+%% APPLICATION
+\begin{Application}[][10 min]
+Soit $f$ la fonction définie sur $\R$ par : $f(x) = 2x^2 + 3$
+\begin{enumerate}
+    \item Soient $a$ et $b$ de $[0\,;\,+\infty[$ tels que $a < b$. Montrer que $f(a) < f(b)$.
+    \item En déduire la monotonie de $f$ sur $\R^+$.
+    \item Étudier la monotonie de $f$ sur $\R^-$.
+    \item Dresser le tableau de variations de $f$ sur $\R$.
+\end{enumerate}
+\end{Application}
+
+%% SOLUTION_APPLICATION
+\begin{Exemple}[Correction — Application 8]
+\textbf{1.} Soient $a, b \in [0\,;\,+\infty[$ avec $a < b$.
+\[
+f(b) - f(a) = 2b^2 + 3 - (2a^2 + 3) = 2(b^2 - a^2) = 2(b-a)(b+a)
+\]
+Or $b - a > 0$ et $b + a > 0$ (car $a, b \geq 0$), donc $f(b) - f(a) > 0$, soit $f(a) < f(b)$.
+
+\textbf{2.} D'où $f$ est \textbf{strictement croissante} sur $\R^+$.
+
+\textbf{3.} Par un raisonnement analogue avec $a, b \in ]-\infty\,;\,0]$ et $a < b$ :
+$b + a < 0$ et $b - a > 0$ donc $f(b) - f(a) < 0$, soit $f$ est \textbf{strictement décroissante} sur $\R^-$.
+
+\textbf{4.} Tableau de variations :
+
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=2, espcl=3]
+        {$x$ / 1, $f(x)$ / 2}
+        {$-\infty$, $0$, $+\infty$}
+    \tkzTabVar{+/$+\infty$, -/$3$, +/$+\infty$}
+\end{tikzpicture}
+\end{center}
+\end{Exemple}
+
+% ────────────────────────────────────────────
+%  5. EXERCICE DE SYNTHÈSE
+% ────────────────────────────────────────────
+
+%% EXERCICE
+\begin{Exercice}[][15 min]
+On considère la fonction numérique $f$ définie sur $\R$ par :
+$$f\big(x\big) = \frac{2x}{x^2 + 1}$$
+On note $\big(\mathcal{C}_f\big)$ sa courbe représentative dans un repère orthonormé
+$\big(O\,;\,\vect{i}\,;\,\vect{j}\big)$.
+\begin{enumerate}
+    \item Déterminer $D_f$, puis étudier la parité de $f$.
+    \item Calculer $f(0)$, $f(1)$ et $f(2)$.
+    \item Soient $a$ et $b$ deux réels distincts de $[0\,;\,+\infty[$.
+    \begin{enumerate}
+        \item Montrer que : $T(a\,;\,b) = \frac{2(1-ab)}{(a^2+1)(b^2+1)}$
+        \item Étudier la monotonie de $f$ sur $[0\,;\,1]$ et sur $[1\,;\,+\infty[$.
+        \item En déduire la monotonie de $f$ sur $[-1\,;\,0]$ et sur $]-\infty\,;\,-1]$.
+        \item Dresser le tableau de variations de $f$ sur $\R$.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item Montrer que pour tout $x \in \R$ :
+        $1 - f(x) = \frac{(x-1)^2}{x^2+1}$
+        \item En déduire que pour tout $x \in \R$ : $f(x) \leq 1$
+    \end{enumerate}
+    \item Résoudre dans $\R$ l'équation $f(x) = 1$.
+    En déduire que $1$ est le maximum de $f$ sur $\R$.
+    \item En utilisant la parité de $f$, montrer que $-1$ est le minimum de $f$ sur $\R$.
+\end{enumerate}
+\end{Exercice}
+
+%% SOLUTION_EXERCICE
+\begin{Exemple}[Correction — Exercice de synthèse 1]
+\textbf{1. Domaine et parité :}
+$x^2 + 1 \geq 1 > 0$ pour tout $x \in \R$, donc $D_f = \R$.
+
+$f(-x) = \frac{2(-x)}{(-x)^2+1} = \frac{-2x}{x^2+1} = -f(x)$ pour tout $x \in \R$.
+Donc $f$ est \textbf{impaire}.
+
+\textbf{2. Images :} $f(0) = 0$, \quad $f(1) = \frac{2}{2} = 1$, \quad $f(2) = \frac{4}{5}$.
+
+\textbf{3a. Taux de variation :} Soient $a, b \in [0\,;\,+\infty[$ distincts.
+\[
+T(a\,;\,b) = \frac{f(b)-f(a)}{b-a}
+= \frac{\frac{2b}{b^2+1} - \frac{2a}{a^2+1}}{b-a}
+= \frac{2b(a^2+1) - 2a(b^2+1)}{(b-a)(a^2+1)(b^2+1)}
+\]
+\[
+= \frac{2(ba^2 - ab^2 + b - a)}{(b-a)(a^2+1)(b^2+1)}
+= \frac{2(b-a)(1-ab)}{(b-a)(a^2+1)(b^2+1)}
+= \frac{2(1-ab)}{(a^2+1)(b^2+1)}
+\]
+
+\textbf{3b. Monotonie :}
+Sur $[0\,;\,1]$ : $a, b \in [0\,;\,1]$ donc $ab \leq 1$, soit $1 - ab \geq 0$, donc $T \geq 0$.
+$f$ est \textbf{croissante} sur $[0\,;\,1]$.
+
+Sur $[1\,;\,+\infty[$ : $a, b \geq 1$ donc $ab \geq 1$, soit $1 - ab \leq 0$, donc $T \leq 0$.
+$f$ est \textbf{décroissante} sur $[1\,;\,+\infty[$.
+
+\textbf{3c.} $f$ est impaire, donc $f$ est croissante sur $[-1\,;\,0]$ et décroissante sur $]-\infty\,;\,-1]$.
+
+\textbf{3d.} Tableau de variations :
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=2, espcl=2.5]
+        {$x$ / 1, $f(x)$ / 2}
+        {$-\infty$, $-1$, $0$, $1$, $+\infty$}
+    \tkzTabVar{+/$0$, -/$-1$, -/$0$, +/$1$, -/$0$}
+\end{tikzpicture}
+\end{center}
+
+\textbf{4a.} $1 - f(x) = 1 - \frac{2x}{x^2+1} = \frac{x^2+1-2x}{x^2+1} = \frac{(x-1)^2}{x^2+1}$. \checkmark
+
+\textbf{4b.} $(x-1)^2 \geq 0$ et $x^2 + 1 > 0$, donc $1 - f(x) \geq 0$, soit $f(x) \leq 1$.
+
+\textbf{5.} $f(x) = 1 \Leftrightarrow 1 - f(x) = 0 \Leftrightarrow \frac{(x-1)^2}{x^2+1} = 0
+\Leftrightarrow x = 1$.
+
+Donc $f(x) \leq 1$ pour tout $x \in \R$ et $f(1) = 1$. Donc $1$ est le \textbf{maximum} de $f$ sur $\R$.
+
+\textbf{6.} $f$ est impaire donc $f(-1) = -f(1) = -1$.
+De plus $f(x) \geq -1$ pour tout $x$ (par symétrie de 4b).
+Donc $-1$ est le \textbf{minimum} de $f$, atteint en $x = -1$.
+\end{Exemple}

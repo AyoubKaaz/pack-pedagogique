@@ -1,0 +1,434 @@
+% ==========================================
+% 02_STYLE.TEX
+% ==========================================
+
+% --- COULEURS ---
+\definecolor{PrimaryColor}{HTML}{004DA0} % Thomas Dark Blue (Headings, Theorem Borders, primary elements)
+\definecolor{SecondaryColor}{HTML}{0078D7} % Thomas Bright Blue (Main Graph lines, Highlights)
+\definecolor{AccentColor}{HTML}{E31837} % Thomas Red (Asymptotes, important points)
+\definecolor{NeutralColor}{HTML}{EBF3F9} % Soft Light Blue (Table headers)
+\definecolor{LightBlue}{HTML}{EAF2F8}
+\definecolor{BgColor}{HTML}{FAFAFA}
+
+
+
+% --- GEOMETRY (Ajustement pour le cadre) ---
+\geometry{a4paper, left=2.5cm, right=1.5cm, top=1.5cm, bottom=2cm}
+
+% --- FORMAT ET ESPACEMENT DES TITRES (Hanging Numbers Style) ---
+\titlespacing*{\section}{0pt}{4ex plus 1ex minus 0.5ex}{1.5ex plus 0.3ex}
+\titlespacing*{\subsection}{0pt}{3ex plus 1ex minus 0.5ex}{1ex plus 0.2ex}
+\titlespacing*{\subsubsection}{0pt}{2ex plus 0.5ex minus 0.2ex}{0.5ex plus 0.2ex}
+
+\titleformat{\section}[hang]
+  {\normalfont\sffamily\Large\bfseries\color{PrimaryColor}}
+  {\llap{\colorbox{PrimaryColor}{\makebox[1cm][c]{\color{white}\sffamily\thesection}}\hspace{0.5cm}}}
+  {0pt}
+  {}
+
+\titleformat{\subsection}[hang]
+  {\normalfont\sffamily\large\bfseries\color{PrimaryColor}}
+  {\llap{\makebox[1.5cm][l]{\color{PrimaryColor}\sffamily\thesubsection}}}
+  {0pt}
+  {}
+
+\titleformat{\subsubsection}[hang]
+  {\normalfont\sffamily\normalsize\bfseries\color{darkgray}}
+  {\llap{\makebox[1.5cm][l]{\color{darkgray}\sffamily\thesubsubsection}}}
+  {0pt}
+  {}
+
+% --- STYLE DES LISTES ET TABLEAUX ---
+
+% --- GEOMETRIC ENUMERATE BADGES ---
+\DeclareRobustCommand{\enumrect}[1]{\tcbox[on line, boxsep=0pt, boxrule=0pt, colback=PrimaryColor!80, coltext=white, sharp corners, fontupper=\bfseries\sffamily\footnotesize, left=3.5pt, right=3.5pt, top=2pt, bottom=2pt, box align=base, nobeforeafter]{#1}}
+
+\DeclareRobustCommand{\enumcirc}[1]{%
+  \tikz[baseline=(char.base)]{%
+    \node[shape=circle, fill=PrimaryColor!70, text=white, font=\bfseries\sffamily\footnotesize, inner sep=1pt, minimum size=1em] (char) {#1};%
+  }%
+}
+
+% Enumerate: 3 niveaux
+\setlist[enumerate,1]{label=\textbf{\sffamily \arabic*.}, itemsep=4pt, topsep=4pt}
+\setlist[enumerate,2]{label=\textbf{\textcolor{PrimaryColor}{\sffamily \alph*)}}, itemsep=2pt, topsep=2pt}
+\setlist[enumerate,3]{label=\textbf{\textcolor{PrimaryColor!80}{\rmfamily\alph{enumii}\textsubscript{\arabic*})}}, itemsep=1pt, topsep=1pt}
+
+% Itemize: 3 niveaux
+\setlist[itemize,1]{label=\textcolor{black}{\textbullet}, itemsep=2pt, topsep=2pt}
+\setlist[itemize,2]{label=\textcolor{black}{$\circ$}, itemsep=1pt, topsep=1pt}
+\setlist[itemize,3]{label=\textcolor{black}{-}, itemsep=1pt, topsep=1pt}
+
+% Tableaux professionnels
+% rowcolors activé uniquement dans tabular (pas dans array/cases) via etoolbox
+\usepackage{etoolbox}
+\AtBeginEnvironment{tabular}{\rowcolors{2}{PrimaryColor!4}{white}}
+
+% Utilisation de \AfterEndEnvironment pour s'exécuter HORS du tableau
+% Utilisation de \hiderowcolors (commande officielle) pour stopper l'alternance
+% \AfterEndEnvironment{tabular}{\hiderowcolors}  
+
+\newcommand{\theadrow}{\rowcolor{NeutralColor}\color{PrimaryColor}\bfseries\sffamily}
+
+% --- STYLE PGFPLOTS ---
+\pgfplotsset{
+    proplot/.style={
+        axis lines=middle,
+        axis line style={thick, black, -stealth},
+        grid=none,
+        tick label style={font=\sffamily\footnotesize, color=black},
+        every axis plot/.append style={very thick, SecondaryColor},
+        label style={font=\sffamily\small\itshape, black}
+    }
+}
+
+% --- STYLE DES BOÎTES (Fiche Technique) ---
+\tcbset{
+    fichebox/.style={
+        enhanced,
+        boxrule=1pt,
+        colframe=PrimaryColor,
+        colback=white,
+        coltitle=PrimaryColor,
+        fonttitle=\normalfont\sffamily,
+        attach boxed title to top left={xshift=5mm, yshift=-\tcboxedtitleheight/2},
+        boxed title style={
+            enhanced,
+            colback=white, 
+            frame hidden,   % Supprime la ligne parasite
+            boxrule=0pt,
+            arc=3pt,
+            left=2mm, right=2mm, top=1mm, bottom=1mm
+        },
+        top=4mm, bottom=2mm, left=3mm, right=3mm
+    }
+}
+
+% --- STYLE "COURS" (Pages avec cadre) ---
+\fancypagestyle{cours}{
+    \fancyhf{} 
+    \renewcommand{\headrulewidth}{0pt} 
+    \renewcommand{\footrulewidth}{0pt} 
+    
+    \fancyfoot[L]{\small Ch 11. Fonctions numériques} 
+    \fancyfoot[C]{\small \thepage}                    
+    \fancyfoot[R]{\small Pr. Kaazouzi Ayoub}         
+}
+
+% ==========================================
+% 02_STYLE.TEX : STYLE ATTACHED BOXED TITLE SANS ICÔNES (Sans Numérotation)
+% ==========================================
+
+% --- PALETTE DE COULEURS DOUCES (SOFT COLORS) ---
+\definecolor{CAct}{HTML}{67899F}    % Activité (Soft Steel Blue)
+\definecolor{CDef}{HTML}{C16B67}    % Définition (Soft Rose/Coral)
+\definecolor{CVoc}{HTML}{8477A4}    % Vocabulaire (Soft Lavender)
+\definecolor{CProp}{HTML}{C59145}   % Propriété (Soft Gold/Amber)
+\definecolor{CPropo}{HTML}{6C8EA8}  % Proposition (Soft Blue)
+\definecolor{CThm}{HTML}{729C7A}    % Théorème (Soft Sage Green)
+\definecolor{CCor}{HTML}{619489}    % Corollaire (Soft Mint/Teal)
+\definecolor{CPre}{HTML}{8F857B}    % Preuve (Soft Taupe)
+\definecolor{CEx}{HTML}{C87D53}     % Exemple (Soft Earthy Orange)
+\definecolor{CRem}{HTML}{8895A5}    % Remarque (Soft Cool Gray)
+\definecolor{CApp}{HTML}{0078D7}    % Application (Thomas Bright Blue)
+\definecolor{CExer}{HTML}{004DA0}   % Exercice (Thomas Dark Blue)
+\definecolor{CTech}{HTML}{8B1A1A}   % Techniques (Dark Red / Burgundy)
+
+% --- STYLE DE BASE DES BOÎTES (Option B Modifiée - 3 param) ---
+\tcbset{
+    myboxstyle/.style n args={3}{
+        enhanced,
+        colback=white,
+        colframe=#1,
+        boxrule=1pt,
+        arc=4pt,
+        coltitle=white,
+        fonttitle=\normalfont\sffamily\bfseries,
+        attach boxed title to top left={xshift=4mm, yshift=-\tcboxedtitleheight/2},
+        boxed title style={
+            enhanced,
+            colback=#1,
+            colframe=#1,
+            arc=3pt,
+            boxrule=0pt,
+        },
+        title={#2},
+        overlay unbroken and first={
+            \ifstrempty{#3}{}{
+                \node[
+                    fill=#1,
+                    text=white,
+                    font=\bfseries\small,
+                    rounded corners=2.5pt,
+                    inner xsep=2mm,
+                    inner ysep=1.5mm,
+                    anchor=east
+                ] at ([xshift=-4mm]frame.north east) {\faClock~#3};
+            }
+        },
+        top=3mm, bottom=3mm, left=4mm, right=4mm
+    },
+    emptyboxstyle/.style n args={3}{
+        enhanced,
+        frame hidden,
+        interior hidden,
+        boxrule=0pt,
+        coltitle=#1,
+        fonttitle=\normalfont\sffamily\bfseries,
+        title={\rule[0.05em]{0.7cm}{0.6em}\hspace{2mm}#2},
+        titlerule=0pt,
+        boxsep=0pt,
+        left=0pt, right=0pt, top=2mm, bottom=2mm,
+        toptitle=2mm, bottomtitle=2mm,
+        overlay unbroken and first={
+            \ifstrempty{#3}{}{
+                \node[
+                    text=#1,
+                    font=\bfseries\small,
+                    anchor=east
+                ] at ([yshift=-3.5mm]frame.north east) {\faClock~#3};
+            }
+        }
+    },
+    leftbarstyle/.style n args={3}{
+        enhanced,
+        frame hidden,
+        interior hidden,
+        boxrule=0pt,
+        borderline west={3pt}{0pt}{#1},
+        coltitle=#1,
+        fonttitle=\normalfont\sffamily\bfseries,
+        title={#2},
+        titlerule=0pt,
+        boxsep=0pt,
+        left=4mm, right=0mm, top=2mm, bottom=2mm,
+        toptitle=2mm, bottomtitle=2mm,
+        overlay unbroken and first={
+            \ifstrempty{#3}{}{
+                \node[
+                    text=#1,
+                    font=\bfseries\small,
+                    anchor=east
+                ] at ([yshift=-3.5mm]frame.north east) {\faClock~#3};
+            }
+        }
+    },
+    topbottomstyle/.style n args={3}{
+        enhanced,
+        frame hidden,
+        colback=white,
+        colbacktitle=#1!15,
+        coltitle=#1,
+        fonttitle=\normalfont\sffamily\large,
+        title={#2},
+        boxrule=0pt,
+        titlerule=0pt,
+        borderline south={1pt}{0pt}{#1},
+        left=4mm, right=4mm, top=3mm, bottom=3mm,
+        toptitle=2.5mm, bottomtitle=2.5mm,
+        overlay unbroken and first={
+            \ifstrempty{#3}{}{
+                \node[
+                    text=#1,
+                    font=\bfseries\small,
+                    anchor=east
+                ] at ([xshift=-4mm, yshift=-4mm]frame.north east) {\faClock~#3};
+            }
+        }
+    },
+    topstyle/.style n args={3}{
+        enhanced,
+        frame hidden,
+        colback=white,
+        colbacktitle=#1!15,
+        coltitle=#1,
+        fonttitle=\normalfont\sffamily\large,
+        title={#2},
+        boxrule=0pt,
+        titlerule=0pt,
+        left=4mm, right=4mm, top=3mm, bottom=3mm,
+        toptitle=2.5mm, bottomtitle=2.5mm,
+        overlay unbroken and first={
+            \ifstrempty{#3}{}{
+                \node[
+                    text=#1,
+                    font=\bfseries\small,
+                    anchor=east
+                ] at ([xshift=-4mm, yshift=-4mm]frame.north east) {\faClock~#3};
+            }
+        }
+    },
+    remarkstyle/.style n args={3}{
+        enhanced,
+        frame hidden,
+        colback=#1!10,
+        boxrule=0pt,
+        coltitle=#1,
+        fonttitle=\normalfont\sffamily\bfseries,
+        attach title to upper,
+        after title={\enskip},
+        title={#2},
+        left=3mm, right=3mm, top=2mm, bottom=2mm,
+        overlay unbroken and first={
+            \ifstrempty{#3}{}{
+                \node[
+                    text=#1,
+                    font=\bfseries\small,
+                    anchor=east
+                ] at ([yshift=-3.5mm]frame.north east) {\faClock~#3};
+            }
+        }
+    },
+    justtitlestyle/.style n args={3}{
+        enhanced,
+        frame hidden,
+        colback=white,
+        coltitle=#1,
+        fonttitle=\normalfont\sffamily\Large\bfseries,
+        title={#2},
+        boxrule=0pt,
+        titlerule=0pt,
+        boxsep=0pt,
+        left=0mm, right=0mm, top=2mm, bottom=2mm,
+        toptitle=2mm, bottomtitle=2mm,
+        overlay unbroken and first={
+            \ifstrempty{#3}{}{
+                \node[
+                    text=#1,
+                    font=\bfseries\small,
+                    anchor=east
+                ] at ([yshift=-3.8mm]frame.north east) {\faClock~#3};
+            }
+        }
+    },
+    techniquestyle/.style n args={3}{
+        enhanced,
+        frame hidden,
+        colback=white,
+        coltitle=#1,
+        fonttitle=\normalfont\rmfamily\scshape\Large\bfseries,
+        title={#2},
+        halign title=center,
+        boxrule=0pt,
+        titlerule=0pt,
+        boxsep=0pt,
+        left=0mm, right=0mm, top=2mm, bottom=2mm,
+        toptitle=4mm, bottomtitle=2mm,
+        overlay unbroken and first={
+            \ifstrempty{#3}{}{
+                \node[
+                    text=#1,
+                    font=\bfseries\small,
+                    anchor=east
+                ] at ([yshift=-5.8mm]frame.north east) {\faClock~#3};
+            }
+        }
+    },
+    inlinestyle/.style n args={3}{
+        enhanced,
+        colback=white,
+        colframe=#1,
+        boxrule=1pt,
+        sharp corners,
+        coltitle=#1,
+        fonttitle=\normalfont\sffamily\bfseries,
+        attach title to upper,
+        after title={\enskip},
+        title={#2},
+        left=3mm, right=3mm, top=2mm, bottom=2mm,
+        overlay unbroken and first={
+            \ifstrempty{#3}{}{
+                \node[
+                    text=#1,
+                    font=\bfseries\small,
+                    anchor=east
+                ] at ([yshift=-3.5mm]frame.north east) {\faClock~#3};
+            }
+        }
+    }
+}
+
+% ==========================================
+% ENVIRONNEMENTS ENCADRÉS (SANS NUMÉROTATION)
+% ==========================================
+
+% 1. Activité
+\NewTColorBox[auto counter]{Activite}{ O{} O{} }{
+    emptyboxstyle={CAct}{ACTIVITÉ \thetcbcounter\ifstrempty{#1}{}{~(#1)}}{#2},
+    breakable
+}
+
+% 2. Définition
+\NewTColorBox{Definition}{ O{} O{} }{
+    inlinestyle={CDef}{DÉFINITION\ifstrempty{#1}{}{~(#1)}}{#2}
+}
+
+% 3. Vocabulaire  (Gris / Noir)
+\NewTColorBox[auto counter]{Vocabulaire}{ O{} O{} }{
+    emptyboxstyle={black!70}{VOCABULAIRE \ifstrempty{#1}{}{~(#1)}}{#2}
+}
+
+% 3. Notations (Gris / Noir)
+\NewTColorBox[auto counter]{Notations}{ O{} O{} }{
+    emptyboxstyle={black!70}{NOTATIONS\ifstrempty{#1}{}{~(#1)}}{#2}
+}
+
+% 4. Propriété
+\NewTColorBox{Propriete}{ O{} O{} }{
+    inlinestyle={CProp}{PROPRIÉTÉ\ifstrempty{#1}{}{~(#1)}}{#2}
+}
+
+% 5. Proposition
+\NewTColorBox{Proposition}{ O{} O{} }{
+    inlinestyle={CPropo}{PROPOSITION\ifstrempty{#1}{}{~(#1)}}{#2}
+}
+
+% 6. Théorème
+\NewTColorBox{Theoreme}{ O{} O{} }{
+    inlinestyle={CThm}{THÉORÈME\ifstrempty{#1}{}{~(#1)}}{#2}
+}
+
+% 7. Corollaire
+\NewTColorBox{Corollaire}{ O{} O{} }{
+    inlinestyle={CCor}{COROLLAIRE\ifstrempty{#1}{}{~(#1)}}{#2}
+}
+
+% 8. Preuve
+\NewTColorBox{Preuve}{ O{} O{} }{
+    emptyboxstyle={CPre}{PREUVE\ifstrempty{#1}{}{~(#1)}}{#2},
+    after upper={\hfill$\blacksquare$}
+}
+
+% 9. Exemple
+\NewTColorBox{Exemple}{ O{} O{} }{
+    emptyboxstyle={CEx}{EXEMPLES\ifstrempty{#1}{}{~(#1)}}{#2}
+}
+
+% 10. Remarques
+\NewTColorBox{Remarque}{ O{} O{} }{
+    remarkstyle={CRem}{\faInfoCircle\hspace{1mm}Remarque\ifstrempty{#1}{}{~(#1)}}{#2}
+}
+
+% 11. Application
+\NewTColorBox[auto counter]{Application}{ O{} O{} }{
+    emptyboxstyle={CApp}{APPLICATION \thetcbcounter\ifstrempty{#1}{}{~(#1)}}{#2},
+    breakable
+}
+
+% 12. Exercice
+\NewTColorBox[auto counter]{Exercice}{ O{} O{} }{
+    emptyboxstyle={CExer}{EXERCICE DE SYNTHÈSE \thetcbcounter\ifstrempty{#1}{}{~(#1)}}{#2},
+    breakable
+}
+
+% 13. Techniques
+\NewTColorBox{Techniques}{ O{} O{} }{
+    techniquestyle={CTech}{Techniques\ifstrempty{#1}{}{~(#1)}}{#2}
+}
+
+% ==========================================
+% ENVIRONNEMENTS TEXTUELS SIMPLES RESTANTS
+% ==========================================
+
+% Solution
+\newenvironment{Solution}{\par\vspace{2mm}\noindent\textit{SOLUTION.}\ }{\par\vspace{2mm}}

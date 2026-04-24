@@ -1,0 +1,56 @@
+% ==========================================
+% 01_PACKAGES.TEX
+% ==========================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[margin=1.5cm]{geometry} 
+\usepackage{array} % DOIT ÊTRE CHARGÉ AVANT XCOLOR[TABLE] POUR ÉVITER LE BUG \insert@pcolumn
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{booktabs} % Professional tables
+\usepackage{cellspace} % Espacement dynamique des cellules
+\setlength{\cellspacetoplimit}{4pt}
+\setlength{\cellspacebottomlimit}{4pt}
+\usepackage{amsmath, amssymb, mathrsfs}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{xparse}
+\usepackage{enumitem} 
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{tkz-tab}
+
+\usetikzlibrary{babel, shapes.geometric}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{fourier}
+
+
+\usepackage{palatino} % Main serif font
+\usepackage[scaled]{helvet} % Professional Sans-Serif font (Helvetica)
+\usepackage{microtype} % Improved typography
+\usepackage{lipsum}
+
+\usepackage{fontawesome5} % Pour les icônes modernes
+\usepackage{longtable}
+\usepackage{titlesec} % Contrôle absolu des espaces autour des titres
+\usepackage{parskip}  % Supprime l'indentation et gère l'espacement des paragraphes
+
+\usepackage{graphicx} %To insert the image properly without distorting its aspect ratio
+
+\usepackage{setspace}
+
+% Choisissez l'une des commandes suivantes :
+%\onehalfspacing % Pour un interligne de 1.5
+% \doublespacing % Pour un interligne double
+ \setstretch{1.2} % Pour un espacement personnalisé très précis
+
+
+% --- COLONNE ROBUSTE POUR CONTENU (Évite les bugs avec \section et tcolorbox) ---
+\newcolumntype{M}[1]{>{\begin{minipage}[t]{\hsize}\vspace{1mm}}p{#1}<{\vspace{1mm}\end{minipage}}}
+
+%\setlength{\columnseprule}{1pt}
+\setlength{\columnsep}{2em} % Set the space between columns
+\def\columnseprulecolor{\color{white}}

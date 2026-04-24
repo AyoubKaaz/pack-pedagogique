@@ -1,0 +1,26 @@
+% ==========================================
+% 03_MACROS.TEX : Custom Math Shortcuts
+% ==========================================
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+% --- Geometry & Vectors ---
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+
+% --- Analysis ---
+\newcommand{\dd}{\mathop{}\!\mathrm{d}} % Correct upright 'd' for integrals (\dd x)
+\newcommand{\e}{\mathrm{e}}             % Upright 'e' for the exponential function
+\newcommand{\limite}[2]{\lim_{#1 \to #2}}
+
+% --- Toujours utiliser \dfrac (grande fraction) ---
+\let\oldfrac\frac
+\renewcommand{\frac}[2]{\dfrac{#1}{#2}}
+
+% --- Utility ---
+\newcommand{\ds}{\displaystyle} % Forces large fractions and limits inline
+\newcommand{\duree}[1]{\hfill\small\faClock~#1}

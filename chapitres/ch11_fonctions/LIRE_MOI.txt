@@ -1,0 +1,7 @@
+IMPORTANT — Copier ici tes vrais fichiers :
+
+  Page1.tex              ← ton fichier existant
+  Images/MEN LOGO 2.png  ← ton logo existant
+
+Ces fichiers ne sont PAS inclus dans ce ZIP
+car ils appartiennent à ton projet original.
