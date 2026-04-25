@@ -1535,22 +1535,29 @@ On a : \quad $D_f = \mathbb{R}^*$
 
 Donc la fonction $f$ est \textbf{impaire}.
 
-\item \textbf{Montrons que $\frac{f(b) - f(a)}{b - a} = \frac{ab - 4}{ab}$ :}
+\item \textbf{Montrons que $\dfrac{f(b) - f(a)}{b - a} = \dfrac{ab - 4}{ab}$ :}
 
 Soit $a$ et $b$ de $\mathbb{R}^*$ tels que $a \neq b$.
-On a :
+
+\textbf{Étape 1 —} Définition du taux de variation :
+\[ T(a\,;\,b) = \frac{f(b) - f(a)}{b - a} \]
+
+\textbf{Étape 2 —} Calculons $f(b) - f(a)$ séparément :
 \begin{align*}
-    \frac{f(b) - f(a)}{b - a} &= \frac{\left(b + \frac{4}{b}\right) - \left(a + \frac{4}{a}\right)}{b - a} \\
-    &= \frac{b - a + \frac{4}{b} - \frac{4}{a}}{b - a} \\
-    &= \frac{b - a + \frac{4a - 4b}{ab}}{b - a} \\
-    &= \frac{b - a - \frac{4(b - a)}{ab}}{b - a} \\
-    &= \frac{(b - a)\left(1 - \frac{4}{ab}\right)}{b - a} \\
-    &= 1 - \frac{4}{ab} \quad \text{(car } a \neq b \text{)} \\
-    &= \frac{ab}{ab} - \frac{4}{ab} \\
-    &= \frac{ab - 4}{ab}
+    f(b) - f(a) &= \left(b + \frac{4}{b}\right) - \left(a + \frac{4}{a}\right) \\
+                &= b - a + \frac{4}{b} - \frac{4}{a} \\
+                &= (b - a) + \frac{4a - 4b}{ab} \\
+                &= (b - a) - \frac{4(b - a)}{ab} \\
+                &= (b - a)\left(1 - \frac{4}{ab}\right) \\
+                &= (b - a) \cdot \frac{ab - 4}{ab}
 \end{align*}
-D'où :
-\[ \frac{f(b) - f(a)}{b - a} = \frac{ab - 4}{ab} \]
+
+\textbf{Étape 3 —} Divisons par $(b - a)$ :
+\[ T(a\,;\,b) = \frac{f(b) - f(a)}{b - a}
+             = \frac{(b - a) \cdot \dfrac{ab - 4}{ab}}{b - a}
+             = \frac{ab - 4}{ab} \quad \text{(car } a \neq b \text{)} \]
+
+D'où : \quad $\dfrac{f(b) - f(a)}{b - a} = \dfrac{ab - 4}{ab}$
 
 \item \textbf{Étudions les variations de $f$ sur chacun des intervalles $]0 ; 2]$ et $[2 ; +\infty[$ :}
 
@@ -1562,13 +1569,12 @@ $\begin{cases}
 \end{cases} \quad \text{alors} \quad 0 < ab \leq 4$
 
 Puisque $a$ et $b$ sont distincts, on a $ab < 4$.
-On a donc :
-\begin{align*}
-    ab &< 4 
-    \text{ équivaut à } \quad ab - 4 &< 0
-\end{align*}
-Puisque $ab > 0$ et $ab - 4 < 0$, nous constatons que $\frac{ab - 4}{ab} < 0$.
+On a donc : \quad $ab - 4 < 0$
+
+Puisque $ab > 0$ et $ab - 4 < 0$, nous constatons que $\dfrac{ab - 4}{ab} < 0$.
+
 Donc : \quad le taux de variation $T(a;b) < 0$.
+
 D'où : la fonction $f$ est strictement décroissante sur $]0 ; 2]$.
 
 Soit $a$ et $b$ de $[2 ; +\infty[$ tels que $a \neq b$.
@@ -1579,16 +1585,16 @@ $\begin{cases}
 \end{cases} \quad \text{alors} \quad ab \geq 4$
 
 Puisque $a$ et $b$ sont distincts, on a $ab > 4$.
-On a donc :
-\begin{align*}
-    ab &> 4 \\
-    \text{ équivaut à } \quad ab - 4 &> 0
-\end{align*}
-Puisque $ab > 0$ et $ab - 4 > 0$, nous constatons que $\frac{ab - 4}{ab} > 0$.
+On a donc : \quad $ab - 4 > 0$
+
+Puisque $ab > 0$ et $ab - 4 > 0$, nous constatons que $\dfrac{ab - 4}{ab} > 0$.
+
 Donc : \quad le taux de variation $T(a;b) > 0$.
+
 D'où : la fonction $f$ est strictement croissante sur $[2 ; +\infty[$.
 
 \item \textbf{Déduisons les variations de $f$ sur chacun des intervalles $]-\infty ; -2]$ et $[-2 ; 0[$ :}
+
 Puisque la fonction $f$ est impaire, elle conserve les mêmes variations sur les intervalles symétriques par rapport à $0$.
 
 L'intervalle symétrique de $[2 ; +\infty[$ est $]-\infty ; -2]$.
@@ -1598,11 +1604,12 @@ L'intervalle symétrique de $]0 ; 2]$ est $[-2 ; 0[$.
 Donc : \quad la fonction $f$ est strictement décroissante sur $[-2 ; 0[$.
 
 \item \textbf{Dressons le tableau de variations de $f$ :}
+
 On a :
 \begin{align*}
     f(2) &= 2 + \frac{4}{2} \\
-    &= 2 + 2 \\
-    &= 4
+         &= 2 + 2 \\
+         &= 4
 \end{align*}
 Puisque la fonction $f$ est impaire, on a $f(-2) = -f(2) = -4$.
 
