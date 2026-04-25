@@ -1538,11 +1538,9 @@ Donc la fonction $f$ est \textbf{impaire}.
 \item \textbf{Montrons que $\dfrac{f(b) - f(a)}{b - a} = \dfrac{ab - 4}{ab}$ :}
 
 Soit $a$ et $b$ de $\mathbb{R}^*$ tels que $a \neq b$.
+On a :  $T(a\,;\,b) = \frac{f(b) - f(a)}{b - a}$ 
 
-\textbf{Étape 1 —} Définition du taux de variation :
-\[ T(a\,;\,b) = \frac{f(b) - f(a)}{b - a} \]
-
-\textbf{Étape 2 —} Calculons $f(b) - f(a)$ séparément :
+Calculons $f(b) - f(a)$ :
 \begin{align*}
     f(b) - f(a) &= \left(b + \frac{4}{b}\right) - \left(a + \frac{4}{a}\right) \\
                 &= b - a + \frac{4}{b} - \frac{4}{a} \\
@@ -1551,8 +1549,7 @@ Soit $a$ et $b$ de $\mathbb{R}^*$ tels que $a \neq b$.
                 &= (b - a)\left(1 - \frac{4}{ab}\right) \\
                 &= (b - a) \cdot \frac{ab - 4}{ab}
 \end{align*}
-
-\textbf{Étape 3 —} Divisons par $(b - a)$ :
+Donc : 
 \[ T(a\,;\,b) = \frac{f(b) - f(a)}{b - a}
              = \frac{(b - a) \cdot \dfrac{ab - 4}{ab}}{b - a}
              = \frac{ab - 4}{ab} \quad \text{(car } a \neq b \text{)} \]
@@ -1561,14 +1558,14 @@ D'où : \quad $\dfrac{f(b) - f(a)}{b - a} = \dfrac{ab - 4}{ab}$
 
 \item \textbf{Étudions les variations de $f$ sur chacun des intervalles $]0 ; 2]$ et $[2 ; +\infty[$ :}
 
-Soit $a$ et $b$ de $]0 ; 2]$ tels que $a \neq b$.
+\begin{itemize}
+    \item Soit $a$ et $b$ de $]0 ; 2]$ tels que $a \neq b$.
 On a :
 $\begin{cases}
     0 < a \leq 2 \\
-    0 < b \leq 2
-\end{cases} \quad \text{alors} \quad 0 < ab \leq 4$
+    0 < b < 2
+\end{cases} \quad \text{alors} \quad 0 < ab < 4$
 
-Puisque $a$ et $b$ sont distincts, on a $ab < 4$.
 On a donc : \quad $ab - 4 < 0$
 
 Puisque $ab > 0$ et $ab - 4 < 0$, nous constatons que $\dfrac{ab - 4}{ab} < 0$.
@@ -1577,14 +1574,13 @@ Donc : \quad le taux de variation $T(a;b) < 0$.
 
 D'où : la fonction $f$ est strictement décroissante sur $]0 ; 2]$.
 
-Soit $a$ et $b$ de $[2 ; +\infty[$ tels que $a \neq b$.
+    \item Soit $a$ et $b$ de $[2 ; +\infty[$ tels que $a \neq b$.
 On a :
 $\begin{cases}
     a \geq 2 \\
-    b \geq 2
-\end{cases} \quad \text{alors} \quad ab \geq 4$
+    b > 2
+\end{cases} \quad \text{alors} \quad ab > 4$
 
-Puisque $a$ et $b$ sont distincts, on a $ab > 4$.
 On a donc : \quad $ab - 4 > 0$
 
 Puisque $ab > 0$ et $ab - 4 > 0$, nous constatons que $\dfrac{ab - 4}{ab} > 0$.
@@ -1592,28 +1588,34 @@ Puisque $ab > 0$ et $ab - 4 > 0$, nous constatons que $\dfrac{ab - 4}{ab} > 0$.
 Donc : \quad le taux de variation $T(a;b) > 0$.
 
 D'où : la fonction $f$ est strictement croissante sur $[2 ; +\infty[$.
+\end{itemize}
+
+
 
 \item \textbf{Déduisons les variations de $f$ sur chacun des intervalles $]-\infty ; -2]$ et $[-2 ; 0[$ :}
 
-Puisque la fonction $f$ est impaire, elle conserve les mêmes variations sur les intervalles symétriques par rapport à $0$.
+Puisque $f$ est impaire, elle conserve les mêmes variations sur les intervalles symétriques par rapport à $0$.
 
-L'intervalle symétrique de $[2 ; +\infty[$ est $]-\infty ; -2]$.
+\begin{itemize}
+    \item L'intervalle symétrique de $[2 ; +\infty[$ est $]-\infty ; -2]$.
+
 Donc : \quad la fonction $f$ est strictement croissante sur $]-\infty ; -2]$.
 
-L'intervalle symétrique de $]0 ; 2]$ est $[-2 ; 0[$.
+\item L'intervalle symétrique de $]0 ; 2]$ est $[-2 ; 0[$.
+
 Donc : \quad la fonction $f$ est strictement décroissante sur $[-2 ; 0[$.
+\end{itemize}
+
+
 
 \item \textbf{Dressons le tableau de variations de $f$ :}
 
-On a :
-\begin{align*}
-    f(2) &= 2 + \frac{4}{2} \\
-         &= 2 + 2 \\
-         &= 4
-\end{align*}
-Puisque la fonction $f$ est impaire, on a $f(-2) = -f(2) = -4$.
+On a :   $f(2) = 2 + \frac{4}{2} 
+         = 2 + 2 
+         = 4$
 
-\textbf{Conclusion :}
+Puisque la fonction $f$ est impaire, on a $f(-2) = -f(2) = -4$
+
 \[
 \begin{tikzpicture}
 \tkzTabInit[lgt=2, espcl=2]{$x$ / 1 , $f(x)$ / 2}{$-\infty$ , $-2$ , $0$ , $2$ , $+\infty$}
@@ -1642,6 +1644,65 @@ $$h(t) = -t^2 + 6t$$
     \item Quelle est la hauteur maximale atteinte par le ballon ? À quel instant est-elle atteinte ?
 \end{enumerate}
 \end{Activite}
+
+
+%% SOLUTION_ACTIVITE
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Calculons $h(0)$ et $h(6)$ :}
+    
+    On a : \quad  $h(0) = -(0)^2 + 6(0)    = 0 + 0   = 0$
+
+    On a :  \quad $h(6) = -(6)^2 + 6(6)   = -36 + 36     = 0$
+    
+    Donc : \quad $h(6) = 0$ et $h(0) = 0$
+    
+    \[ \text{Ces deux résultats signifient qu'à l'instant initial } (t=0) \text{ et après 6 secondes } (t=6) \text{, le ballon est au niveau du sol.} \]
+
+    \item \textbf{Calculons la hauteur du ballon après $3$ secondes :}
+    
+    On a : \quad     $h(3) = -(3)^2 + 6(3)     = -9 + 18      = 9$
+    
+    Donc : \quad la hauteur du ballon après $3$ secondes est de $9$ mètres.
+    
+    \item 
+    \begin{enumerate}
+        \item \textbf{Montrons que pour tout $t \in [0; 6]$, on a : $h(t) - 9 = -(t - 3)^2$ :}
+        
+        Soit $t \in [0; 6]$.
+        On a :
+        \begin{align*}
+            -(t - 3)^2 &= -\left(t^2 - 2(t)(3) + 3^2\right) \\
+            &= -\left(t^2 - 6t + 9\right) \\
+            &= -t^2 + 6t - 9 \\
+            &= \left(-t^2 + 6t\right) - 9 \\
+            &= h(t) - 9
+        \end{align*}
+        D'où : $h(t) - 9 = -(t - 3)^2$ 
+
+        \item \textbf{Déduisons que pour tout $t \in [0; 6]$, on a : $h(t) \leq 9$ :}
+        
+        Soit $t \in [0; 6]$.
+        On a :
+        \begin{align*}
+            (t - 3)^2 &\geq 0 \quad \text{(car le carré d'un réel est toujours positif)} \\
+            \text{ équivaut à } \quad -(t - 3)^2 &\leq 0 \\
+            \text{ équivaut à } \quad h(t) - 9 &\leq 0 \\
+            \text{ équivaut à } \quad h(t) &\leq 9
+        \end{align*}
+        Donc : \quad pour tout $t \in [0; 6]$, on a $h(t) \leq 9$.
+    \end{enumerate}
+
+    \item \textbf{Déterminons la hauteur maximale atteinte par le ballon et l'instant où elle est atteinte :}
+    
+    Puisque pour tout $t \in [0; 6]$, on a $h(t) \leq 9$, et que $h(3) = 9$, 
+    
+    nous constatons que $9$ est la valeur maximale de la fonction $h$ sur l'intervalle $[0; 6]$.
+    
+     $\text{La hauteur maximale atteinte par le ballon est de } 9 \text{ mètres, à l'instant } t = 3 \text{ secondes.}$ 
+\end{enumerate}
+\end{Solution}
+
 
 %% DEFINITION
 \begin{Definition}[][]
