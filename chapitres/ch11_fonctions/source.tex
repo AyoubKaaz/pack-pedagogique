@@ -1112,57 +1112,44 @@ Soit $f$ la fonction numérique définie sur $\mathbb{R}$ par : $f(x) = 2x^2 + 3
 \end{enumerate}
 \end{Application}
 
-%% SOLUTION_APPLICATION
+%% SOLUTION_EXERCICE
 \begin{Solution}
 \begin{enumerate}
-    \item
+    \item 
     \begin{enumerate}
         \item \textbf{Montrons que $f(a) < f(b)$ :}
-
-        Soient $a$ et $b$ de $\left[0 ; +\infty\right[$ tels que $a < b$.
-
-        Calculons $f(a) - f(b)$ :
+        
+        Soient $a$ et $b$ de $[0 ; +\infty[$ tels que $a < b$.
+        On a :
         \begin{align*}
-            f(a) - f(b) &= (2a^2 + 3) - (2b^2 + 3) \\
-                        &= 2a^2 - 2b^2 \\
-                        &= 2(a - b)(a + b)
+            a &< b \\
+            \text{ équivaut à } \quad a^2 &< b^2 \quad \text{(car $a \in \mathbb{R}^+$ et $b \in \mathbb{R}^+$)} \\
+            \text{ équivaut à } \quad 2a^2 &< 2b^2 \\
+            \text{ équivaut à } \quad 2a^2 + 3 &< 2b^2 + 3
         \end{align*}
-
-        Puisque $a$ et $b$ sont de $\left[0 ; +\infty\right[$ et $a < b$ :
-        \begin{itemize}
-            \item $a - b < 0$
-            \item $a \geq 0$ et $b > 0$, donc $a + b > 0$
-        \end{itemize}
-        Donc : $f(a) - f(b) = 2(a-b)(a+b) < 0$
-
-        D'où : $f(a) < f(b)$
+        D'où :
+        \[ f(a) < f(b) \]
 
         \item \textbf{Déduisons la monotonie de $f$ sur $\mathbb{R}^+$ :}
-
-        Pour tous $a, b \in \mathbb{R}^+$ avec $a < b$, on a montré que $f(a) < f(b)$.
-
-        Donc $f$ est \textbf{strictement croissante} sur $\mathbb{R}^+$.
+        
+        Puisque pour tous $a$ et $b$ de $\mathbb{R}^+$ tels que $a < b$, on a $f(a) < f(b)$, la fonction $f$ conserve le sens de l'inégalité.
+        Donc : \quad la fonction $f$ est strictement croissante sur $\mathbb{R}^+$.
     \end{enumerate}
 
     \item \textbf{Étudions la monotonie de $f$ sur $\mathbb{R}^-$ :}
-
-    Soient $a$ et $b$ de $\left]-\infty ; 0\right]$ tels que $a < b$.
-
+    
+    Soient $a$ et $b$ de $]-\infty ; 0]$ tels que $a < b$.
     On a :
     \begin{align*}
-        f(a) - f(b) &= 2(a - b)(a + b)
+        a &< b \\
+        \text{ équivaut à } \quad a^2 &> b^2 \quad \text{(car $a \in \mathbb{R}^-$ et $b \in \mathbb{R}^-$)} \\
+        \text{ équivaut à } \quad 2a^2 &> 2b^2 \\
+        \text{ équivaut à } \quad 2a^2 + 3 &> 2b^2 + 3
     \end{align*}
-
-    Puisque $a$ et $b$ sont de $\left]-\infty ; 0\right]$ et $a < b$ :
-    \begin{itemize}
-        \item $a - b < 0$
-        \item $a < 0$ et $b \leq 0$, donc $a + b < 0$
-    \end{itemize}
-    Donc : $f(a) - f(b) = 2(a-b)(a+b) > 0$
-
-    D'où : $f(a) > f(b)$
-
-    Donc $f$ est \textbf{strictement décroissante} sur $\mathbb{R}^-$.
+    D'où :
+    \[ f(a) > f(b) \]
+    Puisque pour tous $a$ et $b$ de $\mathbb{R}^-$ tels que $a < b$, on a $f(a) > f(b)$, la fonction $f$ change le sens de l'inégalité.
+    Donc : \quad la fonction $f$ est strictement décroissante sur $\mathbb{R}^-$.
 
     \item \textbf{Dressons le tableau de variations de $f$ sur $\mathbb{R}$ :}
 
@@ -1174,7 +1161,7 @@ Soit $f$ la fonction numérique définie sur $\mathbb{R}$ par : $f(x) = 2x^2 + 3
 \tkzTabVar{ +/ , -/ $3$, +/ }
 \end{tikzpicture}
 \end{center}
-
+    
 \end{enumerate}
 \end{Solution}
 
@@ -1270,6 +1257,87 @@ Soit $f$ la fonction définie sur $\mathbb{R}$ par : $f(x) = x^2 - 6x + 5$
 \end{enumerate}
 \end{Application}
 
+%% SOLUTION_EXERCICE
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Montrons que $T(a;b) = a+b-6$ :}
+    
+    Soit $a$ et $b$ deux réels distincts.
+    On a :
+    \begin{align*}
+        T(a;b) &= \frac{f(a) - f(b)}{a - b} \\
+        &= \frac{(a^2 - 6a + 5) - (b^2 - 6b + 5)}{a - b} \\
+        &= \frac{a^2 - 6a + 5 - b^2 + 6b - 5}{a - b} \\
+        &= \frac{a^2 - b^2 - 6a + 6b}{a - b} \\
+        &= \frac{(a-b)(a+b) - 6(a-b)}{a - b} \\
+        &= \frac{(a-b)(a+b-6)}{a - b} \\
+        &= a + b - 6 \quad \text{(car } a \neq b \text{)}
+    \end{align*}
+    D'où :
+    \[ T(a;b) = a+b-6 \]
+
+    \item \textbf{Étudions la monotonie de $f$ sur chacun des deux intervalles $]-\infty ; 3]$ et $[3 ; +\infty[$ :}
+    
+    Soit $a$ et $b$ deux réels distincts de l'intervalle $]-\infty ; 3]$.
+    On a :
+    $\begin{cases}
+        a \leq 3 \\
+        b < 3
+    \end{cases} \quad \text{alors} \quad a + b < 6$
+
+    Donc : \quad $T(a;b) < 0$
+    
+    D'où : la fonction $f$ est strictement décroissante sur $]-\infty ; 3]$.
+
+    Soit $a$ et $b$ deux réels distincts de l'intervalle $[3 ; +\infty[$.
+    On a :
+    $\begin{cases}
+        a \geq 3 \\
+        b > 3
+    \end{cases} \quad \text{alors} \quad a + b > 6$
+
+    Donc : \quad $T(a;b) > 0$
+    
+    D'où : la fonction $f$ est strictement croissante sur $[3 ; +\infty[$.
+
+    \item \textbf{Dressons le tableau de variations de $f$ :}
+    On a :
+    \begin{align*}
+        f(3) &= (3)^2 - 6(3) + 5 \\
+        &= 9 - 18 + 5 \\
+        &= -9 + 5 \\
+        &= -4
+    \end{align*}
+    Donc : \quad $f(3) = -4$
+
+\begin{center}
+  \begin{tikzpicture}
+% Initialisation du tableau avec les largeurs de colonnes (lgt) et l'espacement (espcl)
+\tkzTabInit[lgt=2, espcl=3]{$x$ / 1 , $f(x)$ / 2}{$-\infty$, $3$, $+\infty$}
+
+% Ligne des variations
+% +/ signifie en haut (sans texte pour les limites)
+% -/ -4 signifie en bas avec la valeur -4
+\tkzTabVar{+/ , -/ $-4$ , +/ }
+\end{tikzpicture}
+\end{center}
+
+    \item \textbf{Comparons les nombres $f(2026)$ et $f(2027)$ :}
+    
+    On a : $2026 \in [3 ; +\infty[$ et $2027 \in [3 ; +\infty[$.
+    \begin{align*}
+        2026 &< 2027
+    \end{align*}
+    Puisque la fonction $f$ est strictement croissante sur l'intervalle $[3 ; +\infty[$, elle conserve le sens de l'inégalité.
+    Donc : \quad $f(2026) < f(2027)$
+    
+    D'où :
+    \[ f(2026) < f(2027) \]
+
+\end{enumerate}
+\end{Solution}
+
+
 %% APPLICATION
 \begin{Application}[][10 min]
 \noindent
@@ -1321,6 +1389,39 @@ Répondre, par lecture graphique aux questions suivantes :
 \end{Application}
 
 
+%% SOLUTION_EXERCICE
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Précisons l'ensemble de définition $D_f$ de $f$ :}
+    
+    Par lecture graphique, nous constatons que la courbe de la fonction $f$ est définie pour les abscisses allant de $-1$ à $3$ (les deux extrémités étant incluses).
+    
+    Donc : \quad $D_f = [-1 ; 3]$
+
+    \item \textbf{Déterminons les images par $f$ de $-1$ ; $0$ ; $1$ et $2$ :}
+    
+    Par lecture graphique des coordonnées des points de la courbe, on a :
+    \begin{align*}
+        f(-1) &= -2 \\
+        f(0) &= 2 \\
+        f(1) &= 0 \\
+        f(2) &= -2
+    \end{align*}
+
+    \item \textbf{Dressons le tableau de variation de $f$ sur $D_f$ :}
+    
+    Par lecture graphique, nous constatons que la fonction $f$ est strictement croissante sur l'intervalle $[-1 ; 0]$, strictement décroissante sur l'intervalle $[0 ; 2]$, puis strictement croissante sur l'intervalle $[2 ; 3]$.
+
+    \textbf{Conclusion :}
+    \[
+    \begin{tikzpicture}
+    \tkzTabInit[lgt=2,espcl=2.5]{$x$ / 1 , $f(x)$ / 2}{$-1$ , $0$ , $2$ , $3$}
+    \tkzTabVar{-/ $-2$ , +/ $2$ , -/ $-2$ , +/ $2$}
+    \end{tikzpicture}
+    \]
+\end{enumerate}
+\end{Solution}
+
 %% SECTION
 \subsection{Monotonie et parité d'une fonction \duree{15 min}}
 
@@ -1366,6 +1467,38 @@ Soit $f$ la fonction numérique définie par son tableau de variations :
 \end{enumerate}
 \end{Application}
 
+%% SOLUTION_APPLICATION
+\begin{Solution}
+\begin{enumerate}
+\item \textbf{Déterminons $D_f$ :}
+
+ $D_f = [-7 ; 0[ \cup ]0 ; 7]$
+
+\item \textbf{Complétons le tableau sachant que $f$ est paire :}
+
+Puisque $f$ est paire, elle change donc de sens de variation sur les intervalles symétriques par rapport à $0$, et on a : $f(5) = f(-5) = 4$.
+
+\[
+\begin{tikzpicture}
+\tkzTabInit[lgt=1.5, espcl=1.8]{$x$ / 1, $f(x)$ / 2}{$-7$, $-5$, $0$, $5$, $7$}
+\tkzTabVar{+/ , -/ $4$, +D+/ / , -/ $4$, +/ }
+\end{tikzpicture}
+\]
+
+\item \textbf{Complétons le tableau sachant que $f$ est impaire :}
+
+Puisque $f$ est impaire, elle conserve donc les mêmes variations sur les intervalles symétriques par rapport à $0$, et on a : $f(5) = -f(-5) = -4$.
+
+\[
+\begin{tikzpicture}
+\tkzTabInit[lgt=1.5, espcl=1.8]{$x$ / 1, $f(x)$ / 2}{$-7$, $-5$, $0$, $5$, $7$}
+\tkzTabVar{+/ , -/ $4$, +D-/ / , +/ $-4$, -/ }
+\end{tikzpicture}
+\]
+\end{enumerate}
+\end{Solution}
+
+
 %% APPLICATION
 \begin{Application}[][15 min]
 Soit $f$ une fonction numérique définie par :
@@ -1382,6 +1515,106 @@ $$f(x) = x + \frac{4}{x}$$
 \end{enumerate}
 \end{Application}
 
+%% SOLUTION_APPLICATION
+\begin{Solution}
+\begin{enumerate}
+\item \textbf{Déterminons $D_f$ ; puis montrons que $f$ est impaire :}
+
+On a : \quad $D_f = \mathbb{R}^*$
+
+\begin{itemize}
+    \item $D_f$ est symétrique par rapport à $0$
+    \item Et on a pour tout $x$ de $D_f$ :
+\begin{align*}
+    f(-x) &= (-x) + \frac{4}{-x} \\
+          &= -x - \frac{4}{x} \\
+          &= -\left(x + \frac{4}{x}\right) \\
+          &= -f(x)
+\end{align*}
+\end{itemize}
+
+Donc la fonction $f$ est \textbf{impaire}.
+
+\item \textbf{Montrons que $\frac{f(b) - f(a)}{b - a} = \frac{ab - 4}{ab}$ :}
+
+Soit $a$ et $b$ de $\mathbb{R}^*$ tels que $a \neq b$.
+On a :
+\begin{align*}
+    \frac{f(b) - f(a)}{b - a} &= \frac{\left(b + \frac{4}{b}\right) - \left(a + \frac{4}{a}\right)}{b - a} \\
+    &= \frac{b - a + \frac{4}{b} - \frac{4}{a}}{b - a} \\
+    &= \frac{b - a + \frac{4a - 4b}{ab}}{b - a} \\
+    &= \frac{b - a - \frac{4(b - a)}{ab}}{b - a} \\
+    &= \frac{(b - a)\left(1 - \frac{4}{ab}\right)}{b - a} \\
+    &= 1 - \frac{4}{ab} \quad \text{(car } a \neq b \text{)} \\
+    &= \frac{ab}{ab} - \frac{4}{ab} \\
+    &= \frac{ab - 4}{ab}
+\end{align*}
+D'où :
+\[ \frac{f(b) - f(a)}{b - a} = \frac{ab - 4}{ab} \]
+
+\item \textbf{Étudions les variations de $f$ sur chacun des intervalles $]0 ; 2]$ et $[2 ; +\infty[$ :}
+
+Soit $a$ et $b$ de $]0 ; 2]$ tels que $a \neq b$.
+On a :
+$\begin{cases}
+    0 < a \leq 2 \\
+    0 < b \leq 2
+\end{cases} \quad \text{alors} \quad 0 < ab \leq 4$
+
+Puisque $a$ et $b$ sont distincts, on a $ab < 4$.
+On a donc :
+\begin{align*}
+    ab &< 4 
+    \text{ équivaut à } \quad ab - 4 &< 0
+\end{align*}
+Puisque $ab > 0$ et $ab - 4 < 0$, nous constatons que $\frac{ab - 4}{ab} < 0$.
+Donc : \quad le taux de variation $T(a;b) < 0$.
+D'où : la fonction $f$ est strictement décroissante sur $]0 ; 2]$.
+
+Soit $a$ et $b$ de $[2 ; +\infty[$ tels que $a \neq b$.
+On a :
+$\begin{cases}
+    a \geq 2 \\
+    b \geq 2
+\end{cases} \quad \text{alors} \quad ab \geq 4$
+
+Puisque $a$ et $b$ sont distincts, on a $ab > 4$.
+On a donc :
+\begin{align*}
+    ab &> 4 \\
+    \text{ équivaut à } \quad ab - 4 &> 0
+\end{align*}
+Puisque $ab > 0$ et $ab - 4 > 0$, nous constatons que $\frac{ab - 4}{ab} > 0$.
+Donc : \quad le taux de variation $T(a;b) > 0$.
+D'où : la fonction $f$ est strictement croissante sur $[2 ; +\infty[$.
+
+\item \textbf{Déduisons les variations de $f$ sur chacun des intervalles $]-\infty ; -2]$ et $[-2 ; 0[$ :}
+Puisque la fonction $f$ est impaire, elle conserve les mêmes variations sur les intervalles symétriques par rapport à $0$.
+
+L'intervalle symétrique de $[2 ; +\infty[$ est $]-\infty ; -2]$.
+Donc : \quad la fonction $f$ est strictement croissante sur $]-\infty ; -2]$.
+
+L'intervalle symétrique de $]0 ; 2]$ est $[-2 ; 0[$.
+Donc : \quad la fonction $f$ est strictement décroissante sur $[-2 ; 0[$.
+
+\item \textbf{Dressons le tableau de variations de $f$ :}
+On a :
+\begin{align*}
+    f(2) &= 2 + \frac{4}{2} \\
+    &= 2 + 2 \\
+    &= 4
+\end{align*}
+Puisque la fonction $f$ est impaire, on a $f(-2) = -f(2) = -4$.
+
+\textbf{Conclusion :}
+\[
+\begin{tikzpicture}
+\tkzTabInit[lgt=2, espcl=2]{$x$ / 1 , $f(x)$ / 2}{$-\infty$ , $-2$ , $0$ , $2$ , $+\infty$}
+\tkzTabVar{-/ , +/ $-4$ , -D+/ / , -/ $4$ , +/ }
+\end{tikzpicture}
+\]
+\end{enumerate}
+\end{Solution}
 
 %% SECTION
 \section{Extremums d'une fonction numérique \duree{10 min}}

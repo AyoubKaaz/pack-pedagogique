@@ -83,6 +83,24 @@ Donc, $a < x < b$. L'intervalle est : $D = \left] a ; b \right[$
 | Constat d'égalité | `Nous constatons que les deux ensembles sont identiques :` |
 | $D_f$ non symétrique | `$D_f$ n'est pas symétrique par rapport à $0$.` |
 
+## RÈGLE SPÉCIALE — Taux de variation T(a;b)
+
+Pour tout calcul de taux de variation, suivre OBLIGATOIREMENT
+cet ordre en 3 étapes :
+
+Étape 1 : Écrire la définition
+\[T(a\,;\,b) = \frac{f(b) - f(a)}{b - a}\]
+
+Étape 2 : Calculer et simplifier f(b) - f(a) séparément
+\[f(b) - f(a) = ...\]
+\[= ... \qquad \text{(simplification)}\]
+
+Étape 3 : Diviser par (b-a) à la toute fin
+\[T(a\,;\,b) = \frac{f(b)-f(a)}{b-a} = \frac{...}{b-a} = ...\]
+
+Ne jamais tout mettre dans une seule fraction dès le départ.
+Ne jamais diviser avant d'avoir simplifié f(b) - f(a).
+
 ---
 
 ## RÈGLE 4 — Conclusions
