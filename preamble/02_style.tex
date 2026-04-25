@@ -433,5 +433,6 @@
 
 % 14. Solution
 \NewTColorBox{Solution}{ O{} O{} }{
-    emptyboxstyle={CSol}{SOLUTION}{#2}
+    emptyboxstyle={CSol}{SOLUTION\ifstrempty{#1}{}{~(#1)}}{#2},
+    breakable
 }
