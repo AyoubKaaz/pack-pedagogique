@@ -17,58 +17,71 @@ description: Rédiger une correction mathématique dans le style
 
 ## RÈGLE 1 — Connecteurs logiques
 
-Utiliser UNIQUEMENT ces connecteurs dans cet ordre :
-
 | Connecteur | Quand l'utiliser |
 |---|---|
-| `On a :` | Introduire la première ligne |
-| `\Leftrightarrow` | Entre chaque étape équivalente |
-| `\Rightarrow` | Implication non réversible |
-| `Donc` | Conclusion / ensemble solution |
-| `D'où` | Conséquence directe d'un calcul |
-| `Or` | Introduire une information connue |
-| `Ainsi` | Synthèse intermédiaire |
+| `Puisque` | Raisonnement basé sur un fait connu (type de fonction, signe de Δ...) |
+| `On a :` / `On a donc :` | Lancer un calcul ou rappeler une formule |
+| `Soit $x \in ...$` | Introduire la variable pour une étude (parité, monotonie) |
+| `\text{ équivaut à }` | Transformation dans un `align*` (remplace `\Leftrightarrow`) |
+| `Donc :` | Conclure une sous-étape — suivi de `\quad` + résultat |
+| `D'où :` | Conséquence directe d'un calcul |
+| `Nous constatons que` | Observation intermédiaire (ex : $D_f = D_g$) |
+| `Cherchons` | Annoncer une recherche d'intersection ou de valeurs |
+| `Par conséquent` | Conclusion logique d'un raisonnement (ni paire ni impaire) |
+| `\textbf{Conclusion :}` | Conclusion finale d'un bloc complet |
 
 ---
 
 ## RÈGLE 2 — Format d'une étape
 
-Chaque étape = une ligne mathématique + une justification à droite.
+Chaque sous-question commence par un titre `\textbf{}` à l'**infinitif** + deux-points.
+Le développement utilise `align*` pour les chaînes de calcul, `\[...\]` pour les résultats isolés.
 
 ```latex
-On a :
+\item \textbf{Déterminons $D_f$ :}
+
+Puisque [raisonnement].
+\begin{align*}
+    D_f &= \left\{ x \in \mathbb{R} \mid ... \right\} \\
+        &= \left\{ x \in \mathbb{R} \mid ... \right\}
+\end{align*}
+Donc : \quad $D_f = ...$
+```
+
+Format d'un système de conditions (intervalles) :
+```latex
 \[
-  expression_1
+\begin{cases}
+    \text{condition 1} \\
+    \text{condition 2}
+\end{cases} \quad \text{alors} \quad
+\begin{cases}
+    \text{...} \\
+    \text{...}
+\end{cases} \quad \text{donc} \quad
+\begin{cases}
+    \text{...} \\
+    \text{...}
+\end{cases}
 \]
-\[
-  \Leftrightarrow expression_2
-  \qquad \text{(justification)}
-\]
-\[
-  \Leftrightarrow expression_3
-  \qquad \text{(justification)}
-\]
-Donc $S = \{valeur\}$.
+Donc, $a < x < b$. L'intervalle est : $D = \left] a ; b \right[$
 ```
 
 ---
 
 ## RÈGLE 3 — Justifications exactes à utiliser
 
-| Opération | Justification à écrire |
+| Situation | Justification à écrire |
 |---|---|
-| Développer | `(distributivité)` |
-| Factoriser | `(factorisation)` |
-| Regrouper termes en x | `(on regroupe les termes semblables)` |
-| Ajouter c aux deux membres | `(on ajoute $c$ aux deux membres)` |
-| Soustraire c des deux membres | `(on soustrait $c$ des deux membres)` |
-| Multiplier par c > 0 | `(on multiplie par $c > 0$)` |
-| Diviser par c > 0 | `(on divise par $c$, $c > 0$)` |
-| Diviser par c < 0 | `(on divise par $c < 0$, le sens de l'inégalité s'inverse)` |
-| Multiplier par le PPCM | `(on multiplie par $n$, PPCM de $a$ et $b$)` |
-| Réduire au même dénominateur | `(réduction au même dénominateur)` |
-| Simplifier | `(simplification)` |
-| Condition de définition | `(condition : $Q(x) \neq 0$)` |
+| Fonction polynôme | `Puisque $f$ est une fonction polynôme, elle est définie sur $\mathbb{R}$ tout entier.` |
+| Condition dénominateur | `\left\{ x \in \mathbb{R} \mid Q(x) \neq 0 \right\}` |
+| Condition racine carrée | `\left\{ x \in \mathbb{R} \mid P(x) \geq 0 \right\}` |
+| Transformation équivalente | `\text{ équivaut à }` dans `align*` |
+| Parité utilisée | `(car la fonction $f$ est paire)` ou `(car la fonction $f$ est impaire)` |
+| Discriminant | `Puisque $\Delta = ... > 0$, le trinôme admet deux racines réelles distinctes :` |
+| Intersection de conditions | `Cherchons l'intersection des deux conditions :` |
+| Constat d'égalité | `Nous constatons que les deux ensembles sont identiques :` |
+| $D_f$ non symétrique | `$D_f$ n'est pas symétrique par rapport à $0$.` |
 
 ---
 
@@ -76,12 +89,14 @@ Donc $S = \{valeur\}$.
 
 | Type | Conclusion à écrire |
 |---|---|
-| Équation, solution unique | `Donc $S = \{valeur\}$.` |
-| Équation, pas de solution | `Donc $S = \emptyset$.` |
-| Équation, solution réelle | `Donc $S = \R$.` |
-| Inéquation | `Donc $S = [a \; ; \; +\infty[$.` |
-| Inéquation stricte | `Donc $S = ]a \; ; \; +\infty[$.` |
-| Vérification | Terminer par `\checkmark` |
+| Ensemble de définition | `Donc : \quad $D_f = ...$` |
+| Résultat de calcul | `D'où : \quad $...$` |
+| Fonction paire | `La fonction $f$ est \textbf{paire}.` |
+| Fonction impaire | `Donc la fonction $f$ est \textbf{impaire}.` |
+| Ni paire ni impaire | `Par conséquent, la fonction $f$ n'est \textbf{ni paire ni impaire}.` |
+| Égalité de fonctions | `\textbf{Conclusion :}` puis `$f = g$` sur la ligne suivante |
+| Règle pédagogique | `\textbf{Règle d'or :}` + phrase explicative |
+| Surface / valeur numérique | `La surface est de $25\text{ cm}^2$ lorsque $x = 5\text{ cm}$.` |
 
 ---
 
@@ -91,109 +106,156 @@ Donc $S = \{valeur\}$.
 - `Il suffit de...` / `Clairement...` / `On trouve facilement...`
 - Reformuler l'énoncé avant la correction
 - Ajouter des commentaires pédagogiques non demandés
-- Utiliser `\dfrac` — utiliser `\frac` (redéfini automatiquement)
-- Utiliser `\textwidth` dans les minipage
+- Utiliser `\[\Leftrightarrow expression\]` en série — utiliser `align*` avec `&=` et `\text{ équivaut à }`
+- Écrire les titres de sous-questions sans `\textbf{}` et sans infinitif
+- Utiliser `\textwidth` dans les minipage — utiliser `\linewidth`
 
 ---
 
-## EXEMPLES DE RÉFÉRENCE VALIDÉS
+## EXEMPLES DE RÉFÉRENCE EXTRAITS DE source.tex
 
-### Exemple 1 — Équation simple
+### Exemple 1 — Ensemble de définition (fraction)
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Solution}[Correction — Application X]
-\textbf{Résoudre dans $\R$ :} $3x - 7 = 2x + 5$
-
-On a :
-\[3x - 7 = 2x + 5\]
-\[\Leftrightarrow 3x - 2x = 5 + 7
-  \qquad \text{(on regroupe les termes semblables)}\]
-\[\Leftrightarrow x = 12\]
-Donc $S = \{12\}$.
+\begin{Solution}
+\begin{enumerate}
+    \item $f\left( x \right) = \dfrac{x+1}{2x-8}$
+    \begin{align*}
+         D_f = \left\{ x \in \mathbb{R} \mid 2x - 8 \neq 0 \right\}
+             = \left\{ x \in \mathbb{R} \mid 2x  \neq 8 \right\}
+             = \left\{ x \in \mathbb{R} \mid x  \neq 4 \right\}
+    \end{align*}
+    \[ D_f = \mathbb{R} \setminus \left\{ 4 \right\} = \left] -\infty ; 4 \right[ \cup \left] 4 ; +\infty \right[ \]
+\end{enumerate}
 \end{Solution}
 ```
 
-### Exemple 2 — Équation avec développement
+### Exemple 2 — Ensemble de définition (fraction sous racine + tableau de signe)
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Solution}[Correction — Application X]
-\textbf{Résoudre dans $\R$ :} $2(3x-1) = 4x + 6$
-
-On a :
-\[2(3x-1) = 4x + 6\]
-\[\Leftrightarrow 6x - 2 = 4x + 6
-  \qquad \text{(distributivité)}\]
-\[\Leftrightarrow 6x - 4x = 6 + 2
-  \qquad \text{(on regroupe les termes semblables)}\]
-\[\Leftrightarrow 2x = 8\]
-\[\Leftrightarrow x = 4
-  \qquad \text{(on divise par $2$, $2 > 0$)}\]
-Donc $S = \{4\}$.
+\begin{Solution}
+\begin{enumerate}
+    \item $f\left( x \right) = \sqrt{\dfrac{x-3}{x+1}}$
+    \[ D_f = \left\{ x \in \mathbb{R} \mid \dfrac{x-3}{x+1} \geq 0 \quad \text{et} \quad x + 1 \neq 0 \right\} \]
+    \begin{itemize}
+        \item $x - 3 = 0$ équivaut à $x = 3$
+        \item $x + 1 = 0$ équivaut à $x = -1$
+    \end{itemize}
+    Dressons le tableau de signe de $\dfrac{x-3}{x+1}$ :
+    \vspace{0.1cm}
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=1.5, espcl=2]{$x$ / 0.6 , $x - 3$ / 0.7 , $x + 1$ / 0.7 , $\dfrac{x-3}{x+1}$ / 1}{$-\infty$, $-1$, $3$, $+\infty$}
+    \tkzTabLine{ , -, t, -, z, +, }
+    \tkzTabLine{ , -, z, +, t, +, }
+    \tkzTabLine{ , +, d, -, z, +, }
+\end{tikzpicture}
+\end{center}
+    \[ D_f = \left] -\infty ; -1 \right[ \cup \left[ 3 ; +\infty \right[ \]
+    \textbf{Règle d'or :} Il faut toujours chercher l'ensemble de définition sur l'expression de départ, sans jamais la simplifier ni la transformer !
+\end{enumerate}
 \end{Solution}
 ```
 
-### Exemple 3 — Inéquation avec division par négatif
+### Exemple 3 — Égalité de deux fonctions
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Solution}[Correction — Application X]
-\textbf{Résoudre dans $\R$ :} $-4x + 1 \leq 2x - 11$
+\begin{Solution}
+\begin{itemize}
+    \item \textbf{Déterminons $D_f$ :}
+     $f\left( x \right) = \dfrac{1}{\sqrt{x}-2}$
+     \begin{align*}
+        D_f &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad \sqrt{x} - 2 \neq 0  \right\} \\
+         &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad \sqrt{x}\neq 2  \right\} \\
+         &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad x \neq 4  \right\}
+    \end{align*}
+     Donc : \quad $D_f = \left[ 0 ; 4 \right[ \cup \left] 4 ; +\infty \right[$
 
-On a :
-\[-4x + 1 \leq 2x - 11\]
-\[\Leftrightarrow -4x - 2x \leq -11 - 1
-  \qquad \text{(on regroupe les termes semblables)}\]
-\[\Leftrightarrow -6x \leq -12\]
-\[\Leftrightarrow x \geq 2
-  \qquad \text{(on divise par $-6 < 0$,
-  le sens de l'inégalité s'inverse)}\]
-Donc $S = [2 \; ; \; +\infty[$.
+    \item \textbf{Déterminons $D_g$ :}
+     $g\left( x \right) = \dfrac{\sqrt{x}+2}{x-4}$
+    \begin{align*}
+        D_g &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad x - 4 \neq 0 \right\} \\
+         &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad x \neq 4 \right\}
+    \end{align*}
+  Donc : \quad $D_g = \left[ 0 ; 4 \right[ \cup \left] 4 ; +\infty \right[$
+
+   Nous constatons que les deux ensembles sont identiques :
+\[ D_f = D_g = \mathbb{R}^+ \setminus \left\{ 4 \right\} = \left[ 0 ; 4 \right[ \cup \left] 4 ; +\infty \right[ \]
+
+\item Soit $x$ de $D_f$. Calculons $f\left( x \right)$ :
+\begin{align*}
+    f\left( x \right) &= \dfrac{1}{\sqrt{x}-2}
+    = \dfrac{\left( \sqrt{x} + 2 \right)}{\left( \sqrt{x} - 2 \right)\left( \sqrt{x} + 2 \right)} = \dfrac{\sqrt{x} + 2}{x - 4} = g(x)
+\end{align*}
+\textbf{Conclusion :}
+Puisque $D_f = D_g$ et pour tout $x$ de $D_f$, $f\left( x \right) = g\left( x \right)$, alors :
+    $f = g$
+\end{itemize}
 \end{Solution}
 ```
 
-### Exemple 4 — Équation avec fractions
+### Exemple 4 — Parité (étude complète)
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Solution}[Correction — Application X]
-\textbf{Résoudre dans $\R$ :}
-$\dfrac{x+1}{3} - \dfrac{x-2}{2} = 1$
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Étude de la fonction $f\left( x \right) = 2x^3 - 5x$}
 
-On a :
-\[\frac{x+1}{3} - \frac{x-2}{2} = 1\]
-\[\Leftrightarrow 2(x+1) - 3(x-2) = 6
-  \qquad \text{(on multiplie par $6$, PPCM de $3$ et $2$)}\]
-\[\Leftrightarrow 2x + 2 - 3x + 6 = 6
-  \qquad \text{(distributivité)}\]
-\[\Leftrightarrow -x + 8 = 6
-  \qquad \text{(on regroupe les termes semblables)}\]
-\[\Leftrightarrow -x = -2
-  \qquad \text{(on soustrait $8$ des deux membres)}\]
-\[\Leftrightarrow x = 2
-  \qquad \text{(on multiplie par $-1$)}\]
-Donc $S = \{2\}$.
+    On a : ~ $D_f = \mathbb{R}$ \quad (fonction polynôme)
+
+    Soit $x \in \mathbb{R}$.
+    \begin{align*}
+        f\left( -x \right) = 2\left( -x \right)^3 - 5\left( -x \right)
+         = -2x^3 + 5x
+         &= -\left( 2x^3 - 5x \right) \\
+        &= -f\left( x \right)
+    \end{align*}
+
+        Donc la fonction $f$ est \textbf{impaire}.
+
+    \item \textbf{Étude de la fonction $f\left( x \right) = \sqrt{x - 1}$}
+
+     On a : ~ $D_f = \left\{ x \in \mathbb{R} \mid x \geq 1 \right\}$
+
+    L'ensemble de définition est donc : $D_f = \left[ 1 ; +\infty \right[$
+
+    $D_f$ n'est pas symétrique par rapport à $0$. \\
+    Par conséquent, la fonction $f$ n'est \textbf{ni paire ni impaire}.
+\end{enumerate}
 \end{Solution}
 ```
 
-### Exemple 5 — Taux de variation
+### Exemple 5 — Activité avec système de conditions
 ```latex
-%% SOLUTION_APPLICATION
-\begin{Solution}[Correction — Application X]
-Soient $a$ et $b$ deux réels distincts de $\R$.
+%% SOLUTION_ACTIVITE
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Déterminons l'intervalle $D$ auquel doit appartenir $x$ :}
 
-On a :
-\[
-T(a\,;\,b) = \frac{f(b)-f(a)}{b-a}
-= \frac{(2b^2+3)-(2a^2+3)}{b-a}
-= \frac{2(b^2-a^2)}{b-a}
+    Pour que le rectangle existe, les longueurs $x$ et $y$ doivent être strictement positives :
+    \[
+\begin{cases}
+    x > 0 \\
+    y > 0
+\end{cases} \quad \text{alors} \quad
+\begin{cases}
+    x > 0 \\
+    10 - x > 0
+\end{cases} \quad \text{donc} \quad
+\begin{cases}
+    x > 0 \\
+    x < 10
+\end{cases}
 \]
-\[
-= \frac{2(b-a)(b+a)}{b-a}
-\qquad \text{(factorisation)}
-\]
-\[
-= 2(a+b)
-\qquad \text{(simplification, $b-a \neq 0$)}
-\]
-D'où $T(a\,;\,b) = 2(a+b)$.
+    Donc, $0 < x < 10$. L'intervalle est : $D = \left] 0 ; 10 \right[$
+
+    \item \textbf{Montrons que la surface $S(x) = 10x - x^2$ :}
+
+    La surface d'un rectangle est donnée par la formule :
+    $$S = \text{longueur} \times \text{largeur}$$
+    On a donc :
+    $S\left( x \right) = x \times \left( 10 - x \right) = 10x - x^2$
+\end{enumerate}
 \end{Solution}
 ```
 
