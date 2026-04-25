@@ -1112,6 +1112,72 @@ Soit $f$ la fonction numérique définie sur $\mathbb{R}$ par : $f(x) = 2x^2 + 3
 \end{enumerate}
 \end{Application}
 
+%% SOLUTION_APPLICATION
+\begin{Solution}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item \textbf{Montrons que $f(a) < f(b)$ :}
+
+        Soient $a$ et $b$ de $\left[0 ; +\infty\right[$ tels que $a < b$.
+
+        Calculons $f(a) - f(b)$ :
+        \begin{align*}
+            f(a) - f(b) &= (2a^2 + 3) - (2b^2 + 3) \\
+                        &= 2a^2 - 2b^2 \\
+                        &= 2(a - b)(a + b)
+        \end{align*}
+
+        Puisque $a$ et $b$ sont de $\left[0 ; +\infty\right[$ et $a < b$ :
+        \begin{itemize}
+            \item $a - b < 0$
+            \item $a \geq 0$ et $b > 0$, donc $a + b > 0$
+        \end{itemize}
+        Donc : $f(a) - f(b) = 2(a-b)(a+b) < 0$
+
+        D'où : $f(a) < f(b)$
+
+        \item \textbf{Déduisons la monotonie de $f$ sur $\mathbb{R}^+$ :}
+
+        Pour tous $a, b \in \mathbb{R}^+$ avec $a < b$, on a montré que $f(a) < f(b)$.
+
+        Donc $f$ est \textbf{strictement croissante} sur $\mathbb{R}^+$.
+    \end{enumerate}
+
+    \item \textbf{Étudions la monotonie de $f$ sur $\mathbb{R}^-$ :}
+
+    Soient $a$ et $b$ de $\left]-\infty ; 0\right]$ tels que $a < b$.
+
+    On a :
+    \begin{align*}
+        f(a) - f(b) &= 2(a - b)(a + b)
+    \end{align*}
+
+    Puisque $a$ et $b$ sont de $\left]-\infty ; 0\right]$ et $a < b$ :
+    \begin{itemize}
+        \item $a - b < 0$
+        \item $a < 0$ et $b \leq 0$, donc $a + b < 0$
+    \end{itemize}
+    Donc : $f(a) - f(b) = 2(a-b)(a+b) > 0$
+
+    D'où : $f(a) > f(b)$
+
+    Donc $f$ est \textbf{strictement décroissante} sur $\mathbb{R}^-$.
+
+    \item \textbf{Dressons le tableau de variations de $f$ sur $\mathbb{R}$ :}
+
+    On a $f(0) = 2 \times 0^2 + 3 = 3$.
+
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[lgt=1, espcl=4]{ $x$ / 0.9 , $f(x)$ / 2}{ $-\infty$ , $0$ , $+\infty$ }
+\tkzTabVar{ +/ , -/ $3$, +/ }
+\end{tikzpicture}
+\end{center}
+
+\end{enumerate}
+\end{Solution}
+
 
 %% SECTION
 \subsection{Taux de variations d'une fonction \duree{15 min}}
