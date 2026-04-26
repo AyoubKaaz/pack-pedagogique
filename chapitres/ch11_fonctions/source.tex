@@ -332,7 +332,7 @@ $$\mathcal{C}_f = \bigl\{M\bigl(x\,;\,f(x)\bigr) \mid x \in D_f\bigr\}$$
 \begin{center}
 \begin{tikzpicture}
     \begin{axis}[
-        width=9cm, height=4.5cm,
+        width=\linewidth, height=4.5cm,
         axis lines=middle,
         axis line style={thick, black, -stealth},
         xmin=-0.3, xmax=4.2,
@@ -816,19 +816,19 @@ Pour compléter le tracé sur tout l'intervalle $\left[-6 ; 6\right]$, nous allo
         \draw[very thick, black] (-6, 3) -- (-2, -1);
         \draw[very thick, black] (0, 2) -- (2, -1);
 
-        % Tracés complétés par symétrie (en bleu)
-        \draw[very thick, blue] (0, 2) -- (-2, -1);
-        \draw[very thick, blue] (6, 3) -- (2, -1);
+        % Tracés complétés par symétrie (en AccentColor)
+        \draw[very thick, AccentColor] (0, 2) -- (-2, -1);
+        \draw[very thick, AccentColor] (6, 3) -- (2, -1);
 
         % Points remarquables
         \filldraw[black] (-6,  3) circle (2pt);
         \filldraw[black] (-2, -1) circle (2pt);
         \filldraw[black] ( 0,  2) circle (2pt);
         \filldraw[black] ( 2, -1) circle (2pt);
-        \filldraw[blue]  ( 6,  3) circle (2pt);
+        \filldraw[AccentColor]  ( 6,  3) circle (2pt);
 
         % Label courbe
-        \node[right, font=\small\sffamily\itshape, color=blue] at (4.2, 2.2) {$\left(C_f\right)$};
+        \node[right, font=\small\sffamily\itshape, color=AccentColor] at (4.2, 2.2) {$\left(C_f\right)$};
     \end{tikzpicture}
     \end{center}
 
@@ -954,17 +954,17 @@ Soit $f$ une fonction impaire définie sur $D = [-4 ; -1] \cup [1 ; 4]$ :
         \filldraw[black] (-2,  3) circle (2pt);
         \filldraw[black] (-1,  1) circle (2pt);
 
-        % Partie complétée par symétrie (en bleu)
-        \draw[very thick, blue] (1, -1) -- (2, -3) -- (4, 0);
+        % Partie complétée par symétrie (en AccentColor)
+        \draw[very thick, AccentColor] (1, -1) -- (2, -3) -- (4, 0);
 
         % Points complétés
-        \filldraw[blue] (1, -1) circle (2pt);
-        \filldraw[blue] (2, -3) circle (2pt);
-        \filldraw[blue] (4,  0) circle (2pt);
+        \filldraw[AccentColor] (1, -1) circle (2pt);
+        \filldraw[AccentColor] (2, -3) circle (2pt);
+        \filldraw[AccentColor] (4,  0) circle (2pt);
 
         % Labels
         \node[right, font=\small\sffamily\itshape, color=black] at (-3.8, 1.5) {$\left(C_f\right)$};
-        \node[right, font=\small\sffamily\itshape, color=blue] at (2.2, -1.5) {$\left(C_f\right)$};
+        \node[right, font=\small\sffamily\itshape, color=AccentColor] at (2.2, -1.5) {$\left(C_f\right)$};
     \end{tikzpicture}
     \end{center}
 
@@ -1993,37 +1993,37 @@ Considérons les fonctions $f$ et $g$ définies sur $\mathbb{R}$ par :
 
 \begin{center}
     \begin{tikzpicture}[x=0.9cm, y=1cm]
-        \draw[->, >=stealth, thick] (-7.5,0) -- (7.5,0) node[below right] {$x$};
-        \draw[->, >=stealth, thick] (0,-1.5) -- (0,1.5) node[left] {$y$};
-        \node[below left] at (0,0) {$O$};
-        \draw[dashed, gray!80] (-7.5,1) -- (7,1);
-        \draw[dashed, gray!80] (-7.5,-1) -- (7,-1);
-        \node[left] at (0,1) {$1$};
-        \node[left] at (0,-1) {$-1$};
+        \draw[->, >=stealth, thick, black] (-7.5,0) -- (7.5,0) node[below right, font=\sffamily\small] {$x$};
+        \draw[->, >=stealth, thick, black] (0,-1.5) -- (0,1.5) node[left, font=\sffamily\small] {$y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+        \draw[dashed, black!30] (-7.5,1) -- (7,1);
+        \draw[dashed, black!30] (-7.5,-1) -- (7,-1);
+        \node[left, font=\sffamily\footnotesize] at (0,1) {$1$};
+        \node[left, font=\sffamily\footnotesize] at (0,-1) {$-1$};
         \foreach \k/\label in {
             -4/-2\pi, -3/-\frac{3\pi}{2}, -2/-\pi, -1/-\frac{\pi}{2},
              1/\frac{\pi}{2}, 2/\pi, 3/\frac{3\pi}{2}, 4/2\pi
         } {
-            \draw (\k*pi/2, 0.1) -- (\k*pi/2, -0.1) node[below, font=\footnotesize] {$\label$};
+            \draw (\k*pi/2, 0.1) -- (\k*pi/2, -0.1) node[below, font=\sffamily\footnotesize] {$\label$};
         }
-        \draw[very thick, PrimaryColor, domain=0:pi, samples=100] plot (\x, {cos(\x r)});
+        \draw[very thick, SecondaryColor, domain=0:pi, samples=100] plot (\x, {cos(\x r)});
     \end{tikzpicture}
     \hfill
     \begin{tikzpicture}[x=0.9cm, y=1cm]
-        \draw[->, >=stealth, thick] (-7.5,0) -- (7.5,0) node[below right] {$x$};
-        \draw[->, >=stealth, thick] (0,-1.5) -- (0,1.5) node[left] {$y$};
-        \node[below left] at (0,0) {$O$};
-        \draw[dashed, gray!80] (-7.5,1) -- (7,1);
-        \draw[dashed, gray!80] (-7.5,-1) -- (7,-1);
-        \node[left] at (0,1) {$1$};
-        \node[left] at (0,-1) {$-1$};
+        \draw[->, >=stealth, thick, black] (-7.5,0) -- (7.5,0) node[below right, font=\sffamily\small] {$x$};
+        \draw[->, >=stealth, thick, black] (0,-1.5) -- (0,1.5) node[left, font=\sffamily\small] {$y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+        \draw[dashed, black!30] (-7.5,1) -- (7,1);
+        \draw[dashed, black!30] (-7.5,-1) -- (7,-1);
+        \node[left, font=\sffamily\footnotesize] at (0,1) {$1$};
+        \node[left, font=\sffamily\footnotesize] at (0,-1) {$-1$};
         \foreach \k/\label in {
             -4/-2\pi, -3/-\frac{3\pi}{2}, -2/-\pi, -1/-\frac{\pi}{2},
              1/\frac{\pi}{2}, 2/\pi, 3/\frac{3\pi}{2}, 4/2\pi
         } {
-            \draw (\k*pi/2, 0.1) -- (\k*pi/2, -0.1) node[below, font=\footnotesize] {$\label$};
+            \draw (\k*pi/2, 0.1) -- (\k*pi/2, -0.1) node[below, font=\sffamily\footnotesize] {$\label$};
         }
-        \draw[very thick, PrimaryColor, domain=0:pi, samples=100] plot (\x, {sin(\x r)});
+        \draw[very thick, SecondaryColor, domain=0:pi, samples=100] plot (\x, {sin(\x r)});
     \end{tikzpicture}
 \end{center}
 
@@ -2058,32 +2058,32 @@ Puisque $f$ est \textbf{paire}, sa courbe est symétrique par rapport à l'axe d
 
 \begin{center}
     \begin{tikzpicture}[x=0.9cm, y=1cm]
-        \draw[->, >=stealth, thick] (-7.5,0) -- (7.5,0) node[below right] {$x$};
-        \draw[->, >=stealth, thick] (0,-1.5) -- (0,1.5) node[left] {$y$};
-        \node[below left] at (0,0) {$O$};
-        \draw[dashed, gray!80] (-7.5,1) -- (7,1);
-        \draw[dashed, gray!80] (-7.5,-1) -- (7,-1);
-        \node[left] at (0,1) {$1$};
-        \node[left] at (0,-1) {$-1$};
+        \draw[->, >=stealth, thick, black] (-7.5,0) -- (7.5,0) node[below right, font=\sffamily\small] {$x$};
+        \draw[->, >=stealth, thick, black] (0,-1.5) -- (0,1.5) node[left, font=\sffamily\small] {$y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+        \draw[dashed, black!30] (-7.5,1) -- (7,1);
+        \draw[dashed, black!30] (-7.5,-1) -- (7,-1);
+        \node[left, font=\sffamily\footnotesize] at (0,1) {$1$};
+        \node[left, font=\sffamily\footnotesize] at (0,-1) {$-1$};
         \foreach \k/\label in {
             -4/-2\pi, -3/-\frac{3\pi}{2}, -2/-\pi, -1/-\frac{\pi}{2},
              1/\frac{\pi}{2}, 2/\pi, 3/\frac{3\pi}{2}, 4/2\pi
         } {
-            \draw (\k*pi/2, 0.1) -- (\k*pi/2, -0.1) node[below, font=\footnotesize] {$\label$};
+            \draw (\k*pi/2, 0.1) -- (\k*pi/2, -0.1) node[below, font=\sffamily\footnotesize] {$\label$};
         }
-        
+
         % Courbe initiale sur [0, pi]
-        \draw[very thick, PrimaryColor, domain=0:pi, samples=100] plot (\x, {cos(\x r)});
-        
+        \draw[very thick, SecondaryColor, domain=0:pi, samples=100] plot (\x, {cos(\x r)});
+
         % Complétion par parité sur [-pi, 0]
-        \draw[very thick, black, domain=-pi:0, samples=100] plot (\x, {cos(\x r)});
-        
+        \draw[very thick, AccentColor, domain=-pi:0, samples=100] plot (\x, {cos(\x r)});
+
         % Complétion par périodicité sur [pi, 2pi] et [-2pi, -pi]
-        \draw[very thick, black, domain=pi:2*pi, samples=100] plot (\x, {cos(\x r)});
-        \draw[very thick, black, domain=-2*pi:-pi, samples=100] plot (\x, {cos(\x r)});
-        
+        \draw[very thick, AccentColor, domain=pi:2*pi, samples=100] plot (\x, {cos(\x r)});
+        \draw[very thick, AccentColor, domain=-2*pi:-pi, samples=100] plot (\x, {cos(\x r)});
+
         % Ajout du nom de la courbe (C_f)
-        \node[above] at (2*pi, 1) {$(C_f)$};
+        \node[above, font=\sffamily\small\itshape, color=SecondaryColor] at (2*pi, 1) {$(C_f)$};
     \end{tikzpicture}
 \end{center}
     
@@ -2094,32 +2094,32 @@ Puisque $g$ est \textbf{impaire}, sa courbe est symétrique par rapport à l'ori
 
 \begin{center}
     \begin{tikzpicture}[x=0.9cm, y=1cm]
-        \draw[->, >=stealth, thick] (-7.5,0) -- (7.5,0) node[below right] {$x$};
-        \draw[->, >=stealth, thick] (0,-1.5) -- (0,1.5) node[left] {$y$};
-        \node[below left] at (0,0) {$O$};
-        \draw[dashed, gray!80] (-7.5,1) -- (7,1);
-        \draw[dashed, gray!80] (-7.5,-1) -- (7,-1);
-        \node[left] at (0,1) {$1$};
-        \node[left] at (0,-1) {$-1$};
+        \draw[->, >=stealth, thick, black] (-7.5,0) -- (7.5,0) node[below right, font=\sffamily\small] {$x$};
+        \draw[->, >=stealth, thick, black] (0,-1.5) -- (0,1.5) node[left, font=\sffamily\small] {$y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+        \draw[dashed, black!30] (-7.5,1) -- (7,1);
+        \draw[dashed, black!30] (-7.5,-1) -- (7,-1);
+        \node[left, font=\sffamily\footnotesize] at (0,1) {$1$};
+        \node[left, font=\sffamily\footnotesize] at (0,-1) {$-1$};
         \foreach \k/\label in {
             -4/-2\pi, -3/-\frac{3\pi}{2}, -2/-\pi, -1/-\frac{\pi}{2},
              1/\frac{\pi}{2}, 2/\pi, 3/\frac{3\pi}{2}, 4/2\pi
         } {
-            \draw (\k*pi/2, 0.1) -- (\k*pi/2, -0.1) node[below, font=\footnotesize] {$\label$};
+            \draw (\k*pi/2, 0.1) -- (\k*pi/2, -0.1) node[below, font=\sffamily\footnotesize] {$\label$};
         }
-        
+
         % Courbe initiale sur [0, pi]
-        \draw[very thick, PrimaryColor, domain=0:pi, samples=100] plot (\x, {sin(\x r)});
-        
+        \draw[very thick, SecondaryColor, domain=0:pi, samples=100] plot (\x, {sin(\x r)});
+
         % Complétion par imparité sur [-pi, 0]
-        \draw[very thick, black, domain=-pi:0, samples=100] plot (\x, {sin(\x r)});
-        
+        \draw[very thick, AccentColor, domain=-pi:0, samples=100] plot (\x, {sin(\x r)});
+
         % Complétion par périodicité sur [pi, 2pi] et [-2pi, -pi]
-        \draw[very thick, black, domain=pi:2*pi, samples=100] plot (\x, {sin(\x r)});
-        \draw[very thick, black, domain=-2*pi:-pi, samples=100] plot (\x, {sin(\x r)});
-        
+        \draw[very thick, AccentColor, domain=pi:2*pi, samples=100] plot (\x, {sin(\x r)});
+        \draw[very thick, AccentColor, domain=-2*pi:-pi, samples=100] plot (\x, {sin(\x r)});
+
         % Ajout du nom de la courbe (C_g)
-        \node[above] at (pi/2, 1) {$(C_g)$};
+        \node[above, font=\sffamily\small\itshape, color=SecondaryColor] at (pi/2, 1) {$(C_g)$};
     \end{tikzpicture}
 \end{center}
 
@@ -2439,15 +2439,15 @@ En utilisant la parité de $f$ :
     \item \textbf{Construire $\big(\mathcal{C}_f\big)$ :}
     \begin{center}
         \begin{tikzpicture}[scale=1]
-            \draw[thick,->] (-3,0) -- (3,0) node[right] {$x$};
-            \draw[thick,->] (0,-1) -- (0,5) node[above] {$f(x)$};
-            \draw[step=1cm,gray,very thin,dashed] (-3,-1) grid (3,5);
-            \foreach \x in {-2,-1,1,2} \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
-            \foreach \y in {1,2,3,4} \draw (0.1,\y) -- (-0.1,\y) node[left] {$\y$};
-            \node[below left] at (0,0) {$O$};
-            
-            \draw[very thick, blue, domain=-2.2:2.2, smooth, variable=\x] plot ({\x}, {\x*\x}) node[right] {$\big(\mathcal{C}_f\big)$};
-            
+            \draw[thick, -stealth, black] (-3,0) -- (3,0) node[right, font=\sffamily\small] {$x$};
+            \draw[thick, -stealth, black] (0,-1) -- (0,5) node[above, font=\sffamily\small] {$f(x)$};
+            \draw[step=1cm, black!20, very thin, dashed] (-3,-1) grid (3,5);
+            \foreach \x in {-2,-1,1,2} \draw (\x,0.1) -- (\x,-0.1) node[below, font=\sffamily\footnotesize] {$\x$};
+            \foreach \y in {1,2,3,4} \draw (0.1,\y) -- (-0.1,\y) node[left, font=\sffamily\footnotesize] {$\y$};
+            \node[below left, font=\sffamily\small] at (0,0) {$O$};
+
+            \draw[very thick, SecondaryColor, domain=-2.2:2.2, smooth, variable=\x] plot ({\x}, {\x*\x}) node[right, font=\sffamily\small\itshape, color=SecondaryColor] {$\big(\mathcal{C}_f\big)$};
+
             \filldraw[black] (-2,4) circle (1.5pt);
             \filldraw[black] (-1,1) circle (1.5pt);
             \filldraw[black] (0,0) circle (1.5pt);
@@ -2499,7 +2499,7 @@ $\blacktriangleright$~ La \textbf{courbe} de $f$ :
 \begin{center}
 \begin{tikzpicture}
   \begin{axis}[
-      width=6cm, height=5.5cm,
+      width=\linewidth, height=5.5cm,
       axis lines=middle,
       axis line style={thick, black, -stealth},
       xmin=-2.3, xmax=2.3,
@@ -2550,7 +2550,7 @@ $\blacktriangleright$~ La \textbf{courbe} de $f$ :
 \begin{center}
 \begin{tikzpicture}
   \begin{axis}[
-      width=6cm, height=5.5cm,
+      width=\linewidth, height=5.5cm,
       axis lines=middle,
       axis line style={thick, black, -stealth},
       xmin=-2.3, xmax=2.3,
@@ -2894,7 +2894,7 @@ $\blacktriangleright$~ La \textbf{courbe} de $f$ :
 \begin{tikzpicture}
     \begin{axis}[
         proplot,
-        width=7.5cm, height=7cm,
+        width=\linewidth, height=7cm,
         xmin=-4.5, xmax=4.5,
         ymin=-4.5, ymax=4.5,
         xtick=\empty, ytick=\empty,
@@ -2933,7 +2933,7 @@ $\blacktriangleright$~ La \textbf{courbe} de $f$ :
 \begin{tikzpicture}
     \begin{axis}[
         proplot,
-        width=7.5cm, height=7cm,
+        width=\linewidth, height=7cm,
         xmin=-4.5, xmax=4.5,
         ymin=-4.5, ymax=4.5,
         xtick=\empty, ytick=\empty,
