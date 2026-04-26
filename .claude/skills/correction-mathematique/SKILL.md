@@ -103,6 +103,86 @@ Ne jamais diviser avant d'avoir simplifié f(b) - f(a).
 
 ---
 
+## RÈGLE SPÉCIALE — Étude de la parité d'une fonction
+
+Suivre OBLIGATOIREMENT cette structure en 2 étapes :
+
+### Structure de la réponse
+
+```latex
+\begin{itemize}
+    \item On a : $D_f = ...$, donc $D_f$ est symétrique 
+    par rapport à $0$.
+    \item Soit $x \in D_f$. On a :
+    \[f(-x) = ... = ... = f(x)\]
+    Donc pour tout $x$ de $D_f$, $f(-x) = f(x)$
+    
+    D'où $f$ est \textbf{paire}.
+\end{itemize}
+```
+
+### Variantes selon le résultat
+
+**Si f est paire :**
+```latex
+\begin{itemize}
+    \item On a : $D_f = ...$, donc $D_f$ est symétrique 
+    par rapport à $0$.
+    \item Soit $x \in D_f$. On a :
+    \[f(-x) = ... = f(x)\]
+    Donc pour tout $x$ de $D_f$, $f(-x) = f(x)$
+    
+    D'où $f$ est \textbf{paire}.
+\end{itemize}
+```
+
+**Si f est impaire :**
+```latex
+\begin{itemize}
+    \item On a : $D_f = ...$, donc $D_f$ est symétrique 
+    par rapport à $0$.
+    \item Soit $x \in D_f$. On a :
+    \[f(-x) = ... = -f(x)\]
+    Donc pour tout $x$ de $D_f$, $f(-x) = -f(x)$
+    
+    D'où $f$ est \textbf{impaire}.
+\end{itemize}
+```
+
+**Si f est ni paire ni impaire :**
+```latex
+\begin{itemize}
+    \item On a : $D_f = ...$, donc $D_f$ n'est pas 
+    symétrique par rapport à $0$.
+    
+    Par conséquent, $f$ n'est \textbf{ni paire ni impaire}.
+\end{itemize}
+```
+
+### Exemple de référence extrait de source.tex
+
+```latex
+\begin{itemize}
+    \item On a : $D_f = \mathbb{R}$, donc $D_f$ est 
+    symétrique par rapport à $0$.
+    \item Soit $x \in \mathbb{R}$. On a :
+    \[f(-x) = (-x)^2 - 3|-x| + 2 = x^2 - 3|x| + 2 = f(x)\]
+    Donc pour tout $x$ de $\mathbb{R}$, $f(-x) = f(x)$
+    
+    D'où $f$ est \textbf{paire}.
+\end{itemize}
+```
+
+### Règles absolues pour la parité
+- TOUJOURS commencer par vérifier la symétrie de $D_f$
+- TOUJOURS écrire `Soit $x \in D_f$` avant le calcul
+- TOUJOURS développer $f(-x)$ étape par étape
+- TOUJOURS conclure avec `D'où $f$ est \textbf{paire/impaire}`
+- Si $D_f$ non symétrique → conclure immédiatement sans calculer $f(-x)$
+- Ne jamais conclure sans avoir vérifié $D_f$ d'abord
+
+---
+
 ## RÈGLE 4 — Conclusions
 
 | Type | Conclusion à écrire |
