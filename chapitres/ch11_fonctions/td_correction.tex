@@ -2,7 +2,7 @@
 % TD_CORRECTION.TEX — Chapitre 11 : Fonctions numériques
 % GÉNÉRÉ AUTOMATIQUEMENT depuis source.tex par Claude Code.
 % Ne pas modifier ce fichier — modifier source.tex à la place.
-% Commande : "Génère td_correction.tex depuis source.tex"
+% Commande : /generer ch11_fonctions
 % ============================================================
 % CONTENU INCLUS : SOLUTION_ACTIVITE + SOLUTION_APPLICATION
 %                  + SOLUTION_EXERCICE uniquement
@@ -87,16 +87,2150 @@
 
 \vspace{0.4cm}
 
-% ============================================================
-% CONTENU EXTRAIT DE source.tex
-% Balises incluses : SOLUTION_ACTIVITE, SOLUTION_APPLICATION,
-%                   SOLUTION_EXERCICE
-% Balises exclues  : ACTIVITE, APPLICATION, EXERCICE,
-%                   DEFINITION, PROPRIETE, TECHNIQUES,
-%                   EXEMPLE, REMARQUE
-% ============================================================
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Exprimons la largeur $y$ en fonction de $x$ :}
 
-% [Claude Code insère ici uniquement les blocs SOLUTION_*
-%  de source.tex, dans l'ordre d'apparition]
+    Le périmètre du rectangle est égal à la longueur totale du fil, soit $20\text{ cm}$.
+    Le périmètre est : $2x + 2y = 20$.
+
+    Donc : $x + y = 10$
+
+    D'où :   $y = 10 - x$
+
+
+    \item \textbf{Déterminons l'intervalle $D$ auquel doit appartenir $x$ :}
+
+    Pour que le rectangle existe, les longueurs $x$  et $y$ doivent être strictement positives :
+    \[
+\begin{cases}
+    x > 0 \\
+    y > 0
+\end{cases} \quad \text{alors} \quad
+\begin{cases}
+    x > 0 \\
+    10 - x > 0
+\end{cases} \quad \text{donc} \quad
+\begin{cases}
+    x > 0 \\
+    x < 10
+\end{cases}
+\]
+    Donc,  $0<x<10$ . L'intervalle est : $D = \big] 0 ; 10 \big[$
+
+
+    \item \textbf{Montrons que la surface $S(x) = 10x - x^2$ :}
+
+    La surface d'un rectangle est donnée par la formule :
+    $$S = \text{longueur} \times \text{largeur}$$
+    On a donc :
+    $ S\left( x \right) = x \times \left( 10 - x \right) = 10x - x^2$
+
+    \item \textbf{Calculons la surface pour $x = 2$ et $x = 8$ :}
+
+    \begin{itemize}
+        \item Pour $x = 2$ :
+         $S\left( 2 \right) = 10 \times 2 - 2^2 = 20 - 4 = 16\text{ cm}^2 $
+        \item Pour $x = 8$ :
+        $S\left( 8 \right) = 10 \times 8 - 8^2 = 80 - 64 = 16\text{ cm}^2$
+    \end{itemize}
+    On remarque que deux longueurs différentes peuvent donner la même surface.
+
+    \item \textbf{Déterminons $x$ pour que la surface soit égale à $25\text{ cm}^2$ :}
+
+    Résolvons l'équation $S\left( x \right) = 25$ :
+   \begin{align*}
+    S\left( x \right) = 25 \quad \text{ équivaut à } \qquad 10x - x^2 &= 25 \\
+     x^2 - 10x + 25 &= 0 \\
+     \left( x - 5 \right)^2 &= 0 \\
+     x - 5 &= 0 \\
+     x &= 5
+    \end{align*}
+        La surface est de $25\text{ cm}^2$ lorsque $x = 5\text{ cm}$.
+\end{enumerate}
+\end{Solution}
+
+
+\begin{Solution}
+\begin{enumerate}
+
+    \item $f\left( x \right) = x^2 - 2x + 1$
+
+    Puisque $f$ est une fonction polynôme, elle est définie sur $\mathbb{R}$ tout entier.
+    \[ D_f = \mathbb{R} = \big] -\infty ; +\infty \big[ \]
+
+    \item  $f\left( x \right) = \dfrac{x+1}{2x-8}$
+    \begin{align*}
+         D_f = \left\{ x \in \mathbb{R} \mid 2x - 8 \neq 0 \right\}
+             = \left\{ x \in \mathbb{R} \mid 2x  \neq 8 \right\}
+             = \left\{ x \in \mathbb{R} \mid x  \neq 4 \right\}
+    \end{align*}
+    \[ D_f = \mathbb{R} \setminus \left\{ 4 \right\} = \big] -\infty ; 4 \big[ \cup \big] 4 ; +\infty \big[ \]
+
+    \item  $f\left( x \right) = \sqrt{2-x}$
+    \begin{align*}
+        D_f = \left\{ x \in \mathbb{R} \mid 2 - x \geq 0 \right\}
+         = \left\{ x \in \mathbb{R} \mid  - x \geq -2 \right\}
+         = \left\{ x \in \mathbb{R} \mid x \leq 2 \right\}
+    \end{align*}
+    \[ D_f = \big] -\infty ; 2 \big] \]
+
+    \item $f\left( x \right) = \sqrt{x^2 - 5x + 6}$
+    \[ D_f = \left\{ x \in \mathbb{R} \mid x^2 - 5x + 6 \geq 0 \right\} \]
+    Étudions le signe du trinôme $x^2 - 5x + 6$
+
+    Puisque $\Delta = 1 > 0$, le trinôme admet deux racines réelles distinctes :
+    \begin{align*}
+        x_1 &= \dfrac{-\left( -5 \right) - \sqrt{1}}{2 \times 1} = \dfrac{5 - 1}{2} = 2 \\
+        x_2 &= \dfrac{-\left( -5 \right) + \sqrt{1}}{2 \times 1} = \dfrac{5 + 1}{2} = 3
+    \end{align*}
+
+\begin{center}
+    \begin{tikzpicture}
+    \tkzTabInit[lgt=2, espcl=1.6]{$x$ / 0.5 , $x^2 - 5x + 6$ / 1}{$-\infty$, $2$, $3$, $+\infty$}
+    \tkzTabLine{ , +, z, -, z, +, }
+\end{tikzpicture}
+\end{center}
+
+    \[ D_f = \big] -\infty ; 2 \big] \cup \big[ 3 ; +\infty \big[ \]
+
+    \item  $f\left( x \right) = \dfrac{\sqrt{x}}{x^2 - 2x + 1}$
+    \begin{align*}
+        D_f &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad x^2 - 2x + 1 \neq 0  \right\} \\
+         &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad (x-1)^2 \neq 0  \right\} \\
+         &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad x-1 \neq 0  \right\} \\
+         &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad x \neq 1  \right\}
+    \end{align*}
+    L'ensemble de définition est donc :
+    $D_f = \big[ 0 ; 1 \big[ \cup \big] 1 ; +\infty \big[$
+
+    \item $f\left( x \right) = \dfrac{x+4}{|x| - 3}$
+    \[ D_f = \left\{ x \in \mathbb{R} \mid |x| - 3 \neq 0 \right\} \]
+    \begin{align*}
+        |x| - 3 = 0 &\text{ équivaut à } |x| = 3 \\
+        &\text{ équivaut à } x = 3 \text{ ou } x = -3
+    \end{align*}
+    \[ D_f = \mathbb{R} \setminus \left\{ -3 ; 3 \right\} = \big] -\infty ; -3 \big[ \cup \big] -3 ; 3 \big[ \cup \big] 3 ; +\infty \big[ \]
+
+    \item $f\left( x \right) = \dfrac{\sqrt{x-3}}{\sqrt{x+1}}$
+
+
+        \[ D_f = \left\{ x \in \mathbb{R} \mid  x - 3 \geq 0 \quad \text{et} \quad x +   > 0 \right\} \]
+    Cherchons l'intersection des deux conditions :
+    \begin{align*}
+        \begin{cases} x - 3 \geq 0 \\ x + 1 > 0 \end{cases} &\text{ équivaut à } \begin{cases} x \geq 3 \\ x > -1 \end{cases} ~~
+        \text{ équivaut à } ~~ x \geq 3
+    \end{align*}
+    Donc : \qquad
+     $D_f = \big[ 3 ; +\infty \big[$
+
+    \item  $f\left( x \right) = \sqrt{\dfrac{x-3}{x+1}}$
+    \[ D_f = \left\{ x \in \mathbb{R} \mid \dfrac{x-3}{x+1} \geq 0 \quad \text{et} \quad x + 1 \neq 0  \right\} \]
+    \begin{itemize}
+        \item $x - 3 = 0$ équivaut à $x = 3$
+        \item $x + 1 = 0$ équivaut à $x = -1$
+    \end{itemize}
+    Dressons le tableau de signe de $\dfrac{x-3}{x+1}$:
+    \vspace{0.1cm}
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=1.5, espcl=2]{$x$ / 0.6 , $x - 3$ / 0.7 , $x + 1$ / 0.7 , $\dfrac{x-3}{x+1}$ / 1}{$-\infty$, $-1$, $3$, $+\infty$}
+    \tkzTabLine{ , -, t, -, z, +, }
+    \tkzTabLine{ , -, z, +, t, +, }
+    \tkzTabLine{ , +, d, -, z, +, }
+\end{tikzpicture}
+\end{center}
+    \[ D_f = \big] -\infty ; -1 \big[ \cup \big[ 3 ; +\infty \big[ \]
+    \textbf{Règle d'or :} Il faut toujours chercher l'ensemble de définition sur l'expression de départ, sans jamais la simplifier ni la transformer !
+\end{enumerate}
+\end{Solution}
+
+
+\begin{Solution}
+\begin{itemize}
+    \item \textbf{Déterminons $D_f$ :}
+     $f\left( x \right) = \dfrac{1}{\sqrt{x}-2}$
+     \begin{align*}
+        D_f &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad \sqrt{x} - 2 \neq 0  \right\} \\
+         &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad \sqrt{x}\neq 2  \right\} \\
+         &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad \left( \sqrt{x} \right)^2 \neq 2^2  \right\} \\
+         &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad x \neq 4  \right\}
+    \end{align*}
+     Donc : \quad $D_f = \big[ 0 ; 4 \big[ \cup \big] 4 ; +\infty \big[$
+
+    \item \textbf{Déterminons $D_g$ :}
+     $g\left( x \right) = \dfrac{\sqrt{x}+2}{x-4}$
+    \begin{align*}
+        D_g &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad x - 4 \neq 0 \right\} \\
+         &= \left\{ x \in \mathbb{R} \mid  x \geq 0 \quad \text{et} \quad x \neq 4 \right\}
+    \end{align*}
+  Donc : \quad   $D_g = \big[ 0 ; 4 \big[ \cup \big] 4 ; +\infty \big[ $
+
+   Nous constatons que les deux ensembles sont identiques :
+\[ D_f = D_g = \mathbb{R}^+ \setminus \left\{ 4 \right\} = \big[ 0 ; 4 \big[ \cup \big] 4 ; +\infty \big[ \]
+
+\item Soit $x$ de $D_f$. Calculons $f\left( x \right)$ :
+\begin{align*}
+    f\left( x \right) &= \dfrac{1}{\sqrt{x}-2}
+    = \dfrac{\left( \sqrt{x} + 2 \right)}{\left( \sqrt{x} - 2 \right)\left( \sqrt{x} + 2 \right)} = \dfrac{\sqrt{x} + 2}{x - 4} =g(x)
+\end{align*}
+\textbf{Conclusion :}
+Puisque $D_f = D_g$ et pour tout $x$ de $D_f$, $f\left( x \right) = g\left( x \right)$, Alors  :
+    $f = g$
+\end{itemize}
+\end{Solution}
+
+
+\begin{Solution}
+On a: \quad $f\left( x \right) = \dfrac{x^2}{x+1}$ avec $D_f = \mathbb{R} \setminus \left\{ -1 \right\}$
+
+\begin{itemize}
+    \item On a $f\left( 0 \right) = 0$ donc le point $A\left( 0 ; 0 \right) \in \left( \mathcal{C}_f \right)$
+    \item On a $-1 \notin D_f$ donc le point $B\left( -1 ; 1 \right) \notin \left( \mathcal{C}_f \right)$
+    \item On a $f\left( 3 \right) = \dfrac{9}{4}$ donc le point $C\left( 3 ; \dfrac{9}{4} \right) \in \left( \mathcal{C}_f \right)$
+    \item On a $f\left( 2 \right) = \dfrac{4}{3} \neq 4$ donc le point $D\left( 2 ; 4 \right) \notin \left( \mathcal{C}_f \right)$
+\end{itemize}
+\end{Solution}
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{a) Vérifions que pour tout $x \in D_f$, $f\left( -x \right) = f\left( x \right)$ :}
+    \begin{align*}
+        f\left( -x \right) &= 3 \times \left( -x \right)^2
+        = 3 \times x^2 =f(x)
+    \end{align*}
+    \item \textbf{b) Propriété géométrique vérifiée par $\mathscr{C}_f$ :}
+
+    La propriété géométrique est que l'axe des ordonnées est un \textbf{axe de symétrie} pour la courbe $\mathscr{C}_f$.
+\end{enumerate}
+
+\begin{enumerate}
+    \item \textbf{a) Vérifions que pour tout $x \in D_g$, $g\left( -x \right) = -g\left( x \right)$ :}
+    \begin{align*}
+        g\left( -x \right) &= \left( -x \right)^3
+        = -x^3 = -g(x)
+    \end{align*}
+    \item \textbf{b) Propriété géométrique vérifiée par $\mathscr{C}_g$ :}
+
+        La propriété géométrique est que l'origine du repère (le point $O$) est un \textbf{centre de symétrie} pour la courbe $\mathscr{C}_g$.
+\end{enumerate}
+\end{Solution}
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Étude de la fonction $f\left( x \right) = x^2 - 3|x| + 2$}
+
+\begin{itemize}
+    \item On a :  $D_f = \mathbb{R}$, donc $D_f$ est symétrique par rapport à $0$.
+
+    \item Soit $x \in \mathbb{R}$. On a :
+         $f\left( -x \right) = \left( -x \right)^2 - 3|-x| + 2
+                            = x^2 - 3|x| + 2 = f(x)$ 
+
+    Donc pour tout $x$ de $\R$, $f(-x)=f(x)$
+    
+    D'où $f$ est \textbf{paire}.
+\end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{Étude de la fonction $f\left( x \right) = 2x^3 - 5x$}
+
+    \textbf{Étape 1 : Ensemble de définition}
+
+    On a : ~ $D_f = \mathbb{R}$ \quad (fonction polynôme)
+
+
+    Soit $x \in \mathbb{R}$.
+    \begin{align*}
+        f\left( -x \right) = 2\left( -x \right)^3 - 5\left( -x \right)
+         = -2x^3 + 5x
+         &= -\left( 2x^3 - 5x \right) \\
+        &= -f\left( x \right)
+    \end{align*}
+
+        Donc la fonction $f$ est \textbf{impaire}.
+
+    \vspace{0.5cm}
+
+    \item \textbf{Étude de la fonction $f\left( x \right) = \sqrt{x - 1}$}
+
+     On a : ~ $D_f = \left\{ x \in \mathbb{R} \mid x - 1 \geq 0 \right\}=
+     \left\{ x \in \mathbb{R} \mid x  \geq 1 \right\}$
+
+    L'ensemble de définition est donc : $D_f = \big[ 1 ; +\infty \big[$
+
+    $D_f$ n'est pas symétrique par rapport à $0$. \\
+    Par conséquent, la fonction $f$ n'est \textbf{ni paire ni impaire}.
+
+\end{enumerate}
+\end{Solution}
+
+
+\begin{Solution}
+\begin{enumerate}
+
+    % Question 1
+    \item \textbf{Calculons $f\left(1\right)$ et $f\left(-1\right)$}
+    \begin{itemize}
+        \item $f\left(1\right) = \left(1\right)^2 + \left(1\right)
+     = 1 + 1 \
+     = 2$
+        \item $f\left(-1\right) = \left(-1\right)^2 + \left(-1\right)
+     = 1 - 1
+     = 0$
+    \end{itemize}
+
+    % Question 2
+    \item \textbf{Déduisons que $f$ n'est ni paire, ni impaire}
+
+    \begin{itemize}
+        \item on a trouvé $f\left(-1\right) = 0$ et $f\left(1\right) = 2$.
+        Puisque $0 \neq 2$,
+
+        nous remarquons que :
+        $f\left(-1\right) \neq f\left(1\right)$
+
+        La fonction n'est donc pas paire.
+
+        \item  nous remarquons que :
+        $f\left(-1\right) \neq -f\left(1\right)$
+
+        La fonction n'est donc pas impaire.
+    \end{itemize}
+
+    Conclusion : La fonction $f$ n'est ni paire, ni impaire.
+
+\end{enumerate}
+\end{Solution}
+
+
+\begin{Solution}
+\noindent
+\begin{enumerate}
+
+    % Question 1
+    \item \textbf{Complétons la construction de la courbe $\left(C_f\right)$}
+
+Pour compléter le tracé sur tout l'intervalle $\big[-6 ; 6\big]$, nous allons utiliser la symétrie par rapport à l'axe des ordonnées.
+
+
+    Voici la courbe complétée (les tracés ajoutés sont en bleu pour bien les repérer) :
+
+    \begin{center}
+    \begin{tikzpicture}[x=0.72cm, y=0.72cm]
+        % Grille de fond
+        \draw[black!12, step=1, solid] (-6.5,-2.5) grid (6.5,3.5);
+
+        % Axes principaux
+        \draw[->, >=stealth, thick, black] (-6.5,0) -- (6.5,0) node[below right, font=\small\sffamily] {$x$};
+        \draw[->, >=stealth, thick, black] (0,-2.5) -- (0,3.5) node[left, font=\small\sffamily] {$y$};
+
+        % Graduations axe X
+        \foreach \x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} {
+            \draw[black] (\x, 0.08) -- (\x, -0.08);
+        }
+        \node[below, font=\small\sffamily] at (-6, -0.15) {$-6$};
+        \node[below, font=\small\sffamily] at (-5, -0.15) {$-5$};
+        \node[above left, font=\small\sffamily] at (-2,  0.1) {$-2$};
+        \node[above right, font=\small\sffamily] at ( 2,  0.1) {$2$};
+        \node[below, font=\small\sffamily] at ( 6, -0.15) {$6$};
+        \node[below left, font=\small\sffamily] at (0, 0) {$O$};
+
+        % Graduations axe Y
+        \foreach \y in {-1,1,2,3} {
+            \draw[black] (0.08, \y) -- (-0.08, \y);
+        }
+        \node[right, font=\small\sffamily] at (0.12, -1) {$-1$};
+        \node[right, font=\small\sffamily] at (0.12,  1) {$1$};
+        \node[right, font=\small\sffamily] at (0.12,  2) {$2$};
+        \node[right, font=\small\sffamily] at (0.12,  3) {$3$};
+
+        % Tracés donnés par l'énoncé (en noir épais)
+        \draw[very thick, black] (-6, 3) -- (-2, -1);
+        \draw[very thick, black] (0, 2) -- (2, -1);
+
+        % Tracés complétés par symétrie (en AccentColor)
+        \draw[very thick, AccentColor] (0, 2) -- (-2, -1);
+        \draw[very thick, AccentColor] (6, 3) -- (2, -1);
+
+        % Points remarquables
+        \filldraw[black] (-6,  3) circle (2pt);
+        \filldraw[black] (-2, -1) circle (2pt);
+        \filldraw[black] ( 0,  2) circle (2pt);
+        \filldraw[black] ( 2, -1) circle (2pt);
+        \filldraw[AccentColor]  ( 6,  3) circle (2pt);
+
+        % Label courbe
+        \node[right, font=\small\sffamily\itshape, color=AccentColor] at (4.2, 2.2) {$\left(C_f\right)$};
+    \end{tikzpicture}
+    \end{center}
+
+    \vspace{0.3cm}
+
+    % Question 2
+    \item \textbf{Déterminons $f\left(6\right)$}
+
+     Puisque  $f$ est paire, donc : $f\left(6\right) = f\left(-6\right)$
+    et $f\left(-6\right) = 3$
+
+    D'où : $f\left(6\right)=0$
+
+    % Question 3
+    \item \textbf{Calculons $f\left(-3\right)$ et $f\left(3\right)$}
+
+    Utilisons la parité de $f$ pour trouver $f\left(3\right)$.
+
+    On a :  $f\left(3\right) = f\left(-3\right)$.
+
+    Donc : $f\left(-3\right) = 0 \quad \text{et} \quad f\left(3\right) = 0$
+
+\end{enumerate}
+\end{Solution}
+
+
+\begin{Solution}
+\noindent
+
+\begin{enumerate}
+
+    % Question 1
+    \item \textbf{Complétons le tracé de $\left(C_f\right)$}
+
+     La fonction $f$ est impaire, donc sa courbe est symétrique par rapport à l'origine $O$. Pour tracer la partie manquante sur l'intervalle $\big[1 ; 4\big]$, nous allons utiliser la symétrie centrale.
+    \begin{itemize}
+        \item Le point $\left(-4 ; 0\right)$ a pour symétrique $\left(4 ; 0\right)$.
+        \item Le point $\left(-2 ; 3\right)$ a pour symétrique $\left(2 ; -3\right)$.
+        \item Le point $\left(-1 ; 1\right)$ a pour symétrique $\left(1 ; -1\right)$.
+    \end{itemize}
+    \begin{center}
+    \begin{tikzpicture}[x=0.72cm, y=0.72cm]
+        % Grille étendue pour inclure la partie négative
+        \draw[black!12, step=1, solid] (-4.8,-3.8) grid (4.8,4.5);
+
+        % Axes principaux
+        \draw[->, >=stealth, thick, black] (-5,0) -- (5,0) node[below right, font=\small\sffamily] {$x$};
+        \draw[->, >=stealth, thick, black] (0,-4) -- (0,4.5) node[right, font=\small\sffamily] {$y$};
+
+        % Graduations X
+        \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+            \draw[black] (\x, 0.08) -- (\x, -0.08);
+        }
+        \node[above left,  font=\small\sffamily] at (-4, 0) {$-4$};
+        \node[above right, font=\small\sffamily] at (-2, 0) {$-2$};
+        \node[above right, font=\small\sffamily] at (-1, 0) {$-1$};
+        \node[above right, font=\small\sffamily] at ( 1, 0) {$1$};
+        \node[above right, font=\small\sffamily] at ( 2, 0) {$2$};
+        \node[below right, font=\small\sffamily] at ( 4, 0) {$4$};
+        \node[below left,  font=\small\sffamily] at ( 0, 0) {$O$};
+
+        % Graduations Y
+        \foreach \y in {-3,-2,-1,1,2,3,4} {
+            \draw[black] (0.08, \y) -- (-0.08, \y);
+        }
+        \node[left, font=\small\sffamily] at (0,  4) {$4$};
+        \node[left, font=\small\sffamily] at (0,  3) {$3$};
+        \node[left, font=\small\sffamily] at (0,  1) {$1$};
+        \node[left, font=\small\sffamily] at (0, -1) {$-1$};
+        \node[left, font=\small\sffamily] at (0, -3) {$-3$};
+
+        % Courbe donnée (en noir épais)
+        \draw[very thick, black] (-4, 0) -- (-2, 3) -- (-1, 1);
+
+        % Points donnés
+        \filldraw[black] (-4, 0) circle (2pt);
+        \filldraw[black] (-2,  3) circle (2pt);
+        \filldraw[black] (-1,  1) circle (2pt);
+
+        % Partie complétée par symétrie (en AccentColor)
+        \draw[very thick, AccentColor] (1, -1) -- (2, -3) -- (4, 0);
+
+        % Points complétés
+        \filldraw[AccentColor] (1, -1) circle (2pt);
+        \filldraw[AccentColor] (2, -3) circle (2pt);
+        \filldraw[AccentColor] (4,  0) circle (2pt);
+
+        % Labels
+        \node[right, font=\small\sffamily\itshape, color=black] at (-3.8, 1.5) {$\left(C_f\right)$};
+        \node[right, font=\small\sffamily\itshape, color=AccentColor] at (2.2, -1.5) {$\left(C_f\right)$};
+    \end{tikzpicture}
+    \end{center}
+
+    \vspace{0.3cm}
+
+    % Question 2
+    \item \textbf{Déterminons $f\left(4\right)$ et $f\left(2\right)$}
+
+    On a :
+    $f\left(4\right) = -f\left(-4\right) \qquad \text{(car la fonction $f$ est impaire)}$
+
+    et $f\left(-4\right) = 0$ \qquad
+    Donc : $f\left(4\right) = -0 = 0$
+
+    On a :
+    $f\left(2\right) = -f\left(-2\right) \qquad \text{(car la fonction $f$ est impaire)}$
+
+   et $f\left(-2\right) = 3$
+    Donc :   $f\left(2\right) = -3$
+
+\end{enumerate}
+\end{Solution}
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item \textbf{Montrons que $f(a) < f(b)$ :}
+        
+        Soient $a$ et $b$ de $[0 ; +\infty[$ tels que $a < b$.
+        On a :
+        \begin{align*}
+            a &< b \\
+            \text{ équivaut à } \quad a^2 &< b^2 \quad \text{(car $a \in \mathbb{R}^+$ et $b \in \mathbb{R}^+$)} \\
+            \text{ équivaut à } \quad 2a^2 &< 2b^2 \\
+            \text{ équivaut à } \quad 2a^2 + 3 &< 2b^2 + 3
+        \end{align*}
+        D'où :
+        \[ f(a) < f(b) \]
+
+        \item \textbf{Déduisons la monotonie de $f$ sur $\mathbb{R}^+$ :}
+        
+        Puisque pour tous $a$ et $b$ de $\mathbb{R}^+$ tels que $a < b$, on a $f(a) < f(b)$, la fonction $f$ conserve le sens de l'inégalité.
+        Donc : \quad la fonction $f$ est strictement croissante sur $\mathbb{R}^+$.
+    \end{enumerate}
+
+    \item \textbf{Étudions la monotonie de $f$ sur $\mathbb{R}^-$ :}
+    
+    Soient $a$ et $b$ de $]-\infty ; 0]$ tels que $a < b$.
+    On a :
+    \begin{align*}
+        a &< b \\
+        \text{ équivaut à } \quad a^2 &> b^2 \quad \text{(car $a \in \mathbb{R}^-$ et $b \in \mathbb{R}^-$)} \\
+        \text{ équivaut à } \quad 2a^2 &> 2b^2 \\
+        \text{ équivaut à } \quad 2a^2 + 3 &> 2b^2 + 3
+    \end{align*}
+    D'où :
+    \[ f(a) > f(b) \]
+    Puisque pour tous $a$ et $b$ de $\mathbb{R}^-$ tels que $a < b$, on a $f(a) > f(b)$, la fonction $f$ change le sens de l'inégalité.
+    Donc : \quad la fonction $f$ est strictement décroissante sur $\mathbb{R}^-$.
+
+    \item \textbf{Dressons le tableau de variations de $f$ sur $\mathbb{R}$ :}
+
+    On a $f(0) = 2 \times 0^2 + 3 = 3$.
+
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[lgt=1, espcl=4]{ $x$ / 0.9 , $f(x)$ / 2}{ $-\infty$ , $0$ , $+\infty$ }
+\tkzTabVar{ +/ , -/ $3$, +/ }
+\end{tikzpicture}
+\end{center}
+    
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Montrons que $T(a;b) = a+b-6$ :}
+    
+    Soit $a$ et $b$ deux réels distincts.
+    On a :
+    \begin{align*}
+        T(a;b) &= \frac{f(a) - f(b)}{a - b} \\
+        &= \frac{(a^2 - 6a + 5) - (b^2 - 6b + 5)}{a - b} \\
+        &= \frac{a^2 - 6a + 5 - b^2 + 6b - 5}{a - b} \\
+        &= \frac{a^2 - b^2 - 6a + 6b}{a - b} \\
+        &= \frac{(a-b)(a+b) - 6(a-b)}{a - b} \\
+        &= \frac{(a-b)(a+b-6)}{a - b} \\
+        &= a + b - 6 \quad \text{(car } a \neq b \text{)}
+    \end{align*}
+    D'où :
+    \[ T(a;b) = a+b-6 \]
+
+    \item \textbf{Étudions la monotonie de $f$ sur chacun des deux intervalles $]-\infty ; 3]$ et $[3 ; +\infty[$ :}
+    
+    Soit $a$ et $b$ deux réels distincts de l'intervalle $]-\infty ; 3]$.
+    On a :
+    $\begin{cases}
+        a \leq 3 \\
+        b < 3
+    \end{cases} \quad \text{alors} \quad a + b < 6$
+
+    Donc : \quad $T(a;b) < 0$
+    
+    D'où : la fonction $f$ est strictement décroissante sur $]-\infty ; 3]$.
+
+    Soit $a$ et $b$ deux réels distincts de l'intervalle $[3 ; +\infty[$.
+    On a :
+    $\begin{cases}
+        a \geq 3 \\
+        b > 3
+    \end{cases} \quad \text{alors} \quad a + b > 6$
+
+    Donc : \quad $T(a;b) > 0$
+    
+    D'où : la fonction $f$ est strictement croissante sur $[3 ; +\infty[$.
+
+    \item \textbf{Dressons le tableau de variations de $f$ :}
+    On a :
+    \begin{align*}
+        f(3) &= (3)^2 - 6(3) + 5 \\
+        &= 9 - 18 + 5 \\
+        &= -9 + 5 \\
+        &= -4
+    \end{align*}
+    Donc : \quad $f(3) = -4$
+
+\begin{center}
+  \begin{tikzpicture}
+% Initialisation du tableau avec les largeurs de colonnes (lgt) et l'espacement (espcl)
+\tkzTabInit[lgt=2, espcl=3]{$x$ / 1 , $f(x)$ / 2}{$-\infty$, $3$, $+\infty$}
+
+% Ligne des variations
+% +/ signifie en haut (sans texte pour les limites)
+% -/ -4 signifie en bas avec la valeur -4
+\tkzTabVar{+/ , -/ $-4$ , +/ }
+\end{tikzpicture}
+\end{center}
+
+    \item \textbf{Comparons les nombres $f(2026)$ et $f(2027)$ :}
+    
+    On a : $2026 \in [3 ; +\infty[$ et $2027 \in [3 ; +\infty[$.
+    \begin{align*}
+        2026 &< 2027
+    \end{align*}
+    Puisque la fonction $f$ est strictement croissante sur l'intervalle $[3 ; +\infty[$, elle conserve le sens de l'inégalité.
+    Donc : \quad $f(2026) < f(2027)$
+    
+    D'où :
+    \[ f(2026) < f(2027) \]
+
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Précisons l'ensemble de définition $D_f$ de $f$ :}
+    
+    Par lecture graphique, nous constatons que la courbe de la fonction $f$ est définie pour les abscisses allant de $-1$ à $3$ (les deux extrémités étant incluses).
+    
+    Donc : \quad $D_f = [-1 ; 3]$
+
+    \item \textbf{Déterminons les images par $f$ de $-1$ ; $0$ ; $1$ et $2$ :}
+    
+    Par lecture graphique des coordonnées des points de la courbe, on a :
+    \begin{align*}
+        f(-1) &= -2 \\
+        f(0) &= 2 \\
+        f(1) &= 0 \\
+        f(2) &= -2
+    \end{align*}
+
+    \item \textbf{Dressons le tableau de variation de $f$ sur $D_f$ :}
+    
+    Par lecture graphique, nous constatons que la fonction $f$ est strictement croissante sur l'intervalle $[-1 ; 0]$, strictement décroissante sur l'intervalle $[0 ; 2]$, puis strictement croissante sur l'intervalle $[2 ; 3]$.
+
+    \textbf{Conclusion :}
+    \[
+    \begin{tikzpicture}
+    \tkzTabInit[lgt=2,espcl=2.5]{$x$ / 1 , $f(x)$ / 2}{$-1$ , $0$ , $2$ , $3$}
+    \tkzTabVar{-/ $-2$ , +/ $2$ , -/ $-2$ , +/ $2$}
+    \end{tikzpicture}
+    \]
+\end{enumerate}
+\end{Solution}
+
+
+\begin{Solution}
+\begin{enumerate}
+\item \textbf{Déterminons $D_f$ :}
+
+ $D_f = [-7 ; 0[ \cup ]0 ; 7]$
+
+\item \textbf{Complétons le tableau sachant que $f$ est paire :}
+
+Puisque $f$ est paire, elle change donc de sens de variation sur les intervalles symétriques par rapport à $0$, et on a : $f(5) = f(-5) = 4$.
+
+\[
+\begin{tikzpicture}
+\tkzTabInit[lgt=1.5, espcl=1.8]{$x$ / 1, $f(x)$ / 2}{$-7$, $-5$, $0$, $5$, $7$}
+\tkzTabVar{+/ , -/ $4$, +D+/ / , -/ $4$, +/ }
+\end{tikzpicture}
+\]
+
+\item \textbf{Complétons le tableau sachant que $f$ est impaire :}
+
+Puisque $f$ est impaire, elle conserve donc les mêmes variations sur les intervalles symétriques par rapport à $0$, et on a : $f(5) = -f(-5) = -4$.
+
+\[
+\begin{tikzpicture}
+\tkzTabInit[lgt=1.5, espcl=1.8]{$x$ / 1, $f(x)$ / 2}{$-7$, $-5$, $0$, $5$, $7$}
+\tkzTabVar{+/ , -/ $4$, +D-/ / , +/ $-4$, -/ }
+\end{tikzpicture}
+\]
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+\item \textbf{Déterminons $D_f$ ; puis montrons que $f$ est impaire :}
+
+On a : \quad $D_f = \mathbb{R}^*$
+
+\begin{itemize}
+    \item $D_f$ est symétrique par rapport à $0$
+    \item Et on a pour tout $x$ de $D_f$ :
+\begin{align*}
+    f(-x) &= (-x) + \frac{4}{-x} \\
+          &= -x - \frac{4}{x} \\
+          &= -\left(x + \frac{4}{x}\right) \\
+          &= -f(x)
+\end{align*}
+\end{itemize}
+
+Donc la fonction $f$ est \textbf{impaire}.
+
+\item \textbf{Montrons que $\dfrac{f(b) - f(a)}{b - a} = \dfrac{ab - 4}{ab}$ :}
+
+Soit $a$ et $b$ de $\mathbb{R}^*$ tels que $a \neq b$.
+On a :  $T(a\,;\,b) = \frac{f(b) - f(a)}{b - a}$ 
+
+Calculons $f(b) - f(a)$ :
+\begin{align*}
+    f(b) - f(a) &= \left(b + \frac{4}{b}\right) - \left(a + \frac{4}{a}\right) \\
+                &= b - a + \frac{4}{b} - \frac{4}{a} \\
+                &= (b - a) + \frac{4a - 4b}{ab} \\
+                &= (b - a) - \frac{4(b - a)}{ab} \\
+                &= (b - a)\left(1 - \frac{4}{ab}\right) \\
+                &= (b - a) \cdot \frac{ab - 4}{ab}
+\end{align*}
+Donc : 
+\[ T(a\,;\,b) = \frac{f(b) - f(a)}{b - a}
+             = \frac{(b - a) \cdot \dfrac{ab - 4}{ab}}{b - a}
+             = \frac{ab - 4}{ab} \quad \text{(car } a \neq b \text{)} \]
+
+D'où : \quad $\dfrac{f(b) - f(a)}{b - a} = \dfrac{ab - 4}{ab}$
+
+\item \textbf{Étudions les variations de $f$ sur chacun des intervalles $]0 ; 2]$ et $[2 ; +\infty[$ :}
+
+\begin{itemize}
+    \item Soit $a$ et $b$ de $]0 ; 2]$ tels que $a \neq b$.
+On a :
+$\begin{cases}
+    0 < a \leq 2 \\
+    0 < b < 2
+\end{cases} \quad \text{alors} \quad 0 < ab < 4$
+
+On a donc : \quad $ab - 4 < 0$
+
+Puisque $ab > 0$ et $ab - 4 < 0$, nous constatons que $\dfrac{ab - 4}{ab} < 0$.
+
+Donc : \quad le taux de variation $T(a;b) < 0$.
+
+D'où : la fonction $f$ est strictement décroissante sur $]0 ; 2]$.
+
+    \item Soit $a$ et $b$ de $[2 ; +\infty[$ tels que $a \neq b$.
+On a :
+$\begin{cases}
+    a \geq 2 \\
+    b > 2
+\end{cases} \quad \text{alors} \quad ab > 4$
+
+On a donc : \quad $ab - 4 > 0$
+
+Puisque $ab > 0$ et $ab - 4 > 0$, nous constatons que $\dfrac{ab - 4}{ab} > 0$.
+
+Donc : \quad le taux de variation $T(a;b) > 0$.
+
+D'où : la fonction $f$ est strictement croissante sur $[2 ; +\infty[$.
+\end{itemize}
+
+
+
+\item \textbf{Déduisons les variations de $f$ sur chacun des intervalles $]-\infty ; -2]$ et $[-2 ; 0[$ :}
+
+Puisque $f$ est impaire, elle conserve les mêmes variations sur les intervalles symétriques par rapport à $0$.
+
+\begin{itemize}
+    \item L'intervalle symétrique de $[2 ; +\infty[$ est $]-\infty ; -2]$.
+
+Donc : \quad la fonction $f$ est strictement croissante sur $]-\infty ; -2]$.
+
+\item L'intervalle symétrique de $]0 ; 2]$ est $[-2 ; 0[$.
+
+Donc : \quad la fonction $f$ est strictement décroissante sur $[-2 ; 0[$.
+\end{itemize}
+
+
+
+\item \textbf{Dressons le tableau de variations de $f$ :}
+
+On a :   $f(2) = 2 + \frac{4}{2} 
+         = 2 + 2 
+         = 4$
+
+Puisque la fonction $f$ est impaire, on a $f(-2) = -f(2) = -4$
+
+\[
+\begin{tikzpicture}
+\tkzTabInit[lgt=2, espcl=2]{$x$ / 1 , $f(x)$ / 2}{$-\infty$ , $-2$ , $0$ , $2$ , $+\infty$}
+\tkzTabVar{-/ , +/ $-4$ , -D+/ / , -/ $4$ , +/ }
+\end{tikzpicture}
+\]
+\end{enumerate}
+\end{Solution}
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Calculons $h(0)$ et $h(6)$ :}
+    
+    On a : \quad  $h(0) = -(0)^2 + 6(0)    = 0 + 0   = 0$
+
+    On a :  \quad $h(6) = -(6)^2 + 6(6)   = -36 + 36     = 0$
+    
+    Donc : \quad $h(6) = 0$ et $h(0) = 0$
+    
+    \[ \text{Ces deux résultats signifient qu'à l'instant initial } (t=0) \text{ et après 6 secondes } (t=6) \text{, le ballon est au niveau du sol.} \]
+
+    \item \textbf{Calculons la hauteur du ballon après $3$ secondes :}
+    
+    On a : \quad     $h(3) = -(3)^2 + 6(3)     = -9 + 18      = 9$
+    
+    Donc : \quad la hauteur du ballon après $3$ secondes est de $9$ mètres.
+    
+    \item 
+    \begin{enumerate}
+        \item \textbf{Montrons que pour tout $t \in [0; 6]$, on a : $h(t) - 9 = -(t - 3)^2$ :}
+        
+        Soit $t \in [0; 6]$.
+        On a :
+        \begin{align*}
+            -(t - 3)^2 &= -\left(t^2 - 2(t)(3) + 3^2\right) \\
+            &= -\left(t^2 - 6t + 9\right) \\
+            &= -t^2 + 6t - 9 \\
+            &= \left(-t^2 + 6t\right) - 9 \\
+            &= h(t) - 9
+        \end{align*}
+        D'où : $h(t) - 9 = -(t - 3)^2$ 
+
+        \item \textbf{Déduisons que pour tout $t \in [0; 6]$, on a : $h(t) \leq 9$ :}
+        
+        Soit $t \in [0; 6]$.
+        On a :
+        \begin{align*}
+            (t - 3)^2 &\geq 0 \quad \text{(car le carré d'un réel est toujours positif)} \\
+            \text{ équivaut à } \quad -(t - 3)^2 &\leq 0 \\
+            \text{ équivaut à } \quad h(t) - 9 &\leq 0 \\
+            \text{ équivaut à } \quad h(t) &\leq 9
+        \end{align*}
+        Donc : \quad pour tout $t \in [0; 6]$, on a $h(t) \leq 9$.
+    \end{enumerate}
+
+    \item \textbf{Déterminons la hauteur maximale atteinte par le ballon et l'instant où elle est atteinte :}
+    
+    Puisque pour tout $t \in [0; 6]$, on a $h(t) \leq 9$, et que $h(3) = 9$, 
+    
+    nous constatons que $9$ est la valeur maximale de la fonction $h$ sur l'intervalle $[0; 6]$.
+    
+     $\text{La hauteur maximale atteinte par le ballon est de } 9 \text{ mètres, à l'instant } t = 3 \text{ secondes.}$ 
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Vérifions que $f(x) \geq -2$ pour tout $x \in \mathbb{R}$ :}
+
+    On a :
+    \begin{align*}
+        f(x) - (-2) &= x^2 - 6x + 7 + 2 \\
+                    &= x^2 - 6x + 9 \\
+                    &= (x - 3)^2
+    \end{align*}
+    Puisque $(x-3)^2 \geq 0$ pour tout $x \in \mathbb{R}$, on a $f(x) - (-2) \geq 0$.
+
+    D'où : \quad $f(x) \geq -2$ pour tout $x \in \mathbb{R}$.
+
+    \item \textbf{Calculons $f(3)$ :}
+
+    \[ f(3) = 3^2 - 6 \times 3 + 7 = 9 - 18 + 7 = -2 \]
+
+    \textbf{Conclusion :}
+    Puisque $f(x) \geq -2$ pour tout $x \in \mathbb{R}$ et $f(3) = -2$, le nombre $-2$ est bien le \textbf{minimum} de $f$ sur $\mathbb{R}$.
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Montrons que $f(x) \leq 5$ pour tout $x \in \mathbb{R}$ :}
+
+    On a :
+    \begin{align*}
+        5 - f(x) &= 5 - (-2x^2 + 4x + 3) \\
+                 &= 5 + 2x^2 - 4x - 3 \\
+                 &= 2x^2 - 4x + 2 \\
+                 &= 2(x^2 - 2x + 1) \\
+                 &= 2(x - 1)^2
+    \end{align*}
+    Puisque $2(x-1)^2 \geq 0$ pour tout $x \in \mathbb{R}$, on a $5 - f(x) \geq 0$.
+
+    D'où : \quad $f(x) \leq 5$ pour tout $x \in \mathbb{R}$.
+
+    \item \textbf{Calculons $f(1)$ :}
+
+    \[ f(1) = -2(1)^2 + 4(1) + 3 = -2 + 4 + 3 = 5 \]
+
+    \textbf{Conclusion :}
+    Puisque $f(x) \leq 5$ pour tout $x \in \mathbb{R}$ et $f(1) = 5$, le nombre $5$ est bien le \textbf{maximum} de $f$ sur $\mathbb{R}$.
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Montrons que $4$ est le minimum de $f$ sur $]0 ; +\infty[$ :}
+
+    \begin{itemize}
+        \item Soit $x \in \big]0 ; +\infty\big[$, on a :
+    \begin{align*}
+        f(x) - 4 &= x + \dfrac{4}{x} - 4 \\[4pt]
+                 &= \dfrac{x^2 - 4x + 4}{x} \\[4pt]
+                 &= \dfrac{(x - 2)^2}{x}
+    \end{align*}
+    Puisque $(x-2)^2 \geq 0$ et $x > 0$, on a $f(x) - 4 \geq 0$, soit $f(x) \geq 4$.
+
+        \item \textbf{Résolvons $f(x) = 4$ :}
+        \begin{align*}
+            f(x) = 4
+            &\text{ équivaut à } f(x) - 4 = 0 \\
+            &\text{ équivaut à } \dfrac{(x - 2)^2}{x} = 0 \\
+            &\text{ équivaut à } (x - 2)^2 = 0 \qquad \text{(car $x \neq 0$)} \\
+            &\text{ équivaut à } x - 2 = 0 \\
+            &\text{ équivaut à } x = 2
+        \end{align*}
+    \end{itemize}
+
+   
+    
+    Donc : $f(2) = 4$.
+
+    \textbf{Conclusion :} Le nombre $4$ est le \textbf{minimum} de $f$ sur $\big]0 ; +\infty\big[$.
+
+    \item \textbf{Montrons que $-4$ est le maximum de $f$ sur $]-\infty ; 0[$ :}
+
+    
+
+    \begin{itemize}
+        \item Soit $x \in \big]-\infty ; 0\big[$, on a :
+    \begin{align*}
+        f(x) - (-4) &= x + \dfrac{4}{x} + 4 \\[4pt]
+                    &= \dfrac{x^2 + 4x + 4}{x} \\[4pt]
+                    &= \dfrac{(x + 2)^2}{x}
+    \end{align*}
+    Puisque $(x+2)^2 \geq 0$ et $x < 0$, on a $\dfrac{(x+2)^2}{x} \leq 0$, soit $f(x) \leq -4$.
+
+        \item \textbf{Résolvons $f(x) = -4$ :}
+        \begin{align*}
+            f(x) = -4
+            &\text{ équivaut à } f(x) + 4 = 0 \\
+            &\text{ équivaut à } \dfrac{(x + 2)^2}{x} = 0 \\
+            &\text{ équivaut à } (x + 2)^2 = 0 \qquad \text{(car $x \neq 0$)} \\
+            &\text{ équivaut à } x + 2 = 0 \\
+            &\text{ équivaut à } x = -2
+        \end{align*}
+    Donc : $f(-2) = -4$.
+    \end{itemize}
+
+    \textbf{Conclusion :} Le nombre $-4$ est le \textbf{maximum} de $f$ sur $\big]-\infty ; 0\big[$.
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Déterminons $D_f$ :}
+
+    Puisque $2x^2 + 4 = 2(x^2 + 2) > 0$ pour tout $x \in \mathbb{R}$, le dénominateur ne s'annule jamais.
+
+    Donc : \quad $D_f = \mathbb{R}$
+
+    \textbf{Étudions la parité de $f$ :}
+
+    \begin{itemize}
+        \item $D_f$ est symétrique par rapport à $0$
+
+        \item Soit $x \in \mathbb{R}$.
+    \begin{align*}
+        f(-x) &= \dfrac{(-x)^2 - 3}{2(-x)^2 + 4} = \dfrac{x^2 - 3}{2x^2 + 4} = f(x)
+    \end{align*}
+    \end{itemize}
+    La fonction $f$ est \textbf{paire}.
+
+    \item \textbf{Calculons les images de $0$, $1$ et $-1$ :}
+
+    \begin{align*}
+        f(0) &= \dfrac{0 - 3}{0 + 4} = -\dfrac{3}{4} \\[6pt]
+        f(1) &= \dfrac{1 - 3}{2 + 4} = \dfrac{-2}{6} = -\dfrac{1}{3} \\[6pt]
+        f(-1) &= f(1) = -\dfrac{1}{3} \quad \text{(car la fonction $f$ est paire)}
+    \end{align*}
+
+    \item
+    \begin{enumerate}
+        \item \textbf{Résolvons $f(x) = \dfrac{1}{2}$ :}
+
+        \begin{align*}
+            \dfrac{x^2 - 3}{2x^2 + 4} = \dfrac{1}{2}
+            &\text{ équivaut à } 2(x^2 - 3) = 2x^2 + 4 \\
+            &\text{ équivaut à } 2x^2 - 6 = 2x^2 + 4 \\
+            &\text{ équivaut à } -6 = 4 \quad \textbf{(impossible)}
+        \end{align*}
+        L'équation $f(x) = \dfrac{1}{2}$ n'a \textbf{aucune solution} dans $\mathbb{R}$.
+
+        \item \textbf{Montrons que $f(x) \leq \dfrac{1}{2}$ pour tout $x \in \mathbb{R}$ :}
+
+        \begin{align*}
+            \dfrac{1}{2} - f(x) &= \dfrac{1}{2} - \dfrac{x^2 - 3}{2x^2 + 4} \\[6pt]
+                                &= \dfrac{(2x^2 + 4) - 2(x^2 - 3)}{2(2x^2 + 4)} \\[6pt]
+                                &= \dfrac{2x^2 + 4 - 2x^2 + 6}{2(2x^2 + 4)} \\[6pt]
+                                &= \dfrac{10}{2(2x^2 + 4)}
+        \end{align*}
+        Puisque $10 > 0$ et $2(2x^2+4) > 0$, on a $\dfrac{1}{2} - f(x) > 0$, donc $f(x) < \dfrac{1}{2}$
+
+        \item Puisque l'équation $f(x) = \dfrac{1}{2}$ n'admet aucune solution dans $\mathbb{R}$, le nombre $\dfrac{1}{2}$ \textbf{n'est pas un maximum} de $f$ sur $\mathbb{R}$.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item \textbf{Montrons que $f(x) \geq -\dfrac{3}{4}$ pour tout $x \in \mathbb{R}$ :}
+
+        \begin{align*}
+            f(x) + \dfrac{3}{4} &= \dfrac{x^2 - 3}{2x^2 + 4} + \dfrac{3}{4} \\[6pt]
+                                 &= \dfrac{4(x^2 - 3) + 3(2x^2 + 4)}{4(2x^2 + 4)} \\[6pt]
+                                 &= \dfrac{4x^2 - 12 + 6x^2 + 12}{4(2x^2 + 4)} \\[6pt]
+                                 &= \dfrac{10x^2}{4(2x^2 + 4)}
+        \end{align*}
+        Puisque $10x^2 \geq 0$ et $4(2x^2+4) > 0$, on a $f(x) + \dfrac{3}{4} \geq 0$, donc $f(x) \geq -\dfrac{3}{4}$.
+
+        \item Puisque $f(x) \geq -\dfrac{3}{4}$ pour tout $x \in \mathbb{R}$ et $f(0) = -\dfrac{3}{4}$, le nombre $-\dfrac{3}{4}$ est bien le \textbf{minimum} de $f$ sur $\mathbb{R}$, atteint en $x = 0$.
+    \end{enumerate}
+\end{enumerate}
+\end{Solution}
+
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Étudions la parité de $f$ et $g$ :}
+
+    Soit $x \in \mathbb{R}$.
+    \begin{align*}
+        f(-x) &= \cos(-x) = \cos(x) = f(x) \\
+        g(-x) &= \sin(-x) = -\sin(x) = -g(x)
+    \end{align*}
+    
+            Donc $f$ est \textbf{paire} et la fonction $g$ est \textbf{impaire}.
+
+    \item \textbf{Calculons $f(x+2\pi)$ et $g(x+2\pi)$ :}
+
+    \[ f(x + 2\pi) = \cos(x + 2\pi) = \cos(x) = f(x) \]
+    \[ g(x + 2\pi) = \sin(x + 2\pi) = \sin(x) = g(x) \]
+
+    \textbf{Conclusion :} Les fonctions $f$ et $g$ sont $2\pi$-\textbf{périodiques}.
+
+\item \textbf{Précisons puis complétons les courbes de $f$ et $g$ :}
+
+\begin{itemize}
+    \item On a :   $f(0) = \cos(0)  = 1$, Donc la courbe passant par le point de coordonnées $(0;1)$ est la courbe représentative de $f$.
+
+Puisque $f$ est \textbf{paire}, sa courbe est symétrique par rapport à l'axe des ordonnées : on complète le tracé de $[0\,;\,\pi]$ par symétrie axiale, puis on reproduit par translation de $2k\pi$ ($k \in \mathbb{Z}$).
+
+\begin{center}
+    \begin{tikzpicture}[x=0.9cm, y=1cm]
+        \draw[->, >=stealth, thick, black] (-7.5,0) -- (7.5,0) node[below right, font=\sffamily\small] {$x$};
+        \draw[->, >=stealth, thick, black] (0,-1.5) -- (0,1.5) node[left, font=\sffamily\small] {$y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+        \draw[dashed, black!30] (-7.5,1) -- (7,1);
+        \draw[dashed, black!30] (-7.5,-1) -- (7,-1);
+        \node[left, font=\sffamily\footnotesize] at (0,1) {$1$};
+        \node[left, font=\sffamily\footnotesize] at (0,-1) {$-1$};
+        \foreach \k/\label in {
+            -4/-2\pi, -3/-\frac{3\pi}{2}, -2/-\pi, -1/-\frac{\pi}{2},
+             1/\frac{\pi}{2}, 2/\pi, 3/\frac{3\pi}{2}, 4/2\pi
+        } {
+            \draw (\k*pi/2, 0.1) -- (\k*pi/2, -0.1) node[below, font=\sffamily\footnotesize] {$\label$};
+        }
+
+        % Courbe initiale sur [0, pi]
+        \draw[very thick, SecondaryColor, domain=0:pi, samples=100] plot (\x, {cos(\x r)});
+
+        % Complétion par parité sur [-pi, 0]
+        \draw[very thick, AccentColor, domain=-pi:0, samples=100] plot (\x, {cos(\x r)});
+
+        % Complétion par périodicité sur [pi, 2pi] et [-2pi, -pi]
+        \draw[very thick, AccentColor, domain=pi:2*pi, samples=100] plot (\x, {cos(\x r)});
+        \draw[very thick, AccentColor, domain=-2*pi:-pi, samples=100] plot (\x, {cos(\x r)});
+
+        % Ajout du nom de la courbe (C_f)
+        \node[above, font=\sffamily\small\itshape, color=SecondaryColor] at (2*pi, 1) {$(C_f)$};
+    \end{tikzpicture}
+\end{center}
+    
+
+    \item On a : $g(0) = \sin(0)  = 0$, Donc : la courbe passant par l'origine du repère $(0;0)$ est la courbe représentative de $g$.
+
+Puisque $g$ est \textbf{impaire}, sa courbe est symétrique par rapport à l'origine : on complète le tracé de $[0\,;\,\pi]$ par symétrie centrale en $O$, puis on reproduit par translation de $2k\pi$.
+
+\begin{center}
+    \begin{tikzpicture}[x=0.9cm, y=1cm]
+        \draw[->, >=stealth, thick, black] (-7.5,0) -- (7.5,0) node[below right, font=\sffamily\small] {$x$};
+        \draw[->, >=stealth, thick, black] (0,-1.5) -- (0,1.5) node[left, font=\sffamily\small] {$y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+        \draw[dashed, black!30] (-7.5,1) -- (7,1);
+        \draw[dashed, black!30] (-7.5,-1) -- (7,-1);
+        \node[left, font=\sffamily\footnotesize] at (0,1) {$1$};
+        \node[left, font=\sffamily\footnotesize] at (0,-1) {$-1$};
+        \foreach \k/\label in {
+            -4/-2\pi, -3/-\frac{3\pi}{2}, -2/-\pi, -1/-\frac{\pi}{2},
+             1/\frac{\pi}{2}, 2/\pi, 3/\frac{3\pi}{2}, 4/2\pi
+        } {
+            \draw (\k*pi/2, 0.1) -- (\k*pi/2, -0.1) node[below, font=\sffamily\footnotesize] {$\label$};
+        }
+
+        % Courbe initiale sur [0, pi]
+        \draw[very thick, SecondaryColor, domain=0:pi, samples=100] plot (\x, {sin(\x r)});
+
+        % Complétion par imparité sur [-pi, 0]
+        \draw[very thick, AccentColor, domain=-pi:0, samples=100] plot (\x, {sin(\x r)});
+
+        % Complétion par périodicité sur [pi, 2pi] et [-2pi, -pi]
+        \draw[very thick, AccentColor, domain=pi:2*pi, samples=100] plot (\x, {sin(\x r)});
+        \draw[very thick, AccentColor, domain=-2*pi:-pi, samples=100] plot (\x, {sin(\x r)});
+
+        % Ajout du nom de la courbe (C_g)
+        \node[above, font=\sffamily\small\itshape, color=SecondaryColor] at (pi/2, 1) {$(C_g)$};
+    \end{tikzpicture}
+\end{center}
+
+\end{itemize}
+
+
+
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Déterminons $D_f$ et étudions la parité de $f$ :}
+
+    Puisque $x^2 + 1 > 0$ pour tout $x \in \mathbb{R}$, le dénominateur ne s'annule jamais.
+
+    Donc : \quad $D_f = \mathbb{R}$
+
+    Soit $x \in \mathbb{R}$.
+    \begin{align*}
+        f(-x) &= \dfrac{2(-x)}{(-x)^2 + 1} = \dfrac{-2x}{x^2 + 1} = -f(x)
+    \end{align*}
+    Donc la fonction $f$ est \textbf{impaire}.
+
+    \item \textbf{Calculons $f(0)$, $f(1)$ et $f(2)$ :}
+
+    \[ f(0) = \dfrac{0}{1} = 0 \qquad f(1) = \dfrac{2}{2} = 1 \qquad f(2) = \dfrac{4}{5} \]
+
+    \item
+    \begin{enumerate}
+        \item \textbf{Calculons $T(a\,;\,b)$ :}
+        
+Soient $a$ et $b$ deux réels distincts de l'intervalle $[0; +\infty[$,
+        \begin{align*}
+            f(b) - f(a) &= \dfrac{2b}{b^2 + 1} - \dfrac{2a}{a^2 + 1} \\[6pt]
+                        &= \dfrac{2b(a^2 + 1) - 2a(b^2 + 1)}{(a^2 + 1)(b^2 + 1)} \\[6pt]
+                        &= \dfrac{2a^2b + 2b - 2ab^2 - 2a}{(a^2 + 1)(b^2 + 1)} \\[6pt]
+                        &= \dfrac{2ab(a - b) - 2(a - b)}{(a^2 + 1)(b^2 + 1)} \\[6pt]
+                        &= \dfrac{2(a - b)(ab - 1)}{(a^2 + 1)(b^2 + 1)} \\[6pt]
+                        &= \dfrac{2(b - a)(1 - ab)}{(a^2 + 1)(b^2 + 1)}
+        \end{align*}
+Donc : 
+        \[ T(a\,;\,b) = \dfrac{f(b) - f(a)}{b - a} = \dfrac{2(b-a)(1-ab)}{(a^2+1)(b^2+1)(b-a)} = \dfrac{2(1 - ab)}{(a^2 + 1)(b^2 + 1)} \quad \text{(car } a \neq b\text{)} \]
+
+        \item \textbf{Étudions la monotonie de $f$ sur $[0\,;\,1]$ et sur $[1\,;\,+\infty[$ :}
+
+        Soient $a$ et $b$ deux réels distincts de $[0\,;\,+\infty[$ avec $a < b$. On a $(a^2 + 1)(b^2 + 1) > 0$.
+
+        \begin{itemize}
+            \item \textbf{Sur $[0\,;\,1]$ :} Pour $0 \leq a < b \leq 1$, on a $ab \leq 1$, donc $1 - ab \geq 0$.
+
+        D'où : $T(a\,;\,b) \geq 0$. Donc $f$ est \textbf{strictement croissante} sur $[0\,;\,1]$.
+
+            \item \textbf{Sur $[1\,;\,+\infty[$ :} Pour $1 \leq a < b$, on a $ab \geq 1$, donc $1 - ab \leq 0$.
+
+        D'où : $T(a\,;\,b) \leq 0$. Donc $f$ est \textbf{strictement décroissante} sur $[1\,;\,+\infty[$.
+        \end{itemize}
+
+        
+
+        \item \textbf{Déduisons la monotonie sur $[-1\,;\,0]$ et $]-\infty\,;\,-1]$ :}
+
+        Puisque $f$ est \textbf{impaire}, $f$ est strictement croissante sur $[-1\,;\,0]$ et strictement décroissante sur $]-\infty\,;\,-1]$.
+
+        \item \textbf{Tableau de variations de $f$ sur $\mathbb{R}$ :}
+
+\begin{center}
+            \begin{tikzpicture}
+    % Initialisation du tableau
+    \tkzTabInit[lgt=1.5, espcl=2]{$x$ / 0.7, $f(x)$ / 2.5}{$-\infty$, $-1$, $0$, $1$, $+\infty$}
+    
+    % Variations : on utilise R/ pour "Route" au niveau du 0 pour ne pas casser la flèche
+    \tkzTabVar{+/ , -/ $-1$ , R/ , +/ $1$ , -/ }
+    
+    % Ajout de l'image (la valeur 0) sur la flèche, à la colonne 3, entre les colonnes 2 et 4
+    \tkzTabIma{2}{4}{3}{$0$}
+\end{tikzpicture}
+\end{center}
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item \textbf{Montrons que $1 - f(x) = \dfrac{(x-1)^2}{x^2+1}$ :}
+        \begin{align*}
+            1 - f(x) &= 1 - \dfrac{2x}{x^2 + 1} = \dfrac{x^2 + 1 - 2x}{x^2 + 1} = \dfrac{(x-1)^2}{x^2+1}
+        \end{align*}
+
+        \item \textbf{Déduisons que $f(x) \leq 1$ :}
+
+        Puisque $(x-1)^2 \geq 0$ et $x^2 + 1 > 0$, Alors : $\dfrac{(x-1)^2}{x^2+1} \geq 0$.
+
+        Donc $1 - f(x) \geq 0$, d'où $f(x) \leq 1$.
+    \end{enumerate}
+
+    \item \textbf{Résolvons $f(x) = 1$ et concluons :}
+
+    \[ f(x) = 1 \quad \text{équivaut à} \quad \dfrac{(x-1)^2}{x^2+1} = 0 
+    \quad \text{équivaut à} \quad
+    (x-1)^2 = 0 \quad \text{équivaut à} \quad x = 1 \]
+
+    Puisque $f(x) \leq 1$ pour tout $x \in \mathbb{R}$ et $f(1) = 1$, le nombre $1$ est le \textbf{maximum} de $f$ sur $\mathbb{R}$.
+
+    \item \textbf{Montrons que $-1$ est le minimum de $f$ sur $\mathbb{R}$ en utilisant la parité :}
+    
+Soit $x \in \mathbb{R}$. On a $-x \in \mathbb{R}$.
+Puisque pour tout réel, l'image par $f$ est inférieure ou égale à $1$, on a :
+\begin{align*}
+    f(-x) &\leq 1 \\
+    \text{ équivaut à } \quad -f(x) &\leq 1 \quad \text{(car } f \text{ est impaire)} \\
+    \text{ équivaut à } \quad f(x) &\geq -1
+\end{align*}
+Donc : \quad pour tout $x \in \mathbb{R}$, on a $f(x) \geq -1$.
+
+    De plus $f(-1) = -f(1) = -1$.
+
+    \textbf{Conclusion :} Le nombre $-1$ est le \textbf{minimum} de $f$ sur $\mathbb{R}$, atteint au point $(-1\,;\,-1)$.
+\end{enumerate}
+\end{Solution}
+
+
+
+
+\begin{Solution}
+\begin{enumerate}
+\item \textbf{Étudier la parité de $f$ :}
+
+On a : \quad $D_f = \mathbb{R}$
+
+Soit $x \in \mathbb{R}$.
+On a :  $-x \in \mathbb{R}$
+
+et on a :
+\begin{align*}
+    f(-x) = a\left(-x\right)^2 
+    = ax^2 
+    = f(x)
+\end{align*}
+La fonction $f$ est \textbf{paire}.
+
+\item \textbf{Montrer que $T(x;y) = a(x+y)$ :}
+
+Soient $x$ et $y$ deux réels distincts.
+
+On a :
+\begin{align*}
+    f(x) - f(y) &= ax^2 - ay^2 \\
+    &= a\left(x^2 - y^2\right) \\
+    &= a(x-y)(x+y)
+\end{align*}
+
+On a donc :
+\begin{align*}
+    T(x;y) &= \dfrac{f(x) - f(y)}{x - y} \\
+    &= \dfrac{a(x-y)(x+y)}{x - y} \\
+    &= a(x+y)
+\end{align*}
+\[ T(x;y) = a(x+y) \]
+
+\item \textbf{Étudier la monotonie de $f$ sur $[0 ; +\infty[$ :}
+
+Soient $x$ et $y$ deux réels distincts de $[0 ; +\infty[$.
+On a : \quad $x \geq 0$ et $y \geq 0$
+
+Puisque $x$ et $y$ sont distincts, la somme est strictement positive.
+Donc : \quad $x+y > 0$
+
+Nous constatons que le signe du taux de variation dépend uniquement du signe de $a$.
+\begin{itemize}
+    \item \textbf{Premier cas : $a > 0$}
+    On a :
+    \[ \begin{cases} 
+        a > 0 \\ 
+        x + y > 0 
+    \end{cases} \quad \text{alors} \quad a(x+y) > 0 \]
+    Donc : \quad $T(x;y) > 0$
+    
+    \textbf{Conclusion :}
+    La fonction $f$ est strictement croissante sur $[0 ; +\infty[$.
+
+    \item \textbf{Deuxième cas : $a < 0$}
+    On a :
+    \[ \begin{cases} 
+        a < 0 \\ 
+        x + y > 0 
+    \end{cases} \quad \text{alors} \quad a(x+y) < 0 \]
+    Donc : \quad $T(x;y) < 0$
+    
+    \textbf{Conclusion :}
+    La fonction $f$ est strictement décroissante sur $[0 ; +\infty[$.
+\end{itemize}
+
+\item \textbf{En déduire la monotonie de $f$ sur $]-\infty ; 0]$ :}
+
+En utilisant la parité de $f$ :
+\begin{itemize}
+    \item Si $a > 0$ : Puisque $f$ est strictement croissante sur $[0 ; +\infty[$,
+    Donc  $f$ est strictement décroissante sur $]-\infty ; 0]$.
+    
+    \item Si $a < 0$ : Puisque $f$ est strictement décroissante sur $[0 ; +\infty[$, 
+    Donc  $f$ est strictement croissante sur $]-\infty ; 0]$.
+\end{itemize}
+
+\item \textbf{Dresser le tableau de variations de $f$ sur $\mathbb{R}$ :}
+\vspace{0.2cm}
+
+\noindent
+\begin{minipage}{0.48\linewidth}
+    \textbf{Cas $a > 0$ :} \\[5pt]
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=2,espcl=2.5]{$x$ / 1, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
+        \tkzTabVar{+ / , - / $0$, + / }
+    \end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+    \textbf{Cas $a < 0$ :} \\[5pt]
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=2,espcl=2.5]{$x$ / 1, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
+        \tkzTabVar{- / , + / $0$, - / }
+    \end{tikzpicture}
+\end{minipage}
+\vspace{0.3cm}
+
+\item \textbf{Étudier le cas $a=1$ :}
+\begin{enumerate}
+    \item \textbf{Compléter le tableau :}
+    Pour $a=1$, on a $f(x) = x^2$.
+    Donc :
+    \begin{align*}
+        f(-2) &= \left(-2\right)^2 = 4 \\
+        f(-1) &= \left(-1\right)^2 = 1 \\
+        f(0) &= 0^2 = 0 \\
+        f(1) &= 1^2 = 1 \\
+        f(2) &= 2^2 = 4
+    \end{align*}
+    
+    \vspace{0.1cm}
+    \begin{center}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            $x$    & $-2$ & $-1$ & $0$ & $1$ & $2$  \\ \hline
+            $f(x)$ & $4$  & $1$  & $0$ & $1$ & $4$  \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \vspace{0.1cm}
+
+    \item \textbf{Construire $\big(\mathcal{C}_f\big)$ :}
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            \draw[step=1cm, black!20, very thin] (-2.8,0) grid (2.8,4.8);
+            \draw[thick, -stealth, black] (-3,0) -- (3,0) node[right, font=\sffamily\small] {$x$};
+            \draw[thick, -stealth, black] (0,-1) -- (0,5) node[above, font=\sffamily\small] {$f(x)$};
+            \foreach \x in {-2,-1,1,2} \draw (\x,0.1) -- (\x,-0.1) node[below, font=\sffamily\footnotesize] {$\x$};
+            \foreach \y in {1,2,3,4} \draw (0.1,\y) -- (-0.1,\y) node[left, font=\sffamily\footnotesize] {$\y$};
+            \node[below left, font=\sffamily\small] at (0,0) {$O$};
+
+            \draw[very thick, SecondaryColor, domain=-2.1:2.1, smooth, variable=\x] plot ({\x}, {\x*\x}) node[right, font=\sffamily\small\itshape, color=SecondaryColor] {$\big(\mathcal{C}_f\big)$};
+
+            \filldraw[black] (-2,4) circle (1.5pt);
+            \filldraw[black] (-1,1) circle (1.5pt);
+            \filldraw[black] (0,0) circle (1.5pt);
+            \filldraw[black] (1,1) circle (1.5pt);
+            \filldraw[black] (2,4) circle (1.5pt);
+        \end{tikzpicture}
+    \end{center}
+\end{enumerate}
+\end{enumerate}
+\end{Solution}
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Calculons $f(1)$ et $f(2)$ ; puis déduisons $f(-1)$ et $f(-2)$ :}
+
+    \[ f(1) = 3 \times 1^2 = 3 \qquad f(2) = 3 \times 4 = 12 \]
+
+    Puisque $f$ est \textbf{paire} ($f(-x) = 3(-x)^2 = 3x^2 = f(x)$) :
+    \[ f(-1) = f(1) = 3 \qquad f(-2) = f(2) = 12 \]
+
+    \item \textbf{Tableau de variations de $f$ sur $\mathbb{R}$ :}
+
+    Puisque $a = 3 > 0$, la parabole est dirigée vers le haut, avec minimum $f(0) = 0$ en $x = 0$.
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1, espcl=2.5]{$x$ / 0.7, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
+        \tkzTabVar{+/ , -/ $0$ , +/ }
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{Tracé de $(\mathcal{C}_f)$ :}
+
+    $(\mathcal{C}_f)$ est une \textbf{parabole} de sommet $O(0\,;\,0)$, d'axe de symétrie l'axe des ordonnées, dirigée vers le \textbf{haut}.
+\begin{center}
+    \begin{tikzpicture}[scale=1]
+        % Grille de fond
+        \draw[step=1cm, black!20, very thin] (-2.8,0) grid (2.8,4.8);
+        
+        % Axes
+        \draw[thick, -stealth, black] (-3,0) -- (3,0) node[right, font=\sffamily\small] {$x$};
+        \draw[thick, -stealth, black] (0,-1) -- (0,5) node[above, font=\sffamily\small] {$f(x)$};
+        
+        % Graduations
+        \foreach \x in {-2,-1,1,2} \draw (\x,0.1) -- (\x,-0.1) node[below, font=\sffamily\footnotesize] {$\x$};
+        \foreach \y in {1,2,3,4} \draw (0.1,\y) -- (-0.1,\y) node[left, font=\sffamily\footnotesize] {$\y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+
+        % Courbe de f(x) = 3x^2 (Domaine limité pour ne pas sortir du repère)
+        \draw[very thick, SecondaryColor, domain=-1.26:1.26, smooth, variable=\x] plot ({\x}, {3*\x*\x}) node[right, font=\sffamily\small\itshape, color=SecondaryColor] {$\big(\mathcal{C}_f\big)$};
+
+        % Points remarquables
+        \filldraw[black] (-1,3) circle (1.5pt);
+        \filldraw[black] (0,0) circle (1.5pt);
+        \filldraw[black] (1,3) circle (1.5pt);
+    \end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Déterminons la valeur de $a$ :}
+
+    On a : $g(2) = a \times 2^2 = 4a$.
+    \begin{align*}
+        g(2) = -3 &\text{ équivaut à } 4a = -3 \text{ équivaut à } a = -\dfrac{3}{4}
+    \end{align*}
+    Donc : \quad $a = -\dfrac{3}{4}$
+
+    \item \textbf{Tableau de variations de $g$ sur $\mathbb{R}$ :}
+
+    Puisque $a = -\dfrac{3}{4} < 0$, la parabole est dirigée vers le bas, avec maximum $g(0) = 0$ en $x = 0$.
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1, espcl=2.5]{$x$ / 0.7, $g(x)$ / 2}{$-\infty$, $0$, $+\infty$}
+        \tkzTabVar{-/ , +/ $0$ , -/ }
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{Tracé de $(\mathcal{C}_g)$ :}
+
+    $(\mathcal{C}_g)$ est une \textbf{parabole} de sommet $O(0\,;\,0)$, d'axe de symétrie l'axe des ordonnées, dirigée vers le \textbf{bas}.
+\begin{center}
+    \begin{tikzpicture}[scale=1]
+        % Grille de fond (décalée vers le bas)
+        \draw[step=1cm, black!20, very thin] (-2.8,-4.8) grid (2.8,0.8);
+        
+        % Axes
+        \draw[thick, -stealth, black] (-3,0) -- (3,0) node[right, font=\sffamily\small] {$x$};
+        \draw[thick, -stealth, black] (0,-5) -- (0,1) node[above, font=\sffamily\small] {$g(x)$};
+        
+        % Graduations (x au-dessus, y à gauche)
+        \foreach \x in {-2,-1,1,2} \draw (\x,-0.1) -- (\x,0.1) node[above, font=\sffamily\footnotesize] {$\x$};
+        \foreach \y in {-4,-3,-2,-1} \draw (0.1,\y) -- (-0.1,\y) node[left, font=\sffamily\footnotesize] {$\y$};
+        \node[above left, font=\sffamily\small] at (0,0) {$O$};
+
+        % Courbe de g(x) = -0.75x^2
+        \draw[very thick, SecondaryColor, domain=-2.5:2.5, smooth, variable=\x] plot ({\x}, {-0.75*\x*\x}) node[right, font=\sffamily\small\itshape, color=SecondaryColor] {$\big(\mathcal{C}_g\big)$};
+
+        % Points remarquables (-2, -3), (-1, -0.75), (0, 0), (1, -0.75), (2, -3)
+        \filldraw[black] (-2,-3) circle (1.5pt);
+        \filldraw[black] (-1,-0.75) circle (1.5pt);
+        \filldraw[black] (0,0) circle (1.5pt);
+        \filldraw[black] (1,-0.75) circle (1.5pt);
+        \filldraw[black] (2,-3) circle (1.5pt);
+    \end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{Solution}
+
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item $f(x) = x^2 + 2x + 1$ : \quad $a = 1$, $b = 2$, $c = 1$.
+    \[ -\dfrac{b}{2a} = -\dfrac{2}{2} = -1 \quad \text{et} \quad f(-1) = 1 - 2 + 1 = 0 \]
+    Le \textbf{sommet} est $S(-1\,;\,0)$ et l'axe de symétrie est la droite $x = -1$.
+
+    \item $f(x) = -2x^2 + 6x + 1$ : \quad $a = -2$, $b = 6$, $c = 1$.
+    \[ -\dfrac{b}{2a} = -\dfrac{6}{-4} = \dfrac{3}{2} \quad \text{et} \quad f\!\left(\dfrac{3}{2}\right) = -2 \times \dfrac{9}{4} + 6 \times \dfrac{3}{2} + 1 = -\dfrac{9}{2} + 9 + 1 = \dfrac{11}{2} \]
+    Le \textbf{sommet} est $S\!\left(\dfrac{3}{2}\,;\,\dfrac{11}{2}\right)$ et l'axe de symétrie est la droite $x = \dfrac{3}{2}$.
+
+    \item $f(x) = x^2 - 1$ : \quad $a = 1$, $b = 0$, $c = -1$.
+    \[ -\dfrac{b}{2a} = 0 \quad \text{et} \quad f(0) = -1 \]
+    Le \textbf{sommet} est $S(0\,;\,-1)$ et l'axe de symétrie est la droite $x = 0$ (axe des ordonnées).
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item $f(x) = x^2 + 2x + 1$, $a = 1 > 0$, sommet $S(-1\,;\,0)$ :
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1.2, espcl=2.5]{$x$ / 0.7, $f(x)$ / 2}{$-\infty$, $-1$, $+\infty$}
+        \tkzTabVar{+/ , -/ $0$ , +/ }
+    \end{tikzpicture}
+    \end{center}
+
+    \item $f(x) = -2x^2 + 6x + 1$, $a = -2 < 0$, sommet $S\!\left(\dfrac{3}{2}\,;\,\dfrac{11}{2}\right)$ :
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1.2, espcl=2.5]{$x$ / 0.7, $f(x)$ / 2}{$-\infty$, $\frac{3}{2}$, $+\infty$}
+        \tkzTabVar{-/ , +/ $\frac{11}{2}$ , -/ }
+    \end{tikzpicture}
+    \end{center}
+
+    \item $f(x) = x^2 - 1$, $a = 1 > 0$, sommet $S(0\,;\,-1)$ :
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1.2, espcl=2.5]{$x$ / 0.7, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
+        \tkzTabVar{+/ , -/ $-1$ , +/ }
+    \end{tikzpicture}
+    \end{center}
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Déterminons la nature de $(C_f)$ :}
+
+    On a $a = 2$, $b = -4$, $c = 3$.
+
+    Puisque $a = 2 \neq 0$, la courbe $(C_f)$ est une \textbf{parabole}.
+    \[ -\dfrac{b}{2a} = -\dfrac{-4}{4} = 1 \quad \text{et} \quad f(1) = 2 - 4 + 3 = 1 \]
+    Le \textbf{sommet} est $S(1\,;\,1)$ et l'axe de symétrie est la droite $x = 1$.
+
+    Puisque $a = 2 > 0$, la parabole est dirigée vers le \textbf{haut}.
+    \item \textbf{Tableau de variations de $f$ :}
+
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1.2, espcl=2.5]{$x$ / 0.7, $f(x)$ / 2}{$-\infty$, $1$, $+\infty$}
+        \tkzTabVar{+/ , -/ $1$ , +/ }
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{Construction de $(C_f)$ :}
+
+\begin{center}
+    \begin{tikzpicture}[scale=1]
+        % Grille de fond (adaptée pour centrer sur le sommet x=1)
+        \draw[step=1cm, black!20, very thin] (-1.8,0) grid (3.8,5.8);
+        
+        % Axes
+        \draw[thick, -stealth, black] (-2,0) -- (4,0) node[right, font=\sffamily\small] {$x$};
+        \draw[thick, -stealth, black] (0,-1) -- (0,6) node[above, font=\sffamily\small] {$f(x)$};
+        
+        % Graduations
+        \foreach \x in {-1,1,2,3} \draw (\x,0.1) -- (\x,-0.1) node[below, font=\sffamily\footnotesize] {$\x$};
+        \foreach \y in {1,2,3,4,5} \draw (0.1,\y) -- (-0.1,\y) node[left, font=\sffamily\footnotesize] {$\y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+
+        % Courbe de f(x) = 2x^2 - 4x + 3
+        % Domaine restreint pour rester dans les limites de la grille (y < 6)
+        \draw[very thick, SecondaryColor, domain=-0.35:2.35, smooth, variable=\x] plot ({\x}, {2*\x*\x - 4*\x + 3}) node[right, font=\sffamily\small\itshape, color=SecondaryColor] {$\big(\mathcal{C}_f\big)$};
+
+        % Points remarquables : Sommet (1,1), Intersections (0,3) et (2,3)
+        \filldraw[black] (1,1) circle (1.5pt);
+        \filldraw[black] (0,3) circle (1.5pt);
+        \filldraw[black] (2,3) circle (1.5pt);
+    \end{tikzpicture}
+\end{center}
+
+    \item \textbf{Discussion de l'équation $f(x) = m$ :}
+
+    L'équation $f(x) = m$ représente l'intersection de la parabole $(C_f)$ avec la droite $y = m$.
+
+    Puisque le minimum de $f$ est $1$ (atteint en $x = 1$) :
+    \begin{itemize}
+        \item Si $m < 1$ : l'équation n'a \textbf{aucune solution}.
+        \item Si $m = 1$ : l'équation a \textbf{une seule solution} : $x = 1$.
+        \item Si $m > 1$ : l'équation a \textbf{deux solutions distinctes}.
+    \end{itemize}
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+\item \textbf{Vérifier que $f$ est impaire :}
+\begin{itemize}
+    \item On a :  $D_f = \mathbb{R}^*$, donc $D_f$ est symétrique par rapport à $0$.
+    \item Soit $x \in \mathbb{R}^*$. On a :
+             $f(-x) = \dfrac{a}{-x} = -\dfrac{a}{x} = -f(x) $
+             
+    Donc pour tout $x$ de $\R^*$, $f(-x)=-f(x)$
+    
+    D'où $f$ est \textbf{impaire}.
+\end{itemize}
+
+\item \textbf{Montrer que $T(x;y) = -\dfrac{a}{xy}$ :}
+
+Soient $x$ et $y$ deux réels distincts de $]0 ; +\infty[$.
+
+On a :
+\begin{align*}
+    f(x) - f(y) &= \dfrac{a}{x} - \dfrac{a}{y} \\
+    &= \dfrac{ay}{xy} - \dfrac{ax}{xy} \\
+    &= \dfrac{ay - ax}{xy} \\
+    &= \dfrac{-a(x - y)}{xy}
+\end{align*}
+
+On a donc :
+\begin{align*}
+    T(x;y) &= \dfrac{f(x) - f(y)}{x - y} \\
+    &= \dfrac{\dfrac{-a(x - y)}{xy}}{x - y} \\
+    &= \dfrac{-a(x - y)}{xy} \times \dfrac{1}{x - y} \\
+    &= -\dfrac{a}{xy}
+\end{align*}
+\[ T(x;y) = -\dfrac{a}{xy} \]
+
+\item \textbf{Étudier la monotonie de $f$ sur $]0 ; +\infty[$ :}
+
+Soient $x$ et $y$ deux réels distincts de $]0 ; +\infty[$.
+On a : \quad $x > 0$ et $y > 0$
+Donc : \quad $xy > 0$
+
+Donc le signe du taux de variation dépend de $a$.
+\begin{itemize}
+    \item \textbf{Premier cas : $a > 0$}
+    On a :
+    \[ \begin{cases} 
+        a > 0 \\ 
+        xy > 0 
+    \end{cases} \quad \text{alors} \quad -\dfrac{a}{xy} < 0 \]
+    Donc : \quad $T(x;y) < 0$
+    
+    \textbf{Conclusion :}
+    La fonction $f$ est strictement décroissante sur $]0 ; +\infty[$.
+
+    \item \textbf{Deuxième cas : $a < 0$}
+    On a :
+    \[ \begin{cases} 
+        a < 0 \\ 
+        xy > 0 
+    \end{cases} \quad \text{alors} \quad -\dfrac{a}{xy} > 0 \]
+    Donc : \quad $T(x;y) > 0$
+    
+    \textbf{Conclusion :}
+    La fonction $f$ est strictement croissante sur $]0 ; +\infty[$.
+\end{itemize}
+
+\item \textbf{En déduire la monotonie de $f$ sur $]-\infty ; 0[$ :}
+\begin{itemize}
+    \item Si $a > 0$ : Puisque $f$ est strictement décroissante sur $]0 ; +\infty[$, 
+    Donc $f$ est strictement décroissante sur $]-\infty ; 0[$.
+    
+    \item Si $a < 0$ : Puisque $f$ est strictement croissante sur $]0 ; +\infty[$,
+    Donc $f$ est strictement croissante sur $]-\infty ; 0[$.
+\end{itemize}
+
+\item \textbf{Dresser le tableau de variations de $f$ sur $\mathbb{R}^*$ :}
+
+\noindent
+\begin{minipage}{0.48\linewidth}
+    \textbf{Cas $a > 0$ :} \\[5pt]
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1,espcl=2.4]{$x$ / 0.6, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
+        \tkzTabVar{+ / , -D+ /  / , - / }
+    \end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+    \textbf{Cas $a < 0$ :} \\[5pt]
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1,espcl=2.4]{$x$ / 0.6, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
+        \tkzTabVar{- / , +D- /  / , + / }
+    \end{tikzpicture}
+\end{minipage}
+\vspace{0.3cm}
+
+\item \textbf{Étudier le cas $a=1$ :}
+\begin{enumerate}
+    \item \textbf{Compléter le tableau suivant :}
+    Pour $a=1$, on a $f(x) = \dfrac{1}{x}$.
+    Donc :
+    \begin{align*}
+        f(-4) = -\dfrac{1}{4} = -0,25 \quad \text{et} \quad
+        f(-2) &= -\dfrac{1}{2} = -0,5 \\
+        f(-1) = -1 \quad \text{et} \quad
+        f(-0,5) &= \dfrac{1}{-0,5} = -2
+    \end{align*}
+    Par symétrie (imparité), on déduit les images des réels positifs.
+    
+    \vspace{0.1cm}
+    \begin{center}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+            \hline
+            $x$    & $-4$ & $-2$ & $-1$ & $-0,5$ & $0,5$ & $1$ & $2$ & $4$ \\ \hline
+            $f(x)$ & $-0,25$ & $-0,5$ & $-1$ & $-2$ & $2$ & $1$ & $0,5$ & $0,25$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \vspace{0.1cm}
+
+    \item \textbf{Construire $\big(\mathcal{C}_f\big)$ :}
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+           \draw[step=1cm, black!20, very thin] (-4.6,-3.6) grid (4.7,3.8);
+            \draw[thick,->] (-5,0) -- (5,0) node[right] {$x$};
+            \draw[thick,->] (0,-4) -- (0,4) node[above] {$f(x)$};
+            
+            \foreach \x in {-4,-3,-2,-1,1,2,3,4} \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+            \foreach \y in {-3,-2,-1,1,2,3} \draw (0.1,\y) -- (-0.1,\y) node[left] {$\y$};
+            \node[below left] at (0,0) {$O$};
+
+            \draw[very thick, SecondaryColor, domain=-4.5:-0.25, smooth, samples=100] plot ({\x}, {1/\x});
+            \draw[very thick, SecondaryColor, domain=0.25:4.5, smooth, samples=100] plot ({\x}, {1/\x}) node[right] {$\big(\mathcal{C}_f\big)$};
+            
+            \filldraw[black] (-4,-0.25) circle (1.5pt);
+            \filldraw[black] (-2,-0.5) circle (1.5pt);
+            \filldraw[black] (-1,-1) circle (1.5pt);
+            \filldraw[black] (-0.5,-2) circle (1.5pt);
+            
+            \filldraw[black] (0.5,2) circle (1.5pt);
+            \filldraw[black] (1,1) circle (1.5pt);
+            \filldraw[black] (2,0.5) circle (1.5pt);
+            \filldraw[black] (4,0.25) circle (1.5pt);
+        \end{tikzpicture}
+    \end{center}
+\end{enumerate}
+\end{enumerate}
+\end{Solution}
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Tableau de variations de $f$ :}
+
+    Puisque $a = 3 > 0$, $f$ est \textbf{strictement décroissante} sur chacun des intervalles $]-\infty\,;\,0[$ et $]0\,;\,+\infty[$.
+
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1, espcl=2.5]{$x$ / 0.7, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
+        \tkzTabVar{+/  , -D+/ , -/ }
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{Construction de $(\mathcal{C}_f)$ :}
+
+    $(\mathcal{C}_f)$ est une \textbf{hyperbole} de centre $O(0\,;\,0)$, d'asymptotes les axes du repère.
+    \begin{center}
+    \begin{tikzpicture}[scale=1]
+        % Grille de fond symétrique
+        \draw[step=1cm, black!20, very thin] (-3.8,-3.8) grid (3.8,3.8);
+        
+        % Axes
+        \draw[thick, -stealth, black] (-4,0) -- (4,0) node[right, font=\sffamily\small] {$x$};
+        \draw[thick, -stealth, black] (0,-4) -- (0,4) node[above, font=\sffamily\small] {$f(x)$};
+        
+        % Graduations
+        \foreach \x in {-3,-2,-1,1,2,3} \draw (\x,0.1) -- (\x,-0.1) node[below, font=\sffamily\footnotesize] {$\x$};
+        \foreach \y in {-3,-2,-1,1,2,3} \draw (0.1,\y) -- (-0.1,\y) node[left, font=\sffamily\footnotesize] {$\y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+
+        % Courbe de f(x) = 3/x
+        % Branche négative
+        \draw[very thick, SecondaryColor, domain=-3.8:-0.79, samples=100, smooth, variable=\x] plot ({\x}, {3/\x});
+        
+        % Branche positive
+        \draw[very thick, SecondaryColor, domain=0.79:3.8, samples=100, smooth, variable=\x] plot ({\x}, {3/\x}) node[right, font=\sffamily\small\itshape, color=SecondaryColor] {$\big(\mathcal{C}_f\big)$};
+
+        % Points remarquables : (1,3), (3,1), (-1,-3), (-3,-1)
+        \filldraw[black] (1,3) circle (1.5pt);
+        \filldraw[black] (3,1) circle (1.5pt);
+        \filldraw[black] (-1,-3) circle (1.5pt);
+        \filldraw[black] (-3,-1) circle (1.5pt);
+    \end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Tableau de variations de $f$ :}
+
+    Puisque $a = -2 < 0$,$f$ est \textbf{strictement croissante} sur chacun des intervalles $]-\infty\,;\,0[$ et sur $]0\,;\,+\infty[$.
+
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1, espcl=2.5]{$x$ / 0.7, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
+        \tkzTabVar{-/  , +D-/ , +/  }
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{Construction de $(\mathcal{C}_f)$ :}
+
+    $(\mathcal{C}_f)$ est une \textbf{hyperbole} de centre $O(0\,;\,0)$, d'asymptotes les axes du repère.
+    \begin{center}
+    \begin{tikzpicture}[scale=1]
+        % Grille de fond symétrique
+        \draw[step=1cm, black!20, very thin] (-3.8,-3.8) grid (3.8,3.8);
+        
+        % Axes
+        \draw[thick, -stealth, black] (-4,0) -- (4,0) node[right, font=\sffamily\small] {$x$};
+        \draw[thick, -stealth, black] (0,-4) -- (0,4) node[above, font=\sffamily\small] {$f(x)$};
+        
+        % Graduations
+        \foreach \x in {-3,-2,-1,1,2,3} \draw (\x,0.1) -- (\x,-0.1) node[below, font=\sffamily\footnotesize] {$\x$};
+        \foreach \y in {-3,-2,-1,1,2,3} \draw (0.1,\y) -- (-0.1,\y) node[left, font=\sffamily\footnotesize] {$\y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+
+        % Courbe de f(x) = -2/x
+        % Branche négative (quadrant supérieur gauche)
+        % On limite le domaine à -0.53 pour ne pas dépasser la grille (y max ≈ 3.8)
+        \draw[very thick, SecondaryColor, domain=-3.8:-0.53, samples=100, smooth, variable=\x] plot ({\x}, {-2/\x});
+        
+        % Branche positive (quadrant inférieur droit)
+        \draw[very thick, SecondaryColor, domain=0.53:3.8, samples=100, smooth, variable=\x] plot ({\x}, {-2/\x}) node[right, font=\sffamily\small\itshape, color=SecondaryColor] {$\big(\mathcal{C}_f\big)$};
+
+        % Points remarquables : (-2,1), (-1,2), (1,-2), (2,-1)
+        \filldraw[black] (-2,1) circle (1.5pt);
+        \filldraw[black] (-1,2) circle (1.5pt);
+        \filldraw[black] (1,-2) circle (1.5pt);
+        \filldraw[black] (2,-1) circle (1.5pt);
+    \end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{Solution}
+
+
+
+
+\begin{Solution}
+\begin{itemize}
+    \item $f(x) = \dfrac{3x-1}{x+1}$ : \quad $a = 3$, $b = -1$, $c = 1$, $d = 1$.
+
+    $\Delta = \begin{vmatrix} 3 & -1 \\ 1 & 1 \end{vmatrix} = 3 \times 1 - (-1) \times 1 = 4 > 0$
+
+    Puisque $\Delta > 0$, $f$ est \textbf{strictement croissante} sur chacun des intervalles $]-\infty\,;\,-1[$ et sur $]-1\,;\,+\infty[$.
+
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1.2, espcl=2.5]{$x$ / 0.7, $f(x)$ / 2}{$-\infty$, $-1$, $+\infty$}
+        \tkzTabVar{-/ , +D-/ , +/ }
+    \end{tikzpicture}
+    \end{center}
+
+    \item $g(x) = \dfrac{x}{2x+3}$ : \quad $a = 1$, $b = 0$, $c = 2$, $d = 3$.
+
+    $\Delta = \begin{vmatrix} 1 & 0 \\ 2 & 3 \end{vmatrix} = 1 \times 3 - 0 \times 2 = 3 > 0$
+
+    Puisque $\Delta > 0$, $g$ est \textbf{strictement croissante} sur chacun des intervalles $\big]-\infty\,;\,-\dfrac{3}{2}\big[$ et sur $\big]-\dfrac{3}{2}\,;\,+\infty\big[$.
+
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1.2, espcl=2.5]{$x$ / 0.7, $g(x)$ / 2}{$-\infty$, $-\frac{3}{2}$, $+\infty$}
+        \tkzTabVar{-/ , +D-/ , +/ }
+    \end{tikzpicture}
+    \end{center}
+
+    \item $h(x) = \dfrac{-3}{3x-1}$ : \quad $a = 0$, $b = -3$, $c = 3$, $d = -1$.
+
+    $\Delta = \begin{vmatrix} 0 & -3 \\ 3 & -1 \end{vmatrix} = 0 \times (-1) - (-3) \times 3 = 9 > 0$
+
+    Puisque $\Delta > 0$, $h$ est \textbf{strictement croissante} sur chacun des intervalles $\big]-\infty\,;\,\dfrac{1}{3}\big[$ et sur $\big]\dfrac{1}{3}\,;\,+\infty\big[$.
+
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1.2, espcl=2.5]{$x$ / 0.7, $h(x)$ / 2}{$-\infty$, $\frac{1}{3}$, $+\infty$}
+        \tkzTabVar{-/ , +D-/ , +/ }
+    \end{tikzpicture}
+    \end{center}
+\end{itemize}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item \textbf{Déterminons $D_f$ :}
+    
+      On a : \quad  $D_f = \left\{ x \in \mathbb{R} \mid x - 1 \neq 0 \right\} = \left\{ x \in \mathbb{R} \mid x \neq 1 \right\}$
+      
+    Donc : \quad $D_f = \mathbb{R} \setminus \{1\} = \big]-\infty\,;\,1\big[ \cup \big]1\,;\,+\infty\big[$
+
+    \item \textbf{Nature de $(C_f)$ et éléments caractéristiques :}
+
+    On a $a = 2$, $b = 1$, $c = 1$, $d = -1$.
+
+    La courbe $(C_f)$ est une \textbf{hyperbole} de centre 
+     $\Omega\!\left(-\dfrac{d}{c}\,;\,\dfrac{a}{c}\right) = \Omega(1\,;\,2)$ 
+
+    Les asymptotes sont :
+         $x = 1$ (Asymptote \textbf{verticale})
+        et $y = 2$ (Asymptote \textbf{horizontale}).
+        
+    Donc : $(C_f)$ est une hyperbole de centre $\Omega(1\,;\,2)$, d'asymptotes $x = 1$ et $y = 2$.
+
+    \textit{Puisque $\Delta = -3 < 0$, $f$ est \textbf{strictement décroissante} sur $]-\infty\,;\,1[$ et sur $]1\,;\,+\infty[$.}
+
+    \item \textbf{Construction de $(C_f)$ :}
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        % Grille de fond
+        \draw[step=1cm, black!20, very thin] (-3.8,-3.8) grid (5.8,7.8);
+        
+        % Axes
+        \draw[thick, -stealth, black] (-4,0) -- (6,0) node[right, font=\sffamily\small] {$x$};
+        \draw[thick, -stealth, black] (0,-4) -- (0,8) node[above, font=\sffamily\small] {$f(x)$};
+        
+        % Graduations
+        \foreach \x in {-3,-2,-1,1,2,3,4,5} \draw (\x,0.1) -- (\x,-0.1) node[below, font=\sffamily\footnotesize] {$\x$};
+        \foreach \y in {-3,-2,-1,1,2,3,4,5,6,7} \draw (0.1,\y) -- (-0.1,\y) node[left, font=\sffamily\footnotesize] {$\y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+
+        % --- ASYMPTOTES (Couleur AccentColor : Rouge) ---
+        % Asymptote verticale : x = 1
+        \draw[thick, AccentColor, dashed] (1,-3.8) -- (1,7.8) node[pos=0.05, right, font=\sffamily\scriptsize] {$x=1$};
+        
+        % Asymptote horizontale : y = 2
+        \draw[thick, AccentColor, dashed] (-3.8,2) -- (5.8,2) node[pos=0.05, above, font=\sffamily\scriptsize] {$y=2$};
+
+        % --- COURBE (SecondaryColor : Bleu) ---
+        % Branche de gauche (x < 1)
+        \draw[very thick, SecondaryColor, domain=-3.8:0.25, samples=100, smooth, variable=\x] plot ({\x}, {(2*\x+1)/(\x-1)});
+        
+        % Branche de droite (x > 1)
+        \draw[very thick, SecondaryColor, domain=1.6:5.8, samples=100, smooth, variable=\x] plot ({\x}, {(2*\x+1)/(\x-1)}) node[right, font=\sffamily\small\itshape, color=SecondaryColor] {$\big(\mathcal{C}_f\big)$};
+
+        % Points remarquables
+        \filldraw[black] (-2,1) circle (1.5pt);
+        \filldraw[black] (0,-1) circle (1.5pt);
+        \filldraw[black] (2,5) circle (1.5pt);
+        \filldraw[black] (4,3) circle (1.5pt);
+    \end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{Solution}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item \textbf{Nature de $(C_f)$ :}
+
+        On a $a = -1$, $b = 4$, $c = -3$.
+
+        Puisque $a \neq 0$, $(C_f)$ est une \textbf{parabole}.
+        \[ -\dfrac{b}{2a} = -\dfrac{4}{-2} = 2 \quad \text{et} \quad f(2) = -4 + 8 - 3 = 1 \]
+        Le \textbf{sommet} est $S(2\,;\,1)$, l'axe de symétrie est la droite $x = 2$.
+
+        Puisque $a = -1 < 0$, la parabole est dirigée vers le \textbf{bas}.
+
+        \item \textbf{Calculons $f(0)$, $f(1)$ et $f(3)$ :}
+
+        \[ f(0) = -3 \quad;\quad f(1) = -1 + 4 - 3 = 0 \quad;\quad f(3) = -9 + 12 - 3 = 0 \]
+
+        \item \textbf{Tableau de variations de $f$ :}
+
+        \begin{center}
+        \begin{tikzpicture}
+            \tkzTabInit[lgt=1.2, espcl=2.5]{$x$ / 0.7, $f(x)$ / 2}{$-\infty$, $2$, $+\infty$}
+            \tkzTabVar{-/ , +/ $1$ , -/ }
+        \end{tikzpicture}
+        \end{center}
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item \textbf{Déterminons $D_g$ :}
+
+         On a : \quad   $D_g = \left\{ x \in \mathbb{R} \mid x - 2 \neq 0 \right\} = \left\{ x \in \mathbb{R} \mid x \neq 2 \right\}$
+         
+        Donc : \quad $D_g = \mathbb{R} \setminus \{2\} = \big]-\infty\,;\,2\big[ \cup \big]2\,;\,+\infty\big[$
+
+        \item \textbf{Tableau de variations de $g$ :}
+
+        On a $a = 1$, $b = -3$, $c = 1$, $d = -2$.
+
+        $\Delta = \begin{vmatrix} 1 & -3 \\ 1 & -2 \end{vmatrix} = 1 \times (-2) - (-3) \times 1 = -2 + 3 = 1 > 0$
+
+        Puisque $\Delta > 0$, $g$ est \textbf{strictement croissante} sur chacun des intervalles $]-\infty\,;\,2[$ et sur $]2\,;\,+\infty[$.
+
+        \begin{center}
+        \begin{tikzpicture}
+            \tkzTabInit[lgt=1.2, espcl=2.5]{$x$ / 0.7, $g(x)$ / 2}{$-\infty$, $2$, $+\infty$}
+            \tkzTabVar{-/ , +D-/ , +/ }
+        \end{tikzpicture}
+        \end{center}
+
+        \item \textbf{Nature de $(C_g)$ :}
+
+        $(C_g)$ est une \textbf{hyperbole} de centre $\Omega(2\,;\,1)$, d'asymptotes : $x = 2$ (verticale) et $y = 1$ (horizontale).
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item \textbf{Montrons que $f(x) - g(x) = \dfrac{(x-3)(-x^2+3x-3)}{x-2}$ :}
+
+        Soit $x \in D_g$. On a :
+\begin{align*}
+    f(x) - g(x) &= (-x^2 + 4x - 3) - \frac{x-3}{x-2} \\
+    &= \frac{(-x^2 + 4x - 3)(x-2)}{x-2} - \frac{x-3}{x-2} \\
+    &= \frac{(-x^2 + 4x - 3)(x-2) - (x-3)}{x-2} \\
+    &= \frac{-x^3 + 2x^2 + 4x^2 - 8x - 3x + 6 - x + 3}{x-2} \\
+    &= \frac{-x^3 + 6x^2 - 12x + 9}{x-2}
+\end{align*}
+
+Calculons le membre droit pour le comparer :
+\begin{align*}
+    \frac{(x-3)(-x^2+3x-3)}{x-2} &= \frac{-x^3 + 3x^2 - 3x + 3x^2 - 9x + 9}{x-2} \\
+    &= \frac{-x^3 + 6x^2 - 12x + 9}{x-2}
+\end{align*}
+        D'où : \quad $f(x) - g(x) = \dfrac{(x-3)(-x^2+3x-3)}{x-2}$
+
+        \item \textbf{Montrons que $-x^2+3x-3 < 0$ pour tout $x \in \mathbb{R}$ :}
+
+        le discriminant du trinôme $-x^2+3x-3$ est : $\Delta = 3^2 - 4 \times (-1) \times (-3) = 9 - 12 = -3 < 0$
+
+        Puisque $\Delta < 0$ et $a = -1 < 0$, on a $-x^2+3x-3 < 0$ pour tout réel $x$.
+
+        \item \textbf{Point d'intersection de $(C_f)$ et $(C_g)$ :}
+
+        Cherchons les solutions de l'équation $f(x) = g(x)$ sur $D_g$.
+
+Soit $x \in D_g$. On a :
+\begin{align*}
+    f(x) = g(x) &\text{ équivaut à } \quad f(x) - g(x) = 0 \\
+    &\text{ équivaut à } \quad \frac{(x-3)(-x^2+3x-3)}{x-2} = 0 \\
+    &\text{ équivaut à } \quad (x-3)(-x^2+3x-3) = 0 \\
+    &\text{ équivaut à } \quad x - 3 = 0 \text{ ou } -x^2+3x-3 = 0
+\end{align*}
+
+Puisque pour tout réel $x$, $-x^2+3x-3 < 0$ (d'après la question précédente), 
+On a donc :
+\begin{align*}
+   f(x) = g(x) ~~ \text{ équivaut à } ~~ x - 3 = 0 \text{ équivaut à } x = 3
+\end{align*}
+
+Et on a : $f(3) = 0$
+
+\textbf{Conclusion :}
+$ (C_f) \text{ et } (C_g) \text{ se coupent en un unique point } A(3;0$) 
+    \end{enumerate}
+
+    \item \textbf{Tracé des courbes :}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+% Grille et axes
+\draw[step=1cm,gray!30,very thin] (-2.5,-4.5) grid (5.5,4.5);
+\draw[thick,->] (-2.5,0) -- (5.5,0) node[below] {$x$};
+\draw[thick,->] (0,-4.5) -- (0,4.5) node[left] {$y$};
+\node[below left] at (0,0) {$O$};
+\draw[thick] (1,0.1) -- (1,-0.1) node[below] {$1$};
+\draw[thick] (0.1,1) -- (-0.1,1) node[left] {$1$};
+
+% Asymptotes
+\draw[AccentColor, dashed, thick] (2,-4.5) -- (2,4.5) node[above right] {$x=2$};
+\draw[AccentColor, dashed, thick] (-2.5,1) -- (5.5,1) node[above right] {$y=1$};
+
+% Courbe Cf (Parabole)
+\draw[SecondaryColor, thick, domain=-0.2:4.2, samples=100] plot (\x, {-\x*\x + 4*\x - 3}) node[right] {$(C_f)$};
+
+% Courbe Cg (Hyperbole)
+\draw[green!60!black, thick, domain=-2.5:1.7, samples=100] plot (\x, {(\x-3)/(\x-2)});
+\draw[green!60!black, thick, domain=2.25:5.5, samples=100] plot (\x, {(\x-3)/(\x-2)}) node[below] {$(C_g)$};
+
+% Points remarquables
+\fill[black] (3,0) circle (2pt) node[below right] {$A(3;0)$};
+\fill[black] (2,1) circle (2pt) node[above left] {$\Omega(2;1)$};
+\fill[black] (1,0) circle (2pt);
+\fill[black] (0,-3) circle (2pt);
+\fill[black] (4,-3) circle (2pt);
+
+\fill[black] (1,2) circle (2pt);
+\end{tikzpicture}
+\end{center}
+
+    \item \textbf{Résolution de $\dfrac{x-3}{x-2} \leq -x^2+4x-3$ :}
+
+    L'inéquation $\dfrac{x-3}{x-2} \leq -x^2+4x-3$  équivaut à $g(x) \leq f(x)$
+
+    Cherchons donc les intervalles sur lesquels la courbe $(C_g)$ est située en dessous ou est confondue avec la courbe $(C_f)$.
+    
+    Par lecture graphique, nous constatons que $(C_g)$ est en dessous de $(C_f)$ pour toutes les abscisses comprises entre l'asymptote verticale $x=2$ (exclue) et le point d'intersection d'abscisse $x=3$ (incluse).
+    
+    Donc : \quad $ \text{L'ensemble solution est : } S = \big]2; 3\big] $
+
+    \item \textbf{Discussion de $-x^2+4x-3-m = 0$ :}
+
+    L'équation $f(x) = m$ représente l'intersection de $(C_f)$ avec la droite $y = m$.
+
+Par lecture graphique (en se référant à l'ordonnée du sommet $\Omega$ qui est $1$), on a donc :
+
+    \begin{itemize}
+        \item Si $m > 1$  : l'équation n'a \textbf{aucune solution}.
+        \item Si $m = 1$  : l'équation a \textbf{une seule solution} ($x = 2$).
+        \item Si $m < 1$  : l'équation a \textbf{deux solutions distinctes}.
+    \end{itemize}
+\end{enumerate}
+\end{Solution}
 
 \end{document}

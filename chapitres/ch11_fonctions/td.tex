@@ -2,7 +2,7 @@
 % TD.TEX — Chapitre 11 : Fonctions numériques
 % GÉNÉRÉ AUTOMATIQUEMENT depuis source.tex par Claude Code.
 % Ne pas modifier ce fichier — modifier source.tex à la place.
-% Commande : "Génère td.tex depuis source.tex"
+% Commande : /generer ch11_fonctions
 % ============================================================
 % CONTENU INCLUS : Activités + Applications + Exercices
 %                  (SANS corrections, SANS cours)
@@ -85,16 +85,675 @@
 
 \begin{multicols*}{2}
 
-% ============================================================
-% CONTENU EXTRAIT DE source.tex
-% Balises incluses : ACTIVITE, APPLICATION, EXERCICE
-% Balises exclues  : SOLUTION_*, DEFINITION, PROPRIETE,
-%                   TECHNIQUES, EXEMPLE, REMARQUE
-% ============================================================
+\begin{Activite}[][5 min]
+Ahmed dispose d'un morceau de fil de fer de $20\text{ cm}$ de longueur.
+Il le plie pour former un rectangle de longueur $x$ et de largeur $y$.
+\begin{enumerate}
+    \item Exprimer la largeur $y$ en fonction de la longueur $x$.
+    \item Déterminer l'intervalle $D$ auquel doit appartenir $x$ pour que ce rectangle puisse exister.
+    \item Montrer que la surface du rectangle, notée $S(x)$, s'écrit $S(x) = 10x - x^2$
+    \item Calculer la surface lorsque $x = 2$, puis lorsque $x = 8$.
+    \item Pour quelle(s) valeur(s) de $x$ la surface est-elle égale à $25\text{ cm}^2$ ?
+\end{enumerate}
+\end{Activite}
 
-% [Claude Code insère ici uniquement les blocs ACTIVITE,
-%  APPLICATION et EXERCICE de source.tex, dans l'ordre
-%  d'apparition]
+
+\begin{Application}[][10 min]
+Déterminer l'ensemble de définition de la fonction $f$ dans chacun des cas suivants :
+\begin{enumerate}
+    \item $f(x) = x^2 - 2x + 1$
+    \item $f(x) = \dfrac{x+1}{2x-8}$
+    \item $f(x) = \sqrt{2-x}$
+    \item $f(x) = \sqrt{x^2 - 5x + 6}$
+    \item $f(x) = \dfrac{\sqrt{x}}{x^2 - 2x + 1}$
+    \item $f(x) = \dfrac{x+4}{|x| - 3}$
+    \item $f(x) = \dfrac{\sqrt{2-x}}{\sqrt{4x+2}}$
+    \item $f(x) = \sqrt{\dfrac{2-x}{4x+2}}$
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}[][5 min]
+\noindent
+On considère les fonctions numériques $f$ et $g$ définies par :
+$f(x) = \frac{1}{\sqrt{x}-2} \quad \text{et} \quad g(x) = \frac{\sqrt{x}+2}{x-4}$
+
+Montrer que $f=g$.
+\end{Application}
+
+
+\begin{Application}[][5 min]
+\noindent
+Considérons la fonction $f$ définie par $f(x) = \frac{x^2}{x+1}$
+
+Parmi les points $A(0;0)$, $B(-1;1)$, $C\left(3;\frac{9}{4}\right)$ et $D(2;4)$
+
+déterminer ceux qui appartiennent à $(C_f)$.
+\end{Application}
+
+
+\begin{Activite}[][10 min]
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{enumerate}
+    \item Soit $f$ la fonction définie sur $\R$ par $f(x) = 3x^2$ et sa courbe $\mathcal{C}_f$ représentée ci-contre :
+        \begin{enumerate}
+            \item Vérifier que pour tout $x \in D_f$, $f(-x) = f(x)$
+            \item Quelle est la propriété géométrique vérifiée par $\mathcal{C}_f$ ?
+        \end{enumerate}
+        \vspace{1cm}
+    \item Soit $g$ la fonction définie sur $\R^*$ par $g(x) = x^3$ et sa courbe $\mathcal{C}_g$ représentée ci-contre :
+        \begin{enumerate}
+            \item Vérifier que pour tout $x \in D_g$, $g(-x) = -g(x)$
+            \item Quelle est la propriété géométrique vérifiée par $\mathcal{C}_g$ ?
+        \end{enumerate}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.24\linewidth}
+        \vspace{-0.5cm}
+        \begin{tikzpicture}[scale=1.2]
+            \begin{axis}[
+                width=\linewidth,
+                height=\linewidth,
+                axis lines=middle,
+                axis line style={thick, black, -stealth},
+                xmin=-2, xmax=2,
+                ymin=-0.5, ymax=3.5,
+                xtick={-1,1}, ytick={1,2,3},
+                tick style={color=black},
+                tick label style={font=\footnotesize\sffamily, color=black},
+                clip=false
+            ]
+            \addplot[thick, color=SecondaryColor, smooth, domain=-1.05:1.05, samples=50] {3*x^2};
+            \node[right, font=\footnotesize\sffamily\itshape, color=SecondaryColor] at (axis cs: 0.5, 3) {$\mathcal{C}_f$};
+            \node[below left, font=\footnotesize\sffamily, color=black] at (axis cs: 0, 0) {$O$};
+            \end{axis}
+        \end{tikzpicture}
+\vspace{0.5cm}
+        \begin{tikzpicture}[scale=1.2]
+            \begin{axis}[
+                width=\linewidth,
+                height=\linewidth,
+                axis lines=middle,
+                axis line style={thick, black, -stealth},
+                xmin=-2, xmax=2,
+                ymin=-2.5, ymax=2.5,
+                xtick={-1,1}, ytick={-1,1},
+                tick style={color=black},
+                tick label style={font=\footnotesize\sffamily, color=black},
+                clip=false
+            ]
+            \addplot[thick, color=SecondaryColor, smooth, domain=-1.3:1.3, samples=60] {x^3};
+            \node[right, font=\footnotesize\sffamily\itshape, color=SecondaryColor] at (axis cs: 0.8, 1) {$\mathcal{C}_g$};
+            \node[below right, font=\footnotesize\sffamily, color=black] at (axis cs: 0, 0) {$O$};
+            \end{axis}
+        \end{tikzpicture}
+\end{minipage}%
+
+\end{Activite}
+
+
+\begin{Application}[][10 min]
+Étudier la parité de la fonction $f$ dans chacun des cas suivants :
+    \begin{enumerate}
+    \item $f(x) = x^2 - 3|x| + 2$
+    \item $f(x) = 2x^3 - 5x$
+    \item $f(x) = \sqrt{x - 1}$
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}[][10 min]
+Soit $f$ la fonction définie par : $f(x) = x^2 + x$
+\begin{enumerate}
+    \item Calculer $f(1)$ et $f(-1)$.
+    \item En déduire que $f$ n'est ni paire, ni impaire.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}[][10 min]
+\noindent
+\begin{minipage}[t]{0.45\linewidth}
+\vspace{0pt}
+Soit $f$ une fonction paire définie sur $[-6 ; 6]$ par
+
+sa courbe $\mathcal{C}_f$ représentée ci-contre :
+\begin{enumerate}
+    \item Compléter la construction de $(C_f)$.
+    \item Déterminer $f(6)$.
+    \item Calculer $f(-3)$ et $f(3)$.
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.55\linewidth}
+\vspace{0pt}
+\begin{center}
+\begin{tikzpicture}[x=0.72cm, y=0.72cm]
+    \draw[black!12, step=1, solid] (-6.5,-2.5) grid (6.5,3.5);
+    \draw[->, >=stealth, thick, black] (-6.5,0) -- (6.5,0)
+        node[below right, font=\small\sffamily] {$x$};
+    \draw[->, >=stealth, thick, black] (0,-2.5) -- (0,3.5)
+        node[left, font=\small\sffamily] {$y$};
+    \foreach \x in {-6,-5,-4,-3,-2,-1,1,2,3} {
+        \draw[PrimaryColor] (\x, 0.08) -- (\x, -0.08);
+    }
+    \node[below, font=\small\sffamily, color=black] at (-6, -0.15) {$-6$};
+    \node[below, font=\small\sffamily, color=black] at (-5, -0.15) {$-5$};
+    \node[above left, font=\small\sffamily, color=black] at (-2,  0.1) {$-2$};
+    \node[above right, font=\small\sffamily, color=black] at ( 2,  0.1) {$2$};
+    \node[below left, font=\small\sffamily, color=black] at (0, 0) {$O$};
+    \foreach \y in {-1,1,2,3} {
+        \draw[PrimaryColor] (0.08, \y) -- (-0.08, \y);
+    }
+    \node[right, font=\small\sffamily, color=black] at (0.12, -1) {$-1$};
+    \node[right, font=\small\sffamily, color=black] at (0.12,  1) {$1$};
+    \node[right, font=\small\sffamily, color=black] at (0.12,  2) {$2$};
+    \node[right, font=\small\sffamily, color=black] at (0.12,  3) {$3$};
+    \draw[very thick, SecondaryColor] (-6, 3) -- (-2, -1);
+    \draw[very thick, SecondaryColor] (0, 2) -- (2, -1);
+    \filldraw[black] (-6,  3) circle (2pt);
+    \filldraw[black] (-2, -1) circle (2pt);
+    \filldraw[black] ( 0, -1) circle (2pt);
+    \filldraw[black] ( 0,  2) circle (2pt);
+    \filldraw[black] ( 2, -1) circle (2pt);
+    \node[right, font=\small\sffamily\itshape, color=SecondaryColor]
+        at (4, 2) {$(C_f)$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{Application}
+
+
+\begin{Application}[][10 min]
+\noindent
+\begin{minipage}[t]{0.55\linewidth}
+\vspace{0pt}
+Soit $f$ une fonction impaire définie sur $D = [-4 ; -1] \cup [1 ; 4]$ :
+\begin{enumerate}
+    \item Compléter le tracé de $(C_f)$.
+    \item Déterminer $f(4)$ et $f(2)$.
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.45\linewidth}
+\vspace{0pt}
+\begin{center}
+\begin{tikzpicture}[x=0.72cm, y=0.72cm]
+    \draw[black!12, step=1, solid] (-4.8,-0.5) grid (4.7,4.5);
+    \draw[->, >=stealth, thick, black] (-5,0) -- (5,0)
+        node[below right, font=\small\sffamily] {$x$};
+    \draw[->, >=stealth, thick, black] (0,-1) -- (0,4.5)
+        node[right, font=\small\sffamily] {$y$};
+    \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+        \draw[PrimaryColor] (\x, 0.08) -- (\x, -0.08);
+    }
+    \node[above left,  font=\small\sffamily, color=black] at (-4, 0) {$-4$};
+    \node[below left,  font=\small\sffamily, color=black] at (-2, 0) {$-2$};
+    \node[below left,  font=\small\sffamily, color=black] at (-1, 0) {$-1$};
+    \node[below right, font=\small\sffamily, color=black] at ( 1, 0) {$1$};
+    \node[below right, font=\small\sffamily, color=black] at ( 4, 0) {$4$};
+    \node[below left,  font=\small\sffamily, color=black] at ( 0, 0) {$O$};
+    \foreach \y in {1,2,4} {
+        \draw[PrimaryColor] (0.08, \y) -- (-0.08, \y);
+    }
+    \node[left, font=\small\sffamily, color=black] at (0,  4) {$4$};
+    \node[left, font=\small\sffamily, color=black] at (0,  1) {$1$};
+    \draw[very thick, SecondaryColor] (-4, 0) -- (-2, 3) -- (-1, 1);
+    \filldraw[black] (-4, 0) circle (2pt);
+    \filldraw[black] (-2,  3) circle (2pt);
+    \filldraw[black] (-1,  1) circle (2pt);
+    \node[right, font=\small\sffamily\itshape, color=SecondaryColor]
+        at (-4, 2) {$(C_f)$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{Application}
+
+
+\begin{Application}[][10 min]
+Soit $f$ la fonction numérique définie sur $\mathbb{R}$ par : $f(x) = 2x^2 + 3$
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Soient $a$ et $b$ de $[0 ; +\infty[$ tels que $a < b$. Montrer que $f(a) < f(b)$
+        \item En déduire la monotonie de $f$ sur $\mathbb{R}^+$.
+    \end{enumerate}
+    \item Étudier la monotonie de $f$ sur $\mathbb{R}^-$.
+    \item Donner le tableau de variations de $f$ sur $\R$.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}[][10 min]
+Soit $f$ la fonction définie sur $\mathbb{R}$ par : $f(x) = x^2 - 6x + 5$
+\begin{enumerate}
+    \item Soit $a$ et $b$ deux réels distincts. Montrer que $T(a;b) = a+b-6$
+    \item Étudier la monotonie de $f$ sur chacun des deux intervalles $]-\infty ; 3]$ et $[3 ; +\infty[$.
+    \item Dresser le tableau de variations de $f$.
+    \item Comparer les nombres $f(2026)$ et $f(2027)$.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}[][10 min]
+\noindent
+\begin{minipage}[t]{0.7\linewidth}
+\vspace{0pt}
+La représentation graphique ci-contre, représente la courbe d'une fonction $f$.
+
+Répondre, par lecture graphique aux questions suivantes :
+\begin{enumerate}
+    \item Préciser l'ensemble de définition $D_f$ de $f$.
+    \item Déterminer les images par $f$ de $-1$ ; $0$ ; $1$ et $2$.
+    \item Dresser le tableau de variation de $f$ sur $D_f$.
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.35\linewidth}
+\vspace{0pt}
+\begin{center}
+\begin{tikzpicture}[x=0.85cm, y=0.85cm]
+    \draw[black!12, step=1, solid] (-1.5,-2.5) grid (3.6,2.8);
+    \draw[->, >=stealth, thick, black] (-2,0) -- (4,0)
+        node[below right, font=\small\sffamily] {$x$};
+    \draw[->, >=stealth, thick, black] (0,-2.5) -- (0,3)
+        node[left, font=\small\sffamily] {$y$};
+    \foreach \x in {-1,1,2,3} {
+        \draw[PrimaryColor] (\x, 0.07) -- (\x, -0.07);
+    }
+    \node[below left,  font=\small\sffamily] at (-1, 0) {$-1$};
+    \node[below right, font=\small\sffamily] at ( 1, 0) {$1$};
+    \node[below right, font=\small\sffamily] at ( 2, 0) {$2$};
+    \node[below right, font=\small\sffamily] at ( 3, 0) {$3$};
+    \node[below left,  font=\small\sffamily] at (  0, 0) {$O$};
+    \foreach \y in {-2,-1,1,2} {
+        \draw[PrimaryColor] (0.07, \y) -- (-0.07, \y);
+    }
+    \node[left, font=\small\sffamily] at (0,  2) {$2$};
+    \node[left, font=\small\sffamily] at (0,  1) {$1$};
+    \node[left, font=\small\sffamily] at (0, -1) {$-1$};
+    \node[left, font=\small\sffamily] at (0, -2) {$-2$};
+    \draw[very thick, SecondaryColor, smooth, samples=100, domain=-1:3]
+        plot (\x, {\x*\x*\x - 3*\x*\x + 2});
+    \filldraw[black] (-1, -2) circle (2pt);
+    \filldraw[black] ( 3,  2) circle (2pt);
+    \node[above right, font=\small\sffamily\itshape, color=SecondaryColor]
+        at (0.3, 1.7) {$(C_f)$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{Application}
+
+
+
+\begin{Application}[][10 min]
+Soit $f$ la fonction numérique définie par son tableau de variations :
+
+\vspace{0.3cm}
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=1, espcl=1.4]{$x$ / 0.7, $f(x)$ / 1.9}{$-7$, $-5$, $0$, $5$, $7$}
+    \tkzTabVar{+/ , -/ $4$, +D/ / }
+\end{tikzpicture}
+\end{center}
+\vspace{0.2cm}
+
+\begin{enumerate}
+    \item Déterminer $D_f$.
+    \item Recopier et compléter le tableau ci-dessus sachant que $f$ est paire.
+    \item Recopier et compléter le tableau ci-dessus sachant que $f$ est impaire.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}[][15 min]
+Soit $f$ une fonction numérique définie par :
+$$f(x) = x + \frac{4}{x}$$
+
+\begin{enumerate}
+    \item Déterminer $D_f$ ; puis montrer que $f$ est impaire.
+    \item Soit $a$ et $b$ de $\R^*$ tel que $a \neq b$.
+    Montrer que :
+    $$\frac{f(b) - f(a)}{b - a} = \frac{ab - 4}{ab}$$
+    \item Étudier les variations de $f$ sur chacun des intervalles $]0 ; 2]$ et $[2 ; +\infty[$.
+    \item En déduire les variations de $f$ sur chacun des intervalles $]-\infty ; -2]$ et $[-2 ; 0[$.
+    \item Dresser le tableau de variations de $f$.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Activite}[][5 min]
+Un joueur de foot tire un coup franc. La hauteur du ballon (exprimée en mètres) par rapport au sol en fonction du temps $t$ (exprimé en secondes) est donnée par la fonction $h$ définie sur l'intervalle $[0; 6]$ par :
+$$h(t) = -t^2 + 6t$$
+
+\begin{enumerate}
+    \item Calculer $h(0)$ et $h(6)$. Que signifient ces deux résultats pour le ballon ?
+    \item Calculer la hauteur du ballon après $3$ secondes.
+    \item
+    \begin{enumerate}
+    \item Montrer que pour tout $t \in [0; 6]$, on a : $h(t) - 9 = -(t - 3)^2$
+    \item En déduire que pour tout $t \in [0; 6]$, on a : $h(t) \leq 9$
+    \end{enumerate}
+    \item Quelle est la hauteur maximale atteinte par le ballon ? À quel instant est-elle atteinte ?
+\end{enumerate}
+\end{Activite}
+
+
+
+\begin{Application}[][10 min]
+On considère la fonction $f(x) = x^2 - 6x + 7$
+\begin{enumerate}
+    \item Vérifier que $f(x) \geq -2$ pour tout $x$ de $\mathbb{R}$.
+    \item Calculer $f(3)$, puis en déduire que $-2$ est le minimum de $f$ sur $\mathbb{R}$.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}[][10 min]
+On considère la fonction $f(x) = -2x^2 + 4x + 3$ et $D_f = \mathbb{R}$
+\begin{enumerate}
+    \item Montrer que pour tout $x$ de $\mathbb{R}$ ; $f(x) \leq 5$.
+    \item Calculer $f(1)$, puis en déduire que $5$ est le maximum de $f$ sur $\mathbb{R}$.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}[][10 min]
+Soit $f$ une fonction définie par : \quad $f(x) = x + \frac{4}{x}$
+\begin{enumerate}
+    \item Montrer que $4$ est le minimum de $f$ sur $]0 ; +\infty[$.
+    \item Montrer que $-4$ est le maximum de $f$ sur $]-\infty ; 0[$.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}[][10 min]
+Soit $f$ la fonction numérique définie par : \quad
+$f(x) = \frac{x^2 - 3}{2x^2 + 4}$
+
+\begin{enumerate}
+  \item Déterminer $D_f$ puis étudier la parité de la fonction $f$.
+  \item Calculer les images des nombres suivants $0 \ ; 1 \ $ et $ -1$ par $f$.
+  \item
+  \begin{enumerate}
+    \item Résoudre dans $\mathbb{R}$ l'équation : $f(x) = \frac{1}{2}$
+    \item Montrer que, pour tout réel $x$ : $f(x) \leqslant \frac{1}{2}$
+    \item Le nombre $\frac{1}{2}$ est-il un maximum de $f$ sur $\mathbb{R}$ ?
+  \end{enumerate}
+  \item
+  \begin{enumerate}
+    \item Montrer que pour tout $x$ de $\mathbb{R}$ : $f(x) \geqslant -\frac{3}{4}$
+    \item Le nombre $-\frac{3}{4}$ est-il un minimum de $f$ sur $\mathbb{R}$ ?
+  \end{enumerate}
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}[][10 min]
+Considérons les fonctions $f$ et $g$ définies sur $\mathbb{R}$ par :
+ $f(x) = \cos(x) \quad \text{et} \quad g(x) = \sin(x) $
+\begin{enumerate}
+    \item Étudier la parité de $f$ et $g$.
+    \item Calculer $f(x+2\pi)$ et $g(x+2\pi)$ ; déduire.
+    \item Préciser puis compléter les courbes de $f$ et $g$ représentées ci-dessous.
+\end{enumerate}
+
+\begin{center}
+    \begin{tikzpicture}[x=0.9cm, y=1cm]
+        \draw[->, >=stealth, thick, black] (-7.5,0) -- (7.5,0) node[below right, font=\sffamily\small] {$x$};
+        \draw[->, >=stealth, thick, black] (0,-1.5) -- (0,1.5) node[left, font=\sffamily\small] {$y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+        \draw[dashed, black!30] (-7.5,1) -- (7,1);
+        \draw[dashed, black!30] (-7.5,-1) -- (7,-1);
+        \node[left, font=\sffamily\footnotesize] at (0,1) {$1$};
+        \node[left, font=\sffamily\footnotesize] at (0,-1) {$-1$};
+        \foreach \k/\label in {
+            -4/-2\pi, -3/-\frac{3\pi}{2}, -2/-\pi, -1/-\frac{\pi}{2},
+             1/\frac{\pi}{2}, 2/\pi, 3/\frac{3\pi}{2}, 4/2\pi
+        } {
+            \draw (\k*pi/2, 0.1) -- (\k*pi/2, -0.1) node[below, font=\sffamily\footnotesize] {$\label$};
+        }
+        \draw[very thick, SecondaryColor, domain=0:pi, samples=100] plot (\x, {cos(\x r)});
+    \end{tikzpicture}
+    \hfill
+    \begin{tikzpicture}[x=0.9cm, y=1cm]
+        \draw[->, >=stealth, thick, black] (-7.5,0) -- (7.5,0) node[below right, font=\sffamily\small] {$x$};
+        \draw[->, >=stealth, thick, black] (0,-1.5) -- (0,1.5) node[left, font=\sffamily\small] {$y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+        \draw[dashed, black!30] (-7.5,1) -- (7,1);
+        \draw[dashed, black!30] (-7.5,-1) -- (7,-1);
+        \node[left, font=\sffamily\footnotesize] at (0,1) {$1$};
+        \node[left, font=\sffamily\footnotesize] at (0,-1) {$-1$};
+        \foreach \k/\label in {
+            -4/-2\pi, -3/-\frac{3\pi}{2}, -2/-\pi, -1/-\frac{\pi}{2},
+             1/\frac{\pi}{2}, 2/\pi, 3/\frac{3\pi}{2}, 4/2\pi
+        } {
+            \draw (\k*pi/2, 0.1) -- (\k*pi/2, -0.1) node[below, font=\sffamily\footnotesize] {$\label$};
+        }
+        \draw[very thick, SecondaryColor, domain=0:pi, samples=100] plot (\x, {sin(\x r)});
+    \end{tikzpicture}
+\end{center}
+
+\end{Application}
+
+
+\begin{Exercice}[][15 min]
+On considère la fonction numérique $f$ définie sur $\mathbb{R}$ par : \quad
+$f\big(x\big) = \dfrac{2x}{x^2 + 1}$
+\vspace{0.2cm} \\
+On note $\big(\mathcal{C}_f\big)$ sa courbe représentative dans un repère orthonormé $\big(O; \vect{i}; \vect{j}\big)$.
+
+\begin{enumerate}
+    \item Déterminer $D_f$, puis étudier la parité de $f$.
+    \item Calculer $f\big(0\big)$, $f\big(1\big)$ et $f\big(2\big)$.
+
+    \item Soient $a$ et $b$ deux réels distincts de l'intervalle $[0; +\infty[$.
+    \begin{enumerate}
+        \item Montrer que :
+        $T\big(a; b\big) = \dfrac{2\big(1 - ab\big)}{\big(a^2 + 1\big)\big(b^2 + 1\big)}$
+        \item Étudier la monotonie de $f$ sur $[0; 1]$ et sur $[1; +\infty[$.
+        \item En déduire la monotonie de $f$ sur $[-1; 0]$ et sur $]-\infty; -1]$.
+        \item Dresser le tableau de variations de $f$ sur $\R$.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Montrer que pour tout réel $x \in \mathbb{R}$, on a : $1 - f\big(x\big) = \dfrac{\big(x - 1\big)^2}{x^2 + 1}$
+        \item En déduire que pour tout $x \in \mathbb{R}$, on a : $f\big(x\big) \leqslant 1$
+    \end{enumerate}
+    \item Résoudre dans $\mathbb{R}$ l'équation $f\big(x\big) = 1$
+          En déduire que le nombre $1$ est le maximum de $f$ sur $\mathbb{R}$.
+    \item En utilisant la parité de $f$, montrer que $-1$ est le minimum de $f$ sur $\mathbb{R}$ et préciser en quel point il est atteint.
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Activite}[][10 min]
+Soit $f$ la fonction définie sur $\mathbb{R}$ par : $f(x) = ax^2$ \quad ($a \in \mathbb{R}^*$)
+
+On note $\big(\mathcal{C}_f\big)$ la courbe de $f$ dans un repère orthonormé $\big(O; \vect{i}; \vect{j}\big)$.
+\begin{enumerate}
+    \item Étudier la parité de $f$.
+    \item Soient $x$ et $y$ deux réels distincts.
+
+    Montrer que : \quad $T(x;y) = a(x+y) $
+    \item Étudier la monotonie de $f$ sur $[0 ; +\infty[$.
+    \item En déduire la monotonie de $f$ sur $]-\infty ; 0]$.
+    \item Dresser le tableau de variations de $f$ sur $\R$.
+    \item On pose $a=1$.
+    \begin{enumerate}
+        \item Compléter le tableau suivant :
+        \vspace{0.1cm}
+         \begin{center}
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{|Sc|*{6}{Sc|}}
+                \hline
+                $x$    & $-2$ & $-1$ & $0$ & $1$ & $2$  \\ \hline
+                $f(x)$ &       &       &     &   &    \\
+                \hline
+            \end{tabular}
+        \end{center}
+        \vspace{0.1cm}
+        \item Construire $\big(\mathcal{C}_f\big)$.
+    \end{enumerate}
+\end{enumerate}
+\end{Activite}
+
+
+\begin{Application}[][10 min]
+Soit $f$ la fonction définie sur $\mathbb{R}$ par : $f(x) = 3x^2$
+\begin{enumerate}
+    \item Calculer $f(1)$ et $f(2)$ ; puis déduire $f(-1)$ et $f(-2)$.
+    \item Dresser le tableau de variations de $f$ sur $\mathbb{R}$.
+    \item Tracer $(\mathcal{C}_f)$.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}[][10 min]
+Soit $g$ la fonction définie sur $\mathbb{R}$ par : $g(x) = ax^2$  ~ ($a \in \mathbb{R}^*$)
+\begin{enumerate}
+    \item Déterminer la valeur de $a$ tel que $g(2) = -3$.
+    \item Dresser le tableau de variations de $g$ sur $\mathbb{R}$.
+    \item Tracer $(\mathcal{C}_g)$.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}[][10 min]
+Déterminer le sommet et l'axe de symétrie de $f$ dans chacun des cas suivants : \\
+\textbf{1.} $f(x) = x^2 + 2x + 1$ \qquad
+\textbf{2.} $f(x) = -2x^2 + 6x + 1$ \qquad
+\textbf{3.} $f(x) = x^2 - 1$
+\end{Application}
+
+
+\begin{Application}[][10 min]
+Dresser le tableau de variations de $f$ dans chacun des cas suivants : \\
+\textbf{1.} $f(x) = x^2 + 2x + 1$ \qquad
+\textbf{2.} $f(x) = -2x^2 + 6x + 1$ \qquad
+\textbf{3.} $f(x) = x^2 - 1$
+\end{Application}
+
+
+\begin{Application}[][10 min]
+Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x) = 2x^2 - 4x + 3$
+\begin{enumerate}
+    \item Déterminer la nature de $(C_f)$ en précisant ses éléments caractéristiques.
+    \item Dresser le tableau de variations de $f$
+    \item Construire la courbe de $f$
+    \item Discuter suivant les valeurs de $m$ les solutions de l'équation $f(x) = m \quad (m \in \mathbb{R})$.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Activite}[][10 min]
+Soit $f$ la fonction définie sur $\mathbb{R^*}$ par : $f(x) = \frac{a}{x}$ \quad ($a \in \mathbb{R}^*$)
+
+On note $\big(\mathcal{C}_f\big)$ la courbe de $f$ dans un repère orthonormé $\big(O; \vect{i}; \vect{j}\big)$.
+\begin{enumerate}
+    \item Vérifier que $f$ est impaire.
+    \item Soient $x$ et $y$ deux réels distincts de $]0; +\infty[$ .
+
+    Montrer que : \quad $T(x;y) = -\frac{a}{xy} $
+    \item Étudier la monotonie de $f$ sur $]0 ; +\infty[$.
+    \item En déduire la monotonie de $f$ sur $]-\infty ; 0[$.
+    \item Dresser le tableau de variations de $f$ sur $\R^*$.
+    \item On pose $a=1$.
+    \begin{enumerate}
+        \item Compléter le tableau suivant :
+        \vspace{0.1cm}
+         \begin{center}
+            \renewcommand{\arraystretch}{1.2}
+           \begin{tabular}{|Sc|*{8}{Sc|}}
+    \hline
+    $x$    & $-4$ & $-2$ & $-1$ & $-0,5$ & $0,5$ & $1$ & $2$ & $4$ \\ \hline
+    $f(x)$ &      &      &      &        &       &     &     &     \\
+    \hline
+\end{tabular}
+        \end{center}
+        \vspace{0.1cm}
+        \item Construire $\big(\mathcal{C}_f\big)$.
+    \end{enumerate}
+\end{enumerate}
+\end{Activite}
+
+
+\begin{Application}
+Soit $f$ la fonction définie par : $f(x) = \frac{3}{x}$
+
+\begin{enumerate}
+    \item Donner le tableau de variations de $f$.
+    \item Construire la courbe $(\mathcal{C}_f)$ dans un repère orthonormal $(O; \vec{i}, \vec{j})$.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}
+Soit $f$ la fonction définie par : $f(x) = -\frac{2}{x}$
+
+\begin{enumerate}
+    \item Donner le tableau de variations de $f$.
+    \item Construire la courbe $(\mathcal{C}_f)$ dans un repère orthonormal $(O; \vec{i}, \vec{j})$.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Application}
+Donner le tableau des variations des fonctions suivantes :
+    \begin{itemize}
+    \item $f(x) = \frac{3x-1}{x+1}$
+    \item $g(x) = \frac{x}{2x+3}$
+    \item $h(x) = \frac{-3}{3x-1}$
+\end{itemize}
+\end{Application}
+
+
+\begin{Application}
+Soit $f$ la fonction définie par $f(x) = \frac{2x+1}{x-1}$
+\begin{enumerate}
+    \item Déterminer $D_f$.
+    \item Déterminer la nature de $(C_f)$ en précisant ses éléments caractéristiques.
+    \item Construire $(C_f)$.
+\end{enumerate}
+\end{Application}
+
+
+\begin{Exercice}
+On considère les fonctions numériques $f$ et $g$ définies par : \quad
+$f(x) = -x^2 + 4x - 3  \quad \text{et} \quad  g(x) = \frac{x-3}{x-2}$
+\vspace{0.2cm} \\
+On note $(C_f)$ et $(C_g)$ leurs courbes représentatives dans un repère orthonormé $(O;\vec{i};\vec{j})$.
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+    \item Déterminer la nature de $(C_f)$ en précisant ses éléments caractéristiques.
+    \item Calculer $f(0)$, $f(1)$ et $f(3)$.
+    \item Dresser le tableau de variations de la fonction $f$ sur $\mathbb{R}$.
+\end{enumerate}
+\item
+\begin{enumerate}
+    \item Déterminer $D_g$, l'ensemble de définition de la fonction $g$.
+    \item Dresser le tableau de variations de la fonction $g$ sur $D_g$.
+    \item Déterminer la nature de $(C_g)$ en précisant ses éléments caractéristiques.
+\end{enumerate}
+\item
+\begin{enumerate}
+    \item Montrer que pour tout $x \in D_g$, on a :
+    $f(x) - g(x) = \frac{(x-3)(-x^2+3x-3)}{x-2}$
+    \item Montrer que pour tout réel $x$ : $-x^2+3x-3 < 0 $
+    \item En déduire les coordonnées du point d'intersection des courbes $(C_f)$ et $(C_g)$.
+\end{enumerate}
+\item Tracer les asymptotes, la courbe $(C_g)$ et la courbe $(C_f)$ dans le même repère $(O;\vec{i};\vec{j})$.
+\item  Par lecture graphique, résoudre dans $\mathbb{R}$ l'inéquation :
+$\frac{x-3}{x-2} \le -x^2 + 4x - 3$
+\item  Discuter graphiquement, suivant les valeurs du paramètre réel $m$, le nombre de solutions de l'équation :$$-x^2 + 4x - 3 - m = 0$$
+\end{enumerate}
+\end{Exercice}
+
 
 \end{multicols*}
 
