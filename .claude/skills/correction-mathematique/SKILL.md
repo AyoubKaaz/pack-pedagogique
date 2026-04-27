@@ -103,6 +103,70 @@ Ne jamais diviser avant d'avoir simplifié f(b) - f(a).
 
 ---
 
+## RÈGLE SPÉCIALE — Tableau de variations et de signes (TCS)
+
+> **Contexte** : la notion de limite n'est pas au programme du Tronc Commun.
+> Il est donc interdit d'afficher des valeurs (numériques ou symboliques)
+> aux bornes ±∞ dans la ligne de f(x). Seules les images aux points
+> intérieurs (valeurs exactes calculées) sont affichées.
+
+### Tableau de VARIATIONS — règles \tkzTabVar
+
+**✅ Correct — bornes extrêmes sans valeur, images intérieures affichées**
+```latex
+\tkzTabVar{-/, +/{f(a)}, -/}
+\tkzTabVar{+/, -/{f(a)}, +/{f(b)}, -/}
+```
+
+**❌ Interdit — valeurs de limite aux bornes**
+```latex
+\tkzTabVar{-/{-\infty}, +/{f(a)}, -/{-\infty}}   % interdit
+\tkzTabVar{+/{+\infty}, -/{f(a)}, +/{+\infty}}   % interdit
+\tkzTabVar{-/{0}, +/{f(a)}, -/{2}}                % interdit si 0 ou 2 sont des limites
+```
+
+**Règle de codage \tkzTabVar :**
+| Position | Syntaxe | Explication |
+|----------|---------|-------------|
+| Borne gauche (−∞) | `-/` ou `+/` | Flèche seule, pas de valeur |
+| Borne droite (+∞) | `-/` ou `+/` | Flèche seule, pas de valeur |
+| Point intérieur (extremum local) | `+/{$f(a)$}` ou `-/{$f(a)$}` | Valeur exacte affichée |
+
+**Exemple complet — fonction du 2e degré :**
+```latex
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=1.5, espcl=2.5]
+        {$x$ / 0.6, $f(x)$ / 1.5}
+        {$-\infty$, $-1$, $+\infty$}
+    \tkzTabVar{+/, -/{$-4$}, +/}
+\end{tikzpicture}
+\end{center}
+```
+
+**Exemple complet — fonction du 3e degré avec deux extrema :**
+```latex
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=1.5, espcl=2.5]
+        {$x$ / 0.6, $f(x)$ / 1.5}
+        {$-\infty$, $-2$, $1$, $+\infty$}
+    \tkzTabVar{-/, +/{$5$}, -/{$-3$}, +/}
+\end{tikzpicture}
+\end{center}
+```
+
+### Tableau de SIGNES — règles \tkzTabLine
+
+Dans un tableau de signes, la ligne de f(x) contient uniquement des signes
+`+`, `-`, `z` (zéro), `d` (discontinuité), `t` (valeur interdite).
+Aucune valeur numérique n'apparaît dans cette ligne — pas de modification nécessaire.
+
+Les bornes ±∞ n'apparaissent que dans la ligne $x$ (en-tête) — c'est autorisé
+car ce sont les bornes du domaine, pas des valeurs de la fonction.
+
+---
+
 ## RÈGLE SPÉCIALE — Étude de la parité d'une fonction
 
 Suivre OBLIGATOIREMENT cette structure en 2 étapes :
