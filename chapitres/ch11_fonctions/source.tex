@@ -2928,21 +2928,19 @@ On note $\big(\mathcal{C}_f\big)$ la courbe de $f$ dans un repère orthonormé $
 \begin{Solution}
 \begin{enumerate}
 \item \textbf{Vérifier que $f$ est impaire :}
-
-On a :  $D_f = \mathbb{R}^*$
-
-Soit $x \in \mathbb{R}^*$. on a : $-x \in \mathbb{R}^*$
-
-On a :
-\begin{align*}
-    f(-x) = \dfrac{a}{-x} 
-    = -\dfrac{a}{x} 
-    = -f(x)
-\end{align*}
-La fonction $f$ est \textbf{impaire}.
+\begin{itemize}
+    \item On a :  $D_f = \mathbb{R}^*$, donc $D_f$ est symétrique par rapport à $0$.
+    \item Soit $x \in \mathbb{R}^*$. On a :
+             $f(-x) = \dfrac{a}{-x} = -\dfrac{a}{x} = -f(x) $
+             
+    Donc pour tout $x$ de $\R^*$, $f(-x)=-f(x)$
+    
+    D'où $f$ est \textbf{impaire}.
+\end{itemize}
 
 \item \textbf{Montrer que $T(x;y) = -\dfrac{a}{xy}$ :}
-Soient $x$ et $y$ deux réels distincts de l'intervalle $]0 ; +\infty[$.
+
+Soient $x$ et $y$ deux réels distincts de $]0 ; +\infty[$.
 
 On a :
 \begin{align*}
@@ -2962,13 +2960,12 @@ On a donc :
 \[ T(x;y) = -\dfrac{a}{xy} \]
 
 \item \textbf{Étudier la monotonie de $f$ sur $]0 ; +\infty[$ :}
-Soient $x$ et $y$ deux réels distincts de l'intervalle $]0 ; +\infty[$.
-On a : \quad $x > 0$ et $y > 0$
 
-Le produit de deux nombres strictement positifs est strictement positif.
+Soient $x$ et $y$ deux réels distincts de $]0 ; +\infty[$.
+On a : \quad $x > 0$ et $y > 0$
 Donc : \quad $xy > 0$
 
-Nous constatons que le signe du taux de variation dépend du paramètre $a$.
+Donc le signe du taux de variation dépend de $a$.
 \begin{itemize}
     \item \textbf{Premier cas : $a > 0$}
     On a :
@@ -2994,35 +2991,29 @@ Nous constatons que le signe du taux de variation dépend du paramètre $a$.
 \end{itemize}
 
 \item \textbf{En déduire la monotonie de $f$ sur $]-\infty ; 0[$ :}
-\textbf{Règle d'or :} La parité permet de déduire le sens de variation d'une fonction sur des intervalles symétriques sans aucun calcul supplémentaire. Le sens de variation d'une fonction impaire est conservé sur son intervalle symétrique.
-
-Le sens de variation sur $]-\infty ; 0[$ est le même que celui sur $]0 ; +\infty[$ (car la fonction $f$ est impaire).
-
 \begin{itemize}
-    \item Si $a > 0$ : Puisque la fonction $f$ est strictement décroissante sur $]0 ; +\infty[$, son sens de variation est conservé sur $]-\infty ; 0[$.
-    Donc : \quad La fonction $f$ est strictement décroissante sur $]-\infty ; 0[$.
+    \item Si $a > 0$ : Puisque $f$ est strictement décroissante sur $]0 ; +\infty[$, 
+    Donc $f$ est strictement décroissante sur $]-\infty ; 0[$.
     
-    \item Si $a < 0$ : Puisque la fonction $f$ est strictement croissante sur $]0 ; +\infty[$, son sens de variation est conservé sur $]-\infty ; 0[$.
-    Donc : \quad La fonction $f$ est strictement croissante sur $]-\infty ; 0[$.
+    \item Si $a < 0$ : Puisque $f$ est strictement croissante sur $]0 ; +\infty[$,
+    Donc $f$ est strictement croissante sur $]-\infty ; 0[$.
 \end{itemize}
 
 \item \textbf{Dresser le tableau de variations de $f$ sur $\mathbb{R}^*$ :}
-Nous constatons que $0$ est une valeur interdite, nécessitant une double barre dans le tableau.
-\vspace{0.3cm}
 
 \noindent
 \begin{minipage}{0.48\linewidth}
-    \textbf{Cas $a > 0$ :} \\
+    \textbf{Cas $a > 0$ :} \\[5pt]
     \begin{tikzpicture}
-        \tkzTabInit[lgt=2,espcl=2]{$x$ / 1, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
+        \tkzTabInit[lgt=1,espcl=2.4]{$x$ / 0.6, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
         \tkzTabVar{+ / $0$, -D+ / $-\infty$ / $+\infty$, - / $0$}
     \end{tikzpicture}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\linewidth}
-    \textbf{Cas $a < 0$ :} \\
+    \textbf{Cas $a < 0$ :} \\[5pt]
     \begin{tikzpicture}
-        \tkzTabInit[lgt=2,espcl=2]{$x$ / 1, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
+        \tkzTabInit[lgt=1,espcl=2.4]{$x$ / 0.6, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
         \tkzTabVar{- / $0$, +D- / $+\infty$ / $-\infty$, + / $0$}
     \end{tikzpicture}
 \end{minipage}
