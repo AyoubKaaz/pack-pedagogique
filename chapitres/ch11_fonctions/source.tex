@@ -3047,10 +3047,10 @@ Donc le signe du taux de variation dépend de $a$.
     \item \textbf{Construire $\big(\mathcal{C}_f\big)$ :}
     \begin{center}
         \begin{tikzpicture}[scale=1]
+           \draw[step=1cm, black!20, very thin] (-4.6,-3.6) grid (4.7,3.8);
             \draw[thick,->] (-5,0) -- (5,0) node[right] {$x$};
             \draw[thick,->] (0,-4) -- (0,4) node[above] {$f(x)$};
-            \draw[step=1cm, black!20, very thin] (-5,-4) grid (5,4);
-
+            
             \foreach \x in {-4,-3,-2,-1,1,2,3,4} \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
             \foreach \y in {-3,-2,-1,1,2,3} \draw (0.1,\y) -- (-0.1,\y) node[left] {$\y$};
             \node[below left] at (0,0) {$O$};
@@ -3180,18 +3180,46 @@ Soit $f$ la fonction définie par : $f(x) = \frac{3}{x}$
 \begin{enumerate}
     \item \textbf{Tableau de variations de $f$ :}
 
-    Puisque $a = 3 > 0$, la fonction $f(x) = \dfrac{3}{x}$ est \textbf{strictement décroissante} sur $]-\infty\,;\,0[$ et sur $]0\,;\,+\infty[$.
+    Puisque $a = 3 > 0$, $f$ est \textbf{strictement décroissante} sur chacun des intervalles $]-\infty\,;\,0[$ et $]0\,;\,+\infty[$.
 
     \begin{center}
     \begin{tikzpicture}
         \tkzTabInit[lgt=1, espcl=2.5]{$x$ / 0.7, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
-        \tkzTabVar{+/ $0^-$ , -D+/ , -/ $0^+$ }
+        \tkzTabVar{+/  , -D+/ , -/ }
     \end{tikzpicture}
     \end{center}
 
     \item \textbf{Construction de $(\mathcal{C}_f)$ :}
 
     $(\mathcal{C}_f)$ est une \textbf{hyperbole} de centre $O(0\,;\,0)$, d'asymptotes les axes du repère.
+    \begin{center}
+    \begin{tikzpicture}[scale=1]
+        % Grille de fond symétrique
+        \draw[step=1cm, black!20, very thin] (-3.8,-3.8) grid (3.8,3.8);
+        
+        % Axes
+        \draw[thick, -stealth, black] (-4,0) -- (4,0) node[right, font=\sffamily\small] {$x$};
+        \draw[thick, -stealth, black] (0,-4) -- (0,4) node[above, font=\sffamily\small] {$f(x)$};
+        
+        % Graduations
+        \foreach \x in {-3,-2,-1,1,2,3} \draw (\x,0.1) -- (\x,-0.1) node[below, font=\sffamily\footnotesize] {$\x$};
+        \foreach \y in {-3,-2,-1,1,2,3} \draw (0.1,\y) -- (-0.1,\y) node[left, font=\sffamily\footnotesize] {$\y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+
+        % Courbe de f(x) = 3/x
+        % Branche négative
+        \draw[very thick, SecondaryColor, domain=-3.8:-0.79, samples=100, smooth, variable=\x] plot ({\x}, {3/\x});
+        
+        % Branche positive
+        \draw[very thick, SecondaryColor, domain=0.79:3.8, samples=100, smooth, variable=\x] plot ({\x}, {3/\x}) node[right, font=\sffamily\small\itshape, color=SecondaryColor] {$\big(\mathcal{C}_f\big)$};
+
+        % Points remarquables : (1,3), (3,1), (-1,-3), (-3,-1)
+        \filldraw[black] (1,3) circle (1.5pt);
+        \filldraw[black] (3,1) circle (1.5pt);
+        \filldraw[black] (-1,-3) circle (1.5pt);
+        \filldraw[black] (-3,-1) circle (1.5pt);
+    \end{tikzpicture}
+\end{center}
 \end{enumerate}
 \end{Solution}
 
@@ -3211,18 +3239,47 @@ Soit $f$ la fonction définie par : $f(x) = -\frac{2}{x}$
 \begin{enumerate}
     \item \textbf{Tableau de variations de $f$ :}
 
-    Puisque $a = -2 < 0$, la fonction $f(x) = \dfrac{-2}{x}$ est \textbf{strictement croissante} sur $]-\infty\,;\,0[$ et sur $]0\,;\,+\infty[$.
+    Puisque $a = -2 < 0$,$f$ est \textbf{strictement croissante} sur chacun des intervalles $]-\infty\,;\,0[$ et sur $]0\,;\,+\infty[$.
 
     \begin{center}
     \begin{tikzpicture}
         \tkzTabInit[lgt=1, espcl=2.5]{$x$ / 0.7, $f(x)$ / 2}{$-\infty$, $0$, $+\infty$}
-        \tkzTabVar{-/ $0^+$ , +D-/ , +/ $0^-$ }
+        \tkzTabVar{-/  , +D-/ , +/  }
     \end{tikzpicture}
     \end{center}
 
     \item \textbf{Construction de $(\mathcal{C}_f)$ :}
 
     $(\mathcal{C}_f)$ est une \textbf{hyperbole} de centre $O(0\,;\,0)$, d'asymptotes les axes du repère.
+    \begin{center}
+    \begin{tikzpicture}[scale=1]
+        % Grille de fond symétrique
+        \draw[step=1cm, black!20, very thin] (-3.8,-3.8) grid (3.8,3.8);
+        
+        % Axes
+        \draw[thick, -stealth, black] (-4,0) -- (4,0) node[right, font=\sffamily\small] {$x$};
+        \draw[thick, -stealth, black] (0,-4) -- (0,4) node[above, font=\sffamily\small] {$f(x)$};
+        
+        % Graduations
+        \foreach \x in {-3,-2,-1,1,2,3} \draw (\x,0.1) -- (\x,-0.1) node[below, font=\sffamily\footnotesize] {$\x$};
+        \foreach \y in {-3,-2,-1,1,2,3} \draw (0.1,\y) -- (-0.1,\y) node[left, font=\sffamily\footnotesize] {$\y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
+
+        % Courbe de f(x) = -2/x
+        % Branche négative (quadrant supérieur gauche)
+        % On limite le domaine à -0.53 pour ne pas dépasser la grille (y max ≈ 3.8)
+        \draw[very thick, SecondaryColor, domain=-3.8:-0.53, samples=100, smooth, variable=\x] plot ({\x}, {-2/\x});
+        
+        % Branche positive (quadrant inférieur droit)
+        \draw[very thick, SecondaryColor, domain=0.53:3.8, samples=100, smooth, variable=\x] plot ({\x}, {-2/\x}) node[right, font=\sffamily\small\itshape, color=SecondaryColor] {$\big(\mathcal{C}_f\big)$};
+
+        % Points remarquables : (-2,1), (-1,2), (1,-2), (2,-1)
+        \filldraw[black] (-2,1) circle (1.5pt);
+        \filldraw[black] (-1,2) circle (1.5pt);
+        \filldraw[black] (1,-2) circle (1.5pt);
+        \filldraw[black] (2,-1) circle (1.5pt);
+    \end{tikzpicture}
+\end{center}
 \end{enumerate}
 \end{Solution}
 
@@ -3305,9 +3362,9 @@ Donner le tableau des variations des fonctions suivantes :
 \begin{itemize}
     \item $f(x) = \dfrac{3x-1}{x+1}$ : \quad $a = 3$, $b = -1$, $c = 1$, $d = 1$.
 
-    $\Delta = ad - bc = 3 \times 1 - (-1) \times 1 = 4 > 0$
+    $\Delta = \begin{vmatrix} 3 & -1 \\ 1 & 1 \end{vmatrix} = 3 \times 1 - (-1) \times 1 = 4 > 0$
 
-    Puisque $\Delta > 0$, $f$ est \textbf{strictement croissante} sur $]-\infty\,;\,-1[$ et sur $]-1\,;\,+\infty[$.
+    Puisque $\Delta > 0$, $f$ est \textbf{strictement croissante} sur chacun des intervalles $]-\infty\,;\,-1[$ et sur $]-1\,;\,+\infty[$.
 
     \begin{center}
     \begin{tikzpicture}
@@ -3318,11 +3375,9 @@ Donner le tableau des variations des fonctions suivantes :
 
     \item $g(x) = \dfrac{x}{2x+3}$ : \quad $a = 1$, $b = 0$, $c = 2$, $d = 3$.
 
-    $\Delta = ad - bc = 1 \times 3 - 0 \times 2 = 3 > 0$
+    $\Delta = \begin{vmatrix} 1 & 0 \\ 2 & 3 \end{vmatrix} = 1 \times 3 - 0 \times 2 = 3 > 0$
 
-    Le pôle est $x = -\dfrac{d}{c} = -\dfrac{3}{2}$.
-
-    Puisque $\Delta > 0$, $g$ est \textbf{strictement croissante} sur $\left]-\infty\,;\,-\dfrac{3}{2}\right[$ et sur $\left]-\dfrac{3}{2}\,;\,+\infty\right[$.
+    Puisque $\Delta > 0$, $g$ est \textbf{strictement croissante} sur chacun des intervalles $\left]-\infty\,;\,-\dfrac{3}{2}\right[$ et sur $\left]-\dfrac{3}{2}\,;\,+\infty\right[$.
 
     \begin{center}
     \begin{tikzpicture}
@@ -3333,11 +3388,9 @@ Donner le tableau des variations des fonctions suivantes :
 
     \item $h(x) = \dfrac{-3}{3x-1}$ : \quad $a = 0$, $b = -3$, $c = 3$, $d = -1$.
 
-    $\Delta = ad - bc = 0 \times (-1) - (-3) \times 3 = 9 > 0$
+    $\Delta = \begin{vmatrix} 0 & -3 \\ 3 & -1 \end{vmatrix} = 0 \times (-1) - (-3) \times 3 = 9 > 0$
 
-    Le pôle est $x = -\dfrac{d}{c} = \dfrac{1}{3}$.
-
-    Puisque $\Delta > 0$, $h$ est \textbf{strictement croissante} sur $\left]-\infty\,;\,\dfrac{1}{3}\right[$ et sur $\left]\dfrac{1}{3}\,;\,+\infty\right[$.
+    Puisque $\Delta > 0$, $h$ est \textbf{strictement croissante} sur chacun des intervalles $\left]-\infty\,;\,\dfrac{1}{3}\right[$ et sur $\left]\dfrac{1}{3}\,;\,+\infty\right[$.
 
     \begin{center}
     \begin{tikzpicture}
@@ -3368,32 +3421,62 @@ Soit $f$ la fonction définie par $f(x) = \frac{2x+1}{x-1}$
 \begin{Solution}
 \begin{enumerate}
     \item \textbf{Déterminons $D_f$ :}
-
-    \begin{align*}
-        D_f &= \left\{ x \in \mathbb{R} \mid x - 1 \neq 0 \right\} = \left\{ x \in \mathbb{R} \mid x \neq 1 \right\}
-    \end{align*}
+    
+      On a : \quad  $D_f = \left\{ x \in \mathbb{R} \mid x - 1 \neq 0 \right\} = \left\{ x \in \mathbb{R} \mid x \neq 1 \right\}$
+      
     Donc : \quad $D_f = \mathbb{R} \setminus \{1\} = \left]-\infty\,;\,1\right[ \cup \left]1\,;\,+\infty\right[$
 
     \item \textbf{Nature de $(C_f)$ et éléments caractéristiques :}
 
     On a $a = 2$, $b = 1$, $c = 1$, $d = -1$.
 
-    $\Delta = ad - bc = 2 \times (-1) - 1 \times 1 = -3 < 0$
-
-    La courbe $(C_f)$ est une \textbf{hyperbole} de centre :
-    \[ \Omega\!\left(-\dfrac{d}{c}\,;\,\dfrac{a}{c}\right) = \Omega(1\,;\,2) \]
+    La courbe $(C_f)$ est une \textbf{hyperbole} de centre 
+     $\Omega\!\left(-\dfrac{d}{c}\,;\,\dfrac{a}{c}\right) = \Omega(1\,;\,2)$ 
 
     Les asymptotes sont :
-    \begin{itemize}
-        \item Asymptote \textbf{verticale} : $x = 1$
-        \item Asymptote \textbf{horizontale} : $y = 2$
-    \end{itemize}
+         $x = 1$ (Asymptote \textbf{verticale})
+        et $y = 2$ (Asymptote \textbf{horizontale}).
+        
+    Donc : $(C_f)$ est une hyperbole de centre $\Omega(1\,;\,2)$, d'asymptotes $x = 1$ et $y = 2$.
 
-    Puisque $\Delta = -3 < 0$, $f$ est \textbf{strictement décroissante} sur $]-\infty\,;\,1[$ et sur $]1\,;\,+\infty[$.
+    \textit{Puisque $\Delta = -3 < 0$, $f$ est \textbf{strictement décroissante} sur $]-\infty\,;\,1[$ et sur $]1\,;\,+\infty[$.}
 
     \item \textbf{Construction de $(C_f)$ :}
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        % Grille de fond
+        \draw[step=1cm, black!20, very thin] (-3.8,-3.8) grid (5.8,7.8);
+        
+        % Axes
+        \draw[thick, -stealth, black] (-4,0) -- (6,0) node[right, font=\sffamily\small] {$x$};
+        \draw[thick, -stealth, black] (0,-4) -- (0,8) node[above, font=\sffamily\small] {$f(x)$};
+        
+        % Graduations
+        \foreach \x in {-3,-2,-1,1,2,3,4,5} \draw (\x,0.1) -- (\x,-0.1) node[below, font=\sffamily\footnotesize] {$\x$};
+        \foreach \y in {-3,-2,-1,1,2,3,4,5,6,7} \draw (0.1,\y) -- (-0.1,\y) node[left, font=\sffamily\footnotesize] {$\y$};
+        \node[below left, font=\sffamily\small] at (0,0) {$O$};
 
-    $(C_f)$ est une hyperbole de centre $\Omega(1\,;\,2)$, d'asymptotes $x = 1$ et $y = 2$.
+        % --- ASYMPTOTES (Couleur AccentColor : Rouge) ---
+        % Asymptote verticale : x = 1
+        \draw[thick, AccentColor, dashed] (1,-3.8) -- (1,7.8) node[pos=0.05, right, font=\sffamily\scriptsize] {$x=1$};
+        
+        % Asymptote horizontale : y = 2
+        \draw[thick, AccentColor, dashed] (-3.8,2) -- (5.8,2) node[pos=0.05, above, font=\sffamily\scriptsize] {$y=2$};
+
+        % --- COURBE (SecondaryColor : Bleu) ---
+        % Branche de gauche (x < 1)
+        \draw[very thick, SecondaryColor, domain=-3.8:0.25, samples=100, smooth, variable=\x] plot ({\x}, {(2*\x+1)/(\x-1)});
+        
+        % Branche de droite (x > 1)
+        \draw[very thick, SecondaryColor, domain=1.6:5.8, samples=100, smooth, variable=\x] plot ({\x}, {(2*\x+1)/(\x-1)}) node[right, font=\sffamily\small\itshape, color=SecondaryColor] {$\big(\mathcal{C}_f\big)$};
+
+        % Points remarquables
+        \filldraw[black] (-2,1) circle (1.5pt);
+        \filldraw[black] (0,-1) circle (1.5pt);
+        \filldraw[black] (2,5) circle (1.5pt);
+        \filldraw[black] (4,3) circle (1.5pt);
+    \end{tikzpicture}
+\end{center}
 \end{enumerate}
 \end{Solution}
 
@@ -3442,14 +3525,14 @@ $\frac{x-3}{x-2} \le -x^2 + 4x - 3$
         On a $a = -1$, $b = 4$, $c = -3$.
 
         Puisque $a \neq 0$, $(C_f)$ est une \textbf{parabole}.
-        \[ -\dfrac{b}{2a} = -\dfrac{4}{-2} = 2 \qquad f(2) = -4 + 8 - 3 = 1 \]
+        \[ -\dfrac{b}{2a} = -\dfrac{4}{-2} = 2 \quad \text{et} \quad f(2) = -4 + 8 - 3 = 1 \]
         Le \textbf{sommet} est $S(2\,;\,1)$, l'axe de symétrie est la droite $x = 2$.
 
         Puisque $a = -1 < 0$, la parabole est dirigée vers le \textbf{bas}.
 
         \item \textbf{Calculons $f(0)$, $f(1)$ et $f(3)$ :}
 
-        \[ f(0) = -3 \qquad f(1) = -1 + 4 - 3 = 0 \qquad f(3) = -9 + 12 - 3 = 0 \]
+        \[ f(0) = -3 \quad;\quad f(1) = -1 + 4 - 3 = 0 \quad;\quad f(3) = -9 + 12 - 3 = 0 \]
 
         \item \textbf{Tableau de variations de $f$ :}
 
@@ -3465,18 +3548,17 @@ $\frac{x-3}{x-2} \le -x^2 + 4x - 3$
     \begin{enumerate}
         \item \textbf{Déterminons $D_g$ :}
 
-        \begin{align*}
-            D_g = \left\{ x \in \mathbb{R} \mid x - 2 \neq 0 \right\} = \left\{ x \in \mathbb{R} \mid x \neq 2 \right\}
-        \end{align*}
+         On a : \quad   $D_g = \left\{ x \in \mathbb{R} \mid x - 2 \neq 0 \right\} = \left\{ x \in \mathbb{R} \mid x \neq 2 \right\}$
+         
         Donc : \quad $D_g = \mathbb{R} \setminus \{2\} = \left]-\infty\,;\,2\right[ \cup \left]2\,;\,+\infty\right[$
 
         \item \textbf{Tableau de variations de $g$ :}
 
         On a $a = 1$, $b = -3$, $c = 1$, $d = -2$.
 
-        $\Delta = ad - bc = 1 \times (-2) - (-3) \times 1 = -2 + 3 = 1 > 0$
+        $\Delta = \begin{vmatrix} 1 & -3 \\ 1 & -2 \end{vmatrix} = 1 \times (-2) - (-3) \times 1 = -2 + 3 = 1 > 0$
 
-        Puisque $\Delta > 0$, $g$ est \textbf{strictement croissante} sur $]-\infty\,;\,2[$ et sur $]2\,;\,+\infty[$.
+        Puisque $\Delta > 0$, $g$ est \textbf{strictement croissante} sur chacun des intervalles $]-\infty\,;\,2[$ et sur $]2\,;\,+\infty[$.
 
         \begin{center}
         \begin{tikzpicture}
@@ -3494,68 +3576,106 @@ $\frac{x-3}{x-2} \le -x^2 + 4x - 3$
     \begin{enumerate}
         \item \textbf{Montrons que $f(x) - g(x) = \dfrac{(x-3)(-x^2+3x-3)}{x-2}$ :}
 
-        Pour $x \in D_g$, on a :
-        \begin{align*}
-            f(x) - g(x) &= (-x^2 + 4x - 3) - \dfrac{x-3}{x-2} \\[6pt]
-                        &= \dfrac{(-x^2 + 4x - 3)(x-2) - (x-3)}{x-2}
-        \end{align*}
-        Calculons le numérateur :
-        \begin{align*}
-            (-x^2+4x-3)(x-2) - (x-3)
-            &= -(x-1)(x-3)(x-2) - (x-3) \\
-            &= (x-3)\big[-(x-1)(x-2) - 1\big] \\
-            &= (x-3)\big[-(x^2-3x+2) - 1\big] \\
-            &= (x-3)(-x^2+3x-3)
-        \end{align*}
+        Soit $x \in D_g$. On a :
+\begin{align*}
+    f(x) - g(x) &= (-x^2 + 4x - 3) - \frac{x-3}{x-2} \\
+    &= \frac{(-x^2 + 4x - 3)(x-2)}{x-2} - \frac{x-3}{x-2} \\
+    &= \frac{(-x^2 + 4x - 3)(x-2) - (x-3)}{x-2} \\
+    &= \frac{-x^3 + 2x^2 + 4x^2 - 8x - 3x + 6 - x + 3}{x-2} \\
+    &= \frac{-x^3 + 6x^2 - 12x + 9}{x-2}
+\end{align*}
+
+Calculons le membre droit pour le comparer :
+\begin{align*}
+    \frac{(x-3)(-x^2+3x-3)}{x-2} &= \frac{-x^3 + 3x^2 - 3x + 3x^2 - 9x + 9}{x-2} \\
+    &= \frac{-x^3 + 6x^2 - 12x + 9}{x-2}
+\end{align*}
         D'où : \quad $f(x) - g(x) = \dfrac{(x-3)(-x^2+3x-3)}{x-2}$
 
         \item \textbf{Montrons que $-x^2+3x-3 < 0$ pour tout $x \in \mathbb{R}$ :}
 
-        Le discriminant est $\Delta' = 3^2 - 4 \times (-1) \times (-3) = 9 - 12 = -3 < 0$.
+        le discriminant du trinôme $-x^2+3x-3$ est : $\Delta = 3^2 - 4 \times (-1) \times (-3) = 9 - 12 = -3 < 0$
 
-        Puisque $\Delta' < 0$ et $a = -1 < 0$, on a $-x^2+3x-3 < 0$ pour tout réel $x$.
+        Puisque $\Delta < 0$ et $a = -1 < 0$, on a $-x^2+3x-3 < 0$ pour tout réel $x$.
 
         \item \textbf{Point d'intersection de $(C_f)$ et $(C_g)$ :}
 
-        $f(x) = g(x)$ équivaut à $\dfrac{(x-3)(-x^2+3x-3)}{x-2} = 0$.
+        Cherchons les solutions de l'équation $f(x) = g(x)$ sur $D_g$.
 
-        Puisque $-x^2+3x-3 < 0$ pour tout $x$ et $x \neq 2$ :
-        \[ f(x) = g(x) \Leftrightarrow x - 3 = 0 \Leftrightarrow x = 3 \]
+Soit $x \in D_g$. On a :
+\begin{align*}
+    f(x) = g(x) &\text{ équivaut à } \quad f(x) - g(x) = 0 \\
+    &\text{ équivaut à } \quad \frac{(x-3)(-x^2+3x-3)}{x-2} = 0 \\
+    &\text{ équivaut à } \quad (x-3)(-x^2+3x-3) = 0 \\
+    &\text{ équivaut à } \quad x - 3 = 0 \text{ ou } -x^2+3x-3 = 0
+\end{align*}
 
-        On a $f(3) = 0$. Le point d'intersection est $\mathbf{A(3\,;\,0)}$.
+Puisque pour tout réel $x$, $-x^2+3x-3 < 0$ (d'après la question précédente), 
+On a donc :
+\begin{align*}
+   f(x) = g(x) ~~ \text{ équivaut à } ~~ x - 3 = 0 \text{ équivaut à } x = 3
+\end{align*}
+
+Et on a : $f(3) = 0$
+
+\textbf{Conclusion :}
+$ (C_f) \text{ et } (C_g) \text{ se coupent en un unique point } A(3;0$) 
     \end{enumerate}
 
     \item \textbf{Tracé des courbes :}
 
-    Tracer les asymptotes $x = 2$ et $y = 1$, puis les courbes $(C_f)$ (parabole) et $(C_g)$ (hyperbole) dans le même repère, en marquant le point $A(3\,;\,0)$.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+% Grille et axes
+\draw[step=1cm,gray!30,very thin] (-2.5,-4.5) grid (5.5,4.5);
+\draw[thick,->] (-2.5,0) -- (5.5,0) node[below] {$x$};
+\draw[thick,->] (0,-4.5) -- (0,4.5) node[left] {$y$};
+\node[below left] at (0,0) {$O$};
+\draw[thick] (1,0.1) -- (1,-0.1) node[below] {$1$};
+\draw[thick] (0.1,1) -- (-0.1,1) node[left] {$1$};
+
+% Asymptotes
+\draw[AccentColor, dashed, thick] (2,-4.5) -- (2,4.5) node[above right] {$x=2$};
+\draw[AccentColor, dashed, thick] (-2.5,1) -- (5.5,1) node[above right] {$y=1$};
+
+% Courbe Cf (Parabole)
+\draw[SecondaryColor, thick, domain=-0.2:4.2, samples=100] plot (\x, {-\x*\x + 4*\x - 3}) node[right] {$(C_f)$};
+
+% Courbe Cg (Hyperbole)
+\draw[green!60!black, thick, domain=-2.5:1.7, samples=100] plot (\x, {(\x-3)/(\x-2)});
+\draw[green!60!black, thick, domain=2.25:5.5, samples=100] plot (\x, {(\x-3)/(\x-2)}) node[below] {$(C_g)$};
+
+% Points remarquables
+\fill[black] (3,0) circle (2pt) node[below right] {$A(3;0)$};
+\fill[black] (2,1) circle (2pt) node[above left] {$\Omega(2;1)$};
+\fill[black] (1,0) circle (2pt);
+\fill[black] (0,-3) circle (2pt);
+\fill[black] (4,-3) circle (2pt);
+
+\fill[black] (1,2) circle (2pt);
+\end{tikzpicture}
+\end{center}
 
     \item \textbf{Résolution de $\dfrac{x-3}{x-2} \leq -x^2+4x-3$ :}
 
-    L'inéquation équivaut à $g(x) \leq f(x)$, soit $f(x) - g(x) \geq 0$ :
-    \[ \dfrac{(x-3)(-x^2+3x-3)}{x-2} \geq 0 \]
+    L'inéquation $\dfrac{x-3}{x-2} \leq -x^2+4x-3$  équivaut à $g(x) \leq f(x)$
 
-    Puisque $-x^2+3x-3 < 0$, cela équivaut à $\dfrac{x-3}{x-2} \leq 0$.
-
-    \begin{center}
-    \begin{tikzpicture}
-        \tkzTabInit[lgt=1.5, espcl=2]{$x$ / 0.6, $x-3$ / 0.7, $x-2$ / 0.7, $\frac{x-3}{x-2}$ / 1}{$-\infty$, $2$, $3$, $+\infty$}
-        \tkzTabLine{ , -, t, -, z, +, }
-        \tkzTabLine{ , -, z, +, t, +, }
-        \tkzTabLine{ , +, d, -, z, +, }
-    \end{tikzpicture}
-    \end{center}
-
-    L'ensemble solution est : $\left]2\,;\,3\right]$
+    Cherchons donc les intervalles sur lesquels la courbe $(C_g)$ est située en dessous ou est confondue avec la courbe $(C_f)$.
+    
+    Par lecture graphique, nous constatons que $(C_g)$ est en dessous de $(C_f)$ pour toutes les abscisses comprises entre l'asymptote verticale $x=2$ (exclue) et le point d'intersection d'abscisse $x=3$ (incluse).
+    
+    Donc : \quad $ \text{L'ensemble solution est : } S = \big]2; 3\big] $
 
     \item \textbf{Discussion de $-x^2+4x-3-m = 0$ :}
 
     L'équation $f(x) = m$ représente l'intersection de $(C_f)$ avec la droite $y = m$.
 
-    Le discriminant est $\Delta_m = b^2 - 4a(c-m) = 16 - 4(-1)(-3-m) = 16 - 4(3+m) = 4(1-m)$.
+Par lecture graphique (en se référant à l'ordonnée du sommet $\Omega$ qui est $1$), on a donc :
+
     \begin{itemize}
-        \item Si $m > 1$ : $\Delta_m < 0$ : l'équation n'a \textbf{aucune solution}.
-        \item Si $m = 1$ : $\Delta_m = 0$ : l'équation a \textbf{une seule solution} ($x = 2$).
-        \item Si $m < 1$ : $\Delta_m > 0$ : l'équation a \textbf{deux solutions distinctes}.
+        \item Si $m > 1$  : l'équation n'a \textbf{aucune solution}.
+        \item Si $m = 1$  : l'équation a \textbf{une seule solution} ($x = 2$).
+        \item Si $m < 1$  : l'équation a \textbf{deux solutions distinctes}.
     \end{itemize}
 \end{enumerate}
 \end{Solution}
