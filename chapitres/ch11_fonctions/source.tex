@@ -3049,14 +3049,14 @@ Donc le signe du taux de variation dépend de $a$.
         \begin{tikzpicture}[scale=1]
             \draw[thick,->] (-5,0) -- (5,0) node[right] {$x$};
             \draw[thick,->] (0,-4) -- (0,4) node[above] {$f(x)$};
-            \draw[step=1cm,gray,very thin,dashed] (-5,-4) grid (5,4);
-            
+            \draw[step=1cm, black!20, very thin] (-5,-4) grid (5,4);
+
             \foreach \x in {-4,-3,-2,-1,1,2,3,4} \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
             \foreach \y in {-3,-2,-1,1,2,3} \draw (0.1,\y) -- (-0.1,\y) node[left] {$\y$};
             \node[below left] at (0,0) {$O$};
-            
-            \draw[very thick, blue, domain=-4.5:-0.25, smooth, samples=100] plot ({\x}, {1/\x});
-            \draw[very thick, blue, domain=0.25:4.5, smooth, samples=100] plot ({\x}, {1/\x}) node[right] {$\big(\mathcal{C}_f\big)$};
+
+            \draw[very thick, SecondaryColor, domain=-4.5:-0.25, smooth, samples=100] plot ({\x}, {1/\x});
+            \draw[very thick, SecondaryColor, domain=0.25:4.5, smooth, samples=100] plot ({\x}, {1/\x}) node[right] {$\big(\mathcal{C}_f\big)$};
             
             \filldraw[black] (-4,-0.25) circle (1.5pt);
             \filldraw[black] (-2,-0.5) circle (1.5pt);
