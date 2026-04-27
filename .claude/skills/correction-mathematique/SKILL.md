@@ -279,7 +279,7 @@ Suivre OBLIGATOIREMENT cette structure en 2 étapes :
 ### Exemple 1 — Ensemble de définition (fraction)
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Solution}
+\begin{Solution}[Application][1]
 \begin{enumerate}
     \item $f\left( x \right) = \dfrac{x+1}{2x-8}$
     \begin{align*}
@@ -295,7 +295,7 @@ Suivre OBLIGATOIREMENT cette structure en 2 étapes :
 ### Exemple 2 — Ensemble de définition (fraction sous racine + tableau de signe)
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Solution}
+\begin{Solution}[Application][2]
 \begin{enumerate}
     \item $f\left( x \right) = \sqrt{\dfrac{x-3}{x+1}}$
     \[ D_f = \left\{ x \in \mathbb{R} \mid \dfrac{x-3}{x+1} \geq 0 \quad \text{et} \quad x + 1 \neq 0 \right\} \]
@@ -322,7 +322,7 @@ Suivre OBLIGATOIREMENT cette structure en 2 étapes :
 ### Exemple 3 — Égalité de deux fonctions
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Solution}
+\begin{Solution}[Application][3]
 \begin{itemize}
     \item \textbf{Déterminons $D_f$ :}
      $f\left( x \right) = \dfrac{1}{\sqrt{x}-2}$
@@ -359,7 +359,7 @@ Puisque $D_f = D_g$ et pour tout $x$ de $D_f$, $f\left( x \right) = g\left( x \r
 ### Exemple 4 — Parité (étude complète)
 ```latex
 %% SOLUTION_APPLICATION
-\begin{Solution}
+\begin{Solution}[Application][4]
 \begin{enumerate}
     \item \textbf{Étude de la fonction $f\left( x \right) = 2x^3 - 5x$}
 
@@ -390,7 +390,7 @@ Puisque $D_f = D_g$ et pour tout $x$ de $D_f$, $f\left( x \right) = g\left( x \r
 ### Exemple 5 — Activité avec système de conditions
 ```latex
 %% SOLUTION_ACTIVITE
-\begin{Solution}
+\begin{Solution}[Activité][1]
 \begin{enumerate}
     \item \textbf{Déterminons l'intervalle $D$ auquel doit appartenir $x$ :}
 

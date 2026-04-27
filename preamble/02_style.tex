@@ -433,7 +433,8 @@
 % ==========================================
 
 % 14. Solution
+% #1 = type (Activité / Application / Exercice)   #2 = numéro
 \NewTColorBox{Solution}{ O{} O{} }{
-    emptyboxstyle={CSol}{SOLUTION\ifstrempty{#1}{}{~(#1)}}{#2},
+    emptyboxstyle={CSol}{SOLUTION\ifstrempty{#1}{}{ #1}\ifstrempty{#2}{}{ #2}}{},
     breakable
 }
