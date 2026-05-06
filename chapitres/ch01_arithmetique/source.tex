@@ -1,0 +1,223 @@
+% ============================================================
+% source.tex — Ch 01 : Arithmétique — Tronc Commun Maroc
+% ============================================================
+
+%% HEADER_APERCU — NE PAS EXTRAIRE
+\documentclass[10pt, a4paper]{article}
+\input{../../preamble/01_packages}
+\input{../../preamble/02_style}
+\input{../../preamble/03_macros}
+\geometry{a4paper, left=2.2cm, right=0.6cm, top=0.8cm, bottom=1.5cm}
+
+\begin{document}
+\pagestyle{cours}
+%% FIN_HEADER_APERCU
+
+%% SECTION
+\section{Ensemble $\N$ --- Nombres pairs et nombres impairs}
+
+%% DEFINITION
+\begin{Definition}[Notations et vocabulaires]
+Les nombres $0 ; 1 ; 2 ; 3 ; \ldots$ forment un ensemble appelé \textbf{ensemble des entiers naturels}, noté $\N$ :
+$$\N = \{0\,;\,1\,;\,2\,;\,3\,;\,4\,;\,5\,;\,\ldots\,;\,99\,;\,\ldots\}$$
+On note $\N^* = \N \setminus \{0\}$ l'ensemble des entiers naturels \textbf{non nuls} ($\N^*$ se lit « $\N$ privé de zéro »).
+\end{Definition}
+
+%% DEFINITION
+\begin{Definition}[Nombres pairs et nombres impairs]
+Soit $a$ un nombre entier naturel.
+\begin{itemize}
+  \item Un \textbf{nombre pair} est un multiple de $2$.
+  \item Un \textbf{nombre impair} est un nombre qui n'est pas pair.
+\end{itemize}
+\end{Definition}
+
+%% REMARQUE
+\begin{Remarque}
+\begin{itemize}
+  \item Il existe une infinité d'entiers naturels.
+  \item Un nombre pair se termine nécessairement par $0$, $2$, $4$, $6$ ou $8$.
+  \item Un nombre impair se termine nécessairement par $1$, $3$, $5$, $7$ ou $9$.
+\end{itemize}
+\end{Remarque}
+
+%% PROPRIETE
+\begin{Propriete}[Écriture d'un nombre pair ou impair quelconque]
+Un nombre naturel $n$ est \textbf{pair} si et seulement s'il s'écrit :
+$$n = 2k \quad \text{avec } k \in \N$$
+Un nombre naturel $n$ est \textbf{impair} si et seulement s'il s'écrit :
+$$n = 2k + 1 \quad \text{avec } k \in \N$$
+\end{Propriete}
+
+%% PROPRIETE
+\begin{Propriete}[Opérations sur les nombres pairs et impairs]
+\begin{itemize}
+  \item La somme de deux nombres de \textbf{même parité} est \textbf{paire}.
+  \item La somme de deux nombres de \textbf{parité différente} est \textbf{impaire}.
+  \item Si l'un des facteurs d'un produit est pair, alors ce produit est \textbf{pair}.
+  \item Un nombre élevé à une puissance conserve sa parité.
+\end{itemize}
+\end{Propriete}
+
+%% PROPRIETE
+\begin{Propriete}[Nombres consécutifs]
+Soient $n$ et $n+1$ deux entiers consécutifs.
+\begin{itemize}
+  \item La somme de deux entiers consécutifs est \textbf{impaire}.
+  \item Le produit de deux entiers consécutifs est \textbf{pair}.
+\end{itemize}
+\end{Propriete}
+
+%% SECTION
+\section{Multiples et diviseurs d'un entier naturel}
+
+%% DEFINITION
+\begin{Definition}[Multiples et diviseurs]
+Soient $a$ et $b$ deux entiers naturels. S'il existe un entier naturel $k$ tel que $a = k \times b$, on dit que :
+\begin{itemize}
+  \item $b$ \textbf{divise} $a$ (ou $b$ est un \textbf{diviseur} de $a$),
+  \item $a$ est \textbf{divisible} par $b$,
+  \item $a$ est un \textbf{multiple} de $b$.
+\end{itemize}
+\end{Definition}
+
+%% REMARQUE
+\begin{Remarque}
+\begin{itemize}
+  \item $0$ est un multiple de tous les nombres entiers naturels.
+  \item Tout entier naturel est divisible par $1$ et par lui-même.
+\end{itemize}
+\end{Remarque}
+
+%% PROPRIETE
+\begin{Propriete}[Opérations sur les multiples]
+Soient $a$, $b$ et $c$ des entiers naturels.
+\begin{itemize}
+  \item Si $a$ est multiple de $c$ et $b$ est multiple de $c$, alors $a + b$ est multiple de $c$ ;
+        et si de plus $a \geq b$, alors $a - b$ est multiple de $c$.
+  \item Si $a$ est multiple de $b$ et $b$ est multiple de $c$, alors $a$ est multiple de $c$ \emph{(transitivité)}.
+  \item Si $c$ est multiple de $a$, alors $nc$ est multiple de $a$ pour tout $n \in \N$.
+\end{itemize}
+\end{Propriete}
+
+%% PROPRIETE
+\begin{Propriete}[Opérations sur les diviseurs]
+Soient $a$, $b$ et $c$ des entiers naturels.
+\begin{itemize}
+  \item Si $a$ divise $b$ et $c$, et $b \geq c$, alors $a$ divise $b + c$ et $b - c$.
+  \item Si $a$ divise $b$, alors $a$ divise $bc$.
+\end{itemize}
+\end{Propriete}
+
+%% PROPRIETE
+\begin{Propriete}[Critères de divisibilité]
+\begin{itemize}
+  \item Divisible par $2$ : le chiffre des unités est pair.
+  \item Divisible par $3$ : la somme des chiffres est divisible par $3$.
+  \item Divisible par $4$ : le nombre formé par les deux derniers chiffres est divisible par $4$.
+  \item Divisible par $5$ : se termine par $0$ ou $5$.
+  \item Divisible par $6$ : divisible à la fois par $2$ et par $3$.
+  \item Divisible par $9$ : la somme des chiffres est divisible par $9$.
+\end{itemize}
+\end{Propriete}
+
+%% SECTION
+\section{Les nombres premiers}
+
+%% DEFINITION
+\begin{Definition}[Nombre premier]
+Un nombre est \textbf{premier} s'il possède exactement deux diviseurs : $1$ et lui-même.
+\end{Definition}
+
+%% REMARQUE
+\begin{Remarque}
+\begin{itemize}
+  \item $1$ n'est \textbf{pas} un nombre premier : il n'a qu'un seul diviseur.
+  \item $2$ est le seul nombre premier pair. Tous les autres nombres premiers sont impairs.
+  \item Tout entier naturel $\geq 2$ admet au moins un diviseur premier.
+  \item L'ensemble des nombres premiers est infini (théorème d'Euclide).
+\end{itemize}
+\end{Remarque}
+
+%% PROPRIETE
+\begin{Theoreme}[Test de primalité --- critère d'arrêt]
+Pour qu'un entier $n \geq 2$ soit premier, il faut et il suffit qu'aucun nombre premier $p$
+vérifiant $p \leq \sqrt{n}$ ne divise $n$.
+\end{Theoreme}
+
+%% PROPRIETE
+\begin{Theoreme}[Décomposition en produit de facteurs premiers]
+Tout entier naturel supérieur ou égal à $2$ se décompose de façon \textbf{unique} en produit
+de facteurs premiers.
+\end{Theoreme}
+
+%% SECTION
+\section{PGCD et PPCM}
+
+%% DEFINITION
+\begin{Definition}[PGCD et PPCM]
+Soient $a$ et $b$ deux entiers naturels non nuls.
+\begin{itemize}
+  \item Un \textbf{diviseur commun} de $a$ et $b$ est un entier qui divise à la fois $a$ et $b$.
+  \item Le \textbf{PGCD} (plus grand commun diviseur) se note $\operatorname{pgcd}(a,b)$ ou $a \wedge b$.
+  \item Le \textbf{PPCM} (plus petit multiple commun) se note $\operatorname{ppcm}(a,b)$ ou $a \vee b$.
+\end{itemize}
+\end{Definition}
+
+%% PROPRIETE
+\begin{Propriete}[Calcul du PGCD et du PPCM par décomposition en facteurs premiers]
+Soient $a$ et $b$ deux entiers naturels non nuls.
+\begin{itemize}
+  \item $\operatorname{pgcd}(a,b)$ est le produit des facteurs premiers \textbf{communs} élevés au \textbf{plus petit} exposant.
+  \item $\operatorname{ppcm}(a,b)$ est le produit de \textbf{tous} les facteurs premiers (communs ou non) élevés au \textbf{plus grand} exposant.
+\end{itemize}
+\end{Propriete}
+
+%% REMARQUE
+\begin{Remarque}
+Soient $a$ et $b$ deux entiers naturels non nuls.
+\begin{itemize}
+  \item $\operatorname{pgcd}(a,a) = a$ \quad;\quad $\operatorname{pgcd}(1,a) = 1$ \quad;\quad $\operatorname{pgcd}(a,0) = a$.
+  \item $\operatorname{ppcm}(a,a) = a$ \quad;\quad $\operatorname{ppcm}(1,a) = a$ \quad;\quad $\operatorname{ppcm}(a,0) = 0$.
+  \item Si $a$ divise $b$, alors $\operatorname{pgcd}(a,b) = a$ et $\operatorname{ppcm}(a,b) = b$.
+\end{itemize}
+\end{Remarque}
+
+%% PROPRIETE
+\begin{Propriete}[Relation entre PGCD et PPCM]
+Soient $a$ et $b$ deux entiers naturels non nuls. On a :
+$$\operatorname{pgcd}(a,b) \times \operatorname{ppcm}(a,b) = a \times b$$
+\end{Propriete}
+
+%% DEFINITION
+\begin{Definition}[Nombres premiers entre eux]
+Deux entiers $a$ et $b$ sont \textbf{premiers entre eux} si $\operatorname{pgcd}(a,b) = 1$,
+c'est-à-dire s'ils n'ont aucun diviseur commun autre que $1$.
+\end{Definition}
+
+%% REMARQUE
+\begin{Remarque}
+Il ne faut pas confondre \textbf{nombre premier} et \textbf{nombres premiers entre eux}.
+Par exemple, $15$ et $22$ sont premiers entre eux, mais ne sont pas des nombres premiers.
+\end{Remarque}
+
+%% TECHNIQUES
+\begin{Techniques}[Algorithme d'Euclide --- Calcul du PGCD]
+Pour calculer $\operatorname{pgcd}(a,b)$ avec $a > b$, on applique la règle :
+$$\operatorname{pgcd}(a,b) = \operatorname{pgcd}(b,r)$$
+où $r$ est le reste de la division euclidienne de $a$ par $b$ (i.e.\ $a = bq + r$, $r < b$).
+
+On répète l'opération jusqu'à obtenir un reste nul. Le PGCD est le \textbf{dernier reste non nul}.
+
+\textbf{Exemple :} Calculer $\operatorname{pgcd}(255,\,141)$.
+\begin{align*}
+  255 &= 1 \times 141 + 114 \\
+  141 &= 1 \times 114 + 27  \\
+  114 &= 4 \times 27  + 6   \\
+  27  &= 4 \times 6   + 3   \\
+  6   &= 2 \times 3   + 0
+\end{align*}
+Donc $\operatorname{pgcd}(255,\,141) = 3$.
+\end{Techniques}
+
+\end{document}
