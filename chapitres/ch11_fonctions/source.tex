@@ -8,6 +8,8 @@
 \input{../../preamble/01_packages}
 \input{../../preamble/02_style}
 \input{../../preamble/03_macros}
+\geometry{a4paper, left=2.2cm, right=0.6cm, top=0.8cm, bottom=1.5cm}
+
 \begin{document}
 \pagestyle{cours}
 %% FIN_HEADER_APERCU
@@ -17,16 +19,41 @@
 
 %% ACTIVITE
 \begin{Activite}[][5 min]
-Ahmed dispose d'un morceau de fil de fer de $20\text{ cm}$ de longueur.
-Il le plie pour former un rectangle de longueur $x$ et de largeur $y$.
-\begin{enumerate}
-    \item Exprimer la largeur $y$ en fonction de la longueur $x$.
-    \item Déterminer l'intervalle $D$ auquel doit appartenir $x$ pour que ce rectangle puisse exister.
-    \item Montrer que la surface du rectangle, notée $S(x)$, s'écrit $S(x) = 10x - x^2$
-    \item Calculer la surface lorsque $x = 2$, puis lorsque $x = 8$.
-    \item Pour quelle(s) valeur(s) de $x$ la surface est-elle égale à $25\text{ cm}^2$ ?
-\end{enumerate}
+\noindent
+\begin{minipage}[c]{0.7\textwidth}
+    Ali dispose d’un morceau de fil de fer de $20$ cm de longueur.
+    
+    Il le plie pour former un rectangle de dimensions $x$ et $y$.
+    \begin{enumerate}
+        \item Exprimer $y$ en fonction de $x$.
+        \item Déterminer l'intervalle $D$ auquel doit appartenir $x$ pour que ce rectangle puisse exister.
+        \item Montrer que la surface du rectangle, notée $S(x)$, s'écrit $S(x) = 10x - x^2$.
+        \item Calculer la surface lorsque $x = 2$, puis lorsque $x = 8$.
+        \item Pour quelle(s) valeur(s) de $x$ la surface est-elle égale à $25\text{ cm}^2$ ?
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\textwidth}
+    \centering
+    \begin{tikzpicture}
+        % 2. Le rectangle formé
+        \draw[ultra thick, SecondaryColor, fill=NeutralColor] (-3, 0) rectangle (1, 3);
+        
+        % Cotations du rectangle
+        % Dimension x (en bas)
+        \draw[<->, >=stealth, thick, PrimaryColor] (-3, -0.4) -- (1, -0.4) 
+            node[midway, below, font=\sffamily\bfseries] { $x$};
+        % Dimension y (à droite)
+        \draw[<->, >=stealth, thick, PrimaryColor] (1.4, 0) -- (1.4, 3) 
+            node[midway, right, font=\sffamily\bfseries] { $y$};
+            
+        % Aire à l'intérieur
+        \node[font=\sffamily\bfseries, PrimaryColor] at (-1, 1.5) {Aire = $S(x)$};
+    \end{tikzpicture}
+\end{minipage}%
 \end{Activite}
+
+
 
 %% SOLUTION_ACTIVITE
 \begin{Solution}[ACTIVITÉ][1]
@@ -93,9 +120,9 @@ Il le plie pour former un rectangle de longueur $x$ et de largeur $y$.
 \end{Solution}
 
 %% DEFINITION
-\begin{Definition}[Fonction numérique][]
+\begin{Definition}[][]
 \begin{itemize}
-    \item On appelle \textbf{fonction numérique} d'une variable réelle $x$ toute relation $x \mapsto f(x)$ qui associe à chaque $x$ au plus une valeur.
+    \item On appelle \textbf{fonction numérique} d'une variable réelle $x$ toute relation $x \mapsto f(x)$ qui associe à chaque réel $x$ au plus un réel, noté $f(x)$.
     \item Si $f(x)$ existe, on dit que $f(x)$ est l'\textbf{image} de $x$.
     \item L'ensemble des nombres réels $x$ qui ont une image par $f$ est appelé \textbf{ensemble de définition} de $f$ et se note $D_f$.
 \end{itemize}
@@ -131,8 +158,8 @@ Déterminer l'ensemble de définition de la fonction $f$ dans chacun des cas sui
     \item $f(x) = \sqrt{x^2 - 5x + 6}$
     \item $f(x) = \dfrac{\sqrt{x}}{x^2 - 2x + 1}$
     \item $f(x) = \dfrac{x+4}{|x| - 3}$
-    \item $f(x) = \dfrac{\sqrt{2-x}}{\sqrt{4x+2}}$
-    \item $f(x) = \sqrt{\dfrac{2-x}{4x+2}}$
+    \item $f\left( x \right) = \dfrac{\sqrt{x-3}}{\sqrt{x+1}}$
+    \item $f\left( x \right) = \sqrt{\dfrac{x-3}{x+1}}$
 \end{enumerate}
 \end{Application}
 
@@ -201,7 +228,7 @@ Déterminer l'ensemble de définition de la fonction $f$ dans chacun des cas sui
     \item $f\left( x \right) = \dfrac{\sqrt{x-3}}{\sqrt{x+1}}$
 
 
-        \[ D_f = \left\{ x \in \mathbb{R} \mid  x - 3 \geq 0 \quad \text{et} \quad x +   > 0 \right\} \]
+        \[ D_f = \left\{ x \in \mathbb{R} \mid  x - 3 \geq 0 \quad \text{et} \quad x + 1  > 0 \right\} \]
     Cherchons l'intersection des deux conditions :
     \begin{align*}
         \begin{cases} x - 3 \geq 0 \\ x + 1 > 0 \end{cases} &\text{ équivaut à } \begin{cases} x \geq 3 \\ x > -1 \end{cases} ~~
@@ -258,7 +285,7 @@ $x \mapsto \sqrt{\dfrac{P(x)}{Q(x)}}$ & $D_f = \left\{x \in \mathbb{R} / \dfrac{
 \section{Égalité de deux fonctions \duree{15 min}}
 
 %% DEFINITION
-\begin{Definition}[hi][]
+\begin{Definition}[][]
 Soient $f$ et $g$ deux fonctions et $D_f$ et $D_g$ leurs ensembles de définition respectifs. \\
 On dit que les fonctions $f$ et $g$ sont \textbf{égales } et on écrit $f = g$ si :
      $$D_f = D_g ~\text{ et pour tout}~  x ~\text{de}~ D_f : f(x) = g(x)$$
@@ -324,43 +351,50 @@ Puisque $D_f = D_g$ et pour tout $x$ de $D_f$, $f\left( x \right) = g\left( x \r
 \section{Représentation graphique d'une fonction \duree{15 min}}
 
 %% DEFINITION
-\begin{Definition}[hi][]
+\begin{Definition}[][]
 La \textbf{courbe représentative} de $f$ (ou \textbf{graphe} de $f$), notée $\mathcal{C}_f$, est l'ensemble des points $M(x\,;\,y)$ du plan tels que $x \in D_f$ et $y = f(x)$ :
 
 $$\mathcal{C}_f = \bigl\{M\bigl(x\,;\,f(x)\bigr) \mid x \in D_f\bigr\}$$
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale = 0.8]
     \begin{axis}[
-        width=\linewidth, height=4.5cm,
+        width=\linewidth, height=6cm,
         axis lines=middle,
         axis line style={thick, black, -stealth},
-        xmin=-0.3, xmax=4.2,
-        ymin=-0.1, ymax=2.3,
+        xmin=-1.2, xmax=3.5,
+        ymin=-2.5, ymax=4.5,
         xtick=\empty, ytick=\empty,
         tick style={color=black},
         clip=false,
     ]
+        % La nouvelle courbe cubique
         \addplot[
             thick, color=SecondaryColor, smooth,
-            domain=0:4, samples=120
-        ]{(x+0.3)*(4-x)*0.4};
+            domain=-1:3.2, samples=120
+        ]{0.5*x^3 - 1.5*x^2 + x + 1};
+
+        % Définition des coordonnées de M pour qu'il soit sur la courbe
+        % f(2.4) = 0.5*(2.4)^3 - 1.5*(2.4)^2 + 2.4 + 1 = 1.672
+        \def\xM{2.4}
+        \def\yM{1.672}
 
         \draw[dashed, color=black!40, line width=0.8pt]
-            (axis cs:2, 0) -- (axis cs:2, 1.84);
+            (axis cs:\xM, 0) -- (axis cs:\xM, \yM);
         \draw[dashed, color=black!40, line width=0.8pt]
-            (axis cs:0, 1.84) -- (axis cs:2, 1.84);
+            (axis cs:0, \yM) -- (axis cs:\xM, \yM);
 
-        \filldraw[black] (axis cs:2, 1.84) circle (2.5pt);
+        \filldraw[black] (axis cs:\xM, \yM) circle (2.5pt);
 
-        \node[above right, font=\small\sffamily, color=black]
-            at (axis cs:2, 1.84) {$M(x\,;\,y)$};
+        \node[above left, font=\small\sffamily, color=black]
+            at (axis cs:\xM, \yM) {$M(x\,;\,y)$};
         \node[left, font=\small\sffamily, color=black]
-            at (axis cs:0, 1.84) {$f(x)$};
+            at (axis cs:0, \yM) {$f(x)$};
         \node[below, font=\small\sffamily, color=black]
-            at (axis cs:2, 0) {$x$};
+            at (axis cs:\xM, 0) {$x$};
+            
         \node[right, font=\small\sffamily\itshape, color=SecondaryColor]
-            at (axis cs:3.7, 0.5) {$\mathcal{C}_f$};
+            at (axis cs:3.2, 3.8) {$\mathcal{C}_f$};
     \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -437,7 +471,7 @@ On a: \quad $f\left( x \right) = \dfrac{x^2}{x+1}$ avec $D_f = \mathbb{R} \setmi
                 clip=false
             ]
             \addplot[thick, color=SecondaryColor, smooth, domain=-1.05:1.05, samples=50] {3*x^2};
-            \node[right, font=\footnotesize\sffamily\itshape, color=SecondaryColor] at (axis cs: 0.5, 3) {$\mathcal{C}_f$};
+            \node[right, font=\footnotesize\sffamily\itshape, color=SecondaryColor] at (axis cs: 1, 2.5) {$\mathcal{C}_f$};
             \node[below left, font=\footnotesize\sffamily, color=black] at (axis cs: 0, 0) {$O$};
             \end{axis}
         \end{tikzpicture}
@@ -456,7 +490,7 @@ On a: \quad $f\left( x \right) = \dfrac{x^2}{x+1}$ avec $D_f = \mathbb{R} \setmi
                 clip=false
             ]
             \addplot[thick, color=SecondaryColor, smooth, domain=-1.3:1.3, samples=60] {x^3};
-            \node[right, font=\footnotesize\sffamily\itshape, color=SecondaryColor] at (axis cs: 0.8, 1) {$\mathcal{C}_g$};
+            \node[right, font=\footnotesize\sffamily\itshape, color=SecondaryColor] at (axis cs: 1.2, 1) {$\mathcal{C}_g$};
             \node[below right, font=\footnotesize\sffamily, color=black] at (axis cs: 0, 0) {$O$};
             \end{axis}
         \end{tikzpicture}
@@ -630,7 +664,7 @@ Soit $f$ la fonction définie par : $f(x) = x^2 + x$
 
 %% PROPRIETE
 \begin{Propriete}[][5 min]
-Soit $f$ une fonction et $(C_f)$ sa courbe dans un repère orthogonal $(O ; \vec{i} ; \vec{j})$.
+Soit $f$ une fonction et $(C_f)$ sa courbe dans un repère orthogonal \Oij.
 \begin{itemize}
     \item $f$ est paire signifie que $(C_f)$ est symétrique par rapport à l'\textbf{axe des ordonnées}.
     \item $f$ est impaire signifie que $(C_f)$ est symétrique par rapport au point $O$ l'\textbf{origine du repère}.
@@ -817,18 +851,18 @@ Pour compléter le tracé sur tout l'intervalle $\big[-6 ; 6\big]$, nous allons 
         \draw[very thick, black] (0, 2) -- (2, -1);
 
         % Tracés complétés par symétrie (en AccentColor)
-        \draw[very thick, AccentColor] (0, 2) -- (-2, -1);
-        \draw[very thick, AccentColor] (6, 3) -- (2, -1);
+        \draw[very thick, GraphGreen] (0, 2) -- (-2, -1);
+        \draw[very thick, GraphGreen] (6, 3) -- (2, -1);
 
         % Points remarquables
         \filldraw[black] (-6,  3) circle (2pt);
         \filldraw[black] (-2, -1) circle (2pt);
         \filldraw[black] ( 0,  2) circle (2pt);
         \filldraw[black] ( 2, -1) circle (2pt);
-        \filldraw[AccentColor]  ( 6,  3) circle (2pt);
+        \filldraw[GraphGreen]  ( 6,  3) circle (2pt);
 
         % Label courbe
-        \node[right, font=\small\sffamily\itshape, color=AccentColor] at (4.2, 2.2) {$\left(C_f\right)$};
+        \node[right, font=\small\sffamily\itshape, color=GraphGreen] at (4.5, 1.6) {$\left(C_f\right)$};
     \end{tikzpicture}
     \end{center}
 
@@ -955,16 +989,16 @@ Soit $f$ une fonction impaire définie sur $D = [-4 ; -1] \cup [1 ; 4]$ :
         \filldraw[black] (-1,  1) circle (2pt);
 
         % Partie complétée par symétrie (en AccentColor)
-        \draw[very thick, AccentColor] (1, -1) -- (2, -3) -- (4, 0);
+        \draw[very thick, GraphGreen] (1, -1) -- (2, -3) -- (4, 0);
 
         % Points complétés
-        \filldraw[AccentColor] (1, -1) circle (2pt);
-        \filldraw[AccentColor] (2, -3) circle (2pt);
-        \filldraw[AccentColor] (4,  0) circle (2pt);
+        \filldraw[GraphGreen] (1, -1) circle (2pt);
+        \filldraw[GraphGreen] (2, -3) circle (2pt);
+        \filldraw[GraphGreen] (4,  0) circle (2pt);
 
         % Labels
-        \node[right, font=\small\sffamily\itshape, color=black] at (-3.8, 1.5) {$\left(C_f\right)$};
-        \node[right, font=\small\sffamily\itshape, color=AccentColor] at (2.2, -1.5) {$\left(C_f\right)$};
+        \node[right, font=\small\sffamily\itshape, color=black] at (-3.8, 2.3) {$\left(C_f\right)$};
+        \node[right, font=\small\sffamily\itshape, color=GraphGreen] at (3, -1.5) {$\left(C_f\right)$};
     \end{tikzpicture}
     \end{center}
 
@@ -1167,12 +1201,12 @@ Soit $f$ la fonction numérique définie sur $\mathbb{R}$ par : $f(x) = 2x^2 + 3
 
 
 %% SECTION
-\subsection{Taux de variations d'une fonction \duree{15 min}}
+\subsection{Taux de variation d'une fonction \duree{15 min}}
 
 %% DEFINITION
 \begin{Definition}[hi][]
 Soit $f$ une fonction, et soit $a$ et $b$ deux éléments distincts de $D_f$. \\
-Le nombre réel $T(a;b) = \frac{f(a)-f(b)}{a-b}$ est appelé \textbf{taux de variations} de $f$ entre $a$ et $b$.
+Le réel $T(a;b) = \frac{f(a)-f(b)}{a-b}$ est appelé \textbf{taux de variation} de $f$ entre $a$ et $b$.
 \end{Definition}
 
 %% EXEMPLE
@@ -1709,9 +1743,9 @@ $$h(t) = -t^2 + 6t$$
 Soit $f$ une fonction numérique ; $I$ un intervalle inclus dans $D_f$ et $a \in I$.
 \begin{itemize}
     \item On dit que $f(a)$ est le \textbf{maximum} de $f$ sur $I$ si :
-    $f(x) \leq f(a)$ pour tout $x$ de $I$.
+          Pour tout $x \in I$, on a $f(x) \leq f(a)$.
     \item On dit que $f(a)$ est le \textbf{minimum} de $f$ sur $I$ si :
-    $f(x) \geq f(a)$ pour tout $x$ de $I$.
+          Pour tout $x \in I$, on a $f(x) \geq f(a)$.
 \end{itemize}
 \end{Definition}
 
@@ -1930,7 +1964,7 @@ $f(x) = \frac{x^2 - 3}{2x^2 + 4}$
             \dfrac{x^2 - 3}{2x^2 + 4} = \dfrac{1}{2}
             &\text{ équivaut à } 2(x^2 - 3) = 2x^2 + 4 \\
             &\text{ équivaut à } 2x^2 - 6 = 2x^2 + 4 \\
-            &\text{ équivaut à } -6 = 4 \quad \textbf{(impossible)}
+            &\text{ équivaut à } -6 = 4
         \end{align*}
         L'équation $f(x) = \dfrac{1}{2}$ n'a \textbf{aucune solution} dans $\mathbb{R}$.
 
@@ -2076,14 +2110,14 @@ Puisque $f$ est \textbf{paire}, sa courbe est symétrique par rapport à l'axe d
         \draw[very thick, SecondaryColor, domain=0:pi, samples=100] plot (\x, {cos(\x r)});
 
         % Complétion par parité sur [-pi, 0]
-        \draw[very thick, AccentColor, domain=-pi:0, samples=100] plot (\x, {cos(\x r)});
+        \draw[very thick, GraphGreen, domain=-pi:0, samples=100] plot (\x, {cos(\x r)});
 
         % Complétion par périodicité sur [pi, 2pi] et [-2pi, -pi]
-        \draw[very thick, AccentColor, domain=pi:2*pi, samples=100] plot (\x, {cos(\x r)});
-        \draw[very thick, AccentColor, domain=-2*pi:-pi, samples=100] plot (\x, {cos(\x r)});
+        \draw[very thick, GraphGreen, domain=pi:2*pi, samples=100] plot (\x, {cos(\x r)});
+        \draw[very thick, GraphGreen, domain=-2*pi:-pi, samples=100] plot (\x, {cos(\x r)});
 
         % Ajout du nom de la courbe (C_f)
-        \node[above, font=\sffamily\small\itshape, color=SecondaryColor] at (2*pi, 1) {$(C_f)$};
+        \node[above, font=\sffamily\small\itshape, color=SecondaryColor] at (0.5*pi, 1) {$(C_f)$};
     \end{tikzpicture}
 \end{center}
     
@@ -2112,11 +2146,11 @@ Puisque $g$ est \textbf{impaire}, sa courbe est symétrique par rapport à l'ori
         \draw[very thick, SecondaryColor, domain=0:pi, samples=100] plot (\x, {sin(\x r)});
 
         % Complétion par imparité sur [-pi, 0]
-        \draw[very thick, AccentColor, domain=-pi:0, samples=100] plot (\x, {sin(\x r)});
+        \draw[very thick, GraphGreen, domain=-pi:0, samples=100] plot (\x, {sin(\x r)});
 
         % Complétion par périodicité sur [pi, 2pi] et [-2pi, -pi]
-        \draw[very thick, AccentColor, domain=pi:2*pi, samples=100] plot (\x, {sin(\x r)});
-        \draw[very thick, AccentColor, domain=-2*pi:-pi, samples=100] plot (\x, {sin(\x r)});
+        \draw[very thick, GraphGreen, domain=pi:2*pi, samples=100] plot (\x, {sin(\x r)});
+        \draw[very thick, GraphGreen, domain=-2*pi:-pi, samples=100] plot (\x, {sin(\x r)});
 
         % Ajout du nom de la courbe (C_g)
         \node[above, font=\sffamily\small\itshape, color=SecondaryColor] at (pi/2, 1) {$(C_g)$};
@@ -2511,12 +2545,19 @@ $\blacktriangleright$~ La \textbf{courbe} de $f$ :
       clip=false,
   ]
       \addplot[thick, color=SecondaryColor, smooth, domain=-2:2, samples=80]{x^2};
+      
       \node[right, font=\small\sffamily\itshape, color=SecondaryColor]
           at (axis cs:1.8, 3.2) {$(\mathcal{C}_f)$};
       \node[below left, font=\small\sffamily, color=black]
           at (axis cs:0, 0) {$O$};
-      \node[right, font=\small\sffamily, color=black]
-          at (axis cs:1.1, 1.1) {$a$};
+          
+      % ----- Ajout des pointillés -----
+      \draw[dashed] (axis cs:1,0) -- (axis cs:1,1) -- (axis cs:0,1);
+      \draw[dashed] (axis cs:-1,0) -- (axis cs:-1,1) -- (axis cs:0,1);
+      
+      % Placement de 'a' sur l'axe des ordonnées (y=1)
+      \node[above left, font=\small\sffamily, color=black]
+          at (axis cs:0, 1) {$a$};
   \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -2562,12 +2603,19 @@ $\blacktriangleright$~ La \textbf{courbe} de $f$ :
       clip=false,
   ]
       \addplot[thick, color=SecondaryColor, smooth, domain=-2:2, samples=80]{-x^2};
+      
       \node[right, font=\small\sffamily\itshape, color=SecondaryColor]
           at (axis cs:1.8, -3.2) {$(\mathcal{C}_f)$};
       \node[above left, font=\small\sffamily, color=black]
           at (axis cs:0, 0) {$O$};
-      \node[right, font=\small\sffamily, color=black]
-          at (axis cs:1.1, -1.1) {$a$};
+          
+      % ----- Ajout des pointillés -----
+      \draw[dashed] (axis cs:1,0) -- (axis cs:1,-1) -- (axis cs:0,-1);
+      \draw[dashed] (axis cs:-1,0) -- (axis cs:-1,-1) -- (axis cs:0,-1);
+      
+      % Placement de 'a' sur l'axe des ordonnées (y=-1)
+      \node[below left, font=\small\sffamily, color=black]
+          at (axis cs:0, -1) {$a$};
   \end{axis}
 \end{tikzpicture}
 \end{center}
