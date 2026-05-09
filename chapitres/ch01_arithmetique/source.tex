@@ -84,9 +84,9 @@ $n = 2k + 1 \quad \text{avec } k \in \N$
         \item
 On a $E = 4n + 11 = 4n + 10 + 1 = 2(2n + 5) + 1$
 
-On pose $K = 2n + 5 \in \mathbb{N}$
+On pose $K = 2n + 5 \in \N$
 
-D'où $E = 2K + 1$ avec $K \in \mathbb{N}$
+D'où $E = 2K + 1$ avec $K \in \N$
 
 Donc $E$ est un nombre impair.
 
@@ -486,9 +486,9 @@ $pgcd(a, b)$ ou $a \wedge b$.
 %% APPLICATION
 \begin{Application}
 \begin{enumerate}
-    \item Déterminer $pgcd(40, 84)$.
-    
-    \item Déterminer $pgcd(7;7)$ ; $pgcd(1;3)$ ;  $pgcd(7;0)$ et $pgcd(4;8)$.
+    \item Déterminer $\pgcd(40, 84)$.
+
+    \item Déterminer $\pgcd(7;7)$ ; $\pgcd(1;3)$ ;  $\pgcd(7;0)$ et $\pgcd(4;8)$.
 
 \end{enumerate}
 \end{Application}
@@ -498,7 +498,7 @@ $pgcd(a, b)$ ou $a \wedge b$.
 \begin{Definition}[Nombres premiers entre eux]
 Soient $a$ et $b$ deux entiers naturels.
 
-$a$ et $b$ sont \textbf{premiers entre eux} signifie que $\operatorname{pgcd}(a,b) = 1$,
+$a$ et $b$ sont \textbf{premiers entre eux} signifie que $\pgcd(a,b) = 1$,
 c'est-à-dire leur seul diviseur commun est $1$.
 \end{Definition}
 
@@ -506,7 +506,7 @@ c'est-à-dire leur seul diviseur commun est $1$.
 %% EXEMPLE
 \begin{Exemple}
 \begin{enumerate}
-    \item $5$ et $17$ sont premiers entre eux car $\text{pgcd}(5; 17) = 1$.
+    \item $5$ et $17$ sont premiers entre eux car $\pgcd(5; 17) = 1$.
     \item $1325$ et $2450$ ne sont pas premiers entre eux car ils sont tous les deux divisibles par $5$.
     \item Deux entiers consécutifs sont toujours premiers entre eux.
 \end{enumerate}
@@ -528,14 +528,14 @@ Par exemple, $15$ et $22$ sont premiers entre eux, mais ne sont pas des nombres 
 \begin{Propriete}[]
 Soient $a$ et $b$ deux entiers naturels non nuls.
 \begin{itemize}
-  \item On admet que le $\operatorname{pgcd}(a,b)$ est égal au produit des facteurs premiers \textbf{communs} qui ont \textbf{le plus petit exposant} dans les décompositions de $a$ et $b$.
-  \item On admet que le $\operatorname{ppcm}(a,b)$ est égal au produit des facteurs premiers \textbf{communs et non communs} qui ont \textbf{le plus grand exposant} dans les décompositions de $a$ et $b$.
+  \item On admet que le $\pgcd(a,b)$ est égal au produit des facteurs premiers \textbf{communs} qui ont \textbf{le plus petit exposant} dans les décompositions de $a$ et $b$.
+  \item On admet que le $\ppcm(a,b)$ est égal au produit des facteurs premiers \textbf{communs et non communs} qui ont \textbf{le plus grand exposant} dans les décompositions de $a$ et $b$.
 \end{itemize}
 \end{Propriete}
 
 %% EXEMPLE
 \begin{Exemple}
-Sachant que $a = 2^3 \times 3 \times 7 \times 11$ et $b = 2^2 \times 5 \times 7^3 \times 13$, déterminer $\operatorname{pgcd}(a,b)$ et $\operatorname{ppcm}(a,b)$.
+Sachant que $a = 2^3 \times 3 \times 7 \times 11$ et $b = 2^2 \times 5 \times 7^3 \times 13$, déterminer $\pgcd(a,b)$ et $\ppcm(a,b)$.
 \end{Exemple}
 
 %% APPLICATION
@@ -543,8 +543,8 @@ Sachant que $a = 2^3 \times 3 \times 7 \times 11$ et $b = 2^2 \times 5 \times 7^
 On considère les deux nombres : $a = 3960$ ~\text{et}~ $b = 2100$
 \begin{enumerate}
     \item Décomposer $a$ et $b$ en produit de facteurs premiers.
-    \item Déterminer $\operatorname{pgcd}(a,b)$ et $\operatorname{ppcm}(a,b)$.
-    \item Simplifier $\dfrac{a}{b}$ et $\sqrt{ab}$.
+    \item Déterminer $\pgcd(a,b)$ et $\ppcm(a,b)$.
+    \item Simplifier $\frac{a}{b}$ et $\sqrt{ab}$.
     \item Déterminer le plus petit entier naturel non nul $m$ pour lequel $ma$ soit un carré parfait.
 \end{enumerate}
 \end{Application}
