@@ -33,6 +33,32 @@ $-3 \ ; \ 14 \ ; \ 2,5 \ ; \ 0 \ ; \ 25 \ ; \ 36 \ ; \ -7 \ ; \ 41$
 \end{enumerate}
 \end{Activite}
 
+%% SOLUTION_ACTIVITE
+\begin{Solution}[ACTIVITÉ][1]
+
+\textbf{1.} Les entiers naturels de la liste sont : $0 \; ; \; 14 \; ; \; 25 \; ; \; 36 \; ; \; 41$.
+
+\textbf{2.} Parmi ces entiers naturels :
+\begin{itemize}
+    \item Les nombres \textbf{pairs} sont : $0$ ; $14$ ; $36$.
+    \item Les nombres \textbf{impairs} sont : $25$ ; $41$.
+\end{itemize}
+
+\textbf{3.} Écriture sous la forme $2k$ avec $k \in \N$ :
+\begin{itemize}
+    \item $0 = 2 \times 0$. Posons $k = 0 \in \N$. Donc $0 = 2k$.
+    \item $14 = 2 \times 7$. Posons $k = 7 \in \N$. Donc $14 = 2k$.
+    \item $36 = 2 \times 18$. Posons $k = 18 \in \N$. Donc $36 = 2k$.
+\end{itemize}
+
+\textbf{4.} Écriture sous la forme $2k+1$ avec $k \in \N$ :
+\begin{itemize}
+    \item $25 = 24 + 1 = 2 \times 12 + 1$. Posons $k = 12 \in \N$. Donc $25 = 2k+1$.
+    \item $41 = 40 + 1 = 2 \times 20 + 1$. Posons $k = 20 \in \N$. Donc $41 = 2k+1$.
+\end{itemize}
+
+\end{Solution}
+
 %% DEFINITION
 \begin{Definition}[]
 \begin{itemize}
@@ -319,6 +345,34 @@ Soient $a$, $b$ et $c$ des entiers naturels.
 \end{enumerate}
 \end{Activite}
 
+%% SOLUTION_ACTIVITE
+\begin{Solution}[ACTIVITÉ][2]
+
+\textbf{1.} Les diviseurs de chaque entier naturel :
+\begin{itemize}
+    \item $D(2) = \{1 \; ; \; 2\}$
+    \item $D(3) = \{1 \; ; \; 3\}$
+    \item $D(4) = \{1 \; ; \; 2 \; ; \; 4\}$
+    \item $D(5) = \{1 \; ; \; 5\}$
+    \item $D(6) = \{1 \; ; \; 2 \; ; \; 3 \; ; \; 6\}$
+    \item $D(7) = \{1 \; ; \; 7\}$
+    \item $D(11) = \{1 \; ; \; 11\}$
+\end{itemize}
+
+\textbf{2.} Les nombres admettant exactement deux diviseurs sont : $2$, $3$, $5$, $7$ et $11$.
+
+\textbf{3.}
+\begin{itemize}
+    \item $0$ n'est pas premier : tout entier naturel non nul divise $0$, donc $0$ a une infinité de diviseurs.
+    \item $1$ n'est pas premier : il n'admet qu'un seul diviseur (lui-même).
+\end{itemize}
+
+\textbf{4.} Le nombre $2$ est premier et pair. Tout autre nombre pair est divisible par $2$, donc admet au moins trois diviseurs ($1$, $2$ et lui-même). Par conséquent, $2$ est le seul nombre premier pair.
+
+\textbf{5.} On a : $1 + 0 + 7 + 1 = 9$, qui est divisible par $9$. Donc $9 \mid 1071$. Par conséquent, $1071$ n'est pas un nombre premier.
+
+\end{Solution}
+
 %% DEFINITION
 \begin{Definition}[]
 Un nombre est \textbf{premier} s'il possède \underline{exactement} deux diviseurs : $1$ et lui-même.
@@ -380,6 +434,48 @@ Aucun de ces nombres ne divise $109$. Donc $109$ est premier.
 \end{enumerate}
 \end{Activite}
 
+%% SOLUTION_ACTIVITE
+\begin{Solution}[ACTIVITÉ][3]
+
+\textbf{1.} On effectue les divisions successives :
+\[
+\begin{array}{r|l}
+1400 & 2 \\
+700  & 2 \\
+350  & 2 \\
+175  & 5 \\
+35   & 5 \\
+7    & 7 \\
+1    &
+\end{array}
+\]
+Par conséquent, la décomposition $1400 = 2^3 \times 5^2 \times 7$ \textbf{est vérifiée}.
+
+\textbf{2.} On effectue les divisions successives :
+\[
+\begin{array}{r|l}
+864 & 2 \\
+432 & 2 \\
+216 & 2 \\
+108 & 2 \\
+54  & 2 \\
+27  & 3 \\
+9   & 3 \\
+3   & 3 \\
+1   &
+\end{array}
+\]
+Par conséquent, $864 = 2^5 \times 3^3$.
+
+\textbf{3.} Pour que $864 \times n$ soit un carré parfait, tous les exposants de sa décomposition doivent être pairs.
+
+On a $864 = 2^5 \times 3^3$ : l'exposant de $2$ est $5$ (impair) et l'exposant de $3$ est $3$ (impair).
+
+Il faut multiplier par $2^1 \times 3^1$ pour obtenir $2^6 \times 3^4 = (2^3 \times 3^2)^2 = 72^2$.
+
+Par conséquent, le plus petit entier est $n = 2 \times 3 = \mathbf{6}$.
+
+\end{Solution}
 
 %% PROPRIETE
 \begin{Theoreme}[Décomposition en produit de facteurs premiers]
@@ -437,7 +533,24 @@ Le bus A y repasse toutes les $15$ minutes et le bus B toutes les $20$ minutes.
 \end{enumerate}
 \end{Activite}
 
+%% SOLUTION_ACTIVITE
+\begin{Solution}[ACTIVITÉ][4]
 
+\textbf{1.} Les durées écoulées lors des cinq premiers passages du bus A :
+\[15 \; ; \; 30 \; ; \; 45 \; ; \; 60 \; ; \; 75 \quad \text{(en minutes)}\]
+
+\textbf{2.} Les durées écoulées lors des cinq premiers passages du bus B :
+\[20 \; ; \; 40 \; ; \; 60 \; ; \; 80 \; ; \; 100 \quad \text{(en minutes)}\]
+
+\textbf{3.} Les deux bus se retrouvent à la gare en même temps pour la première fois au bout de $\ppcm(15 \; ; \; 20)$ minutes.
+
+On a les décompositions : $15 = 3 \times 5$ et $20 = 2^2 \times 5$.
+
+Donc $\ppcm(15 \; ; \; 20) = 2^2 \times 3 \times 5 = 60$.
+
+Par conséquent, les deux bus se retrouveront à la gare ensemble pour la première fois au bout de $\mathbf{60}$ \textbf{minutes}.
+
+\end{Solution}
 
 %% DEFINITION
 \begin{Definition}[]
@@ -473,6 +586,22 @@ Un professeur d'EPS forme des équipes identiques (même nombre de filles et de 
 \end{enumerate}
 \end{Activite}
 
+%% SOLUTION_ACTIVITE
+\begin{Solution}[ACTIVITÉ][5]
+
+\textbf{1.} Si le professeur forme $3$ équipes : $\frac{12}{3} = 4$ filles et $\frac{18}{3} = 6$ garçons par équipe. Oui, il peut former $3$ équipes. Chaque équipe est composée de $4$ filles et $6$ garçons.
+
+\textbf{2.} Si le professeur forme $4$ équipes : $\frac{18}{4} = 4{,}5$, qui n'est pas un entier naturel. Donc $4$ ne divise pas $18$. Par conséquent, il ne peut \textbf{pas} former $4$ équipes identiques.
+
+\textbf{3.} Le plus grand nombre d'équipes est $\pgcd(12 \; ; \; 18)$.
+
+On a les décompositions : $12 = 2^2 \times 3$ et $18 = 2 \times 3^2$.
+
+Donc $\pgcd(12 \; ; \; 18) = 2^1 \times 3^1 = 6$.
+
+Par conséquent, le plus grand nombre d'équipes est $\mathbf{6}$. Chaque équipe sera composée de $\frac{12}{6} = 2$ filles et $\frac{18}{6} = 3$ garçons.
+
+\end{Solution}
 
 %% DEFINITION
 \begin{Definition}[]
