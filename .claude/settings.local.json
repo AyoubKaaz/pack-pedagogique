@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(python3 _generer.py)",
+      "Bash(python3 _fix_solutions.py)",
+      "Bash(grep -n '\\\\\\\\begin{Solution}' source.tex)",
+      "Bash(claude mcp *)",
+      "mcp__notebooklm__get_health",
+      "mcp__notebooklm__search_notebooks",
+      "mcp__notebooklm__ask_question",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git pull *)",
+      "Bash(git stash *)",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\Ayyoub kaazouzi\\\\pack-pedagogique-v5.0\\\\pack-pedagogique\\\\chapitres\" -Recurse -Name)",
+      "Bash(grep -n \"\\\\\\\\textwidth\" \"C:/Users/Ayyoub kaazouzi/pack-pedagogique-v5.0/pack-pedagogique/chapitres/ch01_arithmetique/fiche_prof.tex\" \"C:/Users/Ayyoub kaazouzi/pack-pedagogique-v5.0/pack-pedagogique/chapitres/ch01_arithmetique/td.tex\" \"C:/Users/Ayyoub kaazouzi/pack-pedagogique-v5.0/pack-pedagogique/chapitres/ch01_arithmetique/td_correction.tex\")",
+      "Bash(echo \"OK — aucun \\\\\\\\textwidth\")",
+      "Bash(python3 *)"
+    ]
+  }
+}
