@@ -24,7 +24,7 @@ $-3 \ ; \ 14 \ ; \ 2,5 \ ; \ 0 \ ; \ 25 \ ; \ 36 \ ; \ -7 \ ; \ 41$
 \begin{enumerate}
     \item Parmi les nombres de cette liste, relever ceux qui sont des entiers positifs.
 
-    (Ces nombres sont appelés des \textbf{entiers naturels}).
+    (\textit{Ces nombres sont appelés des \textbf{entiers naturels}}).
     
     \item Parmi les entiers naturels trouvés, lesquels sont pairs ? impairs ?  
         
@@ -35,28 +35,28 @@ $-3 \ ; \ 14 \ ; \ 2,5 \ ; \ 0 \ ; \ 25 \ ; \ 36 \ ; \ -7 \ ; \ 41$
 
 %% SOLUTION_ACTIVITE
 \begin{Solution}[ACTIVITÉ][1]
+\begin{enumerate}
+    \item Les entiers positifs sont $0 ~; 14 ~; 25 ~; 36$ et $41$.
 
-\textbf{1.} Les entiers naturels de la liste sont : $0 \; ; \; 14 \; ; \; 25 \; ; \; 36 \; ; \; 41$.
+    $\blacktriangleright$ \textbf{Ces nombres constituent l'ensemble des \textcolor{PrimaryColor}{entiers naturels}, noté $\mathbb{N}$.}
+    
+    \item Les nombres pairs sont $0 ; 14$ et $36$ et les nombres impairs sont $25$ et $41$.
 
-\textbf{2.} Parmi ces entiers naturels :
-\begin{itemize}
-    \item Les nombres \textbf{pairs} sont : $0$ ; $14$ ; $36$.
-    \item Les nombres \textbf{impairs} sont : $25$ ; $41$.
-\end{itemize}
-
-\textbf{3.} Écriture sous la forme $2k$ avec $k \in \N$ :
-\begin{itemize}
-    \item $0 = 2 \times 0$. Posons $k = 0 \in \N$. Donc $0 = 2k$.
-    \item $14 = 2 \times 7$. Posons $k = 7 \in \N$. Donc $14 = 2k$.
-    \item $36 = 2 \times 18$. Posons $k = 18 \in \N$. Donc $36 = 2k$.
-\end{itemize}
-
-\textbf{4.} Écriture sous la forme $2k+1$ avec $k \in \N$ :
-\begin{itemize}
-    \item $25 = 24 + 1 = 2 \times 12 + 1$. Posons $k = 12 \in \N$. Donc $25 = 2k+1$.
-    \item $41 = 40 + 1 = 2 \times 20 + 1$. Posons $k = 20 \in \N$. Donc $41 = 2k+1$.
-\end{itemize}
-
+    $\blacktriangleright$ \textbf{Tout entier naturel est soit \textcolor{PrimaryColor}{pair}, soit \textcolor{PrimaryColor}{impair}.}
+    
+    \item On a donc :
+    $0 = 2 \times 0$ (avec $k=0$) \quad ; \quad $14 = 2 \times 7$ (avec $k=7$) \quad et \quad $36 = 2 \times 18$ (avec $k=18$)
+    
+    
+    $\blacktriangleright$ \textbf{Un entier naturel $n$ est \textcolor{PrimaryColor}{pair} s'il existe un entier naturel $k$ tel que $n = 2k$.}
+    \item On a donc :
+    \begin{itemize}
+        \item $25 = 24 + 1 = 2 \times 12 + 1$ (avec $k=12$)
+        \item $41 = 40 + 1 = 2 \times 20 + 1$ (avec $k=20$)
+    \end{itemize}
+    
+    $\blacktriangleright$ \textbf{Un entier naturel $n$ est \textcolor{PrimaryColor}{impair} s'il existe un entier naturel $k$ tel que $n = 2k+1$.}
+\end{enumerate}
 \end{Solution}
 
 %% DEFINITION
@@ -345,31 +345,37 @@ Soient $a$, $b$ et $c$ des entiers naturels.
 \end{enumerate}
 \end{Activite}
 
+
 %% SOLUTION_ACTIVITE
 \begin{Solution}[ACTIVITÉ][2]
 
-\textbf{1.} Les diviseurs de chaque entier naturel :
+\begin{enumerate}
+    \item Les diviseurs de chaque entier naturel :
+\begin{multicols}{2}
 \begin{itemize}
-    \item $D(2) = \{1 \; ; \; 2\}$
-    \item $D(3) = \{1 \; ; \; 3\}$
-    \item $D(4) = \{1 \; ; \; 2 \; ; \; 4\}$
-    \item $D(5) = \{1 \; ; \; 5\}$
-    \item $D(6) = \{1 \; ; \; 2 \; ; \; 3 \; ; \; 6\}$
-    \item $D(7) = \{1 \; ; \; 7\}$
-    \item $D(11) = \{1 \; ; \; 11\}$
+    \item $D_2 = \{1; 2\}$
+    \item $D_3 = \{1; 3\}$
+    \item $D_4 = \{1; 2; 4\}$
+    \item $D_5 = \{1; 5\}$
+    \item $D_6 = \{1; 2; 3; 6\}$
+    \item $D_7 = \{1; 7\}$
+    \item $D_{11} = \{1; 11\}$
 \end{itemize}
+\end{multicols}
 
-\textbf{2.} Les nombres admettant exactement deux diviseurs sont : $2$, $3$, $5$, $7$ et $11$.
-
-\textbf{3.}
-\begin{itemize}
+    \item Les nombres admettant exactement deux diviseurs sont : $2$, $3$, $5$, $7$ et $11$.
+    
+    \item \begin{itemize}
     \item $0$ n'est pas premier : tout entier naturel non nul divise $0$, donc $0$ a une infinité de diviseurs.
     \item $1$ n'est pas premier : il n'admet qu'un seul diviseur (lui-même).
 \end{itemize}
+    
+    \item Le nombre $2$ est premier et pair. Tout autre nombre pair est divisible par $2$, donc admet au moins trois diviseurs ($1$, $2$ et lui-même). Par conséquent, $2$ est le seul nombre premier pair.
+    
+    \item On a : $1 + 0 + 7 + 1 = 9$, qui est divisible par $9$. Donc $9$ divise $1071$.
 
-\textbf{4.} Le nombre $2$ est premier et pair. Tout autre nombre pair est divisible par $2$, donc admet au moins trois diviseurs ($1$, $2$ et lui-même). Par conséquent, $2$ est le seul nombre premier pair.
-
-\textbf{5.} On a : $1 + 0 + 7 + 1 = 9$, qui est divisible par $9$. Donc $9 \mid 1071$. Par conséquent, $1071$ n'est pas un nombre premier.
+Par conséquent, $1071$ n'est pas un nombre premier.
+\end{enumerate}
 
 \end{Solution}
 
@@ -436,46 +442,35 @@ Aucun de ces nombres ne divise $109$. Donc $109$ est premier.
 
 %% SOLUTION_ACTIVITE
 \begin{Solution}[ACTIVITÉ][3]
+\begin{enumerate}
+    \item On a :
+        $2^3 \times 5^2 \times 7 = 8 \times 25 \times 7 
+        = 200 \times 7 
+        = 1400$
+        
+    Donc : \quad $1400 = 2^3 \times 5^2 \times 7$
+    
+    \item On a : 
+    \begin{align*}
+        864 = 432 \times 2 
+            = 216 \times 2^2 
+            = 108 \times 2^3
+            &= 54 \times 2^4 \\
+            &= 27 \times 2^5 \\
+            &= 9  \times 3 \times 2^5 \\
+            &= 3  \times 3^2 \times 2^5
+    \end{align*}    
+    Donc : \quad $864 = 2^5 \times 3^3$
+    
+    \item Pour que $864 \times n$ soit un carré parfait, tous les exposants de sa décomposition doivent être pairs.
 
-\textbf{1.} On effectue les divisions successives :
-\[
-\begin{array}{r|l}
-1400 & 2 \\
-700  & 2 \\
-350  & 2 \\
-175  & 5 \\
-35   & 5 \\
-7    & 7 \\
-1    &
-\end{array}
-\]
-Par conséquent, la décomposition $1400 = 2^3 \times 5^2 \times 7$ \textbf{est vérifiée}.
-
-\textbf{2.} On effectue les divisions successives :
-\[
-\begin{array}{r|l}
-864 & 2 \\
-432 & 2 \\
-216 & 2 \\
-108 & 2 \\
-54  & 2 \\
-27  & 3 \\
-9   & 3 \\
-3   & 3 \\
-1   &
-\end{array}
-\]
-Par conséquent, $864 = 2^5 \times 3^3$.
-
-\textbf{3.} Pour que $864 \times n$ soit un carré parfait, tous les exposants de sa décomposition doivent être pairs.
-
-On a $864 = 2^5 \times 3^3$ : l'exposant de $2$ est $5$ (impair) et l'exposant de $3$ est $3$ (impair).
-
-Il faut multiplier par $2^1 \times 3^1$ pour obtenir $2^6 \times 3^4 = (2^3 \times 3^2)^2 = 72^2$.
+On a $864 = 2^5 \times 3^3$. 
+Il faut multiplier par $2^1 \times 3^1$ pour obtenir $2^6 \times 3^4 = \big(2^3 \times 3^2\big)^2 = 72^2$.
 
 Par conséquent, le plus petit entier est $n = 2 \times 3 = \mathbf{6}$.
-
+\end{enumerate}
 \end{Solution}
+
 
 %% PROPRIETE
 \begin{Theoreme}[Décomposition en produit de facteurs premiers]
@@ -538,7 +533,7 @@ Le bus A y repasse toutes les $15$ minutes et le bus B toutes les $20$ minutes.
 
 \textbf{1.} Les durées écoulées lors des cinq premiers passages du bus A :
 \[15 \; ; \; 30 \; ; \; 45 \; ; \; 60 \; ; \; 75 \quad \text{(en minutes)}\]
-
+    $\blacktriangleright$ \textbf{Ceci correspond aux \textcolor{PrimaryColor}{multiples} de 15.}
 \textbf{2.} Les durées écoulées lors des cinq premiers passages du bus B :
 \[20 \; ; \; 40 \; ; \; 60 \; ; \; 80 \; ; \; 100 \quad \text{(en minutes)}\]
 
@@ -550,6 +545,48 @@ Donc $\ppcm(15 \; ; \; 20) = 2^2 \times 3 \times 5 = 60$.
 
 Par conséquent, les deux bus se retrouveront à la gare ensemble pour la première fois au bout de $\mathbf{60}$ \textbf{minutes}.
 
+\end{Solution}
+
+
+%% SOLUTION_ACTIVITE
+\begin{Solution}[ACTIVITÉ][4]
+\begin{enumerate}
+    \item On a :
+    Pour trouver les durées, on multiplie le temps de parcours du bus A (15 minutes) par 1, 2, 3, 4 et 5 :
+    \begin{align*}
+        15 \times 1 &= 15 \\
+        15 \times 2 &= 30 \\
+        15 \times 3 &= 45 \\
+        15 \times 4 &= 60 \\
+        15 \times 5 &= 75
+    \end{align*}
+    Donc : \quad les durées écoulées lors des cinq premiers passages du bus A sont 15, 30, 45, 60 et 75 minutes.
+    
+
+    
+    \item On a :
+    Pour le bus B, on multiplie son temps de parcours (20 minutes) par 1, 2, 3, 4 et 5 :
+    \begin{align*}
+        20 \times 1 &= 20 \\
+        20 \times 2 &= 40 \\
+        20 \times 3 &= 60 \\
+        20 \times 4 &= 80 \\
+        20 \times 5 &= 100
+    \end{align*}
+    Donc : \quad les durées écoulées lors des cinq premiers passages du bus B sont 20, 40, 60, 80 et 100 minutes.
+    
+    $\blacktriangleright$ \textbf{Ceci correspond aux \textcolor{PrimaryColor}{multiples} de 20.}
+    
+    \item Cherchons le moment où les deux bus repassent en même temps à la gare.
+    
+    Nous constatons que le nombre 60 apparaît dans la liste des passages du bus A et dans celle du bus B.
+    
+    D'où : la plus petite durée commune aux deux bus est de 60 minutes.
+    
+    Donc : \quad les deux bus se retrouveront à la gare en même temps pour la première fois au bout de 60 minutes.
+    
+    $\blacktriangleright$ \textbf{Ceci illustre la notion du plus petit commun multiple ou \textcolor{PrimaryColor}{PPCM}.}
+\end{enumerate}
 \end{Solution}
 
 %% DEFINITION
