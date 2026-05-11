@@ -1,136 +1,79 @@
-# CLAUDE.md — Kaazouzi Ayyoub
-# Pack Pédagogique Mathématiques — Tronc Commun Maroc
-# Version : 5.0 — optimisée (< 200 lignes)
-
+# Pack Pédagogique TCS — Kaazouzi Ayyoub
+## Règles universelles — s'appliquent à TOUS les chapitres
 ---
 
-## 🎯 IDENTITÉ
-
-Tu es l'assistant de Kaazouzi Ayyoub, professeur de mathématiques.
-Tu travailles directement sur des fichiers `.tex`.
-Tu génères du CONTENU uniquement.
-Tu ne touches JAMAIS aux fichiers `preamble/`.
-
----
-
-## 🗂️ STRUCTURE DU PROJET
-
-```
-pack-pedagogique/
-├── CLAUDE.md
-├── .claude/
-│   ├── commands/        ← /generer /figure /tableau /audit /nouveau-chapitre
-│   └── skills/
-│       └── correction-mathematique/SKILL.md
-├── preamble/            ← NE JAMAIS MODIFIER
-│   ├── 01_packages.tex
-│   ├── 02_style.tex
-│   └── 03_macros.tex
-└── chapitres/
-    └── ch$N_$NOM/
-        ├── source.tex         ← SOURCE UNIQUE — tu écris ici
-        ├── Page1.tex
-        ├── fiche_prof.tex     ← GÉNÉRÉ par /generer
-        ├── td.tex             ← GÉNÉRÉ par /generer
-        ├── td_correction.tex  ← GÉNÉRÉ par /generer
-        └── Images/
-```
-
----
-
-## 📋 BALISES DE source.tex
-
-Un bloc = sa balise %% + son contenu jusqu'à la balise suivante.
-
-```
-%% ACTIVITE              → td ✓   fiche_prof ✓
-%% SOLUTION_ACTIVITE     → td_correction ✓  seulement
-%% DEFINITION            → fiche_prof ✓   seulement
-%% PROPRIETE             → fiche_prof ✓   seulement
-%% TECHNIQUES            → fiche_prof ✓   seulement
-%% EXEMPLE               → fiche_prof ✓   seulement
-%% REMARQUE              → fiche_prof ✓   seulement
-%% APPLICATION           → td ✓   fiche_prof ✓
-%% SOLUTION_APPLICATION  → td_correction ✓  seulement
-%% EXERCICE              → td ✓   fiche_prof ✓
-%% SOLUTION_EXERCICE     → td_correction ✓  seulement
-```
-
----
-
-## 🧱 ENVIRONNEMENTS (preamble/02_style.tex)
-
-Ne jamais inventer de nouveaux environnements.
-Syntaxe : \begin{Nom}[titre][durée]
-
-Disponibles :
-Activite  Application  Exercice  Definition  Propriete
-Theoreme  Exemple  Techniques  Remarque  Corollaire  Preuve  Solution
-
----
-
-## 📐 RÈGLE GRAPHIQUE ABSOLUE
-
-Dans source.tex : toujours \linewidth, jamais \textwidth.
-Raison : source.tex compile en 1 colonne (fiche) ET 2 colonnes (td).
-
----
-
-## ⚙️ COMMANDES DISPONIBLES
-
-/generer          → Génère fiche_prof + td + td_correction
-/nouveau-chapitre → Crée la structure d'un nouveau chapitre
-/figure           → Insère une figure TikZ dans source.tex
-/tableau          → Insère un tableau LaTeX dans source.tex
-/audit            → Vérifie corrections manquantes (lecture seule)
-
----
-
-## 🔒 RÈGLES GIT — OBLIGATOIRES
-
-Après CHAQUE modification, sans demander la permission :
+## Git — automatique après chaque modification
+```bash
 git add .
 git commit -m "[chXX] : description courte"
 git push origin main
-
-Format des commits :
-[ch11] : correction application 3 ajoutée
-[ch03] : nouveau chapitre créé
-[ch11] : figure TikZ activité 2 insérée
+```
 
 ---
 
-## 🚫 LIMITES ABSOLUES
-
-- Ne jamais modifier preamble/*.tex
-- Ne jamais modifier fiche_prof.tex, td.tex, td_correction.tex directement
+## Limites absolues — ne jamais enfreindre
+- Ne jamais modifier `preamble/*.tex`
+- Ne jamais modifier `fiche_prof.tex`, `td.tex`, `td_correction.tex` directement
 - Ne jamais créer de nouveaux environnements tcolorbox
-- Ne jamais utiliser \textwidth dans les minipage de source.tex
+- Ne jamais utiliser `\textwidth` dans les minipage de `source.tex`
 - Ne jamais supprimer du contenu validé
+- `\linewidth` obligatoire dans toutes les minipage
 
 ---
 
-## 🔄 WORKFLOW D'UNE SESSION
-
-1. Je dis le chapitre en cours
-2. Tu lis source.tex
-3. Tu résumes : blocs présents + corrections manquantes
-4. Tu attends mes instructions
-5. Tu agis → tu commites → tu confirmes
-
----
-
-## 🧮 MACROS (preamble/03_macros.tex)
-
-\N \Z \R \C       → ensembles de nombres
-\vect{AB}         → vecteur avec flèche
-\abs{x}           → valeur absolue
-\frac{a}{b}       → dfrac automatique (ne jamais écrire \dfrac)
-\duree{X min}     → badge horloge dans la boîte
-\dd               → d droit pour intégrales
-\e                → e droit pour exponentielle
+## Système de balises source.tex
+```
+%% SECTION              → fiche_prof ✓
+%% ACTIVITE             → fiche_prof ✓  td ✓
+%% SOLUTION_ACTIVITE    → td_correction ✓
+%% DEFINITION           → fiche_prof ✓
+%% PROPRIETE            → fiche_prof ✓
+%% TECHNIQUES           → fiche_prof ✓
+%% EXEMPLE              → fiche_prof ✓
+%% REMARQUE             → fiche_prof ✓
+%% APPLICATION          → fiche_prof ✓  td ✓
+%% SOLUTION_APPLICATION → td_correction ✓
+%% EXERCICE             → fiche_prof ✓  td ✓
+%% SOLUTION_EXERCICE    → td_correction ✓
+```
 
 ---
 
-Version 5.0 — Kaazouzi Ayyoub
-Style de correction → .claude/skills/correction-mathematique/SKILL.md
+## Environnement Solution — syntaxe obligatoire
+```latex
+\begin{Solution}[ACTIVITÉ][1]
+\begin{Solution}[APPLICATION][2]
+\begin{Solution}[EXERCICE DE SYNTHÈSE][1]
+```
+
+---
+
+## Macros disponibles
+`\N \Z \R \C` · `\vect{AB}` · `\abs{x}` · `\frac{}{}` (= dfrac) · `\duree{X min}` · `\dd` · `\e`
+Ne jamais écrire `\dfrac` — `\frac` est redéfini automatiquement.
+
+---
+
+## Vocabulaire officiel marocain
+| ✅ Correct | ❌ Interdit |
+|-----------|------------|
+| ensemble de définition | domaine de définition |
+| ensemble solution | solution générale |
+| sens de l'inégalité | signe de l'inégalité |
+| taux de variation | taux d'accroissement |
+| membre gauche / droit | côté gauche / droit |
+
+---
+
+## Règle de session
+1 session Claude Code = 1 seul chapitre.
+Lire le CLAUDE.md local du chapitre avant toute action.
+Le skill à charger est indiqué dans le CLAUDE.md local.
+
+---
+
+## Skills disponibles
+- `correction-commune` — base commune à tous les chapitres
+- `domaine-algebre` — ch01 à ch05
+- `domaine-geometrie` — ch06 à ch10
+- `domaine-analyse` — ch11 à ch15

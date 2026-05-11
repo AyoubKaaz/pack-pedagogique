@@ -14,6 +14,17 @@ Demander si non précisé :
 4. "Masse horaire ? (ex: 8h)"
 5. "Numéro de série TD ? (ex: Série 3)"
 
+### Déterminer le domaine automatiquement depuis $NUM
+| Numéro | Domaine | Skill à charger |
+|--------|---------|-----------------|
+| 01–05  | Algèbre | domaine-algebre |
+| 06–10  | Géométrie | domaine-geometrie |
+| 11–15  | Analyse | domaine-analyse |
+
+Ne pas poser de question sur le domaine — le déduire du numéro.
+
+---
+
 ## Étape 1 — Créer la structure
 
 ```bash
@@ -22,6 +33,8 @@ mkdir -p chapitres/ch$NUM_$SLUG/Images
 
 Où $SLUG = titre en minuscules sans accents, espaces remplacés par _
 Ex: ch03_equations_inequations
+
+---
 
 ## Étape 2 — Créer source.tex
 
@@ -48,9 +61,9 @@ Créer chapitres/ch$NUM_$SLUG/source.tex avec ce contenu :
 \end{Activite}
 
 %% SOLUTION_ACTIVITE
-\begin{Exemple}[Correction — Activité 1]
+\begin{Solution}[ACTIVITÉ][1]
 
-\end{Exemple}
+\end{Solution}
 
 %% DEFINITION
 \begin{Definition}[]
@@ -73,9 +86,9 @@ Créer chapitres/ch$NUM_$SLUG/source.tex avec ce contenu :
 \end{Application}
 
 %% SOLUTION_APPLICATION
-\begin{Exemple}[Correction — Application 1]
+\begin{Solution}[APPLICATION][1]
 
-\end{Exemple}
+\end{Solution}
 
 % ────────────────────────────────────────────
 %  2. [TITRE DEUXIÈME SECTION]
@@ -93,9 +106,9 @@ Créer chapitres/ch$NUM_$SLUG/source.tex avec ce contenu :
 \end{Application}
 
 %% SOLUTION_APPLICATION
-\begin{Exemple}[Correction — Application 2]
+\begin{Solution}[APPLICATION][2]
 
-\end{Exemple}
+\end{Solution}
 
 % ────────────────────────────────────────────
 %  EXERCICE DE SYNTHÈSE
@@ -107,10 +120,44 @@ Créer chapitres/ch$NUM_$SLUG/source.tex avec ce contenu :
 \end{Exercice}
 
 %% SOLUTION_EXERCICE
-\begin{Exemple}[Correction — Exercice de synthèse 1]
+\begin{Solution}[EXERCICE DE SYNTHÈSE][1]
 
-\end{Exemple}
+\end{Solution}
 ```
+
+---
+
+## Étape 2b — Créer CLAUDE.md local ← NOUVEAU
+
+Créer chapitres/ch$NUM_$SLUG/CLAUDE.md avec ce contenu :
+
+```markdown
+# Chapitre $NUM — $TITRE
+Niveau : Tronc Commun $NIVEAU | Masse horaire : $MASSE_HORAIRE
+
+## Skill à charger
+correction-commune + $DOMAINE_SKILL
+(déterminé automatiquement depuis le numéro de chapitre)
+
+## Statut
+- source.tex       : ❌ non démarré
+- fiche_prof.tex   : ❌ non généré
+- td.tex           : ❌ non généré
+- td_correction.tex: ❌ non généré
+
+## Notations spécifiques à ce chapitre
+% TODO : compléter après rédaction des premières sections
+
+## Corrections en cours
+Aucune
+
+## Limites absolues (rappel local)
+- \linewidth obligatoire dans les minipage — \textwidth interdit
+- \begin{Solution}[TYPE][N] pour toutes les corrections
+- Ne jamais modifier preamble/*.tex
+```
+
+---
 
 ## Étape 3 — Créer Page1.tex
 
@@ -123,6 +170,8 @@ Copier Page1.tex depuis ch11_fonctions/ et adapter :
   % TODO: compléter les capacités attendues
   % TODO: compléter les orientations pédagogiques
 
+---
+
 ## Étape 4 — Créer les 3 templates vides
 
 Créer fiche_prof.tex, td.tex, td_correction.tex
@@ -133,17 +182,34 @@ en copiant les templates de ch11_fonctions/ et en adaptant :
 
 Laisser la zone contenu vide — elle sera remplie par /generer.
 
+---
+
 ## Étape 5 — Copier le logo
+
 ```bash
-copy chapitres\ch11_fonctions\Images\MEN LOGO 2.png
-     chapitres\ch$NUM_$SLUG\Images\
+cp "chapitres/ch11_fonctions/Images/MEN LOGO 2.png" \
+   "chapitres/ch$NUM_$SLUG/Images/"
 ```
 
-## Étape 6 — Rapport final
+---
+
+## Étape 6 — Mettre à jour STATUS.md
+
+Ajouter une ligne dans STATUS.md à la racine :
+
+```
+| ch$NUM_$SLUG | $TITRE | ❌ | ❌ | ❌ | ❌ | 🔄 démarré le $DATE |
+```
+
+---
+
+## Étape 7 — Rapport final
 
 Afficher la structure créée :
+
 ```
 ✅ Chapitre $NUM créé : chapitres/ch$NUM_$SLUG/
+   ├── CLAUDE.md          (skill : $DOMAINE_SKILL — statut initialisé)
    ├── source.tex         (squelette prêt — à remplir)
    ├── Page1.tex          (à compléter : objectifs + orientations)
    ├── fiche_prof.tex     (template prêt)
@@ -155,13 +221,18 @@ Afficher la structure créée :
 
 Rappeler :
 "Prochaines étapes :
-1. Complète les objectifs dans Page1.tex
-2. Rédige le contenu dans source.tex
-3. Lance /generer ch$NUM_$SLUG quand tu es prêt"
+1. Complète les notations spécifiques dans chapitres/ch$NUM_$SLUG/CLAUDE.md
+2. Complète les objectifs dans Page1.tex
+3. Rédige le contenu dans source.tex
+4. Lance /generer ch$NUM_$SLUG quand tu es prêt"
 
-## Étape 7 — Git push
+---
+
+## Étape 8 — Git push
+
 ```bash
 git add chapitres/ch$NUM_$SLUG/
+git add STATUS.md
 git commit -m "[ch$NUM] : nouveau chapitre créé — $TITRE"
 git push origin main
 ```
