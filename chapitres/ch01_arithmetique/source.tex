@@ -530,64 +530,22 @@ Le bus A y repasse toutes les $15$ minutes et le bus B toutes les $20$ minutes.
 
 %% SOLUTION_ACTIVITE
 \begin{Solution}[ACTIVITÉ][4]
-
-\textbf{1.} Les durées écoulées lors des cinq premiers passages du bus A :
-\[15 \; ; \; 30 \; ; \; 45 \; ; \; 60 \; ; \; 75 \quad \text{(en minutes)}\]
-    $\blacktriangleright$ \textbf{Ceci correspond aux \textcolor{PrimaryColor}{multiples} de 15.}
-\textbf{2.} Les durées écoulées lors des cinq premiers passages du bus B :
-\[20 \; ; \; 40 \; ; \; 60 \; ; \; 80 \; ; \; 100 \quad \text{(en minutes)}\]
-
-\textbf{3.} Les deux bus se retrouvent à la gare en même temps pour la première fois au bout de $\ppcm(15 \; ; \; 20)$ minutes.
-
-On a les décompositions : $15 = 3 \times 5$ et $20 = 2^2 \times 5$.
-
-Donc $\ppcm(15 \; ; \; 20) = 2^2 \times 3 \times 5 = 60$.
-
-Par conséquent, les deux bus se retrouveront à la gare ensemble pour la première fois au bout de $\mathbf{60}$ \textbf{minutes}.
-
-\end{Solution}
-
-
-%% SOLUTION_ACTIVITE
-\begin{Solution}[ACTIVITÉ][4]
 \begin{enumerate}
-    \item On a :
-    Pour trouver les durées, on multiplie le temps de parcours du bus A (15 minutes) par 1, 2, 3, 4 et 5 :
-    \begin{align*}
-        15 \times 1 &= 15 \\
-        15 \times 2 &= 30 \\
-        15 \times 3 &= 45 \\
-        15 \times 4 &= 60 \\
-        15 \times 5 &= 75
-    \end{align*}
-    Donc : \quad les durées écoulées lors des cinq premiers passages du bus A sont 15, 30, 45, 60 et 75 minutes.
-    
+    \item Les durées écoulées en minutes lors des cinq premiers passages du bus A :
+\[15 \; ; \; 30 \; ; \; 45 \; ; \; 60 \; ; \; 75 \quad (\text{sont les multiples de~} 15) \]
 
+    \item Les durées écoulées en minutes lors des cinq premiers passages du bus B :
+\[20 \; ; \; 40 \; ; \; 60 \; ; \; 80 \; ; \; 100 \quad (\text{sont les multiples de~} 20) \]
+
+    \item Donc la plus petite durée commune aux deux bus est de 60 minutes.
     
-    \item On a :
-    Pour le bus B, on multiplie son temps de parcours (20 minutes) par 1, 2, 3, 4 et 5 :
-    \begin{align*}
-        20 \times 1 &= 20 \\
-        20 \times 2 &= 40 \\
-        20 \times 3 &= 60 \\
-        20 \times 4 &= 80 \\
-        20 \times 5 &= 100
-    \end{align*}
-    Donc : \quad les durées écoulées lors des cinq premiers passages du bus B sont 20, 40, 60, 80 et 100 minutes.
+    Alors : les deux bus se retrouveront à la gare en même temps pour la première fois au bout de 60 minutes.
     
-    $\blacktriangleright$ \textbf{Ceci correspond aux \textcolor{PrimaryColor}{multiples} de 20.}
-    
-    \item Cherchons le moment où les deux bus repassent en même temps à la gare.
-    
-    Nous constatons que le nombre 60 apparaît dans la liste des passages du bus A et dans celle du bus B.
-    
-    D'où : la plus petite durée commune aux deux bus est de 60 minutes.
-    
-    Donc : \quad les deux bus se retrouveront à la gare en même temps pour la première fois au bout de 60 minutes.
-    
-    $\blacktriangleright$ \textbf{Ceci illustre la notion du plus petit commun multiple ou \textcolor{PrimaryColor}{PPCM}.}
+    $\blacktriangleright$ \textbf{On dit que $60$ est le \textcolor{PrimaryColor}{plus petit commun multiple}  de $15$ et $20$. et on écrit $\ppcm(15, 20) = 60$}
 \end{enumerate}
 \end{Solution}
+
+
 
 %% DEFINITION
 \begin{Definition}[]
@@ -623,22 +581,40 @@ Un professeur d'EPS forme des équipes identiques (même nombre de filles et de 
 \end{enumerate}
 \end{Activite}
 
+
 %% SOLUTION_ACTIVITE
 \begin{Solution}[ACTIVITÉ][5]
+\begin{enumerate}
+    \item On a : \quad    $12 \div 3 = 4   \quad \text{et}  \quad 18 \div 3 = 6$
+        
+    Puisque $4$ et $6$ sont des entiers naturels.
+    
+    Donc : le professeur peut former 3 équipes. Chaque équipe sera composée de 4 filles et 6 garçons.
+    
+    $\blacktriangleright$ \textbf{Ceci montre que 3 est un \textcolor{PrimaryColor}{diviseur commun} à 12 et 18.}
+    
+    \item On a : \quad $12 \div 4 = 3   \quad \text{et}  \quad     18 \div 4 = 4,5$
+    
+    Nous remarquons que $4,5$ n'est pas un entier (le nombre d'élèves doit être un entier).
+    
+    Donc : \quad il ne peut pas former 4 équipes, car 18 n'est pas divisible par 4.
+    
+    \item Cherchons les diviseurs de 12 et de 18 pour trouver le nombre maximum d'équipes possibles :
+    
+    On a : $D_{12} = \{1, 2, 3, 4, 6, 12\}$ \quad et \quad $D_{18} = \{1, 2, 3, 6, 9, 18\}$
+    
+    Donc les diviseurs communs à $12$ et $18$ sont $1, 2, 3 ~\text{et}~6$.
+    
+    D'où : le plus grand de ces diviseurs est $6$.
+    
+    Donc : le plus grand nombre d'équipes qu'il peut former est $6$.
 
-\textbf{1.} Si le professeur forme $3$ équipes : $\frac{12}{3} = 4$ filles et $\frac{18}{3} = 6$ garçons par équipe. Oui, il peut former $3$ équipes. Chaque équipe est composée de $4$ filles et $6$ garçons.
+    $\blacktriangleright$ \textbf{On dit que $6$ est le \textcolor{PrimaryColor}{plus grand commun diviseur}  de $12$ et $18$. et on écrit $\pgcd(12, 18) = 6$}
+    
 
-\textbf{2.} Si le professeur forme $4$ équipes : $\frac{18}{4} = 4{,}5$, qui n'est pas un entier naturel. Donc $4$ ne divise pas $18$. Par conséquent, il ne peut \textbf{pas} former $4$ équipes identiques.
-
-\textbf{3.} Le plus grand nombre d'équipes est $\pgcd(12 \; ; \; 18)$.
-
-On a les décompositions : $12 = 2^2 \times 3$ et $18 = 2 \times 3^2$.
-
-Donc $\pgcd(12 \; ; \; 18) = 2^1 \times 3^1 = 6$.
-
-Par conséquent, le plus grand nombre d'équipes est $\mathbf{6}$. Chaque équipe sera composée de $\frac{12}{6} = 2$ filles et $\frac{18}{6} = 3$ garçons.
-
+\end{enumerate}
 \end{Solution}
+
 
 %% DEFINITION
 \begin{Definition}[]
