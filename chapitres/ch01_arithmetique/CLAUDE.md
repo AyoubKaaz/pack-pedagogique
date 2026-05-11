@@ -26,3 +26,19 @@ correction-commune + domaine-algebre
 
 ## Corrections en cours
 Aucune — chapitre en rédaction
+
+## Distinction SOLUTION_ACTIVITE / SOLUTION_APPLICATION
+
+**SOLUTION_ACTIVITE** (phase de construction) :
+- Guider l'élève vers la notion par le raisonnement — ne pas donner la réponse directement.
+- Faire le pont avec les acquis du collège (division euclidienne, critères de divisibilité).
+- Ajouter $\blacktriangleright$ \textbf{phrase d'institutionnalisation} à la fin de chaque question.
+- Jamais le mot "Conclusion". Jamais la définition avant la découverte.
+- Ton : vocabulaire basique, adapté à un élève débutant le lycée.
+
+**SOLUTION_APPLICATION** (phase d'entraînement) :
+- Appliquer le style domaine-algebre + connecteurs logiques de correction-commune.
+- Justifications obligatoires à chaque étape (voir tableau dans correction-commune/SKILL.md).
+- Pas de phrase $\blacktriangleright$ — la notion est déjà construite.
+- Conclusion standard : `Donc $\pgcd(a,b) = ...$` ou `Donc $a \mid b$.`
+- Ton : rigoureux, concis, sans commentaires pédagogiques.
