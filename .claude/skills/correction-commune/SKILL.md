@@ -34,6 +34,56 @@
 
 ---
 
+## DISTINCTION FONDAMENTALE — SOLUTION_ACTIVITE vs SOLUTION_APPLICATION
+
+### %% SOLUTION_ACTIVITE — Phase de construction
+L'activité n'est PAS un exercice. C'est une phase d'éveil où l'élève
+**découvre et construit** la notion par lui-même, à partir de ses acquis
+du collège. La correction ne donne pas la réponse directement :
+elle guide le raisonnement vers la définition/notion cible.
+
+**Règles spécifiques :**
+- Résolution étape par étape, en s'appuyant explicitement sur les
+  acquis du collège (faire le pont).
+- Ne jamais sauter une étape de calcul.
+- À la fin de chaque question (si possible), ajouter une phrase
+  d'institutionnalisation précédée de $\blacktriangleright$,
+  entièrement en \textbf{...}, avec le terme technique en
+  \textcolor{PrimaryColor}{...}.
+- Ne jamais écrire le mot "Conclusion".
+- Ne jamais donner la définition formelle avant que l'élève
+  l'ait "découverte" via le raisonnement.
+
+**Format de la phrase d'institutionnalisation :**
+```latex
+$\blacktriangleright$ \textbf{Ceci illustre la notion de
+\textcolor{PrimaryColor}{taux de variation}.}
+```
+
+**Ton :** Vocabulaire très basique, adapté à un élève qui débute
+le lycée. Rédaction directe, sans paragraphes superflus.
+
+---
+
+### %% SOLUTION_APPLICATION — Phase d'entraînement
+L'application est un exercice d'entraînement. L'élève **mobilise**
+une notion déjà construite et définie. La correction est rigoureuse,
+directe et sert de modèle de rédaction.
+
+**Règles spécifiques :**
+- Appliquer le style du skill domaine concerné
+  (domaine-algebre / domaine-analyse / domaine-geometrie).
+- Appliquer les connecteurs logiques de correction-commune
+  (`On a :` / `\Leftrightarrow` / `Donc` / `D'où`).
+- Justifications obligatoires à chaque étape (voir tableau
+  des justifications ci-dessous).
+- Pas de phrase $\blacktriangleright$ — la notion est déjà acquise.
+- Conclusion standard : `Donc $S = \{...\}$.`
+
+**Ton :** Rigoureux, concis, sans commentaires pédagogiques.
+
+---
+
 ## 2. FORMAT D'UNE ÉTAPE ALGÉBRIQUE
 
 ### Calcul développé (align*)
