@@ -133,7 +133,7 @@ Donc $E$ est un nombre impair.
 
 %% APPLICATION
 \begin{Application}[]
-Soit $n$ un entier naturel. 
+Soit $n$ un entier naturel non nul. 
 \begin{enumerate}
     \item Étudier la parité de chacun des nombres suivants :
     \begin{multicols}{4}
@@ -154,6 +154,7 @@ Soit $n$ un entier naturel.
 
 %% SOLUTION_APPLICATION
 \begin{Solution}[APPLICATION][1]
+Soit $n \in \mathbb{N}$.
 \begin{enumerate}
     \item \textbf{Parité de $A = 8n + 10$ :}
 
@@ -187,7 +188,7 @@ Soit $n$ un entier naturel.
 
     Donc $C = 2k$ avec $k \in \N$.
 
-    Par conséquent, $C$ est un nombre \textbf{pair}.
+    Donc $C$ est un nombre \textbf{pair}.
 
     \medskip
 
@@ -204,7 +205,7 @@ Soit $n$ un entier naturel.
 
     Donc $D = 2k + 1$ avec $k \in \N$.
 
-    Par conséquent, $D$ est un nombre \textbf{impair}.
+    Donc  $D$ est un nombre \textbf{impair}.
 
     \item
     \begin{enumerate}
@@ -212,28 +213,28 @@ Soit $n$ un entier naturel.
 
         On a :
         \begin{align*}
-            (n+1)^2 - n^2 &= n^2 + 2n + 1 - n^2 \\
-                          &= 2n + 1
+            (n+1)^2 - n^2 = n^2 + 2n + 1 - n^2
+                          = 2n + 1
         \end{align*}
 
-        Posons $k = n \in \N$
-
-        Donc $(n+1)^2 - n^2 = 2k + 1$ avec $k \in \N$.
-
-        Par conséquent, $(n+1)^2 - n^2$ est un nombre \textbf{impair}.
+        Donc $(n+1)^2 - n^2$ est un nombre \textbf{impair}.
 
         \item \textbf{Résolution dans $\N$ de $(n+1)^2 - n^2 = 2021$ :}
 
         D'après la question \textbf{a)}, on a $(n+1)^2 - n^2 = 2n + 1$.
 
         On a :
-        \[2n + 1 = 2021\]
-        \[\Leftrightarrow 2n = 2020 \qquad \text{(on soustrait 1 aux deux membres)}\]
-        \[\Leftrightarrow n = 1010 \qquad \text{(on divise par 2,}\ 2 > 0\text{)}\]
+        \begin{align*}
+            (n+1)^2 - n^2 = 2021 
+            \text{ équivaut à } \quad & 2n + 1 = 2021 \\
+            \text{ équivaut à } \quad & 2n = 2021 - 1 \\
+            \text{ équivaut à } \quad & 2n = 2020 \\
+            \text{ équivaut à } \quad & n = \frac{2020}{2} \\
+            \text{ équivaut à } \quad & n = 1010
+        \end{align*}
+        Puisque $1010 \in \mathbb{N}$, \\
+        Donc : \quad S = \{1010\}
 
-        Or $1010 \in \N$.
-
-        Par conséquent, $S = \{1010\}$.
     \end{enumerate}
 \end{enumerate}
 \end{Solution}
@@ -263,78 +264,32 @@ Soient $x$  et $y$ deux entiers naturels, tels que $x$ est pair et $y$ est impai
 \end{center}
 \end{Application}
 
+
+
 %% SOLUTION_APPLICATION
 \begin{Solution}[APPLICATION][2]
-
-On pose : $x = 2a$ avec $a \in \N$ (car $x$ est pair) et $y = 2b + 1$ avec $b \in \N$ (car $y$ est impair).
-
-\textbf{Parité de $x + 8y$ :}
-
-On a :
-\begin{align*}
-    x + 8y &= 2a + 8(2b + 1) \\
-           &= 2a + 16b + 8 \\
-           &= 2(a + 8b + 4)
-\end{align*}
-
-Posons $k = a + 8b + 4 \in \N$
-
-Donc $x + 8y = 2k$ avec $k \in \N$.
-
-Par conséquent, $x + 8y$ est un nombre \textbf{pair}.
-
-\medskip
-
-\textbf{Parité de $(x+1)(y+1)$ :}
-
-On a :
-\begin{align*}
-    (x+1)(y+1) &= (2a + 1)(2b + 2) \\
-               &= (2a + 1) \cdot 2(b + 1) \\
-               &= 2(2a + 1)(b + 1)
-\end{align*}
-
-Posons $k = (2a + 1)(b + 1) \in \N$
-
-Donc $(x+1)(y+1) = 2k$ avec $k \in \N$.
-
-Par conséquent, $(x+1)(y+1)$ est un nombre \textbf{pair}.
-
-\medskip
-
-\textbf{Parité de $3x^3 + y^2 + 11$ :}
-
-On a :
-\begin{align*}
-    3x^3 + y^2 + 11 &= 3(2a)^3 + (2b+1)^2 + 11 \\
-                    &= 24a^3 + 4b^2 + 4b + 1 + 11 \\
-                    &= 24a^3 + 4b^2 + 4b + 12 \\
-                    &= 2(12a^3 + 2b^2 + 2b + 6)
-\end{align*}
-
-Posons $k = 12a^3 + 2b^2 + 2b + 6 \in \N$
-
-Donc $3x^3 + y^2 + 11 = 2k$ avec $k \in \N$.
-
-Par conséquent, $3x^3 + y^2 + 11$ est un nombre \textbf{pair}.
-
-\medskip
-
-\textbf{Parité de $x^{2024} + xy + 17$ :}
-
-On a :
-\begin{align*}
-    x^{2024} + xy + 17 &= (2a)^{2024} + (2a)(2b+1) + 17 \\
-                       &= 2^{2024}a^{2024} + 4ab + 2a + 17 \\
-                       &= 2^{2024}a^{2024} + 4ab + 2a + 16 + 1 \\
-                       &= 2(2^{2023}a^{2024} + 2ab + a + 8) + 1
-\end{align*}
-
-Posons $k = 2^{2023}a^{2024} + 2ab + a + 8 \in \N$
-
-Donc $x^{2024} + xy + 17 = 2k + 1$ avec $k \in \N$.
-
-Par conséquent, $x^{2024} + xy + 17$ est un nombre \textbf{impair}.
+Soient $x \in \mathbb{N}$ et $y \in \mathbb{N}$. \\
+Puisque $x$ est pair et $y$ est impair, on applique les propriétés des opérations sur les nombres pairs et impairs :
+\begin{itemize}
+    \item Puisque $8$ est un nombre pair, alors le produit $8y$ est pair. \\
+    Alors la somme $x + 8y$ est paire. \\
+    Donc : \quad x + 8y \text{ est un nombre pair.}
+    
+    \item Puisque $x$ est pair et $1$ est impair, alors $x + 1$ est impair. \\
+    Puisque $y$ est impair et $1$ est impair, alors $y + 1$ est pair. \\
+    Donc le produit $(x + 1)(y + 1)$ est pair. 
+    
+    \item Puisque $x$ est pair, alors $x^3$ est pair. \\
+    Donc le produit $3x^3$ est pair. \\
+    Puisque $y$ est impair, alors $y^2$ est impair. \\
+    Donc la somme $y^2 + 11$ est paire. \\
+    D'où la somme $3x^3 + y^2 + 11$ est paire. 
+    
+    \item Puisque $x$ est pair, alors $x^{2024}$ est pair et le produit $xy$ est pair. \\
+    Donc la somme $x^{2024} + xy$ est paire. \\
+    Puisque $x^{2024} + xy$ est pair et $17$ est impair, alors la somme totale est impaire. \\
+    Donc : \quad $x^{2024} + xy + 17 \text{ est un nombre impair.}$
+\end{itemize}
 \end{Solution}
 
 %% PROPRIETE
@@ -363,6 +318,7 @@ $a=n^2+5n \quad ; \quad b=n^2+7n+13 \quad ; \quad c=n^4-n^2$
 
 %% SOLUTION_APPLICATION
 \begin{Solution}[APPLICATION][3]
+Soit $n \in \mathbb{N}$.
 \begin{enumerate}
     \item \textbf{Montrons que $n(n+1)$ est pair :}
 
@@ -370,70 +326,59 @@ $a=n^2+5n \quad ; \quad b=n^2+7n+13 \quad ; \quad c=n^4-n^2$
 
     Donc leur produit contient un facteur pair.
 
-    Il existe donc un entier $A \in \N$ tel que $n(n+1) = 2A$.
-
     Par conséquent, $n(n+1)$ est un nombre \textbf{pair}.
 
     \item \textbf{Parité de $a$, $b$ et $c$ :}
+    \begin{itemize}
+        \item \textbf{Pour $a = n^2 + 5n$ :}
+        
+        On a : $a = n^2 + n + 4n = n(n+1) + 2(2n)$
+        
+        Puisque $n(n+1)$ est pair et $2(2n)$ est pair, leur somme est paire.
+        
+        Donc $a$ \text{ est pair}.
 
-    \textbf{Parité de $a = n^2 + 5n$ :}
+        \item \textbf{Pour $b = n^2 + 7n + 13$ :}
+        
+        On a : $b = n^2 + n + 6n + 12 + 1 = n(n+1) + 2(3n + 6) + 1$
+        
+        Puisque $n(n+1)$ est pair et $2(3n+6)$ est pair, leur somme est paire.
+                
+        Donc  b \text{ est impair}.
 
-    On a : $a = n^2 + 5n = n^2 + n + 4n = n(n+1) + 4n$
+        \item \textbf{Pour $c = n^4 - n^2$ :}
+        
+        On a :         
+        \begin{align*}
+c = n^2(n^2 - 1)  
+ = n^2(n-1)(n+1) 
+ = n(n-1) \times n(n+1)
+\end{align*}
+        
+        Puisque $n(n-1)$ est le produit de deux entiers consécutifs, il est pair.
+        
+        D'où : $c$ est le produit d'un nombre pair par un autre entier.
+        
+        Donc : \quad c \text{ est pair}.
+    \end{itemize}
 
-    D'après la question \textbf{1)}, $n(n+1) = 2A$.
-
-    Donc : $a = 2A + 4n = 2(A + 2n)$
-
-    Posons $k = A + 2n \in \N$
-
-    Donc $a = 2k$ avec $k \in \N$.
-
-    Par conséquent, $a$ est un nombre \textbf{pair}.
-
-    \medskip
-
-    \textbf{Parité de $b = n^2 + 7n + 13$ :}
-
-    On a : $b = n^2 + 7n + 13 = n^2 + n + 6n + 12 + 1 = n(n+1) + 6n + 12 + 1$
-
-    D'après la question \textbf{1)}, $n(n+1) = 2A$.
-
-    Donc : $b = 2A + 6n + 12 + 1 = 2(A + 3n + 6) + 1$
-
-    Posons $k = A + 3n + 6 \in \N$
-
-    Donc $b = 2k + 1$ avec $k \in \N$.
-
-    Par conséquent, $b$ est un nombre \textbf{impair}.
-
-    \medskip
-
-    \textbf{Parité de $c = n^4 - n^2$ :}
-
-    On a : $c = n^4 - n^2 = n^2(n^2 - 1) = n^2(n-1)(n+1)$
-
-    D'après la question \textbf{1)}, $n(n+1) = 2A$, donc $n^2(n+1) = 2An$.
-
-    Ainsi : $c = (n-1) \times n^2(n+1) = (n-1) \times 2An = 2An(n-1)$
-
-    Posons $k = An(n-1) \in \N$
-
-    Donc $c = 2k$ avec $k \in \N$.
-
-    Par conséquent, $c$ est un nombre \textbf{pair}.
-
-    \item \textbf{Valeur de $t$ :}
-
-    On a : $a$ est pair $\Rightarrow (-1)^a = 1$ \quad ; \quad $b$ est impair $\Rightarrow (-1)^b = -1$ \quad ; \quad $c$ est pair $\Rightarrow (-1)^c = 1$.
-
-    Donc :
+    \item \textbf{Déduisons la valeur de $t$ :}
+    
+    On a : $t = 5 \times (-1)^a - 8 \times (-1)^b + 11 \times (-1)^c$
+    
+    Puisque $a$ est pair, $(-1)^a = 1$
+    
+    Puisque $b$ est impair, $(-1)^b = -1$
+    
+    Puisque $c$ est pair, $(-1)^c = 1$
+    
+    On a donc :
     \begin{align*}
-        t &= 5 \times (-1)^a - 8 \times (-1)^b + 11 \times (-1)^c \\
-          &= 5 \times 1 - 8 \times (-1) + 11 \times 1 \\
-          &= 5 + 8 + 11
+    t = 5 \times 1 - 8 \times (-1) + 11 \times 1 
+     = 5 + 8 + 11 
     \end{align*}
-
-    Par conséquent, $t = 24$.
+    
+    Donc : \quad $t = 24$
 \end{enumerate}
 \end{Solution}
 
@@ -495,25 +440,30 @@ S'il existe un entier naturel $k$ tel que $a = k \times b$, on dit que :
     \item \textbf{Multiples de $13$ compris entre $100$ et $199$ :}
 
     On cherche les entiers $k \in \N$ tels que $100 \leq 13k \leq 199$.
+    
+    $100 \leq 13k \leq 199 \quad \text{ équivaut à } \quad \frac{100}{13} \leq k \leq \frac{199}{13}$
 
-    On a : $\frac{100}{13} \approx 7{,}69$ et $\frac{199}{13} \approx 15{,}30$.
+
+    On a : $\frac{100}{13} \approx 7{,}69$ \quad et \quad $\frac{199}{13} \approx 15{,}30$
+
+    Puisque $k$ est un entier naturel.
 
     Donc $k \in \{8 \; ; \; 9 \; ; \; 10 \; ; \; 11 \; ; \; 12 \; ; \; 13 \; ; \; 14 \; ; \; 15\}$.
 
-    Les multiples de $13$ compris entre $100$ et $199$ sont :
+    Les multiples de $13$ compris entre $100$ et $199$ sont donc :
     \[104 \; ; \; 117 \; ; \; 130 \; ; \; 143 \; ; \; 156 \; ; \; 169 \; ; \; 182 \; ; \; 195\]
 
     \item \textbf{Montrons que $3333$ est un multiple de $33$ :}
-
-    On a : $3333 = 33 \times 101$
-
-    Posons $K = 101 \in \N$
-
-    Donc $3333 = 33 \times K$ avec $K \in \N$.
-
-    Par conséquent, $3333$ est un \textbf{multiple de $33$}.
+    
+    On a :
+    $3333 = 3300 + 33 = 33 \times 100 + 33 \times 1 = 33 \times (100 + 1)$
+    
+    Donc : $3333 = 33 \times 101$
+        
+    D'où : \quad $3333$ \text{ est un multiple de } $33$.
 \end{enumerate}
 \end{Solution}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%% ---- Mode Commentaire ---- %%%%%%%%%%%%%%%%%%%%%% 
 \iffalse
@@ -582,35 +532,37 @@ Soient $a$, $b$ et $c$ des entiers naturels.
 %% SOLUTION_APPLICATION
 \begin{Solution}[APPLICATION][5]
 \begin{enumerate}
-    \item \textbf{Divisibles à la fois par $2$ et par $3$ :}
-
+    \item Parmi les nombres proposés, ceux divisibles par $2$ sont : 
+    
+    $126$ , $810$ , $442$ , $3054$ et $7204$.
+    
+    Cherchons parmi ces nombres ceux qui sont également divisibles par $3$ :
     \begin{itemize}
-        \item $126$ : unités $= 6$ (pair) ; $1+2+6=9$ (div. par $3$) $\Rightarrow$ \textbf{oui}
-        \item $345$ : unités $= 5$ (impair) $\Rightarrow$ \textbf{non}
-        \item $810$ : unités $= 0$ (pair) ; $8+1+0=9$ (div. par $3$) $\Rightarrow$ \textbf{oui}
-        \item $442$ : unités $= 2$ (pair) ; $4+4+2=10$ (non div. par $3$) $\Rightarrow$ \textbf{non}
-        \item $3054$ : unités $= 4$ (pair) ; $3+0+5+4=12$ (div. par $3$) $\Rightarrow$ \textbf{oui}
-        \item $5051$ : unités $= 1$ (impair) $\Rightarrow$ \textbf{non}
-        \item $7204$ : unités $= 4$ (pair) ; $7+2+0+4=13$ (non div. par $3$) $\Rightarrow$ \textbf{non}
+        \item Pour $126$ : on a $1+2+6 = 9$ , qui est divisible par $3$.
+        \item Pour $810$ : on a $8+1+0 = 9$ , qui est divisible par $3$.
+        \item Pour $442$ : on a $4+4+2 = 10$ , qui n'est pas divisible par $3$.
+        \item Pour $3054$ : on a $3+0+5+4 = 12$ , qui est divisible par $3$.
+        \item Pour $7204$ : on a $7+2+0+4 = 13$ , qui n'est pas divisible par $3$.
     \end{itemize}
+    
+    D'où : \quad les nombres divisibles à la fois par $2$ et par $3$ sont : $126$ , $810$ et $3054$.
 
-    Par conséquent, les nombres divisibles à la fois par $2$ et par $3$ sont : $\mathbf{126}$, $\mathbf{810}$ et $\mathbf{3054}$.
-
-    \item \textbf{Divisibles à la fois par $5$ et par $9$ :}
-
+    \item Parmi les nombres proposés, ceux divisibles par $5$ sont : $315$ , $450$ , $5550$ , $9045$ et $3800$.
+    
+    Cherchons parmi ces nombres ceux qui sont également divisibles par $9$ :
     \begin{itemize}
-        \item $315$ : unités $= 5$ (div. par $5$) ; $3+1+5=9$ (div. par $9$) $\Rightarrow$ \textbf{oui}
-        \item $450$ : unités $= 0$ (div. par $5$) ; $4+5+0=9$ (div. par $9$) $\Rightarrow$ \textbf{oui}
-        \item $5550$ : unités $= 0$ (div. par $5$) ; $5+5+5+0=15$ (non div. par $9$) $\Rightarrow$ \textbf{non}
-        \item $333$ : unités $= 3$ (non div. par $5$) $\Rightarrow$ \textbf{non}
-        \item $9045$ : unités $= 5$ (div. par $5$) ; $9+0+4+5=18$ (div. par $9$) $\Rightarrow$ \textbf{oui}
-        \item $3800$ : unités $= 0$ (div. par $5$) ; $3+8+0+0=11$ (non div. par $9$) $\Rightarrow$ \textbf{non}
-        \item $9003$ : unités $= 3$ (non div. par $5$) $\Rightarrow$ \textbf{non}
+        \item Pour $315$ : on a $3+1+5 = 9$ , qui est divisible par $9$.
+        \item Pour $450$ : on a $4+5+0 = 9$ , qui est divisible par $9$.
+        \item Pour $5550$ : on a $5+5+5+0 = 15$ , qui n'est pas divisible par $9$.
+        \item Pour $9045$ : on a $9+0+4+5 = 18$ , qui est divisible par $9$.
+        \item Pour $3800$ : on a $3+8+0+0 = 11$ , qui n'est pas divisible par $9$.
     \end{itemize}
-
-    Par conséquent, les nombres divisibles à la fois par $5$ et par $9$ sont : $\mathbf{315}$, $\mathbf{450}$ et $\mathbf{9045}$.
+    
+   D'où : \quad les nombres divisibles à la fois par $5$ et par $9$ sont : $315$ , $450$ et $9045$.
 \end{enumerate}
 \end{Solution}
+
+
 
 %% APPLICATION
 \begin{Application}
@@ -620,38 +572,53 @@ Soient $a$, $b$ et $c$ des entiers naturels.
 \end{enumerate}
 \end{Application}
 
+
+
 %% SOLUTION_APPLICATION
 \begin{Solution}[APPLICATION][6]
 \begin{enumerate}
     \item \textbf{Valeurs de $x$ pour que $N = \overline{4x3}$ soit divisible par $3$ :}
 
-    D'après le critère de divisibilité par $3$, $N$ est divisible par $3$ si et seulement si la somme de ses chiffres est divisible par $3$.
+    $N$ est divisible par $3$ si et seulement si la somme de ses chiffres est divisible par $3$.
 
-    On a : somme des chiffres $= 4 + x + 3 = 7 + x$.
+    On a : $4 + x + 3 = 7 + x$
 
-    Il faut donc que $3 \mid (7 + x)$, avec $x \in \{0 \; ; \; 1 \; ; \; \ldots \; ; \; 9\}$.
+    Il faut donc que $3$ divise $(7 + x)$, avec $x \in \{0 \; ; \; 1 \; ; \; \ldots \; ; \; 9\}$.
 
-    \begin{itemize}
-        \item $x = 2$ : $7 + 2 = 9 = 3 \times 3$ \quad \textbf{oui}
-        \item $x = 5$ : $7 + 5 = 12 = 3 \times 4$ \quad \textbf{oui}
-        \item $x = 8$ : $7 + 8 = 15 = 3 \times 5$ \quad \textbf{oui}
-    \end{itemize}
-
-    Par conséquent, les valeurs possibles de $x$ sont : $x \in \{2 \; ; \; 5 \; ; \; 8\}$.
+    Puisque $0 \leq x \leq 9$, alors : $7 \leq 7 + x \leq 16$.
+    
+    Les multiples de $3$ compris entre $7$ et $16$ sont : $9$, $12$ et $15$.
+    
+    On a donc :
+    \begin{align*}
+        7 + x &= 9 \quad \text{ équivaut à } \quad x = 2 \\
+        7 + x &= 12 \quad \text{ équivaut à } \quad x = 5 \\
+        7 + x &= 15 \quad \text{ équivaut à } \quad x = 8
+    \end{align*}
+    
+    Donc : \quad les valeurs possibles du chiffre $x$ sont $2$, $5$ et $8$.
 
     \item \textbf{Valeur de $y$ pour que $M = \overline{5y}$ soit pair et divisible par $9$ :}
 
-    $M$ est pair $\Leftrightarrow$ le chiffre des unités $y$ est pair, donc $y \in \{0 \; ; \; 2 \; ; \; 4 \; ; \; 6 \; ; \; 8\}$.
-
-    $M$ est divisible par $9$ $\Leftrightarrow$ $5 + y$ est divisible par $9$.
-
-    On cherche $y$ pair tel que $5 + y \in \{9 \; ; \; 18\}$ :
-
-    \begin{itemize}
-        \item $5 + y = 9 \Rightarrow y = 4$ \quad (pair) \quad \textbf{oui}
-        \item $5 + y = 18 \Rightarrow y = 13$ \quad (impossible, $y$ est un chiffre)
-    \end{itemize}
-
+    Puisque $M$ est pair, son chiffre des unités $y$ est pair.
+    
+    On a donc : $y \in \{0, 2, 4, 6, 8\}$.
+    
+    Puisque $M$ est divisible par $9$, la somme de ses chiffres est un multiple de $9$.
+    
+    On a donc : $5 + y$ est un multiple de $9$.
+    
+    Puisque $0 \leq y \leq 8$, alors : $5 \leq 5 + y \leq 13$.
+    
+    Le seul multiple de $9$ compris entre $5$ et $13$ est $9$.
+    
+    On a donc :
+    \begin{align*}
+        5 + y &= 9 \quad \text{ équivaut à } \quad y = 4
+    \end{align*}
+    
+    Puisque $4$ est un chiffre pair, cette valeur convient.
+    
     Par conséquent, $y = 4$.
 \end{enumerate}
 \end{Solution}
@@ -712,7 +679,7 @@ Par conséquent, $1071$ n'est pas un nombre premier.
 
 %% DEFINITION
 \begin{Definition}[]
-Un nombre est \textbf{premier} s'il possède \underline{exactement} deux diviseurs : $1$ et lui-même.
+Un entier naturel est \textbf{premier} s'il possède \underline{exactement} deux diviseurs : $1$ et lui-même.
 \end{Definition}
 
 %% REMARQUE
@@ -756,13 +723,12 @@ Un nombre est \textbf{premier} s'il possède \underline{exactement} deux diviseu
 
     Or $7$ est impair. Donc $p + 7$ est la somme de deux nombres impairs.
 
-    D'après la propriété : la somme de deux nombres impairs est paire.
-
     Donc $p + 7$ est pair.
 
     De plus, $p \geq 3$, donc $p + 7 \geq 10 > 2$.
 
-    Ainsi, $p + 7$ est un nombre pair supérieur à $2$, donc divisible par $2$ sans être égal à $2$.
+    Ainsi, le nombre $p + 7$ est un entier naturel strictement supérieur à $2$ qui est divisible par $2$.
+
 
     Par conséquent, $p + 7$ n'est \textbf{pas un nombre premier}.
 \end{enumerate}
@@ -794,40 +760,29 @@ Aucun de ces nombres ne divise $109$. Donc $109$ est premier.
 
 %% SOLUTION_APPLICATION
 \begin{Solution}[APPLICATION][8]
-
-\textbf{Test de primalité de $127$ :}
-
-On a $\sqrt{127} \approx 11{,}27$. Les nombres premiers $p \leq 11$ à tester sont : $2$, $3$, $5$, $7$ et $11$.
-
-\begin{itemize}
-    \item $127$ est impair, donc $2 \nmid 127$.
-    \item $1 + 2 + 7 = 10$, non divisible par $3$, donc $3 \nmid 127$.
-    \item Le chiffre des unités est $7$, donc $5 \nmid 127$.
-    \item $127 = 18 \times 7 + 1$, donc $7 \nmid 127$.
-    \item $127 = 11 \times 11 + 6$, donc $11 \nmid 127$.
-\end{itemize}
-
-Aucun nombre premier $p \leq \sqrt{127}$ ne divise $127$.
-
-Par conséquent, $127$ est un nombre \textbf{premier}.
-
-\medskip
-
-\textbf{Test de primalité de $133$ :}
-
-On a $\sqrt{133} \approx 11{,}53$. Les nombres premiers $p \leq 11$ à tester sont : $2$, $3$, $5$, $7$ et $11$.
-
-\begin{itemize}
-    \item $133$ est impair, donc $2 \nmid 133$.
-    \item $1 + 3 + 3 = 7$, non divisible par $3$, donc $3 \nmid 133$.
-    \item Le chiffre des unités est $3$, donc $5 \nmid 133$.
-    \item $133 = 19 \times 7 + 0$, donc $7 \mid 133$.
-\end{itemize}
-
-On a : $133 = 7 \times 19$. Donc $133$ admet $7$ comme diviseur (autre que $1$ et $133$).
-
-Par conséquent, $133$ n'est \textbf{pas un nombre premier}.
-
+\begin{enumerate}
+    \item \textbf{Pour le nombre $127$ :}
+    
+    On a : $\sqrt{127} \approx 11,2$
+    
+    Les nombres premiers inférieurs ou égaux à $\sqrt{127}$ sont $2$, $3$, $5$, $7$ et $11$.
+    
+    Puisqu'aucun de ces nombres premiers ne divise $127$.
+    
+    Donc : \quad le nombre $127$ est premier.
+    
+    \item \textbf{Pour le nombre $133$ :}
+    
+    On a : $\sqrt{133} \approx 11,5$
+    
+    Les nombres premiers inférieurs ou égaux à $\sqrt{133}$ sont $2$, $3$, $5$, $7$ et $11$.
+    
+    On a : $133 = 7 \times 19$.
+    
+    Puisque le nombre premier $7$ divise $133$.
+    
+    Donc : \quad le nombre $133$ n'est pas premier.
+\end{enumerate}
 \end{Solution}
 
 
@@ -929,7 +884,7 @@ Donc $882 = 2 \times 3^2 \times 7^2$ est la décomposition de $882$ en produit d
     \end{array}
     \]
 
-    Donc $A = 2^3 \times 3 \times 5$.
+    Donc $A = 2^3 \times 3 \times 5$ et $B = 2^2 \times 3^2 \times 7$.
 
     \columnbreak
 
@@ -943,8 +898,6 @@ Donc $882 = 2 \times 3^2 \times 7^2$ est la décomposition de $882$ en produit d
     1   &
     \end{array}
     \]
-
-    Donc $B = 2^2 \times 3^2 \times 7$.
     \end{multicols}
 
     \item \textbf{Décomposition de $C = A \times B$ :}
@@ -961,29 +914,21 @@ Donc $882 = 2 \times 3^2 \times 7^2$ est la décomposition de $882$ en produit d
 
     On a $A = 2^3 \times 3^1 \times 5^1$. Pour que $A \times k$ soit un carré parfait, tous les exposants doivent être pairs.
 
-    \begin{itemize}
-        \item Exposant de $2$ : $3$ (impair) $\Rightarrow$ il manque $2^1$.
-        \item Exposant de $3$ : $1$ (impair) $\Rightarrow$ il manque $3^1$.
-        \item Exposant de $5$ : $1$ (impair) $\Rightarrow$ il manque $5^1$.
-    \end{itemize}
+    Donc le plus petit $k$ est $k = 2 \times 3 \times 5 = 30$
 
-    Donc le plus petit $k$ est $k = 2 \times 3 \times 5 = 30$.
-
-    Vérification : $A \times k = 2^4 \times 3^2 \times 5^2 = (2^2 \times 3 \times 5)^2 = 60^2$. \quad
+    Vérification : $A \times k = 2^4 \times 3^2 \times 5^2 = (2^2 \times 3 \times 5)^2 = 60^2$ 
 
     Par conséquent, le plus petit entier naturel est $k = 30$.
 
     \item \textbf{$A$ est un multiple de $15$ mais n'est pas divisible par $9$ :}
 
-    On a $A = 2^3 \times 3 \times 5$ et $15 = 3 \times 5$.
-
-    Puisque $A = 2^3 \times (3 \times 5) = 8 \times 15$, on a $15 \mid A$.
+    On a $A = 2^3 \times 3 \times 5 = 2^3 \times 15$
 
     Donc $A$ est un \textbf{multiple de $15$}.
 
     Par ailleurs, $9 = 3^2$. Dans la décomposition de $A = 2^3 \times 3^1 \times 5^1$, l'exposant de $3$ est $1 < 2$.
 
-    Donc $9 \nmid A$.
+    Donc $9$ ne divise pas $A$.
 
     Par conséquent, $A$ est un \textbf{multiple de $15$} mais n'est \textbf{pas divisible par $9$}.
 \end{enumerate}
@@ -1043,30 +988,33 @@ $ppcm(a, b)$ ou $a \vee b$.
 \end{enumerate}
 \end{Application}
 
+
 %% SOLUTION_APPLICATION
 \begin{Solution}[APPLICATION][10]
 \begin{enumerate}
-    \item \textbf{Calcul de $\ppcm(12 \; ; \; 18)$ :}
-
-    On décompose : $12 = 2^2 \times 3$ \quad et \quad $18 = 2 \times 3^2$
-
-    Le $\ppcm$ s'obtient en prenant le produit des facteurs premiers avec le \textbf{plus grand exposant} :
-
-    \[\ppcm(12 \; ; \; 18) = 2^2 \times 3^2 = 4 \times 9 = 36\]
-
-    Par conséquent, $\ppcm(12 \; ; \; 18) = 36$.
-
-    \item
+    \item \textbf{Cherchons les multiples non nuls de $12$ et $18$ :}
+    
+    On a : $M_{12} = \{12, 24, 36, 48, 60, \dots\}$
+    et $M_{18} = \{18, 36, 54, 72, \dots\}$
+    
+    Puisque $36$ est le plus petit multiple commun non nul de ces deux nombres.
+    
+    Donc : \quad $\ppcm(12, 18) = 36$.
+    
+    \item 
     \begin{itemize}
-        \item $\ppcm(5 \; ; \; 5) = 5$ \quad (le plus petit multiple commun de $5$ et $5$ est $5$).
-        \item $\ppcm(1 \; ; \; 3) = 3$ \quad (tout multiple de $3$ est aussi un multiple de $1$).
-        \item $\ppcm(7 \; ; \; 0) = 0$ \quad (par convention, $0$ est un multiple de tout entier, et le plus petit est $0$).
-        \item $\ppcm(4 \; ; \; 8) = 8$ \quad (car $4 \mid 8$, donc tout multiple de $8$ est un multiple de $4$).
+        \item $\ppcm(5 \; ; \; 5) = 5$ \quad 
+        (car pour tout entier naturel $a$ : $\ppcm(a ; a) = a$)
+        \item $\ppcm(1 \; ; \; 3) = 3$ \quad 
+        (car pour tout entier naturel $a$ : $\ppcm(1 ; a) = a$)
+        \item $\ppcm(7 \; ; \; 0) = 0$ \quad
+        (car le seul multiple de $0$ est $0$)
+        \item $\ppcm(4 \; ; \; 8) = 8$ \quad 
+        (car $8$ est un multiple de $4$ )
     \end{itemize}
+    
 \end{enumerate}
 \end{Solution}
-
-
 
 
 %% SECTION
@@ -1141,21 +1089,24 @@ $pgcd(a, b)$ ou $a \wedge b$.
 \begin{Solution}[APPLICATION][11]
 \begin{enumerate}
     \item \textbf{Calcul de $\pgcd(40 \; ; \; 84)$ :}
-
-    On décompose : $40 = 2^3 \times 5$ \quad et \quad $84 = 2^2 \times 3 \times 7$
-
-    Le $\pgcd$ s'obtient en prenant le produit des facteurs premiers \textbf{communs} avec le \textbf{plus petit exposant} :
-
-    \[\pgcd(40 \; ; \; 84) = 2^2 = 4\]
-
-    Par conséquent, $\pgcd(40 \; ; \; 84) = 4$.
+    
+    On a : l'ensemble des diviseurs de $40$ est $\{1, 2, 4, 5, 8, 10, 20, 40\}$.
+    
+    On a : l'ensemble des diviseurs de $84$ est $\{1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84\}$.
+    
+    On a donc : l'ensemble des diviseurs communs de $40$ et $84$ est $\{1, 2, 4\}$.
+    
+    Puisque $4$ est le plus grand diviseur commun de ces deux nombres.
+    
+    Donc : \quad $\pgcd(40, 84) = 4$.
 
     \item
     \begin{itemize}
-        \item $\pgcd(7 \; ; \; 7) = 7$.
+        \item $\pgcd(7 \; ; \; 7) = 7$ \quad
+        (car pour tout entier naturel non nul $a$ : $\pgcd(a ; a) = a$)
         \item $\pgcd(1 \; ; \; 3) = 1$ \quad (tout entier est divisible par $1$).
-        \item $\pgcd(7 \; ; \; 0) = 7$ \quad (par convention, $\pgcd(a \; ; \; 0) = a$ car tout entier divise $0$).
-        \item $\pgcd(4 \; ; \; 8) = 4$ \quad (car $4 \mid 8$).
+        \item $\pgcd(7 \; ; \; 0) = 7$ \quad ( $\pgcd(a \; ; \; 0) = a$ car tout entier divise $0$).
+        \item $\pgcd(4 \; ; \; 8) = 4$ \quad (car $4$ divise $8$).
     \end{itemize}
 \end{enumerate}
 \end{Solution}
@@ -1235,7 +1186,7 @@ On considère les deux nombres : $a = 3960$ ~\text{et}~ $b = 2100$
     \end{array}
     \]
 
-    Donc $a = 2^3 \times 3^2 \times 5 \times 11$.
+    Donc $a = 2^3 \times 3^2 \times 5 \times 11$ \quad et \quad $b = 2^2 \times 3 \times 5^2 \times 7$.
 
     \columnbreak
 
@@ -1251,24 +1202,17 @@ On considère les deux nombres : $a = 3960$ ~\text{et}~ $b = 2100$
     \end{array}
     \]
 
-    Donc $b = 2^2 \times 3 \times 5^2 \times 7$.
     \end{multicols}
 
     \item \textbf{Calcul de $\pgcd(a \; ; \; b)$ et $\ppcm(a \; ; \; b)$ :}
 
-    On a : $a = 2^3 \times 3^2 \times 5^1 \times 11$ \quad et \quad $b = 2^2 \times 3^1 \times 5^2 \times 7$.
+    On a : $a = 2^3 \times 3^2 \times 5^1 \times 11$ \quad et \quad $b = 2^2 \times 3^1 \times 5^2 \times 7$
+    
+    Donc : \quad
+    $\pgcd(a \; ; \; b) = 2^2 \times 3^1 \times 5^1 = 4 \times 3 \times 5 = 60$
 
-    \textbf{Calcul du $\pgcd(a \; ; \; b)$} — facteurs communs avec le plus petit exposant :
-
-    \[\pgcd(a \; ; \; b) = 2^2 \times 3^1 \times 5^1 = 4 \times 3 \times 5 = 60\]
-
-    Par conséquent, $\pgcd(a \; ; \; b) = 60$.
-
-    \textbf{Calcul du $\ppcm(a \; ; \; b)$} — tous les facteurs avec le plus grand exposant :
-
-    \[\ppcm(a \; ; \; b) = 2^3 \times 3^2 \times 5^2 \times 7 \times 11 = 8 \times 9 \times 25 \times 7 \times 11 = 138\,600\]
-
-    Par conséquent, $\ppcm(a \; ; \; b) = 138\,600$.
+    et
+    $\ppcm(a \; ; \; b) = 2^3 \times 3^2 \times 5^2 \times 7 \times 11 = 8 \times 9 \times 25 \times 7 \times 11 = 138\,600$
 
     \item \textbf{Simplification de $\frac{a}{b}$ et $\sqrt{ab}$ :}
 
@@ -1277,9 +1221,7 @@ On considère les deux nombres : $a = 3960$ ~\text{et}~ $b = 2100$
 
     Par conséquent, $\frac{a}{b} = \frac{66}{35}$ (fraction irréductible car $\pgcd(66 \; ; \; 35) = 1$).
 
-    Pour $\sqrt{ab}$ :
-
-    On a :
+    Pour $\sqrt{ab}$, On a :
     \begin{align*}
         ab &= (2^3 \times 3^2 \times 5 \times 11) \times (2^2 \times 3 \times 5^2 \times 7) = 2^5 \times 3^3 \times 5^3 \times 7 \times 11
     \end{align*}
@@ -1287,6 +1229,7 @@ On considère les deux nombres : $a = 3960$ ~\text{et}~ $b = 2100$
     Donc :
     \begin{align*}
         \sqrt{ab} &= \sqrt{2^5 \times 3^3 \times 5^3 \times 7 \times 11} \\
+                  &= \sqrt{(2^4 \times 3^2 \times 5^2) \times (2 \times 3 \times 5 \times 7 \times 11)} \\
                   &= 2^2 \times 3 \times 5 \times \sqrt{2 \times 3 \times 5 \times 7 \times 11} \\
                   &= 60\sqrt{2310}
     \end{align*}
@@ -1296,13 +1239,6 @@ On considère les deux nombres : $a = 3960$ ~\text{et}~ $b = 2100$
     \item \textbf{Plus petit entier naturel non nul $m$ pour que $ma$ soit un carré parfait :}
 
     On a $a = 2^3 \times 3^2 \times 5^1 \times 11^1$. Pour que $ma$ soit un carré parfait, tous les exposants doivent être pairs.
-
-    \begin{itemize}
-        \item Exposant de $2$ : $3$ (impair) $\Rightarrow$ il manque $2^1$.
-        \item Exposant de $3$ : $2$ (pair) $\Rightarrow$ rien à ajouter.
-        \item Exposant de $5$ : $1$ (impair) $\Rightarrow$ il manque $5^1$.
-        \item Exposant de $11$ : $1$ (impair) $\Rightarrow$ il manque $11^1$.
-    \end{itemize}
 
     Donc le plus petit $m$ est $m = 2 \times 5 \times 11 = 110$.
 
