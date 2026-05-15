@@ -436,5 +436,6 @@
 % #1 = type (ACTIVITÉ / APPLICATION / EXERCICE DE SYNTHÈSE)   #2 = numéro
 \NewTColorBox{Solution}{ O{} O{} }{
     emptyboxstyle={CSol}{\MakeUppercase{SOLUTION\ifstrempty{#1}{}{ #1}\ifstrempty{#2}{}{ #2}}}{},
-    breakable
+    breakable,
+    parbox=false
 }
