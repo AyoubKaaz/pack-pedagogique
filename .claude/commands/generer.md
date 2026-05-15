@@ -13,6 +13,15 @@ et entre %% FOOTER_APERCU et %% FIN_FOOTER_APERCU
 Si le chapitre n'est pas précisé dans la commande, demande :
 "Quel chapitre veux-tu générer ? (ex: ch11_fonctions)"
 
+## Étape 0.5 — Extraire le titre depuis CLAUDE.md local
+Lire `chapitres/$CHAPITRE/CLAUDE.md` et extraire la première ligne `# Chapitre XX — Titre`.
+- `$CH_NUM` = le numéro à deux chiffres (ex: `01`)
+- `$CH_TITRE` = le texte après le tiret (ex: `Arithmétique`)
+- `$FOOTER_GAUCHE` = `Ch $CH_NUM. $CH_TITRE`  (ex: `Ch 01. Arithmétique`)
+
+Ce footer sera injecté localement dans chaque fichier généré,
+**sans aucune modification de `preamble/`**.
+
 ## Étape 1 — Lire et analyser source.tex
 Lire chapitres/$CHAPITRE/source.tex et produire un rapport rapide :
 - Nombre de blocs par type (ACTIVITE, APPLICATION, EXERCICE, etc.)
@@ -31,12 +40,13 @@ Balises exclues  : SOLUTION_ACTIVITE, SOLUTION_APPLICATION,
 
 Structure du fichier :
 ```
-\documentclass[12pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 \input{../../preamble/01_packages}
 \input{../../preamble/02_style}
 \input{../../preamble/03_macros}
 \begin{document}
 \input{Page1}
+\fancypagestyle{cours}{\fancyfoot[L]{\small $FOOTER_GAUCHE}}
 \pagestyle{cours}
 [TOUT le contenu de source.tex]
 \end{document}
@@ -58,7 +68,8 @@ Structure du fichier :
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\cfoot{\thepage}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{\small $FOOTER_GAUCHE}
 [HEADER complet — copié depuis le td.tex existant du chapitre]
 \vspace{0.4cm}
 \begin{multicols*}{2}
@@ -73,7 +84,7 @@ Contenu : UNIQUEMENT les blocs SOLUTION_ACTIVITE + SOLUTION_APPLICATION
 
 Structure du fichier :
 ```
-\documentclass[11pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 \input{../../preamble/01_packages}
 \input{../../preamble/02_style}
 \input{../../preamble/03_macros}
@@ -81,10 +92,13 @@ Structure du fichier :
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\cfoot{\thepage}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{\small $FOOTER_GAUCHE}
 [HEADER CORRECTION — copié depuis td_correction.tex existant]
 \vspace{0.4cm}
+\begin{multicols*}{2}
 [SOLUTION_* uniquement dans l'ordre]
+\end{multicols*}
 \end{document}
 ```
 
@@ -94,6 +108,8 @@ Vérifier que :
 - [ ] Pas de \textwidth dans les minipage (uniquement \linewidth)
 - [ ] Les chemins \input{../../preamble/...} sont corrects
 - [ ] Le header du td.tex est complet
+- [ ] \fancyfoot[L] présent dans les 3 fichiers avec le bon titre
+- [ ] \begin{multicols*}{2} présent dans td.tex ET td_correction.tex
 
 ## Étape 6 — Git push automatique
 ```bash
