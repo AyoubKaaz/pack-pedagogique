@@ -88,6 +88,13 @@ Structure du fichier :
 \input{../../preamble/01_packages}
 \input{../../preamble/02_style}
 \input{../../preamble/03_macros}
+\RenewTColorBox{Solution}{ O{} O{} }{%
+    emptyboxstyle={CSol}{\MakeUppercase{SOLUTION\ifstrempty{#1}{}{ #1}\ifstrempty{#2}{}{ #2}}}{},
+    breakable,
+    parbox=false,
+    before skip=2pt,
+    after skip=2pt
+}
 \begin{document}
 \pagestyle{fancy}
 \fancyhf{}
