@@ -19,9 +19,8 @@
 %% ACTIVITE
 \begin{Activite}[][10 min]
 On considère la liste de nombres suivante : 
-$-3 \ ; \ 14 \ ; \ 2,5 \ ; \ 0 \ ; \ 25 \ ; \ 36 \ ; \ -7 \ ; \ 41$
-
-\begin{enumerate}
+$-3 \quad ; \quad 14 \quad ; \quad 2,5 \quad ; \quad 0 \quad ; \quad 25 \quad ; \quad 36 \quad ; \quad -7 \quad ; \quad 41$
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
     \item Parmi les nombres de cette liste, relever ceux qui sont des entiers positifs.
 
     (\textit{Ces nombres sont appelés des \textbf{entiers naturels}}).
@@ -38,30 +37,41 @@ $-3 \ ; \ 14 \ ; \ 2,5 \ ; \ 0 \ ; \ 25 \ ; \ 36 \ ; \ -7 \ ; \ 41$
 \begin{enumerate}
     \item Les entiers positifs sont $0 ~; 14 ~; 25 ~; 36$ et $41$.
 
-    $\blacktriangleright$ \textbf{Ces nombres constituent l'ensemble des \textcolor{PrimaryColor}{entiers naturels}, noté $\mathbb{N}$.}
-    
-    \item Les nombres pairs sont $0 ; 14$ et $36$ et les nombres impairs sont $25$ et $41$.
+    \begin{itemize}[label=$\blacktriangleright$, leftmargin=*, nosep]
+    \item \textbf{Ces nombres constituent l'ensemble des \textcolor{PrimaryColor}{entiers naturels}, noté $\mathbb{N}$.}
+    \end{itemize}
 
-    $\blacktriangleright$ \textbf{Tout entier naturel est soit \textcolor{PrimaryColor}{pair}, soit \textcolor{PrimaryColor}{impair}.}
+    \item Les nombres pairs sont $0 ; 14$ et $36$.
     
+    Les nombres impairs sont $25$ et $41$.
+
+    \begin{itemize}[label=$\blacktriangleright$, leftmargin=*, nosep]
+    \item \textbf{Tout entier naturel est soit \textcolor{PrimaryColor}{pair}, soit \textcolor{PrimaryColor}{impair}.}
+    \end{itemize}
+
     \item On a donc :
     \begin{itemize}
         \item $0 = 2 \times 0$ (avec $k=0$)
-        
+
         \item $14 = 2 \times 7$ (avec $k=7$)
-        
+
         \item $36 = 2 \times 18$ (avec $k=18$)
     \end{itemize}
+
     
+    \begin{itemize}[label=$\blacktriangleright$, leftmargin=*, nosep]
+    \item \textbf{Un entier naturel $n$ est \textcolor{PrimaryColor}{pair} s'il existe un entier naturel $k$ tel que $n = 2k$.}
+    \end{itemize}
     
-    $\blacktriangleright$ \textbf{Un entier naturel $n$ est \textcolor{PrimaryColor}{pair} s'il existe un entier naturel $k$ tel que $n = 2k$.}
     \item On a donc :
     \begin{itemize}
         \item $25 = 24 + 1 = 2 \times 12 + 1$ (avec $k=12$)
         \item $41 = 40 + 1 = 2 \times 20 + 1$ (avec $k=20$)
     \end{itemize}
-    
-    $\blacktriangleright$ \textbf{Un entier naturel $n$ est \textcolor{PrimaryColor}{impair} s'il existe un entier naturel $k$ tel que $n = 2k+1$.}
+
+    \begin{itemize}[label=$\blacktriangleright$, leftmargin=*, nosep]
+    \item \textbf{Un entier naturel $n$ est \textcolor{PrimaryColor}{impair} s'il existe un entier naturel $k$ tel que $n = 2k+1$.}
+\end{itemize}
 \end{enumerate}
 \end{Solution}
 
@@ -81,7 +91,7 @@ $\N^* = \{\,1\,;\,2\,;\,3\,;\,4\,;\ldots\}$
 
 %% DEFINITION
 % durée estimée : 2 min
-\begin{Definition}[Nombres pairs et nombres impairs]
+\begin{Definition}[]
 \begin{itemize}
   \item Un \textbf{nombre pair} est un multiple de $2$.
   \item Un \textbf{nombre impair} est un nombre qui n'est pas pair.
@@ -111,9 +121,9 @@ $n = 2k + 1 \quad \text{avec } k \in \N$
 %% EXEMPLE
 \begin{Exemple}[][5 min]
 \begin{enumerate}
-    \item $2022$ est un nombre pair. Car $2022 = 2 \times 1011$
-    \item $2023$ est un nombre impair. Car $2023 = 2 \times 1011 + 1$
-    \item Soit $n \in \N^*$, 
+    \item $2022$ est un nombre pair, car $2022 = 2 \times 1011$
+    \item $2023$ est un nombre impair, car $2023 = 2 \times 1011 + 1$
+    \item Soit $n \in \N$, 
     On pose : $E = 4n + 11$ et $F = 2n + 6$
 \begin{multicols}{2}
     \begin{itemize}
@@ -122,9 +132,9 @@ On a $E = 4n + 11 = 4n + 10 + 1 = 2(2n + 5) + 1$
 
 On pose $K = 2n + 5 \in \N$
 
-D'où $E = 2K + 1$ avec $K \in \N$
+Donc $E = 2K + 1$ avec $K \in \N$
 
-Donc $E$ est un nombre impair.
+ D'où $E$ est un nombre impair.
 
         \columnbreak
         
@@ -166,7 +176,9 @@ Soit $n$ un entier naturel non nul.
 \begin{Solution}[APPLICATION][1]
 Soit $n \in \mathbb{N}$.
 \begin{enumerate}
-    \item \textbf{Parité de $A = 8n + 10$ :}
+    \item 
+    \begin{itemize}
+        \item \textbf{Parité de $A = 8n + 10$ :}
 
     On a : $A = 8n + 10 = 2(4n + 5)$
 
@@ -176,21 +188,17 @@ Soit $n \in \mathbb{N}$.
 
     Par conséquent, $A$ est un nombre \textbf{pair}.
 
-    \medskip
-
-    \textbf{Parité de $B = 8n - 1$ :}
+        \item \textbf{Parité de $B = 8n - 1$ :}
 
     On a : $B = 8n - 1 = 2(4n - 1) + 1$
 
-    Posons $k = 4n - 1 \in \N$ (pour $n \geq 1$)
+    Posons $k = 4n - 1 \in \N$ (car $n \geq 1$)
 
     Donc $B = 2k + 1$ avec $k \in \N$.
 
     Par conséquent, $B$ est un nombre \textbf{impair}.
 
-    \medskip
-
-    \textbf{Parité de $C = n(2n + 4)$ :}
+        \item \textbf{Parité de $C = n(2n + 4)$ :}
 
     On a : $C = n(2n + 4) = 2n(n + 2)$
 
@@ -200,15 +208,14 @@ Soit $n \in \mathbb{N}$.
 
     Donc $C$ est un nombre \textbf{pair}.
 
-    \medskip
 
-    \textbf{Parité de $D = 4n^2 + 6n + 7$ :}
+        \item \textbf{Parité de $D = 4n^2 + 6n + 7$ :}
 
     On a :
     \begin{align*}
-        D &= 4n^2 + 6n + 7 \\
-          &= 4n^2 + 6n + 6 + 1 \\
-          &= 2(2n^2 + 3n + 3) + 1
+        D = 4n^2 + 6n + 7 \
+          = 4n^2 + 6n + 6 + 1 
+          = 2(2n^2 + 3n + 3) + 1
     \end{align*}
 
     Posons $k = 2n^2 + 3n + 3 \in \N$
@@ -216,12 +223,13 @@ Soit $n \in \mathbb{N}$.
     Donc $D = 2k + 1$ avec $k \in \N$.
 
     Donc  $D$ est un nombre \textbf{impair}.
+    \end{itemize}
 
     \item
     \begin{enumerate}
         \item \textbf{Montrons que $(n+1)^2 - n^2$ est impair :}
 
-        On a :
+        Soit $n \in \N$,  on a :
         \begin{align*}
             (n+1)^2 - n^2 = n^2 + 2n + 1 - n^2
                           = 2n + 1
@@ -233,7 +241,7 @@ Soit $n \in \mathbb{N}$.
 
         D'après la question \textbf{a)}, on a $(n+1)^2 - n^2 = 2n + 1$.
 
-        On a :
+        Dnnc :
         \begin{align*}
             (n+1)^2 - n^2 = 2021 
             \text{ équivaut à } \quad & 2n + 1 = 2021 \\
@@ -305,7 +313,7 @@ Puisque $x$ est pair et $y$ est impair, on applique les propriétés des opérat
 
 %% PROPRIETE
 % durée estimée : 2 min
-\begin{Propriete}[Nombres consécutifs]
+\begin{Propriete}[Entiers consécutifs]
 Soient $n$ et $n+1$ deux entiers consécutifs.
 \begin{itemize}
   \item La somme de deux entiers consécutifs est \textbf{impaire}.
@@ -385,12 +393,10 @@ c = n^2(n^2 - 1)
     Puisque $c$ est pair, $(-1)^c = 1$
     
     On a donc :
-    \begin{align*}
-    t = 5 \times 1 - 8 \times (-1) + 11 \times 1 
-     = 5 + 8 + 11 
-    \end{align*}
+    $t = 5 \times 1 - 8 \times (-1) + 11 \times 1 
+     = 5 + 8 + 11$
     
-    Donc : \quad $t = 24$
+    D'où : \quad $t = 24$
 \end{enumerate}
 \end{Solution}
 
@@ -418,7 +424,7 @@ S'il existe un entier naturel $k$ tel que $a = k \times b$, on dit que :
 % durée estimée : 2 min
 \begin{Remarque}
 \begin{itemize}
-  \item $0$ est un multiple de tous les nombres entiers naturels.
+  \item $0$ est un multiple de tous les entiers naturels.
   \item Tout entier naturel est divisible par $1$ et par lui-même.
 \end{itemize}
 \end{Remarque}
@@ -426,16 +432,14 @@ S'il existe un entier naturel $k$ tel que $a = k \times b$, on dit que :
 %% EXEMPLE
 \begin{Exemple}[][5 min]
 \begin{enumerate}
-    \item On a $145 = 5 \times 29$ ; donc $145$ est un multiple de $5$ et de $29$.
+    \item On a $145 = 5 \times 29$ , donc $145$ est un multiple de $5$ et de $29$.
     
     \item Le nombre $40$ n'est pas divisible par $7$.
     
-    \item Les multiples de $30$ sont : $0 ; 30 ; 60 ; 90 ; \dots$ 
-    (il y en a une infinité).
+    \item L'ensemble des multiples de $30$ est : 
+    $M_{30} = \{ 0 ~;~ 30 ~;~ 60 ~;~ 90 ~;~ \dots \}$ (il est infini).
     
-    \item Les diviseurs de $30$ sont :
-    $ D_{30} = \{1 ; 2 ; 3 ; 5 ; 6 ; 10 ; 15 ; 30\} $
-    (il y en a un nombre fini).
+    \item L'ensemble des diviseurs de $30$ est : $D_{30} = \{1~;~2~;~3~;~5~;~6~;~10~;~15~;~30\}$ (cet ensemble est fini).
 \end{enumerate}
 \end{Exemple}
 
@@ -453,9 +457,11 @@ S'il existe un entier naturel $k$ tel que $a = k \times b$, on dit que :
 \begin{enumerate}
     \item \textbf{Multiples de $13$ compris entre $100$ et $199$ :}
 
-    On cherche les entiers $k \in \N$ tels que $100 \leq 13k \leq 199$.
+    Les multiples de $13$ s’écrivent sous la forme $13k$ avec $k \in \N$
+
+    Cherchons donc les entiers naturels $k \in \N$ tels que $100 \leq 13k \leq 199$ :
     
-    $100 \leq 13k \leq 199 \quad \text{ équivaut à } \quad \frac{100}{13} \leq k \leq \frac{199}{13}$
+    On a : $100 \leq 13k \leq 199 \quad \text{ équivaut à } \quad \frac{100}{13} \leq k \leq \frac{199}{13}$
 
 
     On a : $\frac{100}{13} \approx 7{,}69$ \quad et \quad $\frac{199}{13} \approx 15{,}30$
@@ -535,11 +541,11 @@ Soient $a$, $b$ et $c$ des entiers naturels.
 \begin{enumerate}
     \item Déterminer parmi les nombres suivants ceux qui sont divisibles à la fois par $2$ et par $3$ :
 \begin{center}
-    $126 \quad ; \quad 345 \quad ; \quad 810 \quad ; \quad 442 \quad ; \quad 3054 \quad ; \quad 5051 \quad ; \quad 7204$
+    $126 \quad ; \quad 345 \quad ; \quad 810 \quad ; \quad 3054 \quad ; \quad 5051 \quad ; \quad 7204$
 \end{center}
     \item Déterminer parmi les nombres suivants ceux qui sont divisibles à la fois par $5$ et par $9$ :
 \begin{center}
-    $315 \quad ; \quad 450 \quad ; \quad 5550 \quad ; \quad 333 \quad ; \quad 9045 \quad ; \quad 3800 \quad ; \quad 9003$
+    $315 \quad ; \quad 450 \quad ; \quad 333 \quad ; \quad 9045 \quad ; \quad 3800 \quad ; \quad 9003$
 \end{center}
 \end{enumerate}
 \end{Application}
@@ -549,26 +555,24 @@ Soient $a$, $b$ et $c$ des entiers naturels.
 \begin{enumerate}
     \item Parmi les nombres proposés, ceux divisibles par $2$ sont : 
     
-    $126$ , $810$ , $442$ , $3054$ et $7204$.
+    $126$ , $810$  , $3054$ et $7204$.
     
     Cherchons parmi ces nombres ceux qui sont également divisibles par $3$ :
     \begin{itemize}
         \item On a $1+2+6 = 9$ , Donc $126$ est divisible par $3$.
         \item On a $8+1+0 = 9$ , Donc $810$ est divisible par $3$.
-        \item On a $4+4+2 = 10$ , Donc $442$ n'est pas divisible par $3$.
         \item On a $3+0+5+4 = 12$ , Donc $3054$ est divisible par $3$.
         \item On a $7+2+0+4 = 13$ , Donc $7204$ n'est pas divisible par $3$.
     \end{itemize}
     
     D'où : \quad les nombres divisibles à la fois par $2$ et par $3$ sont : $126$ , $810$ et $3054$.
 
-    \item Parmi les nombres proposés, ceux divisibles par $5$ sont : $315$ , $450$ , $5550$ , $9045$ et $3800$.
+    \item Parmi les nombres proposés, ceux divisibles par $5$ sont : $315$ , $450$ , $9045$ et $3800$.
     
     Cherchons parmi ces nombres ceux qui sont également divisibles par $9$ :
     \begin{itemize}
         \item Pour $315$ : on a $3+1+5 = 9$ , qui est divisible par $9$.
         \item Pour $450$ : on a $4+5+0 = 9$ , qui est divisible par $9$.
-        \item Pour $5550$ : on a $5+5+5+0 = 15$ , qui n'est pas divisible par $9$.
         \item Pour $9045$ : on a $9+0+4+5 = 18$ , qui est divisible par $9$.
         \item Pour $3800$ : on a $3+8+0+0 = 11$ , qui n'est pas divisible par $9$.
     \end{itemize}
@@ -644,7 +648,8 @@ Soient $a$, $b$ et $c$ des entiers naturels.
 %% ACTIVITE
 \begin{Activite}[][10 min]
 \begin{enumerate}
-    \item Déterminer les diviseurs de chacun des entiers naturels : $2 \ ; \ 3 \ ; \ 4 \ ; \ 5 \ ; \ 6 \ ; \ 7 \ \text{et} \ 11$.
+    \item Déterminer les diviseurs de chacun des entiers naturels : 
+    $2 \quad ; \quad 3 \quad ; \quad 4 \quad ; \quad 5 \quad ; \quad 6 \quad ; \quad 7 \quad \text{et} \quad 11$
     
     \item Parmi ces nombres, relever ceux qui admettent \textbf{exactement deux} diviseurs.
     
@@ -664,15 +669,15 @@ Soient $a$, $b$ et $c$ des entiers naturels.
 
 \begin{enumerate}
     \item Les diviseurs de chaque entier naturel :
-\begin{multicols}{2}
+\begin{multicols}{3}
 \begin{itemize}
-    \item $D_2 = \{1; 2\}$
-    \item $D_3 = \{1; 3\}$
-    \item $D_4 = \{1; 2; 4\}$
-    \item $D_5 = \{1; 5\}$
-    \item $D_6 = \{1; 2; 3; 6\}$
-    \item $D_7 = \{1; 7\}$
-    \item $D_{11} = \{1; 11\}$
+    \item $D_2 = \{1 ~;~ 2\}$
+    \item $D_3 = \{1 ~;~ 3\}$
+    \item $D_4 = \{1 ~;~ 2 ~;~ 4\}$
+    \item $D_5 = \{1 ~;~ 5\}$
+    \item $D_6 = \{1 ~;~ 2 ~;~  3 ~;~ 6\}$
+    \item $D_7 = \{1 ~;~ 7\}$
+    \item $D_{11} = \{1 ~;~ 11\}$
 \end{itemize}
 \end{multicols}
 
@@ -838,10 +843,12 @@ Aucun de ces nombres ne divise $109$. Donc $109$ est premier.
     
     \item Pour que $864 \times n$ soit un carré parfait, tous les exposants de sa décomposition doivent être pairs.
 
-On a $864 = 2^5 \times 3^3$. 
-Il faut multiplier par $2^1 \times 3^1$ pour obtenir $2^6 \times 3^4 = \big(2^3 \times 3^2\big)^2 = 72^2$.
+On a :~ $864 = 2^5 \times 3^3$
 
-Par conséquent, le plus petit entier est $n = 2 \times 3 = \mathbf{6}$.
+Il faut multiplier par $2^1 \times 3^1$ pour obtenir : 
+$$2^6 \times 3^4 = \big(2^3 \times 3^2\big)^2 = 72^2$$
+
+D'où le plus petit entier est $n = 2 \times 3 = \mathbf{6}$.
 \end{enumerate}
 \end{Solution}
 
@@ -888,7 +895,7 @@ Donc $882 = 2 \times 3^2 \times 7^2$ est la décomposition de $882$ en produit d
 %% SOLUTION_APPLICATION
 \begin{Solution}[APPLICATION][9]
 \begin{enumerate}
-    \item \textbf{Décomposition en produit de facteurs premiers de $A = 120$ et $B = 252$ :}
+    \item \textbf{Décomposition de $A = 120$ et $B = 252$ :}
 
     \begin{multicols}{2}
     \[
@@ -901,8 +908,6 @@ Donc $882 = 2 \times 3^2 \times 7^2$ est la décomposition de $882$ en produit d
     1   &
     \end{array}
     \]
-
-    Donc $A = 2^3 \times 3 \times 5$ et $B = 2^2 \times 3^2 \times 7$.
 
     \columnbreak
 
@@ -917,20 +922,19 @@ Donc $882 = 2 \times 3^2 \times 7^2$ est la décomposition de $882$ en produit d
     \end{array}
     \]
     \end{multicols}
+    Donc $A = 2^3 \times 3 \times 5$ et $B = 2^2 \times 3^2 \times 7$.
 
     \item \textbf{Décomposition de $C = A \times B$ :}
 
     On a :
-    \begin{align*}
-        C &= (2^3 \times 3 \times 5) \times (2^2 \times 3^2 \times 7) \\
-          &= 2^5 \times 3^3 \times 5 \times 7
-    \end{align*}
+        $C = (2^3 \times 3 \times 5) \times (2^2 \times 3^2 \times 7) 
+          = 2^5 \times 3^3 \times 5 \times 7$
 
-    Par conséquent, $C = 2^5 \times 3^3 \times 5 \times 7$.
+    Donc : \quad $C = 2^5 \times 3^3 \times 5 \times 7$
 
     \item \textbf{Plus petit entier naturel $k$ pour que $A \times k$ soit un carré parfait :}
 
-    On a $A = 2^3 \times 3^1 \times 5^1$. Pour que $A \times k$ soit un carré parfait, tous les exposants doivent être pairs.
+    On a $A = 2^3 \times 3 \times 5$. Pour que $A \times k$ soit un carré parfait, tous les exposants doivent être pairs.
 
     Donc le plus petit $k$ est $k = 2 \times 3 \times 5 = 30$
 
@@ -944,11 +948,13 @@ Donc $882 = 2 \times 3^2 \times 7^2$ est la décomposition de $882$ en produit d
 
     Donc $A$ est un \textbf{multiple de $15$}.
 
-    Par ailleurs, $9 = 3^2$. Dans la décomposition de $A = 2^3 \times 3^1 \times 5^1$, l'exposant de $3$ est $1 < 2$.
+    Par ailleurs, $9 = 3^2$. 
+    
+    Dans la décomposition de $A = 2^3 \times 3 \times 5$, l'exposant de $3$ est $1 < 2$.
 
     Donc $9$ ne divise pas $A$.
 
-    Par conséquent, $A$ est un \textbf{multiple de $15$} mais n'est \textbf{pas divisible par $9$}.
+    D'où $A$ est un \textbf{multiple de $15$} mais n'est \textbf{pas divisible par $9$}.
 \end{enumerate}
 \end{Solution}
 
@@ -974,16 +980,18 @@ Le bus A y repasse toutes les $15$ minutes et le bus B toutes les $20$ minutes.
 \begin{Solution}[ACTIVITÉ][4]
 \begin{enumerate}
     \item Les durées écoulées en minutes lors des cinq premiers passages du bus A :
-\[15 \; ; \; 30 \; ; \; 45 \; ; \; 60 \; ; \; 75 \quad (\text{sont les multiples de~} 15) \]
+\[15 \; ; \; 30 \; ; \; 45 \; ; \; 60 \; ; \; 75 \quad (\text{sont des multiples de~} 15) \]
 
     \item Les durées écoulées en minutes lors des cinq premiers passages du bus B :
-\[20 \; ; \; 40 \; ; \; 60 \; ; \; 80 \; ; \; 100 \quad (\text{sont les multiples de~} 20) \]
+\[20 \; ; \; 40 \; ; \; 60 \; ; \; 80 \; ; \; 100 \quad (\text{sont des multiples de~} 20) \]
 
     \item Donc la plus petite durée commune aux deux bus est de 60 minutes.
     
     Alors : les deux bus se retrouveront à la gare en même temps pour la première fois au bout de 60 minutes.
     
-    $\blacktriangleright$ \textbf{On dit que $60$ est le \textcolor{PrimaryColor}{plus petit commun multiple}  de $15$ et $20$. et on écrit $\ppcm(15, 20) = 60$}
+    \begin{itemize}[label=$\blacktriangleright$, leftmargin=*, nosep]
+    \item \textbf{On dit que $60$ est le \textcolor{PrimaryColor}{plus petit commun multiple}  de $15$ et $20$. et on écrit $\ppcm(15, 20) = 60$}
+    \end{itemize}
 \end{enumerate}
 \end{Solution}
 
@@ -1003,7 +1011,7 @@ $ppcm(a, b)$ ou $a \vee b$.
 \begin{enumerate}
     \item Déterminer $\ppcm(12, 18)$.
     
-    \item Déterminer $\ppcm(5;5)$ ; $\ppcm(1;3)$ ; $\ppcm(7;0)$ et $\ppcm(4;8)$.
+    \item Déterminer $\ppcm(5;5)$, $\ppcm(1;3)$, $\ppcm(7;0)$ et $\ppcm(4;8)$.
 \end{enumerate}
 \end{Application}
 
@@ -1013,8 +1021,8 @@ $ppcm(a, b)$ ou $a \vee b$.
 \begin{enumerate}
     \item \textbf{Cherchons les multiples non nuls de $12$ et $18$ :}
     
-    On a : $M_{12} = \{12, 24, 36, 48, 60, \dots\}$
-    et $M_{18} = \{18, 36, 54, 72, \dots\}$
+    On a : $M_{12} = \{12~;~24~;~36~;~48~;~60~;~\dots\}$
+    et $M_{18} = \{18~;~36~;~54~;~72~;~\dots\}$
     
     Puisque $36$ est le plus petit multiple commun non nul de ces deux nombres.
     
@@ -1055,35 +1063,38 @@ Un professeur d'EPS forme des équipes identiques (même nombre de filles et de 
 \begin{Solution}[ACTIVITÉ][5]
 \begin{enumerate}
     \item On a : \quad    $12 \div 3 = 4   \quad \text{et}  \quad 18 \div 3 = 6$
-        
+
     Puisque $4$ et $6$ sont des entiers naturels.
-    
+
     Donc : le professeur peut former 3 équipes. Chaque équipe sera composée de 4 filles et 6 garçons.
-    
-    $\blacktriangleright$ \textbf{Ceci montre que 3 est un \textcolor{PrimaryColor}{diviseur commun} à 12 et 18.}
-    
+
+    \begin{itemize}[label=$\blacktriangleright$, leftmargin=*, nosep]
+    \item \textbf{Ceci montre que 3 est un \textcolor{PrimaryColor}{diviseur commun} à 12 et 18.}
+    \end{itemize}
+
     \item On a : \quad $12 \div 4 = 3   \quad \text{et}  \quad     18 \div 4 = 4,5$
-    
+
     Nous remarquons que $4,5$ n'est pas un entier (le nombre d'élèves doit être un entier).
-    
+
     Donc : \quad il ne peut pas former 4 équipes, car 18 n'est pas divisible par 4.
-    
+
     \item Cherchons les diviseurs de 12 et de 18 pour trouver le nombre maximum d'équipes possibles :
-    
-    On a : $D_{12} = \{1, 2, 3, 4, 6, 12\}$ \quad et \quad $D_{18} = \{1, 2, 3, 6, 9, 18\}$
-    
+
+    On a : $D_{12} = \{1~;~2~;~3~;~4~;~6~;~12\}$ \quad et \quad 
+    $D_{18} = \{1~;~2~;~3~;~6~;~9~;~18\}$
+
     Donc les diviseurs communs à $12$ et $18$ sont $1, 2, 3 ~\text{et}~6$.
-    
+
     D'où : le plus grand de ces diviseurs est $6$.
-    
+
     Donc : le plus grand nombre d'équipes qu'il peut former est $6$.
 
-    $\blacktriangleright$ \textbf{On dit que $6$ est le \textcolor{PrimaryColor}{plus grand commun diviseur}  de $12$ et $18$. et on écrit $\pgcd(12, 18) = 6$}
-    
+    \begin{itemize}[label=$\blacktriangleright$, leftmargin=*, nosep]
+    \item \textbf{On dit que $6$ est le \textcolor{PrimaryColor}{plus grand commun diviseur}  de $12$ et $18$. et on écrit $\pgcd(12, 18) = 6$}
+    \end{itemize}
 
 \end{enumerate}
 \end{Solution}
-
 
 %% DEFINITION
 % durée estimée : 3 min
@@ -1100,7 +1111,7 @@ $pgcd(a, b)$ ou $a \wedge b$.
 \begin{enumerate}
     \item Déterminer $\pgcd(40, 84)$.
 
-    \item Déterminer $\pgcd(7;7)$ ; $\pgcd(1;3)$ ;  $\pgcd(7;0)$ et $\pgcd(4;8)$.
+    \item Déterminer $\pgcd(7;7)$, $\pgcd(1;3)$,  $\pgcd(7;0)$ et $\pgcd(4;8)$.
 
 \end{enumerate}
 \end{Application}
@@ -1110,9 +1121,13 @@ $pgcd(a, b)$ ou $a \wedge b$.
 \begin{enumerate}
     \item \textbf{Calcul de $\pgcd(40 \; ; \; 84)$ :}
     
-    On a : l'ensemble des diviseurs de $40$ est $\{1, 2, 4, 5, 8, 10, 20, 40\}$.
+    On a : l'ensemble des diviseurs de $40$ est :
     
-    On a : l'ensemble des diviseurs de $84$ est $\{1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84\}$.
+    $D_{40} = \{1~;~2~;~4~;~5~;~8~;~10~;~20~;~40\}$.
+    
+    On a : l'ensemble des diviseurs de $84$ est :
+    
+    $D_{84} = \{1~;~2~;~3~;~4~;~6~;~7~;~12~;~14~;~21~;~28~;~42~;~84\}$.
     
     On a donc : l'ensemble des diviseurs communs de $40$ et $84$ est $\{1, 2, 4\}$.
     
@@ -1209,8 +1224,6 @@ On considère les deux nombres : $a = 3960$ ~\text{et}~ $b = 2100$
     \end{array}
     \]
 
-    Donc $a = 2^3 \times 3^2 \times 5 \times 11$ \quad et \quad $b = 2^2 \times 3 \times 5^2 \times 7$.
-
     \columnbreak
 
     \[
@@ -1226,23 +1239,24 @@ On considère les deux nombres : $a = 3960$ ~\text{et}~ $b = 2100$
     \]
 
     \end{multicols}
+        Donc $a = 2^3 \times 3^2 \times 5 \times 11$ \quad et \quad $b = 2^2 \times 3 \times 5^2 \times 7$.
 
     \item \textbf{Calcul de $\pgcd(a \; ; \; b)$ et $\ppcm(a \; ; \; b)$ :}
 
-    On a : $a = 2^3 \times 3^2 \times 5^1 \times 11$ \quad et \quad $b = 2^2 \times 3^1 \times 5^2 \times 7$
+    On a : $a = 2^3 \times 3^2 \times 5 \times 11$ \quad et \quad $b = 2^2 \times 3 \times 5^2 \times 7$
     
-    Donc : \quad
-    $\pgcd(a \; ; \; b) = 2^2 \times 3^1 \times 5^1 = 4 \times 3 \times 5 = 60$
+    Donc : 
+    \begin{itemize}
+        \item $\pgcd(a \; ; \; b) = 2^2 \times 3 \times 5 = 4 \times 3 \times 5 = 60$
 
-    et
-    $\ppcm(a \; ; \; b) = 2^3 \times 3^2 \times 5^2 \times 7 \times 11 = 8 \times 9 \times 25 \times 7 \times 11 = 138\,600$
+        \item $\ppcm(a \; ; \; b) = 2^3 \times 3^2 \times 5^2 \times 7 \times 11 = 138\,600$
+    \end{itemize}    
 
     \item \textbf{Simplification de $\frac{a}{b}$ et $\sqrt{ab}$ :}
 
     On a :
     \[\frac{a}{b} = \frac{2^3 \times 3^2 \times 5 \times 11}{2^2 \times 3 \times 5^2 \times 7} = \frac{2 \times 3 \times 11}{5 \times 7} = \frac{66}{35}\]
 
-    Par conséquent, $\frac{a}{b} = \frac{66}{35}$ (fraction irréductible car $\pgcd(66 \; ; \; 35) = 1$).
 
     Pour $\sqrt{ab}$, On a :
     \begin{align*}
@@ -1257,17 +1271,17 @@ On considère les deux nombres : $a = 3960$ ~\text{et}~ $b = 2100$
                   &= 60\sqrt{2310}
     \end{align*}
 
-    Par conséquent, $\sqrt{ab} = 60\sqrt{2310}$.
-
     \item \textbf{Plus petit entier naturel non nul $m$ pour que $ma$ soit un carré parfait :}
 
-    On a $a = 2^3 \times 3^2 \times 5^1 \times 11^1$. Pour que $ma$ soit un carré parfait, tous les exposants doivent être pairs.
+    On a : \quad $a = 2^3 \times 3^2 \times 5 \times 11$
+    
+    Pour que $ma$ soit un carré parfait, tous les exposants doivent être pairs.
 
     Donc le plus petit $m$ est $m = 2 \times 5 \times 11 = 110$.
 
-    Vérification : $ma = 2^4 \times 3^2 \times 5^2 \times 11^2 = (2^2 \times 3 \times 5 \times 11)^2 = 660^2$.
+    Vérification : $ma = 2^4 \times 3^2 \times 5^2 \times 11^2 = (2^2 \times 3 \times 5 \times 11)^2 = 660^2$
 
-    Par conséquent, le plus petit entier naturel non nul est $m = 110$.
+    D'où le plus petit entier naturel non nul est $m = 110$.
 \end{enumerate}
 \end{Solution}
 
