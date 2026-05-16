@@ -7,7 +7,7 @@ Légende : ✅ complet · 🔄 en cours · ❌ non démarré
 
 | Chapitre | Titre | source.tex | fiche_prof | td | td_correction | Statut global |
 |----------|-------|:----------:|:----------:|:--:|:-------------:|---------------|
-| ch01 | Arithmétique | 🔄 | ✅ | ✅ | 🔄 | En rédaction |
+| ch01 | Arithmétique | ✅ | ✅ | ✅ | ✅ | Complet |
 | ch02 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
 | ch03 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
 | ch04 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
@@ -26,12 +26,12 @@ Légende : ✅ complet · 🔄 en cours · ❌ non démarré
 ---
 
 ## Résumé
-- Complets : **1 / 15** (ch11)
-- En cours : **1 / 15** (ch01)
+- Complets : **2 / 15** (ch01, ch11)
+- En cours : **0 / 15**
 - Non démarrés : **13 / 15**
 
 ---
 
 ## Historique des mises à jour
 - 2025 : ch11_fonctions complété
-- 2025 : ch01_arithmetique démarré
+- 2026-05-16 : ch01_arithmetique complété (erreurs LaTeX corrigées)
