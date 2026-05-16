@@ -33,6 +33,552 @@
 }
 \pagestyle{cours}
 
+% ============ DÉBUT CONTENU GÉNÉRÉ ============
 
+%% SECTION
+\section{Ensemble $\N$ --- Nombres pairs et nombres impairs \duree{1h15}}
+
+%% ACTIVITE
+\begin{Activite}[][10 min]
+On considère la liste de nombres suivante :
+$-3 \quad ; \quad 14 \quad ; \quad 2,5 \quad ; \quad 0 \quad ; \quad 25 \quad ; \quad 36 \quad ; \quad -7 \quad ; \quad 41$
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Parmi les nombres de cette liste, relever ceux qui sont des entiers positifs.
+
+    (\textit{Ces nombres sont appelés des \textbf{entiers naturels}}).
+
+    \item Parmi les entiers naturels trouvés, lesquels sont pairs ? impairs ?
+
+    \item Écrire chacun des entiers naturels pairs sous forme $2k$ avec $k$ un entier naturel.
+    \item Écrire chacun des entiers naturels impairs sous forme $2k+1$ avec $k$ un entier naturel.
+\end{enumerate}
+\end{Activite}
+
+%% DEFINITION
+% durée estimée : 3 min
+\begin{Definition}[]
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item On désigne par $\N$ l'\textbf{ensemble des entiers naturels}, et on écrit :
+$\N = \{0\,;\,1\,;\,2\,;\,3\,;\,4\,;\ldots\}$
+
+    \item On désigne par $\N^*$ l'\textbf{ensemble des entiers naturels non nuls}, et on écrit :
+$\N^* = \{\,1\,;\,2\,;\,3\,;\,4\,;\ldots\}$
+\end{itemize}
+\end{Definition}
+
+
+
+%% DEFINITION
+% durée estimée : 2 min
+\begin{Definition}[]
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item Un \textbf{nombre pair} est un multiple de $2$.
+  \item Un \textbf{nombre impair} est un nombre qui n'est pas pair.
+\end{itemize}
+\end{Definition}
+
+
+
+%% REMARQUE
+% durée estimée : 1 min
+\begin{Remarque}
+   Il existe une infinité d'entiers naturels.
+\end{Remarque}
+
+%% PROPRIETE
+% durée estimée : 3 min
+\begin{Propriete}[Écriture d'un nombre pair ou impair quelconque] Soit $n$ un entier naturel.
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item $n$ est \textbf{pair} si et seulement s'il s'écrit :
+$n = 2k \quad \text{avec } k \in \N$
+
+    \item $n$ est \textbf{impair} si et seulement s'il s'écrit :
+$n = 2k + 1 \quad \text{avec } k \in \N$
+\end{itemize}
+\end{Propriete}
+
+%% EXEMPLE
+\begin{Exemple}[][5 min]
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item $2022$ est un nombre pair, car $2022 = 2 \times 1011$
+    \item $2023$ est un nombre impair, car $2023 = 2 \times 1011 + 1$
+    \item Soit $n \in \N$,
+    On pose : $E = 4n + 11$ et $F = 2n + 6$
+\begin{multicols}{2}
+    \begin{itemize}[leftmargin=*,itemsep=2pt]
+        \item
+On a $E = 4n + 11 = 4n + 10 + 1 = 2(2n + 5) + 1$
+
+On pose $K = 2n + 5 \in \N$
+
+Donc $E = 2K + 1$ avec $K \in \N$
+
+ D'où $E$ est un nombre impair.
+
+        \columnbreak
+
+        \item On a $F = 2n + 6 = 2(n + 3)$
+
+    On pose $K = n + 3 \in \N$
+
+    Donc $F = 2K$ avec $K \in \N$
+
+    D'où $F$ est un nombre pair.
+    \end{itemize}
+\end{multicols}
+\end{enumerate}
+\end{Exemple}
+
+
+%% APPLICATION
+\begin{Application}[][15 min]
+Soit $n$ un entier naturel non nul.
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Étudier la parité de chacun des nombres suivants :
+    \begin{multicols}{4}
+    \begin{itemize}[label=\textbullet]
+        \item $A=8n+10$
+        \item $B=8n-1$
+        \item $C=n(2n+4)$
+        \item $D=4n^2+6n+7$
+    \end{itemize}
+    \end{multicols}
+    \item
+    \begin{enumerate}[leftmargin=*,itemsep=2pt]
+        \item Montrer que $(n + 1)^2 - n^2$ est un nombre impair.
+        \item Résoudre dans $\N$ l'équation : $(n + 1)^2 - n^2 = 2021$
+    \end{enumerate}
+\end{enumerate}
+\end{Application}
+
+%% PROPRIETE
+% durée estimée : 3 min
+\begin{Propriete}[Opérations sur les nombres pairs et impairs]
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item La somme de deux nombres de \textbf{même parité} est \textbf{paire}.
+  \item La somme de deux nombres de \textbf{parité différente} est \textbf{impaire}.
+  \item Si l'un des facteurs d'un produit est pair, alors ce produit est \textbf{pair}.
+  \item Tout entier naturel élevé à une puissance non nulle conserve sa parité.
+\end{itemize}
+\end{Propriete}
+
+%% APPLICATION
+\begin{Application}[][15 min]
+Soient $x$  et $y$ deux entiers naturels, tels que $x$ est pair et $y$ est impair. Déterminer la parité des nombres suivants :
+\begin{center}
+\begin{multicols}{4}
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item $x + 8y$
+    \item $(x + 1)(y + 1)$
+    \item $3x^3 + y^2 + 11$
+    \item $x^{2024} + xy + 17$
+\end{itemize}
+\end{multicols}
+\end{center}
+\end{Application}
+
+%% PROPRIETE
+% durée estimée : 2 min
+\begin{Propriete}[Entiers consécutifs]
+Soient $n$ et $n+1$ deux entiers consécutifs.
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item La somme de deux entiers consécutifs est \textbf{impaire}.
+  \item Le produit de deux entiers consécutifs est \textbf{pair}.
+\end{itemize}
+\end{Propriete}
+
+
+%% APPLICATION
+\begin{Application}[][15 min]
+Soit $n$ un entier naturel.
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Montrer que le nombre $n(n+1)$ est pair.
+    \item Déterminer la parité des nombres suivants :
+\begin{center}
+$a=n^2+5n \quad ; \quad b=n^2+7n+13 \quad ; \quad c=n^4-n^2$
+\end{center}
+\item En déduire la valeur de $t$ :
+\[  t=5\times(-1)^a-8\times(-1)^b+11\times(-1)^c \]
+\end{enumerate}
+\end{Application}
+
+
+
+
+%% SECTION
+\section{Multiples et diviseurs d'un entier naturel \duree{1h}}
+
+%% DEFINITION
+% durée estimée : 3 min
+\begin{Definition}[Multiples et diviseurs]
+Soient $a$ et $b$ deux entiers naturels.
+
+S'il existe un entier naturel $k$ tel que $a = k \times b$, on dit que :
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item $b$ \textbf{divise} $a$ (ou $b$ est un \textbf{diviseur} de $a$),
+  \item $a$ est \textbf{divisible} par $b$,
+  \item $a$ est un \textbf{multiple} de $b$.
+\end{itemize}
+\end{Definition}
+
+%% REMARQUE
+% durée estimée : 2 min
+\begin{Remarque}
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item $0$ est un multiple de tous les entiers naturels.
+  \item Tout entier naturel est divisible par $1$ et par lui-même.
+\end{itemize}
+\end{Remarque}
+
+%% EXEMPLE
+\begin{Exemple}[][5 min]
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item On a $145 = 5 \times 29$ , donc $145$ est un multiple de $5$ et de $29$.
+
+    \item Le nombre $40$ n'est pas divisible par $7$.
+
+    \item L'ensemble des multiples de $30$ est :
+    $M_{30} = \{ 0 ~;~ 30 ~;~ 60 ~;~ 90 ~;~ \dots \}$ (il est infini).
+
+    \item L'ensemble des diviseurs de $30$ est : $D_{30} = \{1~;~2~;~3~;~5~;~6~;~10~;~15~;~30\}$ (cet ensemble est fini).
+\end{enumerate}
+\end{Exemple}
+
+
+%% APPLICATION
+\begin{Application}[][15 min]
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Déterminer les multiples de $13$ compris entre $100$ et $199$.
+    \item Montrer que $3333$ est un multiple de $33$.
+\end{enumerate}
+\end{Application}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% ---- Mode Commentaire ---- %%%%%%%%%%%%%%%%%%%%%%
+\iffalse
+%% PROPRIETE
+\begin{Propriete}[Opérations sur les multiples]
+Soient $a$, $b$ et $c$ des entiers naturels.
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item Si $a$ est multiple de $c$ et $b$ est multiple de $c$, alors $a + b$ est multiple de $c$ ;
+
+        et si de plus $a \geq b$, alors $a - b$ est multiple de $c$.
+  \item Si $a$ est multiple de $b$ et $b$ est multiple de $c$, alors $a$ est multiple de $c$.
+  \item Si $c$ est multiple de $a$, alors $nc$ est multiple de $a$ pour tout $n \in \N$.
+\end{itemize}
+\end{Propriete}
+
+%% PROPRIETE
+\begin{Propriete}[Opérations sur les diviseurs]
+Soient $a$, $b$ et $c$ des entiers naturels.
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item Si $a$ divise $b$ et $c$, et $b \geq c$, alors $a$ divise $b + c$ et $b - c$.
+  \item Si $a$ divise $b$, alors $a$ divise $bc$.
+\end{itemize}
+\end{Propriete}
+
+%% EXEMPLE
+\begin{Exemple}[][5 min]
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item $20$ et $15$ sont des multiples de $5$, donc $20 + 15 = 35$ et $20 - 15 = 5$ sont aussi des multiples de $5$.
+    \item $24$ est un multiple de $12$ et $12$ est un multiple de $3$, donc $24$ est un multiple de $3$.
+    \item $8$ est un multiple de $4$, donc $8 \times 5 = 40$ est un multiple de $4$.
+    \item $3$ divise $15$ et $9$, donc $3$ divise $15 + 9 = 24$ et $15 - 9 = 6$.
+    \item $7$ divise $14$, donc $7$ divise $14 \times 2 = 28$.
+\end{itemize}
+\end{Exemple}
+
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%% PROPRIETE
+% durée estimée : 3 min
+\begin{Propriete}[Critères de divisibilité] Un nombre est divisible par :
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item $2$ si son chiffre des unités est pair.
+  \item $3$ si la somme de ses chiffres est divisible par $3$.
+  \item $5$ si son chiffre des unités est $0$ ou $5$.
+  \item $9$ si la somme de ses chiffres est divisible par $9$.
+\end{itemize}
+\end{Propriete}
+
+%% APPLICATION
+\begin{Application}[][15 min]
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Déterminer parmi les nombres suivants ceux qui sont divisibles à la fois par $2$ et par $3$ :
+\begin{center}
+    $126 \quad ; \quad 345 \quad ; \quad 810 \quad ; \quad 3054 \quad ; \quad 5051 \quad ; \quad 7204$
+\end{center}
+    \item Déterminer parmi les nombres suivants ceux qui sont divisibles à la fois par $5$ et par $9$ :
+\begin{center}
+    $315 \quad ; \quad 450 \quad ; \quad 333 \quad ; \quad 9045 \quad ; \quad 3800 \quad ; \quad 9003$
+\end{center}
+\end{enumerate}
+\end{Application}
+
+
+
+%% APPLICATION
+\begin{Application}[][15 min]
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Déterminer toutes les valeurs possibles du chiffre $x$ pour que le nombre $N = \overline{4x3}$ soit divisible par $3$.
+    \item Déterminer le chiffre $y$ pour que le nombre $M = \overline{5y}$ soit à la fois pair et divisible par $9$.
+\end{enumerate}
+\end{Application}
+
+%% SECTION
+\section{Les nombres premiers \duree{1h30}}
+
+%% ACTIVITE
+\begin{Activite}[][10 min]
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Déterminer les diviseurs de chacun des entiers naturels :
+    $2 \quad ; \quad 3 \quad ; \quad 4 \quad ; \quad 5 \quad ; \quad 6 \quad ; \quad 7 \quad \text{et} \quad 11$
+
+    \item Parmi ces nombres, relever ceux qui admettent \textbf{exactement deux} diviseurs.
+
+    (\textit{On appelle ces nombres particuliers des \textbf{nombres premiers}}).
+
+    \item Les nombres $0$ et $1$ sont-ils des nombres premiers ? Pourquoi ?
+
+    \item Un nombre pair peut-il être premier ? Justifier.
+
+    \item Le nombre $1071$ est-il premier ? Pourquoi ?
+\end{enumerate}
+\end{Activite}
+
+%% DEFINITION
+% durée estimée : 2 min
+\begin{Definition}[]
+Un entier naturel est \textbf{premier} s'il possède \underline{exactement} deux diviseurs : $1$ et lui-même.
+\end{Definition}
+
+%% REMARQUE
+%\begin{Remarque}
+%Le nombre $1$ n'est pas premier : il n'a qu'un seul diviseur.
+%\begin{itemize}[leftmargin=*,itemsep=2pt]
+%  \item $2$ est le seul nombre premier pair. Tous les autres nombres premiers sont impairs.
+%  \item Tout entier naturel $\geq 2$ admet au moins un diviseur premier.
+% \item L'ensemble des nombres premiers est infini.
+%\end{itemize}
+%\end{Remarque}
+
+%% APPLICATION
+\begin{Application}[][15 min]
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Soit $n$ un entier naturel tel que $n \ge 2$.
+          Montrer que le nombre $A = n^2 + n$ n'est pas premier.
+
+    \item Soit $p$ un nombre premier tel que $p > 2$. Justifier que le nombre $p + 7$ n'est pas premier.
+\end{enumerate}
+\end{Application}
+
+%% PROPRIETE
+% durée estimée : 5 min
+\begin{Theoreme}[Test de primalité] Soit $n$ un entier naturel tel que $n \geq 2$.
+
+Pour que $n$ soit premier, il faut et il suffit qu'aucun nombre premier $p$ vérifiant $p \leq \sqrt{n}$ ne divise $n$.
+\end{Theoreme}
+
+%% EXEMPLE
+\begin{Exemple}[][5 min]
+$\bullet~$\textbf{Montrons que le nombre $109$ est premier :}
+
+On a : $\sqrt{109} \approx 10,4$ ;
+les nombres premiers inférieurs ou égaux à $\sqrt{109}$ sont : $2$, $3$, $5$ et $7$.
+
+Aucun de ces nombres ne divise $109$. Donc $109$ est premier.
+\end{Exemple}
+
+
+%% APPLICATION
+\begin{Application}[][15 min]
+  En utilisant le théorème du test de primalité, déterminer si les nombres suivants sont premiers : $127$ et $133$.
+
+\end{Application}
+
+%% ACTIVITE
+\begin{Activite}[][10 min]
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+   \item Vérifier que $1400 = 2^3 \times 5^2 \times 7 $.
+
+   \textit{(Cette écriture unique s'appelle la \textbf{décomposition en produit de facteurs premiers})}.
+    \item Donner la décomposition du $864$ en produit de facteurs premiers.
+    \item Quel est le plus petit entier qui multiplié par $864$, donne un carré ?
+\end{enumerate}
+\end{Activite}
+
+%% PROPRIETE
+% durée estimée : 3 min
+\begin{Theoreme}[Décomposition en produit de facteurs premiers]
+
+Tout entier naturel supérieur ou égal à $2$ se décompose de façon \textbf{unique} en produit
+de facteurs premiers.
+\end{Theoreme}
+
+%% EXEMPLE
+\begin{Exemple}[][5 min]
+Décomposons $882$ en nombres premiers.
+
+$$
+\begin{array}{r|l}
+882 & 2 \\
+441 & 3 \\
+147 & 3 \\
+49 & 7 \\
+7 & 7 \\
+1 &
+\end{array}
+$$
+
+Donc $882 = 2 \times 3^2 \times 7^2$ est la décomposition de $882$ en produit de facteurs premiers.
+\end{Exemple}
+
+%% APPLICATION
+\begin{Application}[][20 min]
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Établir la décomposition en produit de facteurs premiers des nombres suivants : $A = 120$ et $B = 252$.
+
+    \item En déduire la décomposition en produit de facteurs premiers du nombre $C = A \times B$.
+
+    \item Quel est le plus petit entier naturel $k$ pour lequel $A \times k$ soit un carré parfait ?
+
+    \item Justifier que $A$ est un multiple de $15$ mais qu'il n'est pas divisible par $9$.
+\end{enumerate}
+\end{Application}
+
+
+
+%% SECTION
+\section{Le plus petit commun multiple \duree{25 min}}
+
+
+%% ACTIVITE
+\begin{Activite}[][10 min]
+Deux bus partent de la gare en même temps.
+Le bus A y repasse toutes les $15$ minutes et le bus B toutes les $20$ minutes.
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Déterminer les durées (en minutes) écoulées lors des cinq premiers passages du bus A.
+    \item Déterminer les durées (en minutes) écoulées lors des cinq premiers passages du bus B.
+    \item Au bout de combien de minutes les deux bus se retrouveront-ils à la gare en même temps pour la première fois ?
+\end{enumerate}
+\end{Activite}
+
+%% DEFINITION
+% durée estimée : 3 min
+\begin{Definition}[]
+Soient $a$ et $b$ deux entiers naturels non nuls.
+
+On appelle \textbf{ppcm} de $a$ et $b$ le \textbf{p}lus \textbf{p}etit \textbf{m}ultiple \textbf{c}ommun de $a$ et $b$, on le note souvent par
+$\ppcm(a, b)$ ou $a \vee b$.
+\end{Definition}
+
+%% APPLICATION
+\begin{Application}[][10 min]
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Déterminer $\ppcm(12, 18)$.
+
+    \item Déterminer $\ppcm(5;5)$, $\ppcm(1;3)$, $\ppcm(7;0)$ et $\ppcm(4;8)$.
+\end{enumerate}
+\end{Application}
+
+
+%% SECTION
+\section{Le plus grand commun diviseur \duree{35 min}}
+
+%% ACTIVITE
+\begin{Activite}[][10 min]
+Un professeur d'EPS forme des équipes identiques (même nombre de filles et de garçons) avec $12$ filles et $18$ garçons. Tous les élèves participent.
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Peut-il former $3$ équipes ? Si oui, quelle sera la composition d'une équipe ?
+    \item Peut-il former $4$ équipes ? Pourquoi ?
+    \item Quel est le plus grand nombre d'équipes qu'il peut former ?
+\end{enumerate}
+\end{Activite}
+
+%% DEFINITION
+% durée estimée : 3 min
+\begin{Definition}[]
+Soient $a$ et $b$ deux entiers naturels non nuls.
+
+On appelle \textbf{pgcd} de $a$ et $b$ le \textbf{p}lus \textbf{g}rand \textbf{c}ommun \textbf{d}iviseur  de $a$ et $b$, on le note souvent par
+$pgcd(a, b)$ ou $a \wedge b$.
+\end{Definition}
+
+
+%% APPLICATION
+\begin{Application}[][10 min]
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Déterminer $\pgcd(40, 84)$.
+
+    \item Déterminer $\pgcd(7;7)$, $\pgcd(1;3)$,  $\pgcd(7;0)$ et $\pgcd(4;8)$.
+
+\end{enumerate}
+\end{Application}
+
+%% DEFINITION
+% durée estimée : 2 min
+\begin{Definition}[Nombres premiers entre eux]
+Soient $a$ et $b$ deux entiers naturels.
+
+$a$ et $b$ sont \textbf{premiers entre eux} signifie que $\pgcd(a,b) = 1$,
+c'est-à-dire leur seul diviseur commun est $1$.
+\end{Definition}
+
+
+%% EXEMPLE
+\begin{Exemple}[][5 min]
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item $5$ et $17$ sont premiers entre eux car $\pgcd(5; 17) = 1$.
+    \item $1325$ et $2450$ ne sont pas premiers entre eux car ils sont tous les deux divisibles par $5$.
+    \item Deux entiers consécutifs sont toujours premiers entre eux.
+\end{enumerate}
+\end{Exemple}
+
+
+%% REMARQUE
+% durée estimée : 2 min
+\begin{Remarque}
+Il ne faut pas confondre \textbf{nombre premier} et \textbf{nombres premiers entre eux}.
+
+Par exemple, $15$ et $22$ sont premiers entre eux, mais ne sont pas des nombres premiers.
+\end{Remarque}
+
+
+%% SECTION
+\section{Application de la décomposition en produit de facteurs premiers \duree{30 min}}
+
+%% PROPRIETE
+% durée estimée : 5 min
+\begin{Propriete}[]
+Soient $a$ et $b$ deux entiers naturels non nuls.
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item On admet que le $\pgcd(a,b)$ est égal au produit des facteurs premiers \textbf{communs} qui ont \textbf{le plus petit exposant} dans les décompositions de $a$ et $b$.
+  \item On admet que le $\ppcm(a,b)$ est égal au produit des facteurs premiers \textbf{communs et non communs} qui ont \textbf{le plus grand exposant} dans les décompositions de $a$ et $b$.
+\end{itemize}
+\end{Propriete}
+
+%% EXEMPLE
+\begin{Exemple}[][5 min]
+Sachant que $a = 2^3 \times 3 \times 7 \times 11$ et $b = 2^2 \times 5 \times 7^3 \times 13$, déterminer $\pgcd(a,b)$ et $\ppcm(a,b)$.
+\end{Exemple}
+
+%% APPLICATION
+\begin{Application}[][20 min]
+On considère les deux nombres : $a = 3960$ ~\text{et}~ $b = 2100$
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+    \item Décomposer $a$ et $b$ en produit de facteurs premiers.
+    \item Déterminer $\pgcd(a,b)$ et $\ppcm(a,b)$.
+    \item Simplifier $\frac{a}{b}$ et $\sqrt{ab}$.
+    \item Déterminer le plus petit entier naturel non nul $m$ pour lequel $ma$ soit un carré parfait.
+\end{enumerate}
+\end{Application}
+
+% ============ FIN CONTENU GÉNÉRÉ ==============
 
 \end{document}

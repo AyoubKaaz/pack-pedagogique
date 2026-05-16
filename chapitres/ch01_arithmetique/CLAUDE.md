@@ -1,14 +1,14 @@
 # Chapitre 01 — Arithmétique
-Niveau : Tronc Commun Scientifique | Masse horaire : 8h
+Niveau : Tronc Commun Scientifique | Masse horaire : 5h
 
 ## Skills à charger
 correction-commune + domaine-algebre
 
 ## Statut
-- source.tex        : 🔄 en rédaction
-- fiche_prof.tex    : ✅ généré (486 lignes)
-- td.tex            : ✅ généré (298 lignes)
-- td_correction.tex : 🔄 partiel (89 lignes)
+- source.tex        : ✅ complet
+- fiche_prof.tex    : ✅ généré
+- td.tex            : ✅ généré
+- td_correction.tex : ✅ généré (5 activités + 12 applications)
 
 ## Notations spécifiques
 - Divisibilité : $a \mid b$ (a divise b)
