@@ -13,7 +13,13 @@
 \input{preamble/01_packages}
 \input{preamble/02_style}
 \input{preamble/03_macros}
-\geometry{a4paper, left=0.6cm, right=0.6cm, top=0.6cm, bottom=1.5cm}
+\geometry{a4paper, left=0.5cm, right=0.5cm, top=0.5cm, bottom=1.6cm}
+
+
+\setlength{\columnseprule}{1.5pt} 
+\setlength{\columnsep}{1cm}
+\renewcommand{\columnseprulecolor}{\color{PrimaryColor!40}}
+
 
 \begin{document}
 \pagestyle{cours}
@@ -88,23 +94,24 @@
 
 \vspace{0.4cm}
 
-\begin{multicols*}{2}
+\begin{multicols}{2}
 
 % ============ DÉBUT CONTENU GÉNÉRÉ ============
 
-%% SECTION
-\section{Ensemble $\N$ --- Nombres pairs et nombres impairs \duree{1h15}}
+
 
 %% ACTIVITE
 \begin{Activite}[][10 min]
 On considère la liste de nombres suivante :
-$-3 \quad ; \quad 14 \quad ; \quad 2,5 \quad ; \quad 0 \quad ; \quad 25 \quad ; \quad 36 \quad ; \quad -7 \quad ; \quad 41$
+$$-3 \quad ; \quad 14 \quad ; \quad 2,5 \quad ; \quad 0 \quad ; \quad 25 \quad ; \quad 36 \quad ; \quad -7 \quad ; \quad 41$$
 \begin{enumerate}[leftmargin=*,itemsep=2pt]
     \item Parmi les nombres de cette liste, relever ceux qui sont des entiers positifs.
 
     (\textit{Ces nombres sont appelés des \textbf{entiers naturels}}).
 
-    \item Parmi les entiers naturels trouvés, lesquels sont pairs ? impairs ?
+    \item Parmi les entiers naturels trouvés, lesquels sont pairs ? 
+    
+    impairs ?
 
     \item Écrire chacun des entiers naturels pairs sous forme $2k$ avec $k$ un entier naturel.
     \item Écrire chacun des entiers naturels impairs sous forme $2k+1$ avec $k$ un entier naturel.
@@ -116,7 +123,7 @@ $-3 \quad ; \quad 14 \quad ; \quad 2,5 \quad ; \quad 0 \quad ; \quad 25 \quad ; 
 Soit $n$ un entier naturel non nul.
 \begin{enumerate}[leftmargin=*,itemsep=2pt]
     \item Étudier la parité de chacun des nombres suivants :
-    \begin{multicols}{4}
+    \begin{multicols}{2}
     \begin{itemize}[label=\textbullet]
         \item $A=8n+10$
         \item $B=8n-1$
@@ -136,7 +143,7 @@ Soit $n$ un entier naturel non nul.
 \begin{Application}[][15 min]
 Soient $x$  et $y$ deux entiers naturels, tels que $x$ est pair et $y$ est impair. Déterminer la parité des nombres suivants :
 \begin{center}
-\begin{multicols}{4}
+\begin{multicols}{2}
 \begin{itemize}[leftmargin=*,itemsep=2pt]
     \item $x + 8y$
     \item $(x + 1)(y + 1)$
@@ -161,8 +168,7 @@ $a=n^2+5n \quad ; \quad b=n^2+7n+13 \quad ; \quad c=n^4-n^2$
 \end{enumerate}
 \end{Application}
 
-%% SECTION
-\section{Multiples et diviseurs d'un entier naturel \duree{1h}}
+
 
 %% APPLICATION
 \begin{Application}[][15 min]
@@ -194,20 +200,21 @@ $a=n^2+5n \quad ; \quad b=n^2+7n+13 \quad ; \quad c=n^4-n^2$
 \end{enumerate}
 \end{Application}
 
-%% SECTION
-\section{Les nombres premiers \duree{1h30}}
+
 
 %% ACTIVITE
 \begin{Activite}[][10 min]
 \begin{enumerate}[leftmargin=*,itemsep=2pt]
     \item Déterminer les diviseurs de chacun des entiers naturels :
-    $2 \quad ; \quad 3 \quad ; \quad 4 \quad ; \quad 5 \quad ; \quad 6 \quad ; \quad 7 \quad \text{et} \quad 11$
+    $$2 \quad ; \quad 3 \quad ; \quad 4 \quad ; \quad 5 \quad ; \quad 6 \quad ; \quad 7 \quad \text{et} \quad 11$$
 
     \item Parmi ces nombres, relever ceux qui admettent \textbf{exactement deux} diviseurs.
 
     (\textit{On appelle ces nombres particuliers des \textbf{nombres premiers}}).
 
-    \item Les nombres $0$ et $1$ sont-ils des nombres premiers ? Pourquoi ?
+    \item Les nombres $0$ et $1$ sont-ils des nombres premiers ? 
+    
+    Pourquoi ?
 
     \item Un nombre pair peut-il être premier ? Justifier.
 
@@ -219,9 +226,12 @@ $a=n^2+5n \quad ; \quad b=n^2+7n+13 \quad ; \quad c=n^4-n^2$
 \begin{Application}[][15 min]
 \begin{enumerate}[leftmargin=*,itemsep=2pt]
     \item Soit $n$ un entier naturel tel que $n \ge 2$.
+    
           Montrer que le nombre $A = n^2 + n$ n'est pas premier.
 
-    \item Soit $p$ un nombre premier tel que $p > 2$. Justifier que le nombre $p + 7$ n'est pas premier.
+    \item Soit $p$ un nombre premier tel que $p > 2$. 
+    
+    Justifier que le nombre $p + 7$ n'est pas premier.
 \end{enumerate}
 \end{Application}
 
@@ -230,6 +240,8 @@ $a=n^2+5n \quad ; \quad b=n^2+7n+13 \quad ; \quad c=n^4-n^2$
   En utilisant le théorème du test de primalité, déterminer si les nombres suivants sont premiers : $127$ et $133$.
 
 \end{Application}
+
+\end{multicols}
 
 %% ACTIVITE
 \begin{Activite}[][10 min]
@@ -255,8 +267,7 @@ $a=n^2+5n \quad ; \quad b=n^2+7n+13 \quad ; \quad c=n^4-n^2$
 \end{enumerate}
 \end{Application}
 
-%% SECTION
-\section{Le plus petit commun multiple \duree{25 min}}
+
 
 %% ACTIVITE
 \begin{Activite}[][10 min]
@@ -279,15 +290,15 @@ Le bus A y repasse toutes les $15$ minutes et le bus B toutes les $20$ minutes.
 \end{enumerate}
 \end{Application}
 
-%% SECTION
-\section{Le plus grand commun diviseur \duree{35 min}}
+
 
 %% ACTIVITE
 \begin{Activite}[][10 min]
 Un professeur d'EPS forme des équipes identiques (même nombre de filles et de garçons) avec $12$ filles et $18$ garçons. Tous les élèves participent.
 
 \begin{enumerate}[leftmargin=*,itemsep=2pt]
-    \item Peut-il former $3$ équipes ? Si oui, quelle sera la composition d'une équipe ?
+    \item Peut-il former $3$ équipes ? 
+          Si oui, quelle sera la composition d'une équipe ?
     \item Peut-il former $4$ équipes ? Pourquoi ?
     \item Quel est le plus grand nombre d'équipes qu'il peut former ?
 \end{enumerate}
@@ -303,8 +314,6 @@ Un professeur d'EPS forme des équipes identiques (même nombre de filles et de 
 \end{enumerate}
 \end{Application}
 
-%% SECTION
-\section{Application de la décomposition en produit de facteurs premiers \duree{30 min}}
 
 %% APPLICATION
 \begin{Application}[][20 min]
@@ -319,6 +328,5 @@ On considère les deux nombres : $a = 3960$ ~\text{et}~ $b = 2100$
 
 % ============ FIN CONTENU GÉNÉRÉ ==============
 
-\end{multicols*}
 
 \end{document}
