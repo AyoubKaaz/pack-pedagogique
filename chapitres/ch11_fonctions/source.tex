@@ -288,7 +288,7 @@ Soient $f$ et $g$ deux fonctions définies par :
 On a $D_f = D_g = \R$ et
 $f(x) = \sqrt{(x^2 + 1)^2} = x^2 + 1 \quad (\text{car } x^2 + 1 > 0)$ 
 \vspace{0.2cm} \\
-Donc $f(x) = g(x)$, pour tout $x$ de $\R$.
+Donc pour tout $x$ de $\R$ :  $f(x) = g(x)$,
 D'où : \quad $f = g$
 \end{Exemple}
 
@@ -526,23 +526,28 @@ Soit $f$ une fonction et $D_f$ son ensemble de définition.
 %% REMARQUE
 % durée estimée : 1 min
 \begin{Remarque}
- $x \in D_f$ et $-x \in D_f$ signifie que $D_f$ est symétrique par rapport à zéro.
+ La condition " Pour tout $x$ de $D_f$, on a $-x \in D_f$ " signifie que :
+$D_f$ est symétrique par rapport à $0$.
 \end{Remarque}
 
 %% EXEMPLE
 \begin{Exemple}[][10 min]
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
     \item Soit $f$ la fonction définie par :  $f(x) = x^4 - x^2$
-    \vspace{0.1cm} \\
-    On a $D_f = \R$. Il est clair que si $x \in \R$ alors $-x \in \R$, 
-    et on a $$f(-x) = (-x)^4 - (-x)^2 = x^4 - x^2$$
-    Donc $f$ est paire.
+\begin{itemize}[leftmargin=*,itemsep=0.5pt]
+    \item On a :  $D_f = \R$, donc $D_f$ est symétrique par rapport à $0$.
 
+    \item Soit $x \in \R$, On a :
+         $f(-x) = (-x)^4 - (-x)^2 = x^4 - x^2 = f(x)$ \\
+    Donc pour tout $x$ de $\R$, $-x \in \R$ et $f(-x)=f(x)$ \quad
+    D'où $f$ est \textbf{paire}.
+\end{itemize}
     \item Soit $g$ la fonction définie par : $g(x) = x + x^3$
     \vspace{0.1cm} \\
-    On a $D_g = \R$ est symétrique par rapport à $0$, 
-    et on a $$g(-x) = -x + (-x)^3 = -x - x^3 = -(x + x^3) = -g(x)$$
-    Donc $g$ est une fonction impaire.
+    $\bullet~$ On a $D_g = \R$, Donc $D_g$ est symétrique par rapport à $0$. \\
+    $\bullet~$ Soit $x \in \R$,  on a : \quad  $g(-x) = -x + (-x)^3 = -x - x^3 = -(x + x^3) = -g(x)$ \\
+    Donc pour tout $x$ de $\R$, $-x \in \R$ et $g(-x)=-g(x)$ \quad
+    D'où $g$ est \textbf{impaire}.
 \end{enumerate}
 \end{Exemple}
 
@@ -565,25 +570,27 @@ Soit $f$ une fonction et $D_f$ son ensemble de définition.
 \begin{itemize}[leftmargin=*,itemsep=0.5pt]
     \item On a :  $D_f = \R$, donc $D_f$ est symétrique par rapport à $0$.
 
-    \item Soit $x \in \R$. On a :
+    \item Soit $x \in \R$, On a :
          $f\big( -x \big) = \big( -x \big)^2 - 3|-x| + 2
                             = x^2 - 3|x| + 2 = f(x)$ \\
-    Donc pour tout $x$ de $\R$, $f(-x)=f(x)$ \\
+    Donc pour tout $x$ de $\R$, $-x \in \R$ et $f(-x)=f(x)$ \\
     D'où $f$ est \textbf{paire}.
 \end{itemize}
 
 
     \item \textbf{Étude de la fonction $f\big( x \big) = 2x^3 - 5x$}
 
-    On a : ~ $D_f = \R$ \quad (fonction polynôme) \\
-    Soit $x \in \R$.
+   $\bullet~$ On a : ~ $D_f = \R$ \quad (fonction polynôme) \\
+    Donc $D_f$ est symétrique par rapport à $0$. \\
+   $\bullet~$Soit $x \in \R$, On a : 
     \begin{align*}
         f\big( -x \big) = 2\big( -x \big)^3 - 5\big( -x \big)
          = -2x^3 + 5x
-         &= -\big( 2x^3 - 5x \big) \\
-        &= -f\big( x \big)
+         = -\big( 2x^3 - 5x \big) 
+        = -f\big( x \big)
     \end{align*}
-    Donc la fonction $f$ est \textbf{impaire}.
+    Donc pour tout $x$ de $\R$, $-x \in \R$ et $f(-x)=-f(x)$ \\
+    Ainsi, la fonction $f$ est \textbf{impaire}.
 
     \item \textbf{Étude de la fonction $f\big( x \big) = \sqrt{x - 1}$}
 
@@ -622,19 +629,16 @@ Soit $f$ la fonction définie par : $f(x) = x^2 + x$
 
     % Question 2
     \item \textbf{Déduisons que $f$ n'est ni paire, ni impaire}
-
     \begin{itemize}[leftmargin=*,itemsep=0.5pt]
         \item On a trouvé $f\big(-1\big) = 0$ et $f\big(1\big) = 2$.
         Puisque $0 \neq 2$, \\
-        nous remarquons que :
-        $f\big(-1\big) \neq f\big(1\big)$ \\
-        La fonction n'est donc pas paire.
+        Donc :~  $f\big(-1\big) \neq f\big(1\big)$, 
+        $f$ n'est donc pas paire.
 
         \item  Nous remarquons que :
         $f\big(-1\big) \neq -f\big(1\big)$ \\
-        La fonction n'est donc pas impaire.
+        La fonction $f$ n'est donc pas impaire.
     \end{itemize}
-
     \textbf{Conclusion} : La fonction $f$ n'est ni paire, ni impaire.
 
 \end{enumerate}
@@ -786,8 +790,7 @@ sa courbe $\mathcal{C}_f$ représentée ci-contre :
 %% SOLUTION_APPLICATION
 \begin{Solution}[APPLICATION][6]
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
-    \item \textbf{Complétons la construction de la courbe $\big(C_f\big)$}
-
+    \item \textbf{Complétons la construction de la courbe $\big(C_f\big)$} \\
 Pour compléter le tracé sur tout l'intervalle $\big[-6 ; 6\big]$, nous allons utiliser la symétrie par rapport à l'axe des ordonnées.
 
     \begin{center}
@@ -840,17 +843,13 @@ Pour compléter le tracé sur tout l'intervalle $\big[-6 ; 6\big]$, nous allons 
     \end{center}
 
     % Question 2
-    \item \textbf{Déterminons $f\big(6\big)$}
-
+    \item \textbf{Déterminons $f\big(6\big)$} \\
      Puisque  $f$ est paire, donc : $f\big(6\big) = f\big(-6\big)$
     et $f\big(-6\big) = 3$ \\
     D'où : $f\big(6\big)=0$
 
-    % Question 3
     \item \textbf{Calculons $f\big(-3\big)$ et $f\big(3\big)$}
-
-    Utilisons la parité de $f$ pour trouver $f\big(3\big)$.
-
+    Utilisons la parité de $f$ pour trouver $f\big(3\big)$. \\
     On a :  $f\big(3\big) = f\big(-3\big)$.
     Donc : $f\big(-3\big) = 0 \quad \text{et} \quad f\big(3\big) = 0$
 
@@ -906,8 +905,7 @@ Soit $f$ une fonction impaire définie sur $D = \big[-4 \;;\; -1\big] \cup \big[
 %% SOLUTION_APPLICATION
 \begin{Solution}[APPLICATION][7]
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
-    \item \textbf{Complétons le tracé de $\big(C_f\big)$}
-
+    \item \textbf{Complétons le tracé de $\big(C_f\big)$} \\
      La fonction $f$ est impaire, donc sa courbe est symétrique par rapport à l'origine $O$. Pour tracer la partie manquante sur l'intervalle $\big[1 ; 4\big]$, nous allons utiliser la symétrie centrale.
     \begin{itemize}[leftmargin=*,itemsep=0.5pt]
         \item Le point $\big(-4 ; 0\big)$ a pour symétrique $\big(4 ; 0\big)$.
@@ -1074,23 +1072,26 @@ Soit $f$ une fonction numérique et $I$ un intervalle inclus dans $D_f$.
 
 %% EXEMPLE
 \begin{Exemple}[][10 min]
-\begin{enumerate}[leftmargin=*,itemsep=0.5pt]
-    \item Soit $f(x) = 2x + 3$ et $D_f = \R$.
+\vspace{0.2cm}
+\begin{tasks}[label-width=15pt,item-indent=25pt,after-item-skip=5pt](2)
+    \task Soit $f(x) = 2x + 3$. On a : $D_f = \R$.
     \vspace{0.1cm} \\
     Soient $a$ et $b$ deux réels tels que : $a < b$ \\
     On a $a < b$ donc $2a < 2b$ alors : $2a + 3 < 2b + 3$ \\
     c'est à dire : $f(a) < f(b)$
     \vspace{0.1cm} \\
-    D'où $f$ est strictement croissante sur $\R$.
-
-    \item Soit $g(x) = -3x + 2$ et $D_g = \R$.
+    D'où $f$ est \textbf{strictement croissante} sur $\R$.
+    
+    \task Soit $g(x) = -3x + 2$. On a : $D_g = \R$.
     \vspace{0.1cm} \\
     Soient $a$ et $b$ de $\R$ tels que : $a < b$ \\
     On a $a < b$  ~~ donc ~~ $-3a > -3b$ \\
     alors : \qquad ~~~~~~~~~ $-3a + 2 > -3b + 2$ \\
     c'est à dire : \quad ~~~~~~~~ $g(a) > g(b)$ \vspace{0.1cm} \\
-    D'où $g$ est strictement décroissante sur $\R$.
-\end{enumerate}
+    D'où $g$ est \textbf{strictement décroissante} sur $\R$.
+
+\end{tasks}
+\vspace{0.2cm}
 \end{Exemple}
 
 %% APPLICATION
@@ -1112,8 +1113,7 @@ Soit $f$ la fonction numérique définie sur $\R$ par : $f(x) = 2x^2 + 3$
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
     \item 
     \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
-        \item \textbf{Montrons que $f(a) < f(b)$ :}
-        
+        \item \textbf{Montrons que $f(a) < f(b)$ :} \\
         Soient $a$ et $b$ de $\big[0 \;;\; +\infty\big[$ tels que $a < b$.
         On a :
         \begin{align*}
@@ -1124,14 +1124,12 @@ Soit $f$ la fonction numérique définie sur $\R$ par : $f(x) = 2x^2 + 3$
         \end{align*}
         D'où : \quad $f(a) < f(b)$ 
 
-        \item \textbf{Déduisons la monotonie de $f$ sur $\R^+$ :}
-        
+        \item \textbf{Déduisons la monotonie de $f$ sur $\R^+$ :} \\
         Puisque pour tous $a$ et $b$ de $\R^+$ tels que $a < b$, on a $f(a) < f(b)$, la fonction $f$ conserve le sens de l'inégalité. \\
         Donc : \quad la fonction $f$ est strictement croissante sur $\R^+$.
     \end{enumerate}
 
-    \item \textbf{Étudions la monotonie de $f$ sur $\R^-$ :}
-    
+    \item \textbf{Étudions la monotonie de $f$ sur $\R^-$ :} \\
     Soient $a$ et $b$ de $\big]-\infty \;;\; 0\big]$ tels que $a < b$.
     On a :
     \begin{align*}
@@ -1144,8 +1142,7 @@ Soit $f$ la fonction numérique définie sur $\R$ par : $f(x) = 2x^2 + 3$
     Puisque pour tous $a$ et $b$ de $\R^-$ tels que $a < b$, on a $f(a) > f(b)$, la fonction $f$ change le sens de l'inégalité. \\
     Donc : \quad la fonction $f$ est strictement décroissante sur $\R^-$.
 
-    \item \textbf{Dressons le tableau de variations de $f$ sur $\R$ :}
-
+    \item \textbf{Dressons le tableau de variations de $f$ sur $\R$ :} \\
     On a $f(0) = 2 \times 0^2 + 3 = 3$.
 
 \begin{center}
@@ -1190,8 +1187,7 @@ Soit $f$ une fonction et $T$ son taux de variation entre deux réels distincts $
 
 %% EXEMPLE
 \begin{Exemple}[][10 min]
-Soit $f$ la fonction numérique définie par : $f(x) = x^2 + x$
-\vspace{0.1cm} \\
+Soit $f$ la fonction numérique définie par : $f(x) = x^2 + x$ \\
 Soit $a$ et $b$ deux réels distincts de $\R$. On a  :
 \[ T(a ; b) = \frac{f(a) - f(b)}{a - b}  = \frac{(a^2 + a) - (b^2 + b)}{a - b} = \frac{a^2 - b^2 + a - b}{a - b}
  = \frac{(a - b)(a + b) + (a - b)}{a - b}
@@ -1200,12 +1196,12 @@ Puisque $a \neq b$, on a $a - b \neq 0$, on peut donc simplifier :
  $T(a ; b) = a + b + 1$
 
 \medskip
-
-\textbf{La monotonie sur l'intervalle } $\left]-\infty \;;\; -\frac{1}{2}\right]$ \textbf{:}
+\begin{tasks}[label = \arabic*), label-width=15pt,item-indent=25pt,after-item-skip=5pt](2)
+    \task \textbf{La monotonie sur l'intervalle } $\left]-\infty \;;\; -\frac{1}{2}\right]$ \textbf{:}
 
 Soit $a$ et $b$ deux réels distincts de $\left]-\infty \;;\; -\frac{1}{2}\right]$,
 
-On a :~~ $a \leq -\frac{1}{2}$ ~et~ $b < -\frac{1}{2}$  (Car $a \neq b$)
+On a :~~ $a \leq -\frac{1}{2}$ ~et~ $b < -\frac{1}{2}$  (car $a \neq b$)
 
 Donc : \qquad  $a + b < -1$
 
@@ -1214,14 +1210,12 @@ C'est-à-dire :  $a + b + 1 < 0$
 Donc : $T(a ; b) < 0$, et par suite :
 
 $f$ est strictement décroissante sur $\left]-\infty \;;\; -\frac{1}{2}\right]$.
-
-\medskip
-
-\textbf{La monotonie sur l'intervalle } $\left[-\frac{1}{2} \;;\; +\infty\right[$ \textbf{:}
+    
+    \task \textbf{La monotonie sur l'intervalle } $\left[-\frac{1}{2} \;;\; +\infty\right[$ \textbf{:}
 
 Soit $a$ et $b$ deux réels distincts de $\left[-\frac{1}{2} \;;\; +\infty\right[$.
 
-On a $a \geq -\frac{1}{2}$ et $b > -\frac{1}{2}$ \quad (Car $a \neq b$)
+On a $a \geq -\frac{1}{2}$ et $b > -\frac{1}{2}$ \quad (car $a \neq b$)
 
 Donc :~~~ $a + b > -1$
 
@@ -1231,7 +1225,15 @@ Donc : $T(a ; b) > 0$, et par suite :
 
 $f$ est strictement croissante sur $\left[-\frac{1}{2} \;;\; +\infty\right[$.
 
-Ces résultats peut être résumés dans un tableau, appelé \textcolor{PrimaryColor}{Tableau de variations} de la fonction $f$.
+\end{tasks}
+
+
+
+\medskip
+
+
+
+Ces résultats peut être résumés dans un tableau, appelé \textbf{tableau de variations} de la fonction $f$.
 \vspace{0.2cm}
 \begin{center}
 \begin{tikzpicture}
@@ -1273,7 +1275,7 @@ Soit $f$ la fonction définie sur $\R$ par : $f(x) = x^2 - 6x + 5$
 
     \item \textbf{Étudions la monotonie de $f$ sur chacun des deux intervalles $\big]-\infty \;;\; 3\big]$ et $\big[3 \;;\; +\infty\big[$ :}
     
-    Soit $a$ et $b$ deux réels distincts de l'intervalle $\big]-\infty \;;\; 3\big]$.
+    $\bullet~$ Soit $a$ et $b$ deux réels distincts de l'intervalle $\big]-\infty \;;\; 3\big]$.\\
     On a :
     $\begin{cases}
         a \leq 3 \\
@@ -1282,7 +1284,7 @@ Soit $f$ la fonction définie sur $\R$ par : $f(x) = x^2 - 6x + 5$
     Donc : \quad $T(a;b) < 0$ \\
     D'où : la fonction $f$ est strictement décroissante sur $\big]-\infty \;;\; 3\big]$.
 
-    Soit $a$ et $b$ deux réels distincts de l'intervalle $\big[3 \;;\; +\infty\big[$.
+    $\bullet~$ Soit $a$ et $b$ deux réels distincts de l'intervalle $\big[3 \;;\; +\infty\big[$. \\
     On a :
     $\begin{cases}
         a \geq 3 \\
@@ -1293,7 +1295,7 @@ Soit $f$ la fonction définie sur $\R$ par : $f(x) = x^2 - 6x + 5$
 
     \item \textbf{Dressons le tableau de variations de $f$ :}
     
-    On a :~ $f(3) = (3)^2 - 6(3) + 5 = 9 - 18 + 5  = -4$
+    On a :~ $f(3) = (3)^2 - 6(3) + 5 = 9 - 18 + 5  = -4$ \quad
     Donc : \quad $f(3) = -4$
 
 \begin{center}
@@ -1373,23 +1375,19 @@ Répondre, par lecture graphique aux questions suivantes :
 %% SOLUTION_APPLICATION
 \begin{Solution}[APPLICATION][10]
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
-    \item \textbf{Précisons l'ensemble de définition $D_f$ de $f$ :}
-    
+    \item \textbf{Précisons l'ensemble de définition $D_f$ de $f$ :} \\
     Par lecture graphique, nous constatons que la courbe de la fonction $f$ est définie pour les abscisses allant de $-1$ à $3$ (les deux extrémités étant incluses). \\
     Donc : \quad $D_f = \big[-1 \;;\; 3\big]$
 
-    \item \textbf{Déterminons les images par $f$ de $-1$ ; $0$ ; $1$ et $2$ :}
-    
-    Par lecture graphique des coordonnées des points de la courbe, on a :
-    \begin{align*}
-        f(-1) = -2 \ ; \
+    \item \textbf{Déterminons les images par $f$ de $-1$ ; $0$ ; $1$ et $2$ :} \\
+    Par lecture graphique des coordonnées des points de la courbe, \\
+    On a :
+        $f(-1) = -2 \ ; \
         f(0) = 2  \ ; \
-        f(1) = 0  \ ; \
-        f(2) = -2
-    \end{align*}
+        f(1) = 0  \ \text{et} \
+        f(2) = -2$
 
-    \item \textbf{Dressons le tableau de variation de $f$ sur $D_f$ :}
-    
+    \item \textbf{Dressons le tableau de variation de $f$ sur $D_f$ :} \\
     Par lecture graphique, nous constatons que la fonction $f$ est strictement croissante sur l'intervalle $\big[-1 \;;\; 0\big]$, strictement décroissante sur l'intervalle $\big[0 \;;\; 2\big]$, puis strictement croissante sur l'intervalle $\big[2 \;;\; 3\big]$.
     \[
     \begin{tikzpicture}
@@ -1453,8 +1451,7 @@ Soit $f$ la fonction numérique définie par son tableau de variations :
 
 On a : \quad $D_f = \big[-7 \;;\; 0\big[ \cup \big]0 \;;\; 7\big]$
 
-\item \textbf{Complétons le tableau sachant que $f$ est paire :}
-
+\item \textbf{Complétons le tableau sachant que $f$ est paire :}  \\
 Puisque $f$ est paire, elle change donc de sens de variation sur les intervalles symétriques par rapport à $0$, et on a : $f(5) = f(-5) = 4$.
 
 \[
@@ -1464,8 +1461,7 @@ Puisque $f$ est paire, elle change donc de sens de variation sur les intervalles
 \end{tikzpicture}
 \]
 
-\item \textbf{Complétons le tableau sachant que $f$ est impaire :}
-
+\item \textbf{Complétons le tableau sachant que $f$ est impaire :} \\
 Puisque $f$ est impaire, elle conserve donc les mêmes variations sur les intervalles symétriques par rapport à $0$, et on a : $f(5) = -f(-5) = -4$.
 
 \[
@@ -1480,14 +1476,13 @@ Puisque $f$ est impaire, elle conserve donc les mêmes variations sur les interv
 
 %% APPLICATION
 \begin{Application}[][15 min]
-Soit $f$ une fonction numérique définie par :
-$$f(x) = x + \frac{4}{x}$$
+Soit $f$ une fonction définie par : \quad $f(x) = x + \frac{4}{x}$
 
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
     \item Déterminer $D_f$ ; puis montrer que $f$ est impaire.
     \item Soit $a$ et $b$ de $\R^*$ tel que $a \neq b$.
-    Montrer que :
-    $$\frac{f(b) - f(a)}{b - a} = \frac{ab - 4}{ab}$$
+    Montrer que : ~~
+    $\frac{f(b) - f(a)}{b - a} = \frac{ab - 4}{ab}$
     \item Étudier les variations de $f$ sur chacun des intervalles $\big]0 \;;\; 2\big]$ et $\big[2 \;;\; +\infty\big[$.
     \item En déduire les variations de $f$ sur chacun des intervalles $\big]-\infty \;;\; -2\big]$ et $\big[-2 \;;\; 0\big[$.
     \item Dresser le tableau de variations de $f$.
@@ -1498,11 +1493,8 @@ $$f(x) = x + \frac{4}{x}$$
 \begin{Solution}[APPLICATION][12]
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
 \item \textbf{Déterminons $D_f$ ; puis montrons que $f$ est impaire :}
-
-On a : \quad $D_f = \R^*$
-
 \begin{itemize}[leftmargin=*,itemsep=1pt]
-    \item $D_f$ est symétrique par rapport à $0$
+    \item On a : ~ $D_f = \R^*$, Donc $D_f$ est symétrique par rapport à $0$
     \item Et on a pour tout $x$ de $D_f$ :
     $$f(-x) = (-x) + \frac{4}{-x} 
           = -x - \frac{4}{x} 
@@ -1512,14 +1504,13 @@ On a : \quad $D_f = \R^*$
 
 Donc la fonction $f$ est \textbf{impaire}.
 
-\item \textbf{Montrons que $\frac{f(b) - f(a)}{b - a} = \frac{ab - 4}{ab}$ :}
-
+\item \textbf{Montrons que $\frac{f(b) - f(a)}{b - a} = \frac{ab - 4}{ab}$ :} \\
 Soit $a$ et $b$ de $\R^*$ tels que $a \neq b$.
 On a :  $T(a\,;\,b) = \frac{f(b) - f(a)}{b - a}$ 
 
 Calculons d'abord $f(b) - f(a)$ :
 \begin{align*}
-    f(b) - f(a) &= \left(b + \frac{4}{b}\right) - \left(a + \frac{4}{a}\right) \\
+    f(b) - f(a) = \left(b + \frac{4}{b}\right) - \left(a + \frac{4}{a}\right) 
                 &= b - a + \frac{4}{b} - \frac{4}{a} \\
                 &= (b - a) + \frac{4a - 4b}{ab} \\
                 &= (b - a) - \frac{4(b - a)}{ab} \\
@@ -1531,38 +1522,34 @@ Donc :
              = \frac{(b - a) \cdot \frac{ab - 4}{ab}}{b - a}
              = \frac{ab - 4}{ab} \quad \text{(car } a \neq b \text{)} \]
 
-D'où : \quad $\frac{f(b) - f(a)}{b - a} = \frac{ab - 4}{ab}$
+D'où : \quad $T(a\,;\,b) = \frac{ab - 4}{ab}$
 
 \item \textbf{Étudions les variations de $f$ sur chacun des intervalles $\big]0 \;;\; 2\big]$ et $\big[2 \;;\; +\infty\big[$ :}
-
 \begin{itemize}[leftmargin=*,itemsep=0.5pt]
-    \item Soit $a$ et $b$ de $\big]0 \;;\; 2\big]$ tels que $a \neq b$.
+    \item Soit $a$ et $b$ de $\big]0 \;;\; 2\big]$ tels que $a \neq b$. \\
 On a :
 $\begin{cases}
     0 < a \leq 2 \\
     0 < b < 2
-\end{cases} \quad \text{alors} \quad 0 < ab < 4$ \\
-On a donc : \quad $ab - 4 < 0$ \\
+\end{cases} ~~ \text{alors} ~~ 0 < ab < 4$ ~~ donc : ~~ $ab - 4 < 0$ \\
 Puisque $ab > 0$ et $ab - 4 < 0$, nous constatons que $\frac{ab - 4}{ab} < 0$. \\
-Donc : \quad le taux de variation $T(a;b) < 0$. \\
+Donc : \quad $T(a;b) < 0$. \\
 D'où : la fonction $f$ est strictement décroissante sur $\big]0 \;;\; 2\big]$.
 
-    \item Soit $a$ et $b$ de $\big[2 \;;\; +\infty\big[$ tels que $a \neq b$.
+    \item Soit $a$ et $b$ de $\big[2 \;;\; +\infty\big[$ tels que $a \neq b$. \\
 On a :
 $\begin{cases}
     a \geq 2 \\
     b > 2
-\end{cases} \quad \text{alors} \quad ab > 4$ \\
-On a donc : \quad $ab - 4 > 0$ \\
+\end{cases} ~~ \text{alors} ~~ ab > 4$ ~~ donc  ~~ $ab - 4 > 0$ \\
 Puisque $ab > 0$ et $ab - 4 > 0$, nous constatons que $\frac{ab - 4}{ab} > 0$. \\
-Donc : \quad le taux de variation $T(a;b) > 0$. \\
+Donc : \quad $T(a;b) > 0$. \\
 D'où : la fonction $f$ est strictement croissante sur $\big[2 \;;\; +\infty\big[$.
 \end{itemize}
 
 
 
-\item \textbf{Déduisons les variations de $f$ sur chacun des intervalles $\big]-\infty \;;\; -2\big]$ et $\big[-2 \;;\; 0\big[$ :}
-
+\item \textbf{Déduisons les variations de $f$ sur chacun des intervalles $\big]-\infty \;;\; -2\big]$ et $\big[-2 \;;\; 0\big[$ :} \\
 Puisque $f$ est impaire, elle conserve les mêmes variations sur les intervalles symétriques par rapport à $0$.
 \begin{itemize}[leftmargin=*,itemsep=1pt]
     \item L'intervalle symétrique de $\big[2 \;;\; +\infty\big[$ est $\big]-\infty \;;\; -2\big]$. \\
@@ -2078,7 +2065,7 @@ Puisque $g$ est \textbf{impaire}, sa courbe est symétrique par rapport à l'ori
 On considère la fonction numérique $f$ définie sur $\R$ par : \quad
 $f\big(x\big) = \frac{2x}{x^2 + 1}$
 \vspace{0.2cm} \\
-On note $\big(\mathcal{C}_f\big)$ sa courbe représentative dans un repère orthonormé $\big(O; \vect{i}; \vect{j}\big)$.
+On note $\big(\mathcal{C}_f\big)$ sa courbe représentative dans un repère orthonormé \Oij.
 
 \begin{enumerate}[leftmargin=*,itemsep=1pt]
     \item Déterminer $D_f$, puis étudier la parité de $f$.
@@ -2846,7 +2833,7 @@ La courbe représentative de la fonction $(a \neq 0) \; f : x \mapsto ax^2 + bx 
 \begin{Activite}[][10 min]
 Soit $f$ la fonction définie sur $\mathbb{R^*}$ par : $f(x) = \frac{a}{x}$ \quad ($a \in \R^*$)
 
-On note $\big(\mathcal{C}_f\big)$ la courbe de $f$ dans un repère orthonormé $\big(O; \vect{i}; \vect{j}\big)$.
+On note $\big(\mathcal{C}_f\big)$ la courbe de $f$ dans un repère orthonormé \Oij.
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
     \item Vérifier que $f$ est impaire.
     \item Soient $x$ et $y$ deux réels distincts de $\big]0 \;;\; +\infty\big[$ .
@@ -3021,7 +3008,7 @@ Donc le signe du taux de variation dépend de $a$.
 \begin{Definition}[]
 Soit $a$ un nombre réel non nul.
 
-Soit $(O; \vec{i}, \vec{j})$ un repère orthogonal du plan.
+Soit \Oij un repère orthogonal du plan.
 La représentation graphique de la fonction $x \mapsto \frac{a}{x}$ est appelée \textbf{hyperbole} de centre $O$, d'asymptotes les droites d'équations $x = 0$ et $y = 0$ (axe du repère).
 \end{Definition}
 
@@ -3115,7 +3102,7 @@ Soit $f$ la fonction définie par : $f(x) = \frac{3}{x}$
 
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
     \item Donner le tableau de variations de $f$.
-    \item Construire la courbe $(\mathcal{C}_f)$ dans un repère orthonormal $(O; \vec{i}, \vec{j})$.
+    \item Construire la courbe $(\mathcal{C}_f)$ dans un repère orthonormal \Oij.
 \end{enumerate}
 \end{Application}
 
@@ -3174,7 +3161,7 @@ Soit $f$ la fonction définie par : $f(x) = -\frac{2}{x}$
 
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
     \item Donner le tableau de variations de $f$.
-    \item Construire la courbe $(\mathcal{C}_f)$ dans un repère orthonormal $(O; \vec{i}, \vec{j})$.
+    \item Construire la courbe $(\mathcal{C}_f)$ dans un repère orthonormal \Oij.
 \end{enumerate}
 \end{Application}
 
@@ -3454,7 +3441,7 @@ On note $(C_f)$ et $(C_g)$ leurs courbes représentatives dans un repère orthon
     \item Montrer que pour tout réel $x$ : $-x^2+3x-3 < 0 $
     \item En déduire les coordonnées du point d'intersection des courbes $(C_f)$ et $(C_g)$.
 \end{enumerate}
-\item Tracer les asymptotes, la courbe $(C_g)$ et la courbe $(C_f)$ dans le même repère $(O;\vec{i};\vec{j})$.
+\item Tracer les asymptotes, la courbe $(C_g)$ et la courbe $(C_f)$ dans le même repère \Oij.
 \item  Par lecture graphique, résoudre dans $\R$ l'inéquation :
 $\frac{x-3}{x-2} \le -x^2 + 4x - 3$
 \item  Discuter graphiquement, suivant les valeurs du paramètre réel $m$, le nombre de solutions de l'équation :$$-x^2 + 4x - 3 - m = 0$$
