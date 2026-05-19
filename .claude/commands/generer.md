@@ -118,6 +118,15 @@ Vérifier que :
 - [ ] \fancyfoot[L] présent dans les 3 fichiers avec le bon titre
 - [ ] \begin{multicols*}{2} présent dans td.tex ET td_correction.tex
 
+## Étape finale — Vérification délimiteurs
+Après génération de fiche_prof.tex, td.tex, td_correction.tex :
+Scanner source.tex et corriger automatiquement :
+  \left\{  →  \big\{
+  \right\} →  \big\}   (sauf si \frac à l'intérieur)
+  [ sans \big  →  \big[   dans les intervalles
+  ] sans \big  →  \big]   dans les intervalles
+Afficher le nombre de corrections effectuées.
+
 ## Étape 6 — Git push automatique
 ```bash
 cd pack-pedagogique
