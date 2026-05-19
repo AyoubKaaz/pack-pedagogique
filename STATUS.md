@@ -35,3 +35,4 @@ Légende : ✅ complet · 🔄 en cours · ❌ non démarré
 ## Historique des mises à jour
 - 2025 : ch11_fonctions complété
 - 2026-05-16 : ch01_arithmetique complété (erreurs LaTeX corrigées)
+- 2026-05-19 : ch01_arithmetique — fiche_prof + td + td_correction régénérés (multicols* corrigé, contenu complet)
