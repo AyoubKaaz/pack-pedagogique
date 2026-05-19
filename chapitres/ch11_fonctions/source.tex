@@ -56,14 +56,12 @@
 %% SOLUTION_ACTIVITE
 \begin{Solution}[ACTIVITÉ][1]
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
-    \item \textbf{Exprimons la largeur $y$ en fonction de $x$ :}
-
+    \item \textbf{Exprimons la largeur $y$ en fonction de $x$ :} \\
     Le périmètre du rectangle est égal à la longueur totale du fil, soit $20\text{ cm}$.
     Le périmètre est : $2x + 2y = 20$. \\
     Donc : $x + y = 10$. D'où :   $y = 10 - x$
 
-    \item \textbf{Déterminons l'intervalle $D$ auquel doit appartenir $x$ :}
-
+    \item \textbf{Déterminons l'intervalle $D$ auquel doit appartenir $x$ :} \\
     Pour que le rectangle existe, les longueurs $x$  et $y$ doivent être strictement positives :
     \[
 \begin{cases}
@@ -81,15 +79,13 @@
 \]
     Donc,  $0<x<10$ . L'intervalle est : $D = \big] 0 ; 10 \big[$
 
-    \item \textbf{Montrons que la surface $S(x) = 10x - x^2$ :}
-
+    \item \textbf{Montrons que la surface $S(x) = 10x - x^2$ :} \\
     La surface d'un rectangle est donnée par la formule :
     $$S = \text{longueur} \times \text{largeur}$$
     On a donc :
     $ S\left( x \right) = x \times \left( 10 - x \right) = 10x - x^2$
 
     \item \textbf{Calculons la surface pour $x = 2$ et $x = 8$ :}
-
     \begin{itemize}[leftmargin=*,itemsep=0.5pt]
         \item Pour $x = 2$ :
          $S\left( 2 \right) = 10 \times 2 - 2^2 = 20 - 4 = 16\text{ cm}^2 $
@@ -98,8 +94,7 @@
     \end{itemize}
     On remarque que deux longueurs différentes peuvent donner la même surface.
 
-    \item \textbf{Déterminons $x$ pour que la surface soit égale à $25\text{ cm}^2$ :}
-
+    \item \textbf{Déterminons $x$ pour que la surface soit égale à $25\text{ cm}^2$ :} \\
     Résolvons l'équation $S\left( x \right) = 25$ :
    \begin{align*}
     S\left( x \right) = 25 \quad \text{ équivaut à } \qquad 10x - x^2 &= 25 \\
@@ -130,7 +125,7 @@
     L'expression $\frac{2x}{x-1}$ est définie si : $x - 1 \neq 0$, 
     c'est-à-dire : $x \neq 1$ 
     
-    Donc l'ensemble de définition de $f$ est : \quad $D_f = \big]-\infty \;;\; 1\big[ \cup \big]1 \;;\; +\infty\big[$ \quad ou encore \quad $D_f = \R \setminus \big\{1\big\}$
+     Donc l'ensemble de définition de $f$ est : \quad $D_f = \big]-\infty \;;\; 1\big[ \cup \big]1 \;;\; +\infty\big[$ \quad ou encore \quad $D_f = \R \setminus \big\{1\big\}$
 
     \item Soit $g$ la fonction : $g(x) = \sqrt{2x - 3}$
 
@@ -146,7 +141,7 @@
 \begin{Application}[][10 min]
 Déterminer l'ensemble de définition de la fonction $f$ dans chacun des cas suivants :
 \vspace{0.2cm}
-\begin{tasks}[label-width=15pt,item-indent=25pt,after-item-skip=5pt](2)
+\begin{tasks}[label-width=15pt,item-indent=25pt,after-item-skip=5pt](3)
     \task $f(x) = x^2 - 2x + 1$
     \task $f(x) = \frac{x+1}{2x-8}$
     \task $f(x) = \sqrt{2-x}$
@@ -164,8 +159,7 @@ Déterminer l'ensemble de définition de la fonction $f$ dans chacun des cas sui
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
 
     \item $f\left( x \right) = x^2 - 2x + 1$ \\
-    Puisque $f$ est une fonction polynôme, elle est définie sur $\R$ tout entier.
-
+    Puisque $f$ est une fonction polynôme, elle est définie sur $\R$ tout entier. \\
     Donc : \quad $D_f = \R = \big] -\infty ; +\infty \big[ $
 
     \item  $f\left( x \right) = \frac{x+1}{2x-8}$
@@ -191,14 +185,12 @@ Déterminer l'ensemble de définition de la fonction $f$ dans chacun des cas sui
         x_1 &= \frac{-\left( -5 \right) - \sqrt{1}}{2 \times 1} = \frac{5 - 1}{2} = 2 \\
         x_2 &= \frac{-\left( -5 \right) + \sqrt{1}}{2 \times 1} = \frac{5 + 1}{2} = 3
     \end{align*}
-
 \begin{center}
     \begin{tikzpicture}
     \tkzTabInit[lgt=2, espcl=1.6]{$x$ / 0.5 , $x^2 - 5x + 6$ / 1}{$-\infty$, $2$, $3$, $+\infty$}
     \tkzTabLine{ , +, z, -, z, +, }
 \end{tikzpicture}
 \end{center}
-
     Donc : \quad $ D_f = \big] -\infty ; 2 \big] \cup \big[ 3 ; +\infty \big[ $
 
     \item  $f\left( x \right) = \frac{\sqrt{x}}{x^2 - 2x + 1}$
@@ -264,11 +256,11 @@ Soient $P(x)$ et $Q(x)$ deux polynômes ; on a :
 \toprule
 \theadrow Fonction & Ensemble de définition \\
 \midrule
-$x \mapsto P(x)$ & $D_f = \R = ]-\infty ; +\infty[$ \\
-$x \mapsto \frac{P(x)}{Q(x)}$ & $D_f = \{x \in \R / Q(x) \neq 0\}$ \\
-$x \mapsto \sqrt{P(x)}$ & $D_f = \{x \in \R / P(x) \geq 0\}$ \\
-$x \mapsto \frac{P(x)}{\sqrt{Q(x)}}$ & $D_f = \{x \in \R / Q(x) > 0\}$ \\
-$x \mapsto \frac{\sqrt{P(x)}}{\sqrt{Q(x)}}$ & $D_f = \{x \in \R / P(x) \geq 0 \text{ et } Q(x) > 0\}$ \\
+$x \mapsto P(x)$ & $D_f = \R = \big]-\infty ; +\infty \big[$ \\
+$x \mapsto \frac{P(x)}{Q(x)}$ & $D_f = \big\{x \in \R / Q(x) \neq 0\big\}$ \\
+$x \mapsto \sqrt{P(x)}$ & $D_f = \big\{x \in \R / P(x) \geq 0\big\}$ \\
+$x \mapsto \frac{P(x)}{\sqrt{Q(x)}}$ & $D_f = \big\{x \in \R / Q(x) > 0\big\}$ \\
+$x \mapsto \frac{\sqrt{P(x)}}{\sqrt{Q(x)}}$ & $D_f = \big\{x \in \R / P(x) \geq 0 \text{ et } Q(x) > 0\big\}$ \\
 $x \mapsto \sqrt{\frac{P(x)}{Q(x)}}$ & $D_f = \left\{x \in \R / \frac{P(x)}{Q(x)} \geq 0 \text{ et } Q(x) \neq 0\right\}$ \\
 \bottomrule
 \end{tabular}
@@ -331,7 +323,7 @@ Montrer que $f=g$.
   Donc : \quad   $D_g = \big[ 0 ; 4 \big[ \cup \big] 4 ; +\infty \big[ $
  
    Nous constatons que les deux ensembles sont identiques :
-\[ D_f = D_g = \R^+ \setminus \left\{ 4 \right\} = \big[ 0 ; 4 \big[ \cup \big] 4 ; +\infty \big[ \]
+\[ D_f = D_g = \R^+ \setminus \big\{ 4 \big\} = \big[ 0 ; 4 \big[ \cup \big] 4 ; +\infty \big[ \]
 
 \item Soit $x$ de $D_f$. Calculons $f\left( x \right)$ :
 \begin{align*}
@@ -352,7 +344,7 @@ Puisque $D_f = D_g$ et pour tout $x$ de $D_f$, $f\left( x \right) = g\left( x \r
 \begin{Definition}[]
 La \textbf{courbe représentative} de $f$ (ou \textbf{graphe} de $f$), notée $\mathcal{C}_f$, est l'ensemble des points $M(x\,;\,y)$ du plan tels que $x \in D_f$ et $y = f(x)$ :
 
-$$\mathcal{C}_f = \bigl\{M\bigl(x\,;\,f(x)\bigr) \mid x \in D_f\bigr\}$$
+$$\mathcal{C}_f = \Big\{M\bigl(x\,;\,f(x)\bigr) \mid x \in D_f\Big\}$$
 
 \begin{center}
 \begin{tikzpicture}[scale = 0.8]
@@ -595,8 +587,8 @@ Soit $f$ une fonction et $D_f$ son ensemble de définition.
 
     \item \textbf{Étude de la fonction $f\left( x \right) = \sqrt{x - 1}$}
 
-     On a : ~ $D_f = \left\{ x \in \R \mid x - 1 \geq 0 \right\}=
-     \left\{ x \in \R \mid x  \geq 1 \right\}$ \\
+     On a :~ $D_f = \big\{ x \in \R \mid x - 1 \geq 0 \big\}=
+                    \big\{ x \in \R \mid x  \geq 1 \big\}$ \\
     L'ensemble de définition est donc : $D_f = \big[ 1 ; +\infty \big[$ \\
     $D_f$ n'est pas symétrique par rapport à $0$. \\
     Par conséquent, la fonction $f$ n'est \textbf{ni paire ni impaire}.
@@ -3376,7 +3368,7 @@ Soit $f$ la fonction définie par $f(x) = \frac{2x+1}{x-1}$
 \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
     \item \textbf{Déterminons $D_f$ :}
     
-      On a : \quad  $D_f = \left\{ x \in \R \mid x - 1 \neq 0 \right\} = \left\{ x \in \R \mid x \neq 1 \right\}$
+      On a : \quad  $D_f = \big\{ x \in \R \mid x - 1 \neq 0 \big\} = \left\{ x \in \R \mid x \neq 1 \right\}$
       
     Donc : \quad $D_f = \R \setminus \big\{1\big\} = \big]-\infty\,;\,1\big[ \cup \big]1\,;\,+\infty\big[$
 
@@ -3500,7 +3492,7 @@ $\frac{x-3}{x-2} \le -x^2 + 4x - 3$
     \begin{enumerate}[leftmargin=*,itemsep=0.5pt]
         \item \textbf{Déterminons $D_g$ :}
 
-         On a : \quad   $D_g = \left\{ x \in \R \mid x - 2 \neq 0 \right\} = \left\{ x \in \R \mid x \neq 2 \right\}$
+         On a : \quad   $D_g = \big\{ x \in \R \mid x - 2 \neq 0 \big\} = \left\{ x \in \R \mid x \neq 2 \right\}$
          
         Donc : \quad $D_g = \R \setminus \big\{2\big\} = \big]-\infty\,;\,2\big[ \cup \big]2\,;\,+\infty\big[$
 
