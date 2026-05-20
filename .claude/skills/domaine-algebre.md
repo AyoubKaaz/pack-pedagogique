@@ -1,7 +1,7 @@
 # SKILL — Style de Correction : Domaine Algèbre
 ## `.claude/skills/domaine-algebre.md`
-**Chapitres couverts : ch04, ch05, ch07, ch08 · TCSF · Kaazouzi Ayyoub · 2025/2026**
-> ⚠️ ch01 → utiliser `domaine-arithmetique`
+**Chapitres couverts : ch04 (Ensembles de nombres), ch05 (L'ordre dans ℝ), ch07 (Polynômes), ch08 (Équations, inéquations et systèmes) · TCSF · Kaazouzi Ayyoub · 2025/2026**
+> ⚠️ ch01 n'est PAS dans ce domaine → utiliser domaine-arithmetique
 
 ---
 

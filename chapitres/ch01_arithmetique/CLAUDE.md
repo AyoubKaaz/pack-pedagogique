@@ -2,7 +2,7 @@
 Niveau : Tronc Commun Scientifique | Masse horaire : 5h
 
 ## Skills à charger
-correction-commune + domaine-algebre
+correction-commune + domaine-arithmetique
 
 ## Statut
 - source.tex        : ✅ complet

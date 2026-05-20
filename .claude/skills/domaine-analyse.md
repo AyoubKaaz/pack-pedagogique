@@ -1,7 +1,7 @@
 # SKILL — Style de Correction : Domaine Analyse
 ## `.claude/skills/domaine-analyse.md`
-**Chapitres couverts : ch12 uniquement · TCSF · Kaazouzi Ayyoub · 2025/2026**
-> ⚠️ ch11 → utiliser `domaine-trigonometrie`
+**Chapitres couverts : ch12 (Généralités sur les fonctions numériques) · TCSF · Kaazouzi Ayyoub · 2025/2026**
+> ⚠️ ch11 n'est PAS dans ce domaine → utiliser domaine-trigonometrie
 
 ---
 

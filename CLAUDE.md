@@ -56,10 +56,16 @@ Ne jamais écrire `\dfrac` — `\frac` est redéfini automatiquement.
 Le skill à charger est indiqué dans le CLAUDE.md local.
 
 ## Skills disponibles
-- `correction-commune` — base commune à tous les chapitres
-- `domaine-algebre` — ch01 à ch05
-- `domaine-geometrie` — ch06 à ch10
-- `domaine-analyse` — ch11 à ch15
+- `correction-commune`            — base commune à tous les chapitres
+- `domaine-arithmetique`          — ch01
+- `domaine-geometrie-vectorielle` — ch02, ch03
+- `domaine-algebre`               — ch04, ch05, ch07, ch08
+- `domaine-geometrie-analytique`  — ch06, ch14
+- `domaine-trigonometrie`         — ch09, ch11
+- `domaine-statistiques`          — ch10
+- `domaine-analyse`               — ch12
+- `domaine-geometrie-plane`       — ch13
+- `domaine-geometrie-espace`      — ch15
 
 ## Fichiers transversaux — lire au démarrage de chaque session
 - log.md          → journal de bord, ajouter une entrée EN FIN de session
