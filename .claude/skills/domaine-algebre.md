@@ -1,6 +1,7 @@
-# SKILL — Style de Correction : Arithmétique des entiers naturels
-## `.claude/skills/correction-arithmetique/SKILL.md`
-**Chapitre 1 · TCSF · Kaazouzi Ayyoub · 2025/2026**
+# SKILL — Style de Correction : Domaine Algèbre
+## `.claude/skills/domaine-algebre.md`
+**Chapitres couverts : ch04, ch05, ch07, ch08 · TCSF · Kaazouzi Ayyoub · 2025/2026**
+> ⚠️ ch01 → utiliser `domaine-arithmetique`
 
 ---
 

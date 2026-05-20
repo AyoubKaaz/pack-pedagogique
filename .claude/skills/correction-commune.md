@@ -1,9 +1,9 @@
 # SKILL — Règles Communes à Tous les Chapitres
-## `.claude/skills/correction-commune/SKILL.md`
+## `.claude/skills/correction-commune.md`
 **Pack Pédagogique · TCSF · Kaazouzi Ayyoub · 2025/2026**
 
 > Ce fichier est chargé en PREMIER pour tout chapitre.
-> Il est complété par `.claude/skills/correction-[chapitre]/SKILL.md`.
+> Il est complété par `.claude/skills/domaine-[domaine].md`.
 > En cas de conflit, le skill du chapitre prime.
 
 ---
