@@ -78,7 +78,7 @@ directe et sert de modèle de rédaction.
 - Justifications obligatoires à chaque étape (voir tableau
   des justifications ci-dessous).
 - Pas de phrase $\blacktriangleright$ — la notion est déjà acquise.
-- Conclusion standard : `Donc $S = \{...\}$.`
+- Conclusion standard : `Donc $S = \big\{...\big\}$.`
 
 **Ton :** Rigoureux, concis, sans commentaires pédagogiques.
 
@@ -105,7 +105,7 @@ On a :
 \[expression_1\]
 \[\Leftrightarrow expression_2 \qquad \text{(justification)}\]
 \[\Leftrightarrow expression_3 \qquad \text{(justification)}\]
-Donc $S = \{valeur\}$.
+Donc $S = \big\{valeur\big\}$.
 ```
 
 ### Calcul en ligne (résultat simple)
@@ -160,7 +160,7 @@ Attendre la validation avant tout `git push`.
 | Séparateur décimal | `,` | `.` |
 | Guillemets | `\og \fg` ou `« »` | `"..."` |
 | Vecteur | `\vect{AB}` | `\overrightarrow{AB}` |
-| Valeur absolue | `\abs{x}` | `|x|` ou `\left|x\right|` |
+| Valeur absolue | `\abs{x}` | `\|x\|` ou `\left\|x\right\|` |
 | Ensembles | `\N \Z \R \C` | `\mathbb{N}` etc. |
 | d droit (intégrale) | `\dd` | `d` ou `\mathrm{d}` |
 | Points de suspension | `\ldots` | `...` |
@@ -168,27 +168,74 @@ Attendre la validation avant tout `git push`.
 
 ---
 
-## 6. CONCLUSIONS TYPES — UNIVERSELLES
+## 6. DÉLIMITEURS MATHÉMATIQUES (police 10pt) ← RÈGLE CRITIQUE
+
+> À 10pt, les délimiteurs nus `\{ \}` et `[ ]` sont illisibles à l'impression.
+> Appliquer systématiquement les tailles ci-dessous dans tout le contenu généré.
+
+### Accolades d'ensembles
+
+| Contexte | ✅ Correct | ❌ Interdit |
+|---|---|---|
+| Ensemble solution `S = {...}` | `\big\{ \big\}` | `\{ \}` nu |
+| Ensemble de définition | `\big\{ \big\}` | `\left\{ \right\}` (inefficace si contenu simple) |
+| Ensemble image | `\big\{ \big\}` | `\{ \}` nu |
+
+**Exemples corrects :**
+```latex
+Donc $S = \big\{ 2 \big\}$.
+Donc $S = \emptyset$.
+$D_f = \big\{ x \in \R \mid x \neq 0 \big\}$
+```
+
+### Crochets d'intervalles
+
+| Contenu de l'intervalle | ✅ Correct | ❌ Interdit |
+|---|---|---|
+| Sans fraction | `\big[ \big]` · `\big] \big[` | `[ ]` nu |
+| Avec fraction (`\frac`) | `\left[ \right]` · `\left] \right[` | `\big[ \big]` |
+
+**Exemples corrects :**
+```latex
+% Sans fraction
+$\big[ a \;;\; b \big]$
+$\big] -\infty \;;\; a \big[$
+$\big[ 0 \;;\; +\infty \big[$
+$\big] -\infty \;;\; +\infty \big[$
+
+% Avec fraction
+$\left[ \frac{1}{2} \;;\; 3 \right]$
+$\left] -\infty \;;\; \frac{a+b}{2} \right[$
+```
+
+### Parenthèses
+Les parenthèses `( )` suivent la même logique :
+- Sans fraction → `\big( \big)`
+- Avec fraction → `\left( \right)`
+
+---
+
+## 7. CONCLUSIONS TYPES — UNIVERSELLES
 
 | Situation | Format |
 |-----------|--------|
-| Équation — solution unique | `Donc $S = \{valeur\}$.` |
+| Équation — solution unique | `Donc $S = \big\{valeur\big\}$.` |
 | Équation — pas de solution | `Donc $S = \emptyset$.` |
 | Équation — tout réel | `Donc $S = \R$.` |
-| Inéquation | `Donc $S = [a \; ; \; +\infty[$.` |
+| Inéquation | `Donc $S = \big[ a \;;\; +\infty \big[$.` |
 | Valeur d'une expression | `Par conséquent, $A = valeur$.` |
 | Démonstration terminée | `Par conséquent, [énoncé de ce qu'on voulait montrer].` |
 | Résultat avec condition | `Par conséquent, pour tout $x \in D_f$, [conclusion].` |
 
 ---
 
-## 7. STRUCTURE D'UNE DÉMONSTRATION
+## 8. STRUCTURE D'UNE DÉMONSTRATION
 
 ```latex
 % Toujours suivre ce plan en 3 temps :
 
 % 1. Hypothèses (ce qu'on sait)
-Soit $n \in \mathbb{N}$ [tel que ...].
+Soit $n \in \N$ [tel que ...].
 
 % 2. Corps de la démonstration
 On a :
@@ -208,17 +255,17 @@ D'après la question \textbf{a)}, on sait que $[résultat]$.
 
 ---
 
-## 8. LISTES ET ÉNUMÉRATIONS
+## 9. LISTES ET ÉNUMÉRATIONS
 
 ```latex
 % Toujours utiliser itemize pour les cas multiples
-\begin{itemize}
+\begin{itemize}[leftmargin=*,itemsep=0.5pt]
     \item Premier cas : ...
     \item Deuxième cas : ...
 \end{itemize}
 
 % Pour les étapes numérotées dans une démonstration
-\begin{enumerate}
+\begin{enumerate}[leftmargin=*,itemsep=0.5pt]
     \item ...
     \item ...
 \end{enumerate}
@@ -226,7 +273,7 @@ D'après la question \textbf{a)}, on sait que $[résultat]$.
 
 ---
 
-## 9. VOCABULAIRE OFFICIEL MAROCAIN — COMMUN
+## 10. VOCABULAIRE OFFICIEL MAROCAIN — COMMUN
 
 | ✅ Correct | ❌ Incorrect |
 |-----------|-------------|
@@ -242,7 +289,7 @@ D'après la question \textbf{a)}, on sait que $[résultat]$.
 
 ---
 
-## 10. CE QUI EST DANS LE SKILL DU CHAPITRE
+## 11. CE QUI EST DANS LE SKILL DU CHAPITRE
 
 Les règles suivantes sont **spécifiques** et ne sont jamais dans ce fichier :
 

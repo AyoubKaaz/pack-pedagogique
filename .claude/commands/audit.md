@@ -3,6 +3,16 @@ name: audit
 description: Vérifier les corrections manquantes et l'état du chapitre
 ---
 
+## Critère "généré"
+Un fichier est marqué ✅ généré UNIQUEMENT si :
+1. Il existe sur le disque
+2. ET il contient du contenu réel entre les balises injection
+   (td.tex : contenu non vide entre \begin{multicols} et \end{multicols})
+   (fiche_prof.tex : plus de 60 lignes avec au moins un environnement \begin{...})
+   (td_correction.tex : au moins un \begin{Solution})
+Sinon → ⚠️ généré (vide) — relancer /generer
+
+
 # /audit — Audit complet d'un chapitre
 
 ## Étape 0 — Identifier le chapitre

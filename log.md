@@ -14,7 +14,6 @@
 - Contexte : ajout des 3 composants inspirés du pattern LLM Wiki (Karpathy)
   pour rendre la connaissance transversale entre les 15 chapitres TCS
 - État du projet à cette date :
-  - ch01_arithmetique : source.tex 🔄, fiche_prof ✅, td ✅,
-    td_correction 🔄 (89 lignes)
+  - ch01_arithmetique : source.tex 🔄, fiche_prof ✅, td ✅, td_correction 🔄 (89 lignes)
   - ch11_fonctions    : complet ✅
   - ch02–ch10, ch12–ch15 : non démarrés ❌

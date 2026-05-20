@@ -1,5 +1,5 @@
 # Chapitre 11 — Fonctions Numériques d'une Variable Réelle
-Niveau : Tronc Commun Scientifique | Masse horaire : 15h
+Niveau : Tronc Commun Scientifique | Masse horaire : 20h
 
 ## Skills à charger
 correction-commune + domaine-analyse
