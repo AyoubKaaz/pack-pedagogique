@@ -118,7 +118,21 @@ Vérifier que :
 - [ ] \fancyfoot[L] présent dans les 3 fichiers avec le bon titre
 - [ ] \begin{multicols*}{2} présent dans td.tex ET td_correction.tex
 
-## Étape finale — Vérification délimiteurs
+## Étape 6 — Mise à jour index-concepts.md
+
+Après génération des 3 fichiers LaTeX :
+1. Lire source.tex du chapitre traité
+2. Identifier toutes les balises %% DEFINITION et %% PROPRIETE
+3. Pour chaque notion trouvée :
+   - Si déjà présente dans index-concepts.md :
+     vérifier que le chapitre courant est listé → ajouter si manquant
+   - Si nouvelle notion :
+     ajouter sous la bonne lettre alphabétique au format :
+     **Nom de la notion** → chXX (introduit / réutilisé / approfondi)
+     avec les notations spécifiques du chapitre si applicable
+4. Ajouter index-concepts.md au git add du commit final
+
+## Étape 7 — Vérification délimiteurs
 Après génération de fiche_prof.tex, td.tex, td_correction.tex :
 Scanner source.tex et corriger automatiquement :
   \left\{  →  \big\{
@@ -127,7 +141,7 @@ Scanner source.tex et corriger automatiquement :
   ] sans \big  →  \big]   dans les intervalles
 Afficher le nombre de corrections effectuées.
 
-## Étape 6 — Git push automatique
+## Étape finale — Git push automatique
 ```bash
 cd pack-pedagogique
 git add chapitres/$CHAPITRE/

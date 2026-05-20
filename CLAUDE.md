@@ -1,6 +1,5 @@
 # Pack Pédagogique TCS — Kaazouzi Ayyoub
 ## Règles universelles — s'appliquent à TOUS les chapitres
----
 
 ## Git — automatique après chaque modification
 ```bash
@@ -8,8 +7,6 @@ git add .
 git commit -m "[chXX] : description courte"
 git push origin main
 ```
-
----
 
 ## Limites absolues — ne jamais enfreindre
 - Ne jamais modifier `preamble/*.tex`
@@ -19,25 +16,20 @@ git push origin main
 - Ne jamais supprimer du contenu validé
 - `\linewidth` obligatoire dans toutes les minipage
 
----
+## Règles délimiteurs mathématiques (police 10pt)
+| Contexte | ✅ Correct | ❌ Interdit |
+|---|---|---|
+| Accolades d'ensembles `S = {...}` | `\big\{ \big\}` | `\{ \}` nu · `\left\{ \right\}` |
+| Intervalles **sans** fraction | `\big[ \big]` · `\big] \big[` | `[ ]` nu |
+| Intervalles **avec** fraction | `\left[ \right]` · `\left] \right[` | `\big[ \big]` |
+> Raison : à 10pt, `\{ \}` et `[ ]` nus sont illisibles. `\left\{ \right\}` reste petit — inefficace.
 
 ## Système de balises source.tex
-```
-%% SECTION              → fiche_prof ✓
-%% ACTIVITE             → fiche_prof ✓  td ✓
-%% SOLUTION_ACTIVITE    → td_correction ✓
-%% DEFINITION           → fiche_prof ✓
-%% PROPRIETE            → fiche_prof ✓
-%% TECHNIQUES           → fiche_prof ✓
-%% EXEMPLE              → fiche_prof ✓
-%% REMARQUE             → fiche_prof ✓
-%% APPLICATION          → fiche_prof ✓  td ✓
-%% SOLUTION_APPLICATION → td_correction ✓
-%% EXERCICE             → fiche_prof ✓  td ✓
-%% SOLUTION_EXERCICE    → td_correction ✓
-```
-
----
+| Balise | fiche_prof | td | td_correction |
+|--------|-----------|-----|--------------|
+| SECTION / DEFINITION / PROPRIETE / TECHNIQUES / EXEMPLE / REMARQUE | ✓ | — | — |
+| ACTIVITE / APPLICATION / EXERCICE | ✓ | ✓ | — |
+| SOLUTION_ACTIVITE / SOLUTION_APPLICATION / SOLUTION_EXERCICE | — | — | ✓ |
 
 ## Environnement Solution — syntaxe obligatoire
 ```latex
@@ -46,13 +38,9 @@ git push origin main
 \begin{Solution}[EXERCICE DE SYNTHÈSE][1]
 ```
 
----
-
 ## Macros disponibles
 `\N \Z \R \C` · `\vect{AB}` · `\abs{x}` · `\frac{}{}` (= dfrac) · `\duree{X min}` · `\dd` · `\e`
 Ne jamais écrire `\dfrac` — `\frac` est redéfini automatiquement.
-
----
 
 ## Vocabulaire officiel marocain
 | ✅ Correct | ❌ Interdit |
@@ -63,17 +51,30 @@ Ne jamais écrire `\dfrac` — `\frac` est redéfini automatiquement.
 | taux de variation | taux d'accroissement |
 | membre gauche / droit | côté gauche / droit |
 
----
-
 ## Règle de session
-1 session Claude Code = 1 seul chapitre.
-Lire le CLAUDE.md local du chapitre avant toute action.
+1 session Claude Code = 1 seul chapitre. Lire le CLAUDE.md local avant toute action.
 Le skill à charger est indiqué dans le CLAUDE.md local.
-
----
 
 ## Skills disponibles
 - `correction-commune` — base commune à tous les chapitres
 - `domaine-algebre` — ch01 à ch05
 - `domaine-geometrie` — ch06 à ch10
 - `domaine-analyse` — ch11 à ch15
+
+## Fichiers transversaux — lire au démarrage de chaque session
+- log.md          → journal de bord, ajouter une entrée EN FIN de session
+- index-concepts.md → index des notions, mise à jour automatique via /generer
+- patterns/       → formulations validées, consulter avant toute correction
+
+## Règle log.md
+Fin de session obligatoire : ajouter dans log.md
+  ## [DATE] chXX_nom — Session N
+  - Fait : ...
+  - Décision : ...
+  - Restant : ...
+
+## Règle patterns/
+Avant de générer une correction :
+  vérifier si patterns/ contient un fichier correspondant.
+  Si oui → appliquer sa structure exacte.
+  Si non → générer normalement puis proposer de verser le pattern.

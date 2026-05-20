@@ -10,6 +10,28 @@ Lecture seule — ne rien modifier.
 Produire un rapport complet de l'état du projet TCS.
 
 ---
+## Étape 0 — Lecture des fichiers transversaux
+
+Avant l'audit des chapitres, lire et résumer :
+
+### log.md
+- Extraire la dernière entrée de chaque chapitre mentionné
+- Identifier la date de la session la plus récente
+
+### index-concepts.md
+- Compter le nombre total de notions indexées
+- Lister les chapitres déjà couverts
+
+### patterns/
+- Lister les fichiers présents avec leur chapitre source
+
+Afficher en en-tête du rapport d'audit :
+  ┌─────────────────────────────────────────────┐
+  │ ÉTAT TRANSVERSAL DU PROJET                  │
+  │ Dernière session : [date] — [chapitre]      │
+  │ Notions indexées : N dans index-concepts.md │
+  │ Patterns disponibles : N fichiers           │
+  └─────────────────────────────────────────────┘
 
 ## Étape 1 — Lire STATUS.md
 Lire le fichier STATUS.md à la racine.

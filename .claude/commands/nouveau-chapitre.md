@@ -201,9 +201,25 @@ Ajouter une ligne dans STATUS.md à la racine :
 | ch$NUM_$SLUG | $TITRE | ❌ | ❌ | ❌ | ❌ | 🔄 démarré le $DATE |
 ```
 
+## Étape 7 — Initialisation dans les fichiers transversaux
+
+Après création de la structure chapitres/chXX_nom/ :
+
+### index-concepts.md
+Ajouter la ligne provisoire :
+  *Notions de chXX_nom — à indexer après /generer*
+(sera remplacée par les vraies notions lors du premier /generer)
+
+### log.md
+Ajouter l'entrée :
+  ## [DATE] chXX_nom — Création du chapitre
+  - Fait : structure créée via /nouveau-chapitre
+  - Masse horaire : Xh | Domaine : domaine-XXX
+  - Restant : source.tex à rédiger, Page1.tex à remplir manuellement
+
 ---
 
-## Étape 7 — Rapport final
+## Étape 8 — Rapport final
 
 Afficher la structure créée :
 
@@ -228,7 +244,7 @@ Rappeler :
 
 ---
 
-## Étape 8 — Git push
+## Étape 9 — Git push
 
 ```bash
 git add chapitres/ch$NUM_$SLUG/
