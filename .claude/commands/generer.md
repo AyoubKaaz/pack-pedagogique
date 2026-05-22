@@ -9,7 +9,13 @@ Ignorer tout ce qui se trouve entre
 %% HEADER_APERCU et %% FIN_HEADER_APERCU
 et entre %% FOOTER_APERCU et %% FIN_FOOTER_APERCU
 
-## Étape 0 — Identifier le chapitre
+## Étape 0 — Plan (karpathy-guidelines)
+- Lire karpathy-guidelines.md
+- Lister les blocs SOLUTION manquants dans source.tex
+- Pour chacun : vérifier patterns/, énoncer le plan
+- Afficher la liste complète et attendre confirmation avant de commencer
+
+## Étape 0b — Identifier le chapitre
 Si le chapitre n'est pas précisé dans la commande, demande :
 "Quel chapitre veux-tu générer ? (ex: ch11_fonctions)"
 

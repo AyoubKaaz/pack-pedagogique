@@ -66,6 +66,7 @@ Le skill à charger est indiqué dans le CLAUDE.md local.
 - `domaine-analyse`               — ch12
 - `domaine-geometrie-plane`       — ch13
 - `domaine-geometrie-espace`      — ch15
+- `karpathy-guidelines`           — chargé automatiquement avec tout skill domaine
 
 ## Fichiers transversaux — lire au démarrage de chaque session
 - log.md          → journal de bord, ajouter une entrée EN FIN de session

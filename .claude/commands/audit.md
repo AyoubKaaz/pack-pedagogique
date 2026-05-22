@@ -62,3 +62,8 @@ Selon le rapport, proposer :
 ## Étape 3 — Pas de modification automatique
 /audit ne modifie RIEN. Il observe et rapporte seulement.
 Toute action doit être confirmée explicitement.
+
+## Critères de succès (karpathy-guidelines)
+□ Chaque SOLUTION insérée = uniquement le bloc demandé modifié
+□ Diff source.tex = zéro ligne hors du bloc SOLUTION concerné
+□ Checklist ✓ affichée pour chaque correction avant insertion
