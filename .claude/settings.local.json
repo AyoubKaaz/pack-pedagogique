@@ -44,7 +44,19 @@
       "Bash(Select-Object -ExpandProperty Lines)",
       "PowerShell(\\(Get-Content \"C:\\\\Users\\\\Ayyoub kaazouzi\\\\pack-pedagogique-v5.0\\\\pack-pedagogique\\\\chapitres\\\\ch11_fonctions\\\\fiche_prof.tex\" | Measure-Object -Line\\).Lines)",
       "PowerShell(\\(Get-Content \"C:\\\\Users\\\\Ayyoub kaazouzi\\\\pack-pedagogique-v5.0\\\\pack-pedagogique\\\\chapitres\\\\ch11_fonctions\\\\td_correction.tex\" | Measure-Object -Line\\).Lines)",
-      "Bash(Remove-Item *)"
+      "Bash(Remove-Item *)",
+      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\Ayyoub kaazouzi\\\\pack-pedagogique-v5.0\\\\pack-pedagogique\\\\CLAUDE.md\" | Measure-Object -Line\\).Lines)",
+      "Bash(git log *)",
+      "Bash(xargs -0 -I{} git cat-file -s \"HEAD:{}\")",
+      "Bash(xargs ls -la)",
+      "Bash(sort -k5 -n -r)",
+      "Bash(awk '$5 > 1000000 {print $5, $9}')",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(git check-ignore *)",
+      "Bash(awk 'NR>=1600 && NR<=1660' chapitres/ch11_fonctions/source.tex)",
+      "Bash(awk 'NR>=2380 && NR<=2415' chapitres/ch11_fonctions/source.tex)",
+      "Bash(awk '{if \\($2 !~ /^\\\\[/\\) print \"🔴 \"$0; else print \"✅ \"$0}')",
+      "Bash(git mv *)"
     ]
   }
 }

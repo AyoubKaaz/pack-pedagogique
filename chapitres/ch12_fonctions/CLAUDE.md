@@ -1,8 +1,8 @@
-# Chapitre 11 — Fonctions Numériques d'une Variable Réelle
+# Chapitre 12 — Généralités sur les fonctions numériques
 Niveau : Tronc Commun Scientifique | Masse horaire : 20h
 
 ## Skills à charger
-correction-commune + domaine-trigonometrie
+correction-commune + domaine-analyse
 
 ## Statut
 - source.tex        : ✅ complet (45 pages)

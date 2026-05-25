@@ -1,4 +1,4 @@
-# Chapitre 01 — Arithmétique
+# Chapitre 02 — Arithmétique dans ℕ
 Niveau : Tronc Commun Scientifique | Masse horaire : 5h
 
 ## Skills à charger

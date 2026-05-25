@@ -57,14 +57,14 @@ Le skill à charger est indiqué dans le CLAUDE.md local.
 
 ## Skills disponibles
 - `correction-commune`            — base commune à tous les chapitres
-- `domaine-arithmetique`          — ch01
-- `domaine-geometrie-vectorielle` — ch02, ch03
-- `domaine-algebre`               — ch04, ch05, ch07, ch08
-- `domaine-geometrie-analytique`  — ch06, ch14
+- `domaine-algebre`               — ch01, ch05, ch07, ch08
+- `domaine-arithmetique`          — ch02
+- `domaine-geometrie-vectorielle` — ch03, ch04, ch13
+- `domaine-geometrie-analytique`  — ch06
 - `domaine-trigonometrie`         — ch09, ch11
 - `domaine-statistiques`          — ch10
 - `domaine-analyse`               — ch12
-- `domaine-geometrie-plane`       — ch13
+- `domaine-geometrie-plane`       — ch04, ch13, ch14
 - `domaine-geometrie-espace`      — ch15
 - `karpathy-guidelines`           — chargé automatiquement avec tout skill domaine
 

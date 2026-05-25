@@ -9,10 +9,10 @@ Claude Code crée ou met à jour le fichier correspondant.
 ## Fichiers disponibles
 | Fichier | Chapitre source | Type |
 |---------|----------------|------|
-| resolution-equation-1er-degre.md | ch01 | APPLICATION |
-| divisibilite-pgcd-ppcm.md | ch01 | APPLICATION |
-| taux-de-variation.md | ch11 | APPLICATION |
-| parite-fonction.md | ch11 | APPLICATION |
+| resolution-equation-1er-degre.md | ch02 | APPLICATION |
+| divisibilite-pgcd-ppcm.md | ch02 | APPLICATION |
+| taux-de-variation.md | ch12 | APPLICATION |
+| parite-fonction.md | ch12 | APPLICATION |
 ## Comment utiliser un pattern dans Claude Code
 "Génère la correction de l'Application 4 du ch05.
  Lis d'abord patterns/resolution-equation-1er-degre.md

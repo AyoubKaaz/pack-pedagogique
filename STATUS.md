@@ -7,26 +7,26 @@ Légende : ✅ complet · 🔄 en cours · ❌ non démarré
 
 | Chapitre | Titre | source.tex | fiche_prof | td | td_correction | Statut global |
 |----------|-------|:----------:|:----------:|:--:|:-------------:|---------------|
-| ch01 | Arithmétique | ✅ | ✅ | ✅ | ✅ | Complet |
-| ch02 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch03 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch04 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch05 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch06 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch07 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch08 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch09 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch10 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch11 | Fonctions Numériques | ✅ | ✅ | ✅ | ✅ | Complet |
-| ch12 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch13 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch14 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch15 | — | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch01 | Ensembles de nombres                     | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch02 | Arithmétique dans ℕ                      | ✅ | ✅ | ✅ | ✅ | Complet |
+| ch03 | Calcul vectoriel dans le plan            | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch04 | La projection dans le plan               | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch05 | L'ordre dans ℝ                           | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch06 | La droite dans le plan                   | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch07 | Les polynômes                            | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch08 | Équations, inéquations et systèmes       | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch09 | Calcul trigonométrique                   | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch10 | Statistiques                             | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch11 | Calcul trigonométrique (compléments)     | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch12 | Généralités sur les fonctions numériques | ✅ | ✅ | ✅ | ✅ | Complet |
+| ch13 | Le produit scalaire                      | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch14 | Les transformations dans le plan         | ❌ | ❌ | ❌ | ❌ | Non démarré |
+| ch15 | Géométrie dans l'espace                  | ❌ | ❌ | ❌ | ❌ | Non démarré |
 
 ---
 
 ## Résumé
-- Complets : **2 / 15** (ch01, ch11)
+- Complets : **2 / 15** (ch02, ch12)
 - En cours : **0 / 15**
 - Non démarrés : **13 / 15**
 

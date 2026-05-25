@@ -7,11 +7,10 @@ Type : SOLUTION_APPLICATION
 ## Structure type complète
 ```latex
 \begin{itemize}
-    \item On a : $D_f = \ldots$, donc $D_f$ est symétrique
-    par rapport à $0$. \checkmark
+    \item On a : $D_f = \ldots$, donc $D_f$ est symétrique par rapport à $0$. \checkmark
     \item Soit $x \in D_f$. On a :
     \[f(-x) = \ldots = f(x)\]
-    Donc pour tout $x \in D_f$, $f(-x) = f(x)$.
+    Donc pour tout $x \in D_f$,$-x \in D_f$ et $f(-x) = f(x)$.
     D'où $f$ est \textbf{paire}.
 \end{itemize}
 ```

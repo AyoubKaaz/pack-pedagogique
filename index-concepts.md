@@ -4,28 +4,28 @@
 # Format : **Notion** → chXX (rôle : introduit / réutilisé / approfondi)
 ---
 ## A
-- **Arithmétique des entiers naturels** → ch01 (introduit)
+- **Arithmétique des entiers naturels** → ch02 (introduit)
 ## D
-- **Divisibilité** → ch01 (introduit §1)
+- **Divisibilité** → ch02 (introduit §1)
   - Notation officielle : a | b  (jamais a/b pour la relation)
-- **Division euclidienne** → ch01 (introduit §2)
+- **Division euclidienne** → ch02 (introduit §2)
   - Forme : a = b×q + r, avec 0 ≤ r < b
   - Théorème d'existence et d'unicité
 ## E
-- **Ensemble de définition** → ch11 (introduit §1)
+- **Ensemble de définition** → ch12 (introduit §1)
   - Vocabulaire officiel marocain : "ensemble de définition"
     (jamais "domaine de définition")
 ## F
-- **Fonction numérique d'une variable réelle** → ch11 (introduit §1)
-- **Fonction paire / impaire** → ch11 (introduit §3)
+- **Fonction numérique d'une variable réelle** → ch12 (introduit §1)
+- **Fonction paire / impaire** → ch12 (introduit §3)
   - Condition de parité : D_f symétrique par rapport à 0
 ## P
-- **PGCD** → ch01 (introduit §4)
+- **PGCD** → ch02 (introduit §4)
   - Notation : PGCD(a,b)
-- **PPCM** → ch01 (introduit §4)
+- **PPCM** → ch02 (introduit §4)
   - Notation : PPCM(a,b)
 ## T
-- **Taux de variation** → ch11 (introduit §2)
+- **Taux de variation** → ch12 (introduit §2)
   - Vocabulaire officiel marocain : "taux de variation"
     (jamais "taux d'accroissement")
   - Notation : T(a;b) = [f(b) - f(a)] / (b - a)
