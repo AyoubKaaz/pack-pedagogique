@@ -15,6 +15,7 @@ git push origin main
 - Ne jamais utiliser `\textwidth` dans les minipage de `source.tex`
 - Ne jamais supprimer du contenu validé
 - `\linewidth` obligatoire dans toutes les minipage
+- Ne jamais déplacer `chapitres/Images/` — ressource globale partagée par tous les chapitres
 
 ## Règles délimiteurs mathématiques (police 10pt)
 | Contexte | ✅ Correct | ❌ Interdit |
@@ -41,15 +42,6 @@ git push origin main
 ## Macros disponibles
 `\N \Z \R \C` · `\vect{AB}` · `\abs{x}` · `\frac{}{}` (= dfrac) · `\duree{X min}` · `\dd` · `\e`
 Ne jamais écrire `\dfrac` — `\frac` est redéfini automatiquement.
-
-## Vocabulaire officiel marocain
-| ✅ Correct | ❌ Interdit |
-|-----------|------------|
-| ensemble de définition | domaine de définition |
-| ensemble solution | solution générale |
-| sens de l'inégalité | signe de l'inégalité |
-| taux de variation | taux d'accroissement |
-| membre gauche / droit | côté gauche / droit |
 
 ## Règle de session
 1 session Claude Code = 1 seul chapitre. Lire le CLAUDE.md local avant toute action.
