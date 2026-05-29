@@ -18,16 +18,27 @@ Légende : ✅ complet · 🔄 en cours · ❌ non démarré
 | ch09 | Calcul trigonométrique                   | ❌ | ❌ | ❌ | ❌ | Non démarré |
 | ch10 | Statistiques                             | ❌ | ❌ | ❌ | ❌ | Non démarré |
 | ch11 | Calcul trigonométrique (compléments)     | ❌ | ❌ | ❌ | ❌ | Non démarré |
-| ch12 | Généralités sur les fonctions numériques | ✅ | ✅ | ✅ | ✅ | Complet |
+| ch12 | Généralités sur les fonctions numériques | ✅ | ❌ | ❌ | ❌ | en cours |
 | ch13 | Le produit scalaire                      | ❌ | ❌ | ❌ | ❌ | Non démarré |
 | ch14 | Les transformations dans le plan         | ❌ | ❌ | ❌ | ❌ | Non démarré |
 | ch15 | Géométrie dans l'espace                  | ❌ | ❌ | ❌ | ❌ | Non démarré |
 
 ---
 
+## Ressources globales
+
+| Chemin | Contenu | Usage |
+|--------|---------|-------|
+| `chapitres/Images/` | `MEN LOGO 2.png` | En-tête de tous les chapitres — **ne pas déplacer** |
+
+> ⚠️ Vérifier après chaque Pull from GitHub (Overleaf) que `chapitres/Images/MEN LOGO 2.png` est toujours présent.
+> Récupération : `git log --diff-filter=D` puis `git checkout <hash>^ -- "chapitres/Images/MEN LOGO 2.png"`
+
+---
+
 ## Résumé
-- Complets : **2 / 15** (ch02, ch12)
-- En cours : **0 / 15**
+- Complets : **1 / 15** (ch02)
+- En cours : **1 / 15**
 - Non démarrés : **13 / 15**
 
 ---
