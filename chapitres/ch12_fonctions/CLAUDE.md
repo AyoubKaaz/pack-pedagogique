@@ -8,7 +8,7 @@ correction-commune + domaine-analyse
 - source.tex        : ✅ complet (45 pages)
 - fiche_prof.tex    : ✅ généré (17 pages)
 - td.tex            : ✅ généré (4 pages)
-- td_correction.tex : ✅ généré (15 pages)
+- td_correction.tex : ❌ 0/33 solutions générées
 
 ## Notations spécifiques
 - Ensemble de définition : $D_f$ (jamais "domaine")
@@ -24,7 +24,7 @@ correction-commune + domaine-analyse
 - Ensemble de définition : conclure par "Donc $D_f = ...$"
 
 ## Corrections en cours
-Aucune — chapitre complet
+33 solutions manquantes (5 activités + 26 applications + 2 exercices)
 
 ## Distinction SOLUTION_ACTIVITE / SOLUTION_APPLICATION
 
