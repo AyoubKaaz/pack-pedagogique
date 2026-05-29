@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pack Pédagogique v7.5 — Guide Workflow</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --bg: #0d0f14;
+    --surface: #13161e;
+    --surface2: #1a1e28;
+    --border: #252a38;
+    --accent: #4f8fff;
+    --accent2: #ff6b35;
+    --accent3: #34d399;
+    --accent4: #a78bfa;
+    --warn: #fbbf24;
+    --danger: #f87171;
+    --text: #e2e8f0;
+    --text-muted: #64748b;
+    --text-dim: #94a3b8;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'Inter', sans-serif;
+    --display: 'Syne', sans-serif;
+    --radius: 8px;
+    --glow: 0 0 20px rgba(79,143,255,0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  .layout { display: flex; min-height: 100vh; }
+
+  .sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar::-webkit-scrollbar { width: 4px; }
+  .sidebar::-webkit-scrollbar-track { background: transparent; }
+  .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  .sidebar-logo {
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo-title {
+    font-family: var(--display);
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+  }
+
+  .logo-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-family: var(--mono);
+  }
+
+  .sidebar-search {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-search input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 7px 12px;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .sidebar-search input:focus { border-color: var(--accent); }
+  .sidebar-search input::placeholder { color: var(--text-muted); }
+
+  .nav-section {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-section-title {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 20px 4px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 20px;
+    cursor: pointer;
+    color: var(--text-dim);
+    font-size: 12.5px;
+    text-decoration: none;
+    transition: all 0.15s;
+    border-left: 2px solid transparent;
+  }
+
+  .nav-item:hover { color: var(--text); background: var(--surface2); }
+  .nav-item.active { color: var(--accent); border-left-color: var(--accent); background: rgba(79,143,255,0.06); }
+
+  .nav-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+    opacity: 0.5;
+  }
+  .nav-item.active .nav-dot { opacity: 1; }
+
+  .badge {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 9px;
+    padding: 1px 6px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .badge-new { background: rgba(79,143,255,0.15); color: var(--accent); }
+  .badge-warn { background: rgba(251,191,36,0.15); color: var(--warn); }
+  .badge-v75 { background: rgba(52,211,153,0.15); color: var(--accent3); }
+
+  .main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 0 80px;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #0d0f14 0%, #111520 50%, #0a0e1a 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(79,143,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 200px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(52,211,153,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    opacity: 0.8;
+  }
+
+  .hero-title {
+    font-family: var(--display);
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text);
+    max-width: 600px;
+  }
+
+  .hero-title span { color: var(--accent); }
+
+  .hero-desc {
+    color: var(--text-muted);
+    margin-top: 14px;
+    font-size: 14px;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .hero-stat-val {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .hero-stat-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .content { padding: 0 48px; }
+
+  section { padding-top: 48px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .section-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .icon-blue { background: rgba(79,143,255,0.12); }
+  .icon-orange { background: rgba(255,107,53,0.12); }
+  .icon-green { background: rgba(52,211,153,0.12); }
+  .icon-purple { background: rgba(167,139,250,0.12); }
+  .icon-yellow { background: rgba(251,191,36,0.12); }
+  .icon-teal { background: rgba(45,212,191,0.12); }
+
+  .section-title {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .section-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover { border-color: var(--accent); box-shadow: var(--glow); }
+
+  .card-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-body { color: var(--text-dim); font-size: 13px; line-height: 1.6; }
+
+  .steps { display: flex; flex-direction: column; gap: 16px; }
+
+  .step {
+    display: flex;
+    gap: 16px;
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 2px;
+  }
+
+  .step-body { flex: 1; }
+
+  .step-title {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .step-desc { color: var(--text-dim); font-size: 13px; line-height: 1.6; }
+
+  .code-block {
+    background: #080b10;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin: 12px 0;
+    overflow: hidden;
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+
+  .code-lang {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .copy-btn {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .copy-btn:hover { color: var(--accent); border-color: var(--accent); }
+  .copy-btn.copied { color: var(--accent3); border-color: var(--accent3); }
+
+  pre {
+    padding: 16px;
+    overflow-x: auto;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: #c9d1d9;
+  }
+
+  pre::-webkit-scrollbar { height: 4px; }
+  pre::-webkit-scrollbar-track { background: transparent; }
+  pre::-webkit-scrollbar-thumb { background: var(--border); }
+
+  .cmd { color: #79c0ff; }
+  .kw { color: #ff7b72; }
+  .str { color: #a5d6ff; }
+  .cmt { color: #5a6680; font-style: italic; }
+  .ok { color: var(--accent3); }
+  .warn-text { color: var(--warn); }
+  .accent-text { color: var(--accent); }
+
+  .checklist {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    margin: 12px 0;
+  }
+
+  .checklist-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+
+  .check-item:hover { opacity: 0.8; }
+
+  .check-box {
+    width: 16px; height: 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+    background: var(--surface);
+  }
+
+  .check-item.checked .check-box {
+    background: var(--accent3);
+    border-color: var(--accent3);
+  }
+
+  .check-item.checked .check-box::after { content: '✓'; font-size: 10px; color: white; font-weight: 700; }
+
+  .check-label {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    font-family: var(--mono);
+    line-height: 1.4;
+    transition: all 0.15s;
+  }
+
+  .check-item.checked .check-label {
+    text-decoration: line-through;
+    color: var(--text-muted);
+  }
+
+  .alert {
+    display: flex;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin: 12px 0;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .alert-icon { font-size: 16px; flex-shrink: 0; line-height: 1.3; }
+
+  .alert-info { background: rgba(79,143,255,0.08); border: 1px solid rgba(79,143,255,0.2); }
+  .alert-info .alert-icon { color: var(--accent); }
+
+  .alert-warn { background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2); }
+  .alert-warn .alert-icon { color: var(--warn); }
+
+  .alert-danger { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.2); }
+  .alert-danger .alert-icon { color: var(--danger); }
+
+  .alert-success { background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.2); }
+  .alert-success .alert-icon { color: var(--accent3); }
+
+  .alert-body strong { color: var(--text); }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    margin: 12px 0;
+  }
+
+  .data-table th {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+
+  .data-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(37,42,56,0.5);
+    color: var(--text-dim);
+    vertical-align: top;
+  }
+
+  .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .pill-blue { background: rgba(79,143,255,0.15); color: var(--accent); }
+  .pill-green { background: rgba(52,211,153,0.15); color: var(--accent3); }
+  .pill-orange { background: rgba(255,107,53,0.15); color: var(--accent2); }
+  .pill-red { background: rgba(248,113,113,0.15); color: var(--danger); }
+  .pill-yellow { background: rgba(251,191,36,0.15); color: var(--warn); }
+  .pill-purple { background: rgba(167,139,250,0.15); color: var(--accent4); }
+  .pill-teal { background: rgba(45,212,191,0.15); color: #2dd4bf; }
+
+  .karpathy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 16px 0;
+  }
+
+  .karpathy-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    border-top: 3px solid;
+  }
+
+  .karpathy-card:nth-child(1) { border-top-color: var(--accent); }
+  .karpathy-card:nth-child(2) { border-top-color: var(--accent3); }
+  .karpathy-card:nth-child(3) { border-top-color: var(--accent2); }
+  .karpathy-card:nth-child(4) { border-top-color: var(--accent4); }
+
+  .karpathy-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .karpathy-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .karpathy-body { font-size: 12.5px; color: var(--text-dim); line-height: 1.6; }
+
+  .compare-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 12px 0;
+  }
+
+  .compare-col {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .compare-header {
+    padding: 10px 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .compare-activite .compare-header { background: rgba(79,143,255,0.08); color: var(--accent); }
+  .compare-application .compare-header { background: rgba(255,107,53,0.08); color: var(--accent2); }
+
+  .compare-body { padding: 12px 14px; }
+
+  .compare-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  .compare-item::before { content: '•'; opacity: 0.4; flex-shrink: 0; }
+
+  .trouble-grid { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
+
+  .trouble-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12.5px;
+  }
+
+  .trouble-problem { color: var(--danger); font-family: var(--mono); }
+  .trouble-solution { color: var(--accent3); }
+
+  .cmd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 12px 0;
+  }
+
+  .cmd-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+
+  .cmd-name {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .cmd-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+  /* Migration table */
+  .migration-grid { display: flex; flex-direction: column; gap: 6px; margin: 12px 0; }
+
+  .migration-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    align-items: center;
+  }
+
+  .migration-item.changed { border-left: 3px solid var(--warn); }
+  .migration-item.unchanged { border-left: 3px solid var(--border); opacity: 0.7; }
+  .migration-item.header { background: var(--surface); border-color: var(--accent); font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
+
+  .old-ref { color: var(--danger); font-family: var(--mono); text-decoration: line-through; opacity: 0.8; }
+  .new-ref { color: var(--accent3); font-family: var(--mono); font-weight: 600; }
+  .status-changed { color: var(--warn); font-family: var(--mono); font-size: 11px; }
+  .status-ok { color: var(--text-muted); font-family: var(--mono); font-size: 11px; }
+
+  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-family: var(--mono);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  mark { background: rgba(79,143,255,0.25); color: var(--text); border-radius: 2px; }
+
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .content { padding: 0 24px; }
+    .hero { padding: 32px 24px; }
+    .karpathy-grid { grid-template-columns: 1fr; }
+    .compare-table { grid-template-columns: 1fr; }
+    .trouble-item { grid-template-columns: 1fr; }
+    .migration-item { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-title">Pack Pédagogique</div>
+      <div class="logo-sub">v7.5 · workflow guide</div>
+    </div>
+    <div class="sidebar-search">
+      <input type="text" id="searchInput" placeholder="Rechercher…">
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Démarrage</div>
+      <a href="#start" class="nav-item active" onclick="setActive(this)"><span class="nav-dot"></span>Règle d'or</a>
+      <a href="#session-start" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Démarrage session</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Sessions types</div>
+      <a href="#session-a" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Type A — Corrections <span class="badge badge-new">≠</span></a>
+      <a href="#session-b" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Type B — Durées</a>
+      <a href="#session-c" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Type C — Nouveau ch.</a>
+      <a href="#session-d" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Type D — Audit global</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Référence</div>
+      <a href="#chapitres" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Chapitres TCS <span class="badge badge-v75">v7.5</span></a>
+      <a href="#karpathy" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Karpathy Guidelines ⭐</a>
+      <a href="#styles" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Styles de correction</a>
+      <a href="#prompts" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Prompts prêts</a>
+      <a href="#commands" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Commandes</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Outils</div>
+      <a href="#checklist-tool" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Checklists interactives</a>
+      <a href="#migration" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Migration v7.4→v7.5 <span class="badge badge-v75">NEW</span></a>
+      <a href="#troubleshoot" class="nav-item" onclick="setActive(this)"><span class="nav-dot"></span>Dépannage</a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero" id="start">
+      <div class="hero-tag">Manuel opérationnel · Session par session</div>
+      <h1 class="hero-title">Guide Workflow<br><span>Ultra-Détaillé</span></h1>
+      <p class="hero-desc">Compagnon opérationnel du guide_conversation_v7_5. Actions exactes, ordre exact, prompts prêts à copier-coller. <strong style="color:var(--accent3)">v7.5 : nouvelle répartition officielle des 15 chapitres TCS.</strong></p>
+      <div class="hero-meta">
+        <div class="hero-stat"><div class="hero-stat-val">4</div><div class="hero-stat-label">Sessions types</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">11</div><div class="hero-stat-label">Skills</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">15</div><div class="hero-stat-label">Chapitres TCS</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">v7.5</div><div class="hero-stat-label">Version</div></div>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- DÉMARRAGE -->
+      <section id="session-start">
+        <div class="section-header">
+          <div class="section-icon icon-blue">🔑</div>
+          <div>
+            <div class="section-title">Règle d'or & Démarrage</div>
+            <div class="section-sub">À exécuter au tout début de chaque session</div>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">⭐</div>
+          <div class="alert-body"><strong>1 session Claude Code = 1 chapitre.</strong> Jamais de génération sans plan Karpathy affiché au préalable. Toujours : lire → planifier → confirmer → insérer → valider.</div>
+        </div>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-lang">bash · démarrage terminal</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+          </div>
+          <pre>cd pack-pedagogique && claude</pre>
+        </div>
+
+        <p style="color:var(--text-dim); font-size:13px; margin: 12px 0 8px;">Puis dans Claude Code :</p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-lang">prompt · démarrage universel</span>
+            <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+          </div>
+          <pre>Lis log.md → affiche la dernière entrée.
+Lis index-concepts.md → affiche le nombre de notions indexées.
+Affiche l'état du chapitre sur lequel je vais travailler aujourd'hui.</pre>
+        </div>
+
+        <div class="alert alert-warn">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-body">Si le résumé ne s'affiche pas correctement → lancer <code style="font-family:var(--mono);color:var(--accent)">/audit chXX_nom</code> manuellement.</div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- CHAPITRES TCS v7.5 -->
+      <section id="chapitres">
+        <div class="section-header">
+          <div class="section-icon icon-teal">📚</div>
+          <div>
+            <div class="section-title">Répartition officielle — 15 chapitres TCS</div>
+            <div class="section-sub">Nouvelle numérotation v7.5 · à utiliser dans tous les prompts</div>
+          </div>
+        </div>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✅</div>
+          <div class="alert-body"><strong>v7.5 :</strong> répartition officielle mise à jour. Les chapitres ch01 (Ensembles) et ch02 (Arithmétique) ont été inversés. ch11_fonctions est devenu ch12_fonctions. Voir la section Migration pour les commandes git.</div>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Chapitre</th>
+              <th>Titre</th>
+              <th>Domaine</th>
+              <th>Skill</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="pill pill-blue">ch01</span></td><td>Ensembles de nombres</td><td>Algèbre</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-algebre</code></td></tr>
+            <tr><td><span class="pill pill-blue">ch02</span></td><td>Arithmétique dans ℕ</td><td>Arithmétique</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-arithmetique</code></td></tr>
+            <tr><td><span class="pill pill-blue">ch03</span></td><td>Calcul vectoriel dans le plan</td><td>Géom. vectorielle</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-geometrie-vectorielle</code></td></tr>
+            <tr><td><span class="pill pill-blue">ch04</span></td><td>La projection dans le plan</td><td>Géom. vectorielle</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-geometrie-vectorielle</code></td></tr>
+            <tr><td><span class="pill pill-blue">ch05</span></td><td>L'ordre dans ℝ</td><td>Algèbre</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-algebre</code></td></tr>
+            <tr><td><span class="pill pill-blue">ch06</span></td><td>La droite dans le plan</td><td>Géom. analytique</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-geometrie-analytique</code></td></tr>
+            <tr><td><span class="pill pill-blue">ch07</span></td><td>Les polynômes</td><td>Algèbre</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-algebre</code></td></tr>
+            <tr><td><span class="pill pill-blue">ch08</span></td><td>Équations, inéquations et systèmes</td><td>Algèbre</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-algebre</code></td></tr>
+            <tr><td><span class="pill pill-blue">ch09</span></td><td>Calcul trigonométrique</td><td>Trigonométrie</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-trigonometrie</code></td></tr>
+            <tr><td><span class="pill pill-blue">ch10</span></td><td>Statistiques</td><td>Statistiques</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-statistiques</code></td></tr>
+            <tr><td><span class="pill pill-blue">ch11</span></td><td>Calcul trigonométrique (partie 2)</td><td>Trigonométrie</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-trigonometrie</code></td></tr>
+            <tr><td><span class="pill pill-green">ch12</span></td><td>Généralités sur les fonctions numériques</td><td>Analyse</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-analyse</code></td></tr>
+            <tr><td><span class="pill pill-orange">ch13</span></td><td>Le produit scalaire</td><td>Géom. analytique</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-geometrie-analytique</code></td></tr>
+            <tr><td><span class="pill pill-orange">ch14</span></td><td>Les transformations dans le plan</td><td>Géom. plane</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-geometrie-plane</code></td></tr>
+            <tr><td><span class="pill pill-blue">ch15</span></td><td>Géométrie dans l'espace</td><td>Géom. espace</td><td><code style="font-family:var(--mono);color:var(--accent3)">domaine-geometrie-espace</code></td></tr>
+          </tbody>
+        </table>
+
+        <p style="color:var(--text-dim);font-size:12px;margin-top:10px;">
+          <span class="pill pill-green">ch12</span> = ancien ch11_fonctions (migré) &nbsp;·&nbsp;
+          <span class="pill pill-orange">ch13/ch14</span> = produit scalaire et transformations inversés
+        </p>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- SESSION TYPE A -->
+      <section id="session-a">
+        <div class="section-header">
+          <div class="section-icon icon-blue">✏️</div>
+          <div>
+            <div class="section-title">Session Type A — Générer des corrections</div>
+            <div class="section-sub">source.tex avec énoncés mais SOLUTION manquantes</div>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">📌</div>
+          <div class="alert-body"><strong>Règle renforcée v7.4+ :</strong> toujours générer <strong>une correction à la fois</strong>. Ne jamais demander "génère toutes les corrections". Chaque correction = 1 prompt + 1 checklist + 1 validation.</div>
+        </div>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-num">A1</div>
+            <div class="step-body">
+              <div class="step-title">Audit initial</div>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">commande</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>/audit ch02_arithmetique</pre>
+              </div>
+              <div class="step-desc">Résultat attendu : liste des corrections manquantes + critères de succès Karpathy.</div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">A2</div>
+            <div class="step-body">
+              <div class="step-title">Plan Karpathy — obligatoire avant toute génération</div>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">prompt · plan initial</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>Lis karpathy-guidelines.md, correction-commune.md et domaine-arithmetique.md.
+Lis source.tex du ch02.
+Pour chaque correction manquante :
+  - identifie le pattern applicable dans patterns/
+  - dis-moi ce que tu vas faire avant de commencer
+Affiche le plan complet. Attends mon OK.</pre>
+              </div>
+              <div class="alert alert-success">
+                <div class="alert-icon">✅</div>
+                <div class="alert-body">Répondre <strong>"OK, commence par 1"</strong> uniquement après avoir vérifié le plan affiché.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">A3</div>
+            <div class="step-body">
+              <div class="step-title">Génération correction par correction</div>
+
+              <p style="font-size:13px;color:var(--text-dim);margin-bottom:10px;">Pour une <span class="pill pill-blue">SOLUTION_APPLICATION</span> :</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">prompt · application</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>Génère la correction de l'Application N du chXX.
+Applique le pattern patterns/[NOM-PATTERN].md.
+Applique domaine-[NOM] + correction-commune + karpathy-guidelines.
+Règles Karpathy :
+  - Touche UNIQUEMENT le bloc %% SOLUTION_APPLICATION Application N
+  - Lis les 2 blocs adjacents mais ne les modifie jamais
+  - Minimum de code : connecteurs + justifications obligatoires + conclusion
+  - Zéro \textbf{} décoratif non prévu par le skill
+Affiche la checklist ✓ avant d'insérer. Montre le résultat. Attends ma validation.</pre>
+              </div>
+
+              <p style="font-size:13px;color:var(--text-dim);margin:14px 0 10px;">Pour une <span class="pill pill-orange">SOLUTION_ACTIVITE</span> :</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">prompt · activité</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>Génère la correction de l'Activité N du chXX.
+Applique domaine-[NOM] + correction-commune + karpathy-guidelines.
+Règles spécifiques SOLUTION_ACTIVITE :
+  - Pont explicite avec acquis du collège (obligatoire)
+  - Phrase ▶ \blacktriangleright après chaque notion institutionnalisée
+  - Vocabulaire accessible TCS (début lycée)
+  - Ne pas écrire "Conclusion"
+Règles Karpathy :
+  - Touche UNIQUEMENT le bloc %% SOLUTION_ACTIVITE Activité N
+  - Blocs adjacents intouchables
+  - Minimum de code, pas de paraphrase inutile
+Affiche la checklist ✓ avant d'insérer. Attends ma validation.</pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">A4</div>
+            <div class="step-body">
+              <div class="step-title">Finalisation après toutes les corrections</div>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">commande</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>/generer ch02_arithmetique</pre>
+              </div>
+              <div class="step-desc">Claude Code affiche l'Étape 0 Karpathy. Vérifier puis répondre <strong>"OK"</strong>.</div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">A5</div>
+            <div class="step-body">
+              <div class="step-title">Vérification Overleaf</div>
+              <div class="step-desc">Overleaf → Menu → GitHub → Pull from GitHub → Compiler fiche_prof.tex → Vérifier td_correction.tex</div>
+              <div class="alert alert-warn">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-body"><strong>Tous chapitres :</strong> vérifier que <code style="font-family:var(--mono)">chapitres/Images/MEN LOGO 2.png</code> est toujours présent après le pull (ressource globale partagée).</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">A6</div>
+            <div class="step-body">
+              <div class="step-title">Verser un pattern validé (si applicable)</div>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">prompt · pattern</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>La correction de [type] [N] du [chXX] est validée et réutilisable.
+Verse ce pattern dans patterns/[nom-du-pattern].md avec :
+  - Validé dans : chXX, session [date]
+  - Skill domaine : domaine-[NOM]
+  - Structure type : [résumé de la structure]
+  - Règles spécifiques : [liste]
+git push.</pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">A7</div>
+            <div class="step-body">
+              <div class="step-title">Fin de session — obligatoire</div>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">prompt · log.md</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>Session terminée. Écris dans log.md l'entrée suivante :
+
+## [DATE] chXX_nom — Session N
+- Fait : [liste des corrections effectuées]
+- Décision : [patterns versés, règles établies]
+- Problème rencontré : [ou "aucun"]
+- Restant : [liste des éléments à faire la prochaine fois]
+
+git push.</pre>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- SESSION TYPE B -->
+      <section id="session-b">
+        <div class="section-header">
+          <div class="section-icon icon-green">⏱️</div>
+          <div>
+            <div class="section-title">Session Type B — Redistribuer les durées</div>
+            <div class="section-sub">source.tex complet ou partiel, calibrer les \duree{}</div>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">B1</div>
+            <div class="step-body">
+              <div class="step-title">Lancement</div>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">commande</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>/repartir-duree ch02_arithmetique</pre>
+              </div>
+              <div class="step-desc">Lecture seule jusqu'à votre "OK". La commande affiche les écarts et suggestions de correction.</div>
+              <div class="alert alert-danger">
+                <div class="alert-icon">🚨</div>
+                <div class="alert-body"><strong>Règle critique :</strong> <code style="font-family:var(--mono)">Masse horaire</code> dans le CLAUDE.md local doit toujours correspondre à la valeur de Page1.tex (source de vérité PDF). Toute divergence = résultat incorrect.<br>Vérification : <code style="font-family:var(--mono)">grep -i "masse\|horaire\|heure" chapitres/chXX/CLAUDE.md Page1.tex</code></div>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">B2</div>
+            <div class="step-body">
+              <div class="step-title">Vérification post-modification</div>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">prompt · vérification</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>Relis source.tex section [N].
+Affiche toutes les \duree{} et les "% durée estimée : X min" de cette section.
+Vérifie que la somme = \duree{X min} (arrondie au multiple de 5 supérieur).</pre>
+              </div>
+              <div class="card" style="margin-top:12px">
+                <div class="card-title">📐 Règle de cohérence</div>
+                <div class="card-body">
+                  <strong>Catégorie A (affichée)</strong> → \duree{X min} multiple de 5 : Section, Activite, Exemple, Application, Exercice<br><br>
+                  <strong>Catégorie B (commentaire)</strong> → % durée estimée : X min, entier libre : Definition, Propriete, Theoreme, Remarque, Techniques, Preuve<br><br>
+                  <strong>Formule :</strong> \duree{} section = Σ(A + B) arrondie au ×5 supérieur
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- SESSION TYPE C -->
+      <section id="session-c">
+        <div class="section-header">
+          <div class="section-icon icon-orange">📁</div>
+          <div>
+            <div class="section-title">Session Type C — Créer un nouveau chapitre</div>
+            <div class="section-sub">Structure complète de zéro</div>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">C1</div>
+            <div class="step-body">
+              <div class="step-title">Lancement</div>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">commande</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>/nouveau-chapitre</pre>
+              </div>
+              <div class="step-desc">Claude Code pose 5 questions : Numéro · Nom court · Titre officiel · Domaine · Masse horaire</div>
+              <div class="alert alert-info">
+                <div class="alert-icon">📌</div>
+                <div class="alert-body">Utiliser la <strong>nouvelle numérotation v7.5</strong> (voir tableau §Chapitres TCS). Ex : ch01_ensembles, ch03_calcul_vectoriel, ch13_produit_scalaire…</div>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">C2</div>
+            <div class="step-body">
+              <div class="step-title">Vérifier le CLAUDE.md local créé</div>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">prompt · vérification</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>Affiche le contenu de chapitres/chXX_nom/CLAUDE.md
+Vérifie que "karpathy-guidelines" figure dans les skills à charger.</pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">C3</div>
+            <div class="step-body">
+              <div class="step-title">Remplir Page1.tex (manuel dans Overleaf)</div>
+              <div class="step-desc">Titre officiel · <strong>Masse horaire = valeur identique au CLAUDE.md local</strong> · Objectifs pédagogiques</div>
+              <div class="alert alert-danger">
+                <div class="alert-icon">🚨</div>
+                <div class="alert-body"><strong>Règle critique :</strong> la Masse horaire dans Page1.tex et dans CLAUDE.md local doit être identique. C'est la principale cause d'erreur dans /repartir-duree.</div>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">C4</div>
+            <div class="step-body">
+              <div class="step-title">Générer source.tex via NotebookLM</div>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">prompt · source.tex</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>En utilisant le notebook chXX dans NotebookLM,
+pose la question section par section :
+"Liste toutes les définitions de la section [NOM]"
+
+Crée chapitres/chXX_nom/source.tex :
+- Balises %% SECTION, %% DEFINITION, %% PROPRIETE, %% REMARQUE
+- Environnements du preamble uniquement
+- \linewidth partout, jamais \textwidth
+- Montre les 80 premières lignes avant de sauvegarder.
+git push après validation.</pre>
+              </div>
+              <div class="step-desc" style="margin-top:8px">⚠️ Demander section par section pour éviter les timeouts NotebookLM.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">C5</div>
+            <div class="step-body">
+              <div class="step-title">Chaîne complète</div>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">séquence de commandes</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+                <pre>/audit chXX_nom
+/repartir-duree chXX_nom
+<span class="cmt"># → valider avec "OK"</span>
+/generer chXX_nom
+<span class="cmt"># → Étape 0 affiché → confirmer → 3 fichiers + git push</span>
+<span class="cmt"># Overleaf → Pull from GitHub → compiler pour vérifier</span></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- SESSION TYPE D -->
+      <section id="session-d">
+        <div class="section-header">
+          <div class="section-icon icon-purple">📊</div>
+          <div>
+            <div class="section-title">Session Type D — Audit global</div>
+            <div class="section-sub">Vision d'ensemble, début de mois ou après plusieurs sessions</div>
+          </div>
+        </div>
+
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">commande</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+          <pre>/audit-global</pre>
+        </div>
+
+        <p style="color:var(--text-dim);font-size:13px;margin:12px 0 8px;">Résultat attendu :</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">sortie attendue (v7.5)</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+          <pre>┌─────────────────────────────────────────────┐
+│ ÉTAT TRANSVERSAL DU PROJET                  │
+│ Dernière session : [date] — [chapitre]      │
+│ Notions indexées : N dans index-concepts.md │
+│ Patterns disponibles : N fichiers           │
+└─────────────────────────────────────────────┘
+
+| Chapitre | source.tex | fiche_prof | td  | correction | Statut      |
+|----------|:----------:|:----------:|:---:|:----------:|-------------|
+| ch01     | ❌         | ❌         | ❌  | ❌         | Non démarré |
+| ch02     | 🔄         | ✅         | ✅  | 🔄         | En cours    |
+| ch03-11  | ❌         | ❌         | ❌  | ❌         | Non démarré |
+| ch12     | ✅         | ✅         | ✅  | ✅         | Complet     |
+| ch13-15  | ❌         | ❌         | ❌  | ❌         | Non démarré |</pre>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- KARPATHY -->
+      <section id="karpathy">
+        <div class="section-header">
+          <div class="section-icon icon-yellow">⭐</div>
+          <div>
+            <div class="section-title">Karpathy Guidelines</div>
+            <div class="section-sub">.claude/skills/karpathy-guidelines.md · chargé avec tout skill domaine</div>
+          </div>
+        </div>
+
+        <div class="karpathy-grid">
+          <div class="karpathy-card">
+            <div class="karpathy-num">Principe 1</div>
+            <div class="karpathy-title">Réfléchir avant d'agir</div>
+            <div class="karpathy-body">
+              Avant toute modification :<br>
+              • Lire le bloc %% concerné <strong>et les 2 blocs adjacents</strong><br>
+              • Vérifier patterns/ : pattern applicable ?<br>
+              • Énoncer ce qui va être modifié<br>
+              • <strong>Attendre la confirmation</strong>
+            </div>
+          </div>
+          <div class="karpathy-card">
+            <div class="karpathy-num">Principe 2</div>
+            <div class="karpathy-title">Simplicité stricte</div>
+            <div class="karpathy-body">
+              • Minimum de code qui satisfait correction-commune + skill domaine<br>
+              • Zéro \textbf{} décoratif non prévu<br>
+              • Zéro phrase superflue<br>
+              • Étape > 3 lignes pour un calcul simple → réécrire
+            </div>
+          </div>
+          <div class="karpathy-card">
+            <div class="karpathy-num">Principe 3</div>
+            <div class="karpathy-title">Modifications chirurgicales</div>
+            <div class="karpathy-body">
+              • <strong>Seul le bloc %% SOLUTION demandé est modifié</strong><br>
+              • Blocs %% voisins : intouchables<br>
+              • Commentaires % durée estimée : jamais touchés<br>
+              • Test : diff = uniquement les lignes du bloc
+            </div>
+          </div>
+          <div class="karpathy-card">
+            <div class="karpathy-num">Principe 4</div>
+            <div class="karpathy-title">Checklist obligatoire</div>
+            <div class="karpathy-body">
+              Avant chaque insertion, afficher :<br>
+              ✓ Bloc ciblé · Pattern appliqué<br>
+              ✓ Style (ACTIVITE / APPLICATION)<br>
+              ✓ Phrase ▶ présente/absente<br>
+              ✓ Conclusion présente/absente<br>
+              ✓ Blocs voisins non modifiés
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- STYLES -->
+      <section id="styles">
+        <div class="section-header">
+          <div class="section-icon icon-orange">🎨</div>
+          <div>
+            <div class="section-title">Styles de correction</div>
+            <div class="section-sub">Distinction fondamentale ACTIVITE vs APPLICATION</div>
+          </div>
+        </div>
+
+        <div class="compare-table">
+          <div class="compare-col compare-activite">
+            <div class="compare-header">SOLUTION_ACTIVITE — Découverte</div>
+            <div class="compare-body">
+              <div class="compare-item">Pont explicite avec acquis du collège</div>
+              <div class="compare-item">Phrase ▶ \blacktriangleright <strong>OBLIGATOIRE</strong> après chaque notion</div>
+              <div class="compare-item">Vocabulaire accessible, début lycée</div>
+              <div class="compare-item">Ne jamais écrire "Conclusion"</div>
+              <div class="compare-item">Connecteurs \Leftrightarrow si pertinents</div>
+              <div class="compare-item">Institutionnalisation avec \textcolor{PrimaryColor}{...}</div>
+            </div>
+          </div>
+          <div class="compare-col compare-application">
+            <div class="compare-header">SOLUTION_APPLICATION — Mobilisation</div>
+            <div class="compare-body">
+              <div class="compare-item">Connecteurs logiques obligatoires : On a → \Leftrightarrow → Donc</div>
+              <div class="compare-item">Phrase ▶ \blacktriangleright <strong>INTERDITE</strong></div>
+              <div class="compare-item">Justifications à chaque étape</div>
+              <div class="compare-item">Conclusion standard : Donc S = {...}.</div>
+              <div class="compare-item">Style du skill domaine appliqué</div>
+              <div class="compare-item">Rigueur de modèle</div>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:13px;color:var(--text-dim);margin:20px 0 10px;font-weight:600;">Justifications standard (correction-commune)</p>
+        <table class="data-table">
+          <thead><tr><th>Opération</th><th>Justification</th></tr></thead>
+          <tbody>
+            <tr><td>Développer</td><td><code style="font-family:var(--mono);color:var(--accent3)">(distributivité)</code></td></tr>
+            <tr><td>Regrouper</td><td><code style="font-family:var(--mono);color:var(--accent3)">(on regroupe les termes semblables)</code></td></tr>
+            <tr><td>Diviser par c &gt; 0</td><td><code style="font-family:var(--mono);color:var(--accent3)">(on divise par c, c &gt; 0)</code></td></tr>
+            <tr><td>Diviser par c &lt; 0</td><td><code style="font-family:var(--mono);color:var(--accent3)">(on divise par c &lt; 0, le sens de l'inégalité s'inverse)</code></td></tr>
+            <tr><td>Multiplier par PPCM</td><td><code style="font-family:var(--mono);color:var(--accent3)">(on multiplie par n, PPCM de a et b)</code></td></tr>
+            <tr><td>Factoriser</td><td><code style="font-family:var(--mono);color:var(--accent3)">(factorisation)</code></td></tr>
+          </tbody>
+        </table>
+
+        <p style="font-size:13px;color:var(--text-dim);margin:20px 0 10px;font-weight:600;">Conclusions standard</p>
+        <table class="data-table">
+          <thead><tr><th>Type</th><th>Format</th></tr></thead>
+          <tbody>
+            <tr><td>Équation</td><td><code style="font-family:var(--mono);color:var(--accent)">Donc $S = \{valeur\}$.</code></td></tr>
+            <tr><td>Inéquation</td><td><code style="font-family:var(--mono);color:var(--accent)">Donc $S = [a \; ; \; +\infty[$.</code></td></tr>
+            <tr><td>Pas de solution</td><td><code style="font-family:var(--mono);color:var(--accent)">Donc $S = \emptyset$.</code></td></tr>
+            <tr><td>Tout réel</td><td><code style="font-family:var(--mono);color:var(--accent)">Donc $S = \R$.</code></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- PROMPTS PRÊTS -->
+      <section id="prompts">
+        <div class="section-header">
+          <div class="section-icon icon-blue">📋</div>
+          <div>
+            <div class="section-title">Prompts prêts à l'emploi</div>
+            <div class="section-sub">Copier-coller dans Claude Code, remplacer XX et N</div>
+          </div>
+        </div>
+
+        <p style="color:var(--text-dim);font-size:13px;margin-bottom:16px;font-weight:600;">Prompt universel de démarrage</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">prompt universel</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+          <pre>Lis chapitres/chXX_nom/CLAUDE.md.
+Charge les skills : karpathy-guidelines + correction-commune + domaine-[NOM].
+Lis source.tex de ce chapitre.
+Lis patterns/ pour identifier les patterns applicables.
+Affiche le plan complet des corrections manquantes avec pattern identifié pour chacune.
+Attends mon OK avant de commencer.</pre>
+        </div>
+
+        <p style="color:var(--text-dim);font-size:13px;margin:20px 0 10px;font-weight:600;">Correction d'une erreur ciblée dans source.tex</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">prompt · correction ciblée</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+          <pre>Dans chapitres/chXX/source.tex,
+dans le bloc %% SOLUTION_APPLICATION Application N,
+trouve exactement : [texte fautif]
+remplace par : [texte correct]
+Ne touche rien d'autre.
+Affiche le diff avant d'appliquer. git push.</pre>
+        </div>
+
+        <p style="color:var(--text-dim);font-size:13px;margin:20px 0 10px;font-weight:600;">Verser un pattern validé</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">prompt · pattern</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+          <pre>La correction de [type] [N] du [chXX] est validée.
+Verse ce pattern dans patterns/[nom-du-pattern].md avec :
+  - Validé dans : chXX, session [date]
+  - Skill domaine : domaine-[NOM]
+  - Structure type : [résumé de la structure]
+  - Règles spécifiques : [liste]
+git push.</pre>
+        </div>
+
+        <p style="color:var(--text-dim);font-size:13px;margin:20px 0 10px;font-weight:600;">Récupérer MEN LOGO 2.png après un merge</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">bash · récupération image (ressource globale)</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+          <pre><span class="cmt"># Trouver le commit où le fichier a été supprimé</span>
+git log --diff-filter=D --summary | grep "MEN LOGO"
+
+<span class="cmt"># Récupérer le fichier (remplacer HASH par le hash trouvé)</span>
+git checkout HASH^ -- "chapitres/Images/MEN LOGO 2.png"
+git add . && git commit -m "[global] : restauration MEN LOGO 2.png" && git push</pre>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- COMMANDES -->
+      <section id="commands">
+        <div class="section-header">
+          <div class="section-icon icon-purple">⚡</div>
+          <div>
+            <div class="section-title">Référence des commandes</div>
+            <div class="section-sub">Toutes les commandes disponibles dans Claude Code</div>
+          </div>
+        </div>
+
+        <div class="cmd-grid">
+          <div class="cmd-card">
+            <div class="cmd-name">/generer chXX</div>
+            <div class="cmd-desc">Étape 0 Karpathy → génère fiche_prof, td, td_correction → index-concepts → git push</div>
+          </div>
+          <div class="cmd-card">
+            <div class="cmd-name">/audit chXX</div>
+            <div class="cmd-desc">Lecture seule · rapport corrections manquantes + critères Karpathy</div>
+          </div>
+          <div class="cmd-card">
+            <div class="cmd-name">/audit-global</div>
+            <div class="cmd-desc">État transversal : log, index, patterns + tableau 15 chapitres</div>
+          </div>
+          <div class="cmd-card">
+            <div class="cmd-name">/nouveau-chapitre</div>
+            <div class="cmd-desc">5 questions → structure + CLAUDE.md local + Page1.tex vide</div>
+          </div>
+          <div class="cmd-card">
+            <div class="cmd-name">/repartir-duree chXX</div>
+            <div class="cmd-desc">Vérifie et redistribue le volume horaire · lecture seule jusqu'à "OK"</div>
+          </div>
+          <div class="cmd-card">
+            <div class="cmd-name">/figure · /tableau</div>
+            <div class="cmd-desc">Insertion de figures et tableaux LaTeX</div>
+          </div>
+          <div class="cmd-card">
+            <div class="cmd-name">/verificateur-graphes</div>
+            <div class="cmd-desc">Vérification des figures et graphiques</div>
+          </div>
+        </div>
+
+        <p style="color:var(--text-dim);font-size:13px;margin:20px 0 10px;font-weight:600;">Skills — chargement obligatoire (v7.5)</p>
+        <table class="data-table">
+          <thead><tr><th>Skill</th><th>Chapitres (v7.5)</th><th>Usage</th></tr></thead>
+          <tbody>
+            <tr><td><code style="font-family:var(--mono);color:var(--warn)">karpathy-guidelines</code></td><td><span class="pill pill-yellow">Tous ⭐</span></td><td>Qualité & rigueur</td></tr>
+            <tr><td><code style="font-family:var(--mono);color:var(--accent)">correction-commune</code></td><td><span class="pill pill-blue">Tous</span></td><td>Base commune</td></tr>
+            <tr><td><code style="font-family:var(--mono)">domaine-algebre</code></td><td>ch01, ch05, ch07, ch08</td><td>Algèbre</td></tr>
+            <tr><td><code style="font-family:var(--mono)">domaine-arithmetique</code></td><td>ch02</td><td>Arithmétique</td></tr>
+            <tr><td><code style="font-family:var(--mono)">domaine-geometrie-vectorielle</code></td><td>ch03, ch04</td><td>Géométrie vectorielle</td></tr>
+            <tr><td><code style="font-family:var(--mono)">domaine-geometrie-analytique</code></td><td>ch06, ch13</td><td>Géométrie analytique</td></tr>
+            <tr><td><code style="font-family:var(--mono)">domaine-trigonometrie</code></td><td>ch09, ch11</td><td>Trigonométrie</td></tr>
+            <tr><td><code style="font-family:var(--mono)">domaine-statistiques</code></td><td>ch10</td><td>Statistiques</td></tr>
+            <tr><td><code style="font-family:var(--mono)">domaine-analyse</code></td><td>ch12</td><td>Analyse</td></tr>
+            <tr><td><code style="font-family:var(--mono)">domaine-geometrie-plane</code></td><td>ch14</td><td>Géométrie plane</td></tr>
+            <tr><td><code style="font-family:var(--mono)">domaine-geometrie-espace</code></td><td>ch15</td><td>Géométrie dans l'espace</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- CHECKLISTS INTERACTIVES -->
+      <section id="checklist-tool">
+        <div class="section-header">
+          <div class="section-icon icon-green">✅</div>
+          <div>
+            <div class="section-title">Checklists interactives</div>
+            <div class="section-sub">Cocher chaque point avant de dire "OK, insère"</div>
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-title">📝 SOLUTION_APPLICATION / EXERCICE</div>
+            <div class="checklist">
+              <div class="checklist-title">Checklist Karpathy — APPLICATION</div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Bloc ciblé uniquement (Principe 3)</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Pattern appliqué ou justification de l'absence</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Connecteur "On a :" en première ligne</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">\Leftrightarrow entre chaque étape équivalente</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Justifications à chaque étape (distributivité, etc.)</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Conclusion "Donc S = {...}." présente</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Phrase ▶ \blacktriangleright : ABSENTE ✓</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Zéro \textbf{} décoratif non prévu</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">\linewidth utilisé (jamais \textwidth)</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Blocs voisins non modifiés</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Commentaires % durée estimée non touchés</span></div>
+              <button onclick="resetChecklist(this.previousElementSibling.parentElement)" style="margin-top:10px;font-family:var(--mono);font-size:10px;color:var(--text-muted);background:none;border:1px solid var(--border);border-radius:4px;padding:4px 10px;cursor:pointer;">Réinitialiser</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">🌱 SOLUTION_ACTIVITE</div>
+            <div class="checklist">
+              <div class="checklist-title">Checklist Karpathy — ACTIVITE</div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Bloc ciblé uniquement (Principe 3)</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Pont avec acquis du collège : PRÉSENT</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Phrase ▶ \blacktriangleright après chaque notion : PRÉSENTE</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">\textcolor{PrimaryColor}{...} autour du nom de la notion</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Vocabulaire accessible : pas de jargon avancé</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Mot "Conclusion" : ABSENT</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Blocs voisins non modifiés</span></div>
+              <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><span class="check-label">Commentaires % durée estimée non touchés</span></div>
+              <button onclick="resetChecklist(this.previousElementSibling.parentElement)" style="margin-top:10px;font-family:var(--mono);font-size:10px;color:var(--text-muted);background:none;border:1px solid var(--border);border-radius:4px;padding:4px 10px;cursor:pointer;">Réinitialiser</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- MIGRATION v7.4 → v7.5 -->
+      <section id="migration">
+        <div class="section-header">
+          <div class="section-icon icon-teal">🔄</div>
+          <div>
+            <div class="section-title">Migration v7.4 → v7.5</div>
+            <div class="section-sub">Correspondance ancienne / nouvelle numérotation + commandes git</div>
+          </div>
+        </div>
+
+        <div class="alert alert-warn">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-body"><strong>À faire en priorité</strong> avant toute nouvelle session de travail. Renommer les dossiers actifs avec <code style="font-family:var(--mono)">git mv</code> (jamais <code style="font-family:var(--mono)">mv</code>) pour préserver l'historique git.</div>
+        </div>
+
+        <div class="migration-grid">
+          <div class="migration-item header">
+            <div>Ancien (v7.4)</div>
+            <div>Nouveau (v7.5)</div>
+            <div>Statut</div>
+          </div>
+          <div class="migration-item changed">
+            <div><span class="old-ref">ch01 — Arithmétique dans ℕ</span></div>
+            <div><span class="new-ref">ch02 — Arithmétique dans ℕ</span></div>
+            <div><span class="status-changed">⚠️ RENOMMER</span></div>
+          </div>
+          <div class="migration-item changed">
+            <div><span class="old-ref">ch02 — Calcul vectoriel</span></div>
+            <div><span class="new-ref">ch03 — Calcul vectoriel</span></div>
+            <div><span class="status-changed">git mv si existait</span></div>
+          </div>
+          <div class="migration-item changed">
+            <div><span class="old-ref">ch03 — La projection</span></div>
+            <div><span class="new-ref">ch04 — La projection</span></div>
+            <div><span class="status-changed">git mv si existait</span></div>
+          </div>
+          <div class="migration-item changed">
+            <div><span class="old-ref">ch04 — Ensembles de nombres</span></div>
+            <div><span class="new-ref">ch01 — Ensembles de nombres</span></div>
+            <div><span class="status-changed">Créer en ch01</span></div>
+          </div>
+          <div class="migration-item unchanged">
+            <div><span style="color:var(--text-dim);font-family:var(--mono)">ch05 → ch10</span></div>
+            <div><span class="new-ref">ch05 → ch10</span></div>
+            <div><span class="status-ok">— inchangés</span></div>
+          </div>
+          <div class="migration-item unchanged">
+            <div><span style="color:var(--text-dim);font-family:var(--mono)">ch11 — Trigono. (2)</span></div>
+            <div><span class="new-ref">ch11 — Trigono. (partie 2)</span></div>
+            <div><span class="status-ok">— inchangé</span></div>
+          </div>
+          <div class="migration-item changed">
+            <div><span class="old-ref">ch11_fonctions</span></div>
+            <div><span class="new-ref">ch12_fonctions</span></div>
+            <div><span class="status-changed">⚠️ RENOMMER</span></div>
+          </div>
+          <div class="migration-item changed">
+            <div><span class="old-ref">ch13 — Transformations</span></div>
+            <div><span class="new-ref">ch14 — Transformations</span></div>
+            <div><span class="status-changed">git mv si existait</span></div>
+          </div>
+          <div class="migration-item changed">
+            <div><span class="old-ref">ch14 — Produit scalaire</span></div>
+            <div><span class="new-ref">ch13 — Produit scalaire</span></div>
+            <div><span class="status-changed">git mv si existait</span></div>
+          </div>
+          <div class="migration-item unchanged">
+            <div><span style="color:var(--text-dim);font-family:var(--mono)">ch15 — Géométrie espace</span></div>
+            <div><span class="new-ref">ch15 — Géométrie espace</span></div>
+            <div><span class="status-ok">— inchangé</span></div>
+          </div>
+        </div>
+
+        <p style="color:var(--text-dim);font-size:13px;margin:20px 0 10px;font-weight:600;">Commandes git de migration (dossiers actifs)</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">bash · migration des dossiers actifs</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+          <pre><span class="cmt"># Renommer les deux dossiers actifs</span>
+git mv chapitres/ch01_arithmetique chapitres/ch02_arithmetique
+git mv chapitres/ch11_fonctions chapitres/ch12_fonctions
+
+<span class="cmt"># Commit de migration</span>
+git add .
+git commit -m "[migration] : répartition officielle v7.5 — ch01→ch02, ch11→ch12"
+git push
+
+<span class="cmt"># Overleaf : Menu → GitHub → Pull from GitHub</span></pre>
+        </div>
+
+        <div class="alert alert-danger">
+          <div class="alert-icon">🚨</div>
+          <div class="alert-body"><strong>Après migration :</strong> le logo est une ressource globale. Chemin unique pour tous les chapitres : <code style="font-family:var(--mono)">chapitres/Images/MEN LOGO 2.png</code></div>
+        </div>
+
+        <p style="color:var(--text-dim);font-size:13px;margin:20px 0 10px;font-weight:600;">Mise à jour des CLAUDE.md locaux après renommage</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">prompt · mise à jour CLAUDE.md</span><button class="copy-btn" onclick="copyCode(this)">Copier</button></div>
+          <pre>Dans chapitres/ch02_arithmetique/CLAUDE.md,
+remplace "Chapitre 01" par "Chapitre 02" dans l'en-tête.
+Dans chapitres/ch12_fonctions/CLAUDE.md,
+remplace "Chapitre 11" par "Chapitre 12" dans l'en-tête.
+Affiche le diff. git push.</pre>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- TROUBLESHOOT -->
+      <section id="troubleshoot">
+        <div class="section-header">
+          <div class="section-icon icon-orange">🔧</div>
+          <div>
+            <div class="section-title">Dépannage rapide</div>
+            <div class="section-sub">Problèmes fréquents et solutions immédiates (v7.5)</div>
+          </div>
+        </div>
+
+        <div class="trouble-grid">
+          <div class="trouble-item"><div class="trouble-problem">Claude modifie le bloc voisin</div><div class="trouble-solution">karpathy-guidelines Principe 3 non chargé → vérifier CLAUDE.md local</div></div>
+          <div class="trouble-item"><div class="trouble-problem">Checklist ✓ absente avant insertion</div><div class="trouble-solution">"Affiche la checklist karpathy-guidelines avant d'insérer"</div></div>
+          <div class="trouble-item"><div class="trouble-problem">Phrase ▶ dans SOLUTION_APPLICATION</div><div class="trouble-solution">"SOLUTION_APPLICATION : phrase ▶ INTERDITE, relis karpathy + correction-commune"</div></div>
+          <div class="trouble-item"><div class="trouble-problem">Pas de phrase ▶ dans SOLUTION_ACTIVITE</div><div class="trouble-solution">"SOLUTION_ACTIVITE : phrase ▶ OBLIGATOIRE, recommence"</div></div>
+          <div class="trouble-item"><div class="trouble-problem">Correction baroque (trop longue)</div><div class="trouble-solution">Principe 2 Karpathy : "Simplifie : minimum de code, réécrire"</div></div>
+          <div class="trouble-item"><div class="trouble-problem">Claude génère sans plan affiché</div><div class="trouble-solution">"Stop. Affiche d'abord le plan complet. Attends mon OK."</div></div>
+          <div class="trouble-item"><div class="trouble-problem">/repartir-duree volume erroné</div><div class="trouble-solution">Corriger Masse horaire dans CLAUDE.md local (doit = Page1.tex)</div></div>
+          <div class="trouble-item"><div class="trouble-problem">MEN LOGO 2.png manquant</div><div class="trouble-solution">git log --diff-filter=D → git checkout HASH^ -- "chapitres/Images/MEN LOGO 2.png"</div></div>
+          <div class="trouble-item"><div class="trouble-problem">git push échoue (port 443)</div><div class="trouble-solution">Désactiver VPN, vérifier WiFi</div></div>
+          <div class="trouble-item"><div class="trouble-problem">Vim s'ouvre lors d'un merge</div><div class="trouble-solution">Taper :wq pour valider et quitter</div></div>
+          <div class="trouble-item"><div class="trouble-problem">source.tex ne compile pas</div><div class="trouble-solution">Normal — compiler fiche_prof.tex à la place</div></div>
+          <div class="trouble-item"><div class="trouble-problem">Figure trop grande dans td</div><div class="trouble-solution">Remplacer \textwidth par \linewidth</div></div>
+          <div class="trouble-item"><div class="trouble-problem">NotebookLM timeout</div><div class="trouble-solution">Demander section par section</div></div>
+          <div class="trouble-item"><div class="trouble-problem">CLAUDE.md global > 80 lignes</div><div class="trouble-solution">Claude ignore les règles → réduire le fichier</div></div>
+          <div class="trouble-item"><div class="trouble-problem">Correction en masse → erreurs</div><div class="trouble-solution">Générer une par une + checklist Karpathy (règle v7.4+)</div></div>
+          <div class="trouble-item"><div class="trouble-problem">Preamble modifié accidentellement</div><div class="trouble-solution">git checkout preamble/02_style.tex</div></div>
+          <div class="trouble-item"><div class="trouble-problem">Ancien numéro de ch utilisé (ex: ch01 pour arithmétique)</div><div class="trouble-solution">v7.5 : Arithmétique = ch02, Fonctions = ch12. Voir section Migration.</div></div>
+          <div class="trouble-item"><div class="trouble-problem">Produit scalaire appelé ch14</div><div class="trouble-solution">v7.5 : Produit scalaire = ch13, Transformations = ch14</div></div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+    </div><!-- /content -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <span>Pack Pédagogique v7.5 · Kaazouzi Ayyoub · Tronc Commun Maroc</span>
+      <span>Dernière mise à jour : mai 2026</span>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  function toggleCheck(item) {
+    item.classList.toggle('checked');
+  }
+
+  function resetChecklist(container) {
+    container.querySelectorAll('.check-item').forEach(i => i.classList.remove('checked'));
+  }
+
+  function copyCode(btn) {
+    const pre = btn.closest('.code-block').querySelector('pre');
+    const text = pre.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = 'Copié !';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  function setActive(el) {
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navItems = document.querySelectorAll('.nav-item');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navItems.forEach(item => {
+          item.classList.remove('active');
+          if (item.getAttribute('href') === '#' + id) item.classList.add('active');
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
