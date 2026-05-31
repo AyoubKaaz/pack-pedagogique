@@ -3,6 +3,14 @@ name: generer
 description: Générer les 3 documents (fiche_prof, td, td_correction) depuis source.tex
 ---
 
+---
+PRÉ-CHECK OBLIGATOIRE
+Avant toute génération, exécuter :
+scripts/check-conventions.sh [nom_chapitre]
+Si des erreurs sont détectées → stopper immédiatement.
+Corriger les erreurs avant de continuer.
+---
+
 # /generer — Génération des 3 documents
 
 Ignorer tout ce qui se trouve entre
