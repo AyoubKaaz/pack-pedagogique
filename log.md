@@ -17,3 +17,7 @@
   - ch01_arithmetique : source.tex 🔄, fiche_prof ✅, td ✅, td_correction 🔄 (89 lignes)
   - ch11_fonctions    : complet ✅
   - ch02–ch10, ch12–ch15 : non démarrés ❌
+## [2026-06-01] ch01_ensembles_de_nombres — Création du chapitre
+- Fait : structure créée via nouveau_chapitre.py
+- Masse horaire : 5h | Domaine : Algèbre
+- Restant : source.tex à rédiger, Page1.tex à compléter manuellement

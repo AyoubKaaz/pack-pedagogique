@@ -31,3 +31,4 @@
   - Notation : T(a;b) = [f(b) - f(a)] / (b - a)
 ---
 *Les chapitres ch02–ch10, ch12–ch15 seront ajoutés au fur et à mesure.*
+*Notions de ch01_ensembles_de_nombres — à indexer après /generer*
