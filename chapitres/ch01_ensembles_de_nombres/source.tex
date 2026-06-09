@@ -612,46 +612,14 @@ Si le nombre est négatif, alors son écriture scientifique est :
 %% APPLICATION
 \begin{Application}[][15 min]
 Soit $a ; b \in \mathbb{R}^*$, on pose : \quad
-$E = \frac{a^{-2}b^{-5}\big(ab^2\big)^3 + a^3b^3}{a^2 + b^2}$
+$E = \frac{a^{-1}b^{-4}\left(a^2b^3\right)^2 + a^{-2}b^{-2}\left(ab^2\right)^3}{a^2 + b^2}$
 \begin{enumerate}
     \item Simplifier $E$.
     \item Donner l'écriture scientifique de $E$ sachant que $a = 100000$ et $b = 0{,}04$.
 \end{enumerate}
 \end{Application}
 
-%% SOLUTION_APPLICATION
-\begin{Solution}[APPLICATION][8]
-\begin{enumerate}
-    \item \textbf{Simplification de $E$}
-    \begin{flalign*}
-\text{On a :} \quad E &= \frac{a^{-2}b^{-5}\big(ab^2\big)^3 + a^3b^3}{a^2 + b^2} &\\
-                      &= \frac{a^{-2}b^{-5} \cdot a^3b^6 + a^3b^3}{a^2 + b^2} &\\
-                      &= \frac{a^{-2+3} \cdot b^{-5+6} + a^3b^3}{a^2 + b^2} &\\
-                      &= \frac{a^1 b^1 + a^3b^3}{a^2 + b^2} &\\
-                      &= \frac{ab\big(1 + a^2b^2\big)}{a^2 + b^2} &
-\end{flalign*}
-Donc $E = \frac{ab(1 + a^2b^2)}{a^2 + b^2}$.
 
-    \item \textbf{Application numérique avec $a = 100000 = 10^5$ et $b = 0{,}04 = 4 \times 10^{-2}$}
-\begin{flalign*}
-ab           &= 10^5 \times 4 \times 10^{-2} = 4 \times 10^{3} &\\[6pt]
-a^2b^2       &= (ab)^2 = \big(4 \times 10^{3}\big)^2 = 16 \times 10^{6} &\\[6pt]
-1 + a^2b^2   &= 1 + 16 \times 10^{6} \approx 16 \times 10^{6} &\\[6pt]
-a^2          &= \big(10^5\big)^2 = 10^{10} &\\[6pt]
-b^2          &= \big(4 \times 10^{-2}\big)^2 = 16 \times 10^{-4} &\\[6pt]
-a^2 + b^2    &= 10^{10} + 16 \times 10^{-4} \approx 10^{10} &
-\end{flalign*}
-
-\begin{flalign*}
-\text{D'où :} \quad E &\approx \frac{4 \times 10^{3} \times 16 \times 10^{6}}{10^{10}} &\\
-                      &= \frac{64 \times 10^{9}}{10^{10}} &\\
-                      &= 64 \times 10^{-1} = 6{,}4 &
-\end{flalign*}
-
-Donc $E \approx 6{,}4$.
-\end{enumerate}
-
-\end{Solution}
 
 
 
