@@ -11,10 +11,630 @@
 
 \begin{document}
 \pagestyle{cours}
+\fancypagestyle{cours}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    \fancyfoot[L]{\small Ch 01. Ensembles de nombres}
+    \fancyfoot[C]{\small \thepage}
+    \fancyfoot[R]{\small Pr. Kaazouzi Ayyoub}
+}
+\pagestyle{cours}
+
 %% FIN_HEADER_APERCU
 
+%% SECTION
+\section{Les ensembles $\mathbb{N} ~; \mathbb{Z} ~; \mathbb{D} ~; \mathbb{Q} ~; \mathbb{R}$ \duree{}}
+
 %% ACTIVITE
-\begin{Activite}[][20 min]
+\begin{Activite}[][ min]
+Cocher les cases convenables :
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{\textcolor{PrimaryColor}{Ensemble}}
+  & $13$
+  & $-5$
+  & $28{,}13$
+  & $10^{-2}$
+  & $\dfrac{1}{3}$
+  & $\sqrt{2}$
+  & $\pi$
+  & \textbf{\textcolor{PrimaryColor}{Notation}} \\
+\hline
+Entier naturel  & & & & & & & &  $\mathbb{N}$ \\
+\hline
+Entier relatif    & & & & & & &  & $\mathbb{Z}$ \\
+\hline
+Nombre décimal    & & & & & & &  & $\mathbb{D}$ \\
+\hline
+Nombre rationnel  & & & & & & &  & $\mathbb{Q}$ \\
+\hline
+Nombre réel       & & & & & & &  & $\mathbb{R}$ \\
+\hline
+\end{tabular}
+\end{center}
+\renewcommand{\arraystretch}{1}
+\end{Activite}
+
+%% SOLUTION_ACTIVITE
+\begin{Solution}[ACTIVITÉ][1]
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{\textcolor{PrimaryColor}{Ensemble}}
+  & $13$
+  & $-5$
+  & $28{,}13$
+  & $10^{-2}$
+  & $\frac{1}{3}$
+  & $\sqrt{2}$
+  & $\pi$
+  & \textbf{\textcolor{PrimaryColor}{Notation}} \\
+\hline
+Entier naturel   & $\checkmark$ &              &              &              &              &              &              & $\mathbb{N}$ \\
+\hline
+Entier relatif   & $\checkmark$ & $\checkmark$ &              &              &              &              &              & $\mathbb{Z}$ \\
+\hline
+Nombre décimal   & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ &              &              &              & $\mathbb{D}$ \\
+\hline
+Nombre rationnel & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ &              &              & $\mathbb{Q}$ \\
+\hline
+Nombre réel      & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\mathbb{R}$ \\
+\hline
+\end{tabular}
+\end{center}
+\renewcommand{\arraystretch}{1}
+\end{Solution}
+
+
+%% DEFINITION
+\begin{Definition}[]
+\begin{itemize}[leftmargin=*,itemsep=0.5pt]
+    \item On note l'ensemble des \textbf{entiers naturels} par $\N$, et on écrit : 
+    $\N = \{0, 1, 2, 3, \dots\}$.
+    \item On note l'ensemble des \textbf{entiers relatifs} par $\Z$ et on écrit :
+    $\Z = \{\dots, -2, -1, 0, 1, 2, \dots\}$.
+    \item On note l'ensemble des \textbf{nombres décimaux} par $\D$, et on écrit : 
+    $\D = \{\frac{a}{10^n} / a \in \Z \text{ et } n \in \N\}$.
+    \item On note l'ensemble des \textbf{nombres rationnels} par $\Q$, et on écrit : 
+    $\Q = \left\{ \frac{a}{b} / a \in \Z \text{ et } b \in \N^* \right\}$.
+    \item On note l'ensemble des \textbf{nombres réels} par $\R$. C'est l'ensemble des nombres rationnels et irrationnels.
+\end{itemize}
+\end{Definition}
+
+
+\noindent % Prevents indentation of the first minipage
+\begin{minipage}[c]{0.63\textwidth}
+\begin{Remarque}
+\begin{itemize}[leftmargin=*,itemsep=0.5pt]
+    \item $\N \subset \Z \subset \D \subset \Q \subset \R$ \quad (\textit{Le symbole $\subset$ se lit : « inclus » ou « partie de »})
+    \item $\R^*$ est l'ensemble des réels non nuls.
+    \item $\R^+$ est l'ensemble des réels positifs.
+    \item $\R^-$ est l'ensemble des réels négatifs.
+\end{itemize}
+\end{Remarque}
+\end{minipage}% % The '%' here is important to prevent an unwanted space
+\hfill % Pushes the next minipage flush to the right
+\begin{minipage}[c]{0.35\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.8] % Scaled down slightly to fit the right column
+  % R — ellipse la plus grande (rouge/brun)
+  \draw[SecondaryColor, thick] (0,0) ellipse (3.5 and 1.8);
+  \node[SecondaryColor] at (3,0) {\large $\mathbb{R}$};
+
+  % Q (violet)
+  \draw[violet, thick] (-0.4,0) ellipse (2.7 and 1.45);
+  \node[violet] at (1.9,0) {\large $\mathbb{Q}$};
+
+  % D (vert)
+  \draw[green!50!black, thick] (-0.8,0) ellipse (2.0 and 1.1);
+  \node[green!50!black] at (0.9,0) {\large $\mathbb{D}$};
+
+  % Z (cyan/turquoise)
+  \draw[cyan!70!black, thick] (-1.2,0) ellipse (1.3 and 0.75);
+  \node[cyan!70!black] at (-0.3,0) {\large $\mathbb{Z}$};
+
+  % N (bleu) — ellipse la plus petite
+  \draw[blue, thick] (-1.5,0) ellipse (0.75 and 0.45);
+  \node[blue] at (-1.2,0) {\large $\mathbb{N}$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+
+%% APPLICATION
+\begin{Application}[]
+\begin{enumerate}[leftmargin=*,itemsep=0.5pt]
+    \item Compléter par  $\in$ ou $\notin$ :
+    $$15 \dots \mathbb{N} \quad ; \quad -8 \dots \mathbb{N} \quad ; \quad -8 \dots \mathbb{Z} \quad ; \quad \frac{1}{3} \dots \mathbb{D} \quad ; \quad \sqrt{7} \dots \mathbb{Q} \quad ; \quad \pi \dots \mathbb{R}$$
+
+    \item Compléter par  $\subset$ ou  $\not\subset$ :
+    $$\mathbb{N} \dots \mathbb{Z} \quad ; \quad \mathbb{R} \dots \mathbb{Q} \quad ; \quad \mathbb{D} \dots \mathbb{R} \quad ; \quad \mathbb{Z} \dots \mathbb{N} \quad ; \quad 
+    \Z \dots \R^+    $$
+\end{enumerate}
+\end{Application}
+
+
+%% SECTION
+\section{Opérations dans $\R$ \duree{}}
+
+%% PROPRIETE
+\begin{Propriete}[Règle fondamentale de développement et de factorisation]
+
+Soient $a$, $b$ et $c$ des nombres réels. On a :
+\vspace{0.2cm}
+
+    $\bullet~$  $a \times (b+c) = a \times b + a \times c$ \hfill
+    $\bullet~$  $(b+c) \times a = b \times a + c \times a$ \hfill
+    $\bullet~$  $(a+b)(c+d) = ac + ad + bc + bd$
+\end{Propriete}
+
+
+%% APPLICATION
+\begin{Application}
+Soit $x$ un nombre réel.
+\begin{enumerate}[leftmargin=*,itemsep=0.5pt]
+    \item Développer puis réduire les expressions suivantes : 
+    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](3)
+        \task $A = (2x + 3)(x - 4) + 5x$
+        \task $B = 3x(x - 2) - (x - 1)(x + 5)$
+        \task $C = \sqrt{2}(x\sqrt{2} - 3) - x(2 - \sqrt{2}x)$
+    \end{tasks}
+
+    \item Factoriser les expressions suivantes :
+    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](2)
+        \task $A = 7x^2 - 21x$
+        \task $B = (3x - 1)(x + 2) - (3x - 1)(2x - 5)$
+        \task $C = \sqrt{12}x^2 - \sqrt{3}x$
+        \task $D = (x - 5)(2x + 3) - 4x + 20$
+    \end{tasks}
+\end{enumerate}
+\end{Application}
+
+%% SOLUTION_APPLICATION
+\begin{Solution}[APPLICATION][2]
+\begin{enumerate}[leftmargin=*,itemsep=0.5pt]
+    \item \textbf{Développement et réduction :}
+    \begin{itemize}[leftmargin=*,itemsep=0.5pt]
+        \item $A = (2x + 3)(x - 4) + 5x$ \\
+        $ A = 2x^2 - 8x + 3x - 12 + 5x$ \\
+        $ A = 2x^2 - 12$
+        
+        \item $B = 3x(x - 2) - (x - 1)(x + 5)$ \\
+        $B = (3x^2 - 6x) - (x^2 + 5x - x - 5)$ \\
+        $B = 3x^2 - 6x - (x^2 + 4x - 5)$ \\
+        $B = 3x^2 - 6x - x^2 - 4x + 5$ \\
+        $B = 2x^2 - 10x + 5$
+        
+        \item $C = \sqrt{2}(x\sqrt{2} - 3) - x(2 - \sqrt{2}x)$ \\
+        $C = (\sqrt{2} \times x\sqrt{2}) - 3\sqrt{2} - 2x + \sqrt{2}x^2$ \\
+        $C = 2x - 3\sqrt{2} - 2x + \sqrt{2}x^2$ \\
+        $C = \sqrt{2}x^2 - 3\sqrt{2}$
+    \end{itemize}
+
+    \item \textbf{Factorisation :}
+    \begin{itemize}[leftmargin=*,itemsep=0.5pt]
+        \item $A = 7x^2 - 21x$ \\
+        $A = 7x \times x - 7x \times 3$ \\
+        $A = 7x(x - 3)$
+        
+        \item $B = (3x - 1)(x + 2) - (3x - 1)(2x - 5)$ \\
+        $B = (3x - 1) \left[ (x + 2) - (2x - 5) \right]$ \\
+        $B = (3x - 1)(x + 2 - 2x + 5)$ \\
+        $B = (3x - 1)(-x + 7)$
+        
+        \item $C = \sqrt{12}x^2 - \sqrt{3}x$ \\
+        On sait que $\sqrt{12} = \sqrt{4 \times 3} = 2\sqrt{3}$. \\
+        $C = 2\sqrt{3}x^2 - \sqrt{3}x$ \\
+        $C = \sqrt{3}x(2x - 1)$
+    \end{itemize}
+\end{enumerate}
+\end{Solution}
+
+
+%% PROPRIETE
+\begin{Propriete}[]
+Quels que soient les réels $a$ et $b$, on a :
+\vspace{0.2cm}
+
+    $\bullet~$ $(a+b)^2 = a^2 + 2ab + b^2$ \hfill
+    $\bullet~$ $(a-b)^2 = a^2 - 2ab + b^2$ \hfill
+    $\bullet~$ $a^2 - b^2 = (a-b)(a+b)$
+\end{Propriete}
+
+
+%% APPLICATION
+\begin{Application}
+Soit $x$ un nombre réel.
+\begin{enumerate}[leftmargin=*,itemsep=0.5pt]
+    \item Développer puis réduire les expressions suivantes :
+    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](3)
+        \task $A = (x + 5)^2  - (3x - 4)^2$
+        \task $B = (\sqrt{5}x - 2)^2$
+        \task $C = (\sqrt{2}x + 3)(\sqrt{2}x - 3)$
+    \end{tasks}
+
+    \item Factoriser les expressions suivantes  :
+    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](3)
+        \task $E = x^2 - 64$
+        \task $F = 25x^2 + 30x + 9$
+        \task $G = (2x - 1)^2 - (x + 3)^2$
+    \end{tasks}
+
+\end{enumerate}
+\end{Application}
+
+%% ACTIVITE
+\begin{Activite}
+Soit $a$ et $b$ deux réels.
+\begin{enumerate}
+    \item En écrivant $(a+b)^3 = (a+b)^2 \times (a+b)$, développer $(a+b)^3$.
+    
+    \item En remplaçant $b$ par $-b$ dans le résultat de la question \textbf{1.}, déduire le développement de $(a-b)^3$.
+\end{enumerate}
+
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item Développer et réduire le produit $(a-b)\big(a^2 + ab + b^2\big)$.
+    
+    \item Développer et réduire le produit $(a+b)\big(a^2 - ab + b^2\big)$.
+    
+    \item À l'aide des questions \textbf{3.} et \textbf{4.}, compléter :
+    \[
+        a^3 - b^3 = \dots \qquad ; \qquad a^3 + b^3 = \dots
+    \]
+\end{enumerate}
+\end{Activite}
+
+%% SOLUTION_ACTIVITE
+\begin{Solution}[ACTIVITÉ][2]
+\begin{enumerate}
+    \item On a :
+    \[
+        (a+b)^3 = (a+b)^2(a+b) = \big(a^2 + 2ab + b^2\big)(a+b)
+    \]
+    En distribuant :
+    \[
+     (a+b)^3   = a^3 + a^2 b + 2a^2 b + 2ab^2 + ab^2 + b^3 = a^3 + 3a^2 b + 3ab^2 + b^3
+    \]
+
+    \item On remplace $b$ par $-b$ :
+    \[
+        (a-b)^3 = a^3 + 3a^2(-b) + 3a(-b)^2 + (-b)^3 = a^3 - 3a^2 b + 3ab^2 - b^3
+    \]
+
+    \item On développe :
+    \[
+        (a-b)\big(a^2 + ab + b^2\big) = a^3 + a^2 b + ab^2 - a^2 b - ab^2 - b^3 = a^3 - b^3
+    \]
+
+    \item On développe :
+    \[
+        (a+b)\big(a^2 - ab + b^2\big) = a^3 - a^2 b + ab^2 + a^2 b - ab^2 + b^3 = a^3 + b^3
+    \]
+
+    \item On en déduit :
+    \[
+        a^3 - b^3 = (a-b)\big(a^2 + ab + b^2\big) \qquad ; \qquad a^3 + b^3 = (a+b)\big(a^2 - ab + b^2\big)
+    \]
+\end{enumerate}
+\end{Solution}
+
+%% PROPRIETE
+\begin{Propriete}[]
+Quels que soient les réels $a$ et $b$, on a :
+\begin{itemize}[leftmargin=*,itemsep=0.5pt]
+    \item Cube d'une somme : \quad $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$
+    \item Cube d'une différence : ~~ $(a-b)^3 = a^3 - 3a^2b + 3ab^2 - b^3$
+    \item Différence de deux cubes : $a^3 - b^3 = (a-b)(a^2 + ab + b^2)$
+    \item Somme de deux cubes : \quad $a^3 + b^3 = (a+b)(a^2 - ab + b^2)$
+\end{itemize}
+\end{Propriete}
+
+%% EXEMPLE
+\begin{Exemple}[][ min]
+\begin{enumerate}[leftmargin=*,itemsep=0.5pt]
+  \item $(x + 2)^3 = x^3 + 3(x^2)(2) + 3(x)(2^2) + 2^3 
+          = x^3 + 6x^2 + 12x + 8$
+          
+  \item $(2x - 1)^3 = (2x)^3 - 3(2x)^2(1) + 3(2x)(1^2) - 1^3 
+           = 8x^3 - 12x^2 + 6x - 1$
+           
+  \item $x^3 - 27 = x^3 - 3^3 = (x - 3)(x^2 + 3x + 3^2) 
+          = (x - 3)(x^2 + 3x + 9)$
+
+\item $(2x)^3 + 1 = (2x + 1)\left((2x)^2 - (2x)(1) + 1^2\right) 
+             = (2x + 1)(4x^2 - 2x + 1)$
+\end{enumerate}
+\end{Exemple}
+
+%% APPLICATION
+\begin{Application}
+Soit $x$ un réel.
+\begin{enumerate}[leftmargin=*,itemsep=0.5pt]
+    \item Développer puis réduire chaque expression :
+    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](2)
+        \task $A = (x - 2)^3$
+        \task $B = (x + \sqrt{2})^3$
+    \end{tasks}
+
+    \item Factoriser chaque expression :
+    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](3)
+        \task $E = x^3 - 1000$
+        \task $F =  27x^3 + 1$
+        \task $G = x^3 + 8 - x^2 + 4$
+    \end{tasks}
+
+\end{enumerate}
+\end{Application}
+
+
+%% SOLUTION_APPLICATION
+\begin{Solution}[APPLICATION][4]
+Soit $x \in \mathbb{R}$.
+\begin{enumerate}[leftmargin=*,itemsep=0.5pt]
+    \item \textbf{Développons puis réduisons chaque expression :}
+\begin{flalign*} 
+\bullet~\text{On a :} \quad A &= (x - 2)^3 &\\
+&= x^3 - 3 \times x^2 \times 2 + 3 \times x \times 2^2 - 2^3 &\\
+&= x^3 - 6x^2 + 12x - 8 &\\[5pt]
+\bullet~\text{On a :} \quad B &= (x + \sqrt{2})^3 &\\
+&= x^3 + 3 \times x^2 \times \sqrt{2} + 3 \times x \times (\sqrt{2})^2 + (\sqrt{2})^3 &\\
+&= x^3 + 3\sqrt{2}x^2 + 3 \times x \times 2 + 2\sqrt{2} &\\
+&= x^3 + 3\sqrt{2}x^2 + 6x + 2\sqrt{2} &
+\end{flalign*}
+
+    \item \textbf{Factorisons chaque expression :}
+\begin{flalign*} 
+\text{On a :} \quad E &= x^3 - 1000 &\\
+&= x^3 - 10^3 &\\
+&= (x - 10)(x^2 + x \times 10 + 10^2) &\\
+&= (x - 10)(x^2 + 10x + 100) &\\[10pt]
+\text{On a :} \quad F &= 27x^3 + 1 &\\
+&= (3x)^3 + 1^3 &\\
+&= (3x + 1)((3x)^2 - 3x \times 1 + 1^2) &\\
+&= (3x + 1)(9x^2 - 3x + 1) &\\[10pt]
+\text{On a :} \quad G &= x^3 + 8 - x^2 + 4 &\\
+&= (x^3 + 2^3) - (x^2 - 4) &\\
+&= (x + 2)(x^2 - 2x + 2^2) - (x^2 - 2^2) &\\
+&= (x + 2)(x^2 - 2x + 4) - (x - 2)(x + 2) &\\
+&= (x + 2) \left[ (x^2 - 2x + 4) - (x - 2) \right] &\\
+&= (x + 2)(x^2 - 2x + 4 - x + 2) &\\
+&= (x + 2)(x^2 - 3x + 6) &
+\end{flalign*}
+
+\end{enumerate}
+\end{Solution}
+
+
+%% SECTION
+\section{Les puissances - puissances de $10$ - Écriture scientifique \duree{}}
+
+
+%% DEFINITION
+\begin{Definition}[]
+Soit $a$ un réel non nul, et $n$ un entier relatif non nul. 
+\begin{itemize}
+\item On a :~~
+    $a^n = \underbrace{a \times a \times a \times \dots \times a}_{\text{n facteurs de } a}$
+
+    \item En particulier:~~ $a^1 = a$ \quad ; \quad $a^{-1} = \dfrac{1}{a}$ \quad;\quad $\left(\dfrac{a}{b}\right)^{-n} = \left(\dfrac{b}{a}\right)^n$ \quad et \quad $a^0 = 1$
+\end{itemize}
+\end{Definition}
+
+
+%% APPLICATION
+\begin{Application}[][ min]
+ Calculer :
+\begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](2)
+\task $A = \left(\frac{1}{4}\right)^{-1} \times (-5)^0 + 3^{-1}$
+\task $B = \left(\frac{-\sqrt{2}}{2}\right)^{-4} \times \left(\frac{4}{3}\right)^{-1} - (\pi - 3)^0$
+\end{tasks}
+\end{Application}
+
+%% SOLUTION_APPLICATION
+\begin{Solution}[APPLICATION][5]
+\begin{flalign*}
+\bullet~ \text{On a :} \quad A &= \left(\frac{1}{4}\right)^{-1} \times (-5)^0 + 3^{-1} &\\
+                      &= 4 \times 1 + \frac{1}{3} &\\
+                      &= 4 + \frac{1}{3} = \frac{12}{3} + \frac{1}{3} &\\
+                      &= \frac{13}{3} &\\[10pt]
+\bullet~ \text{On a :} \quad B &= \left(\frac{-\sqrt{2}}{2}\right)^{-4} \times \left(\frac{4}{3}\right)^{-1} - (\pi - 3)^0 &\\
+                      &= \left(\frac{2}{-\sqrt{2}}\right)^{4} \times \frac{3}{4} - 1 &\\
+                      &= \left(\frac{2}{\sqrt{2}}\right)^{4} \times \frac{3}{4} - 1 &\\
+                      &= \left(\sqrt{2}\right)^{4} \times \frac{3}{4} - 1 &\\
+                      &= 4 \times \frac{3}{4} - 1 &\\
+                      &= 3 - 1 = 2 &
+\end{flalign*}
+
+Donc $A = \dfrac{13}{3}$ et $B = 2$.
+\end{Solution}
+
+%% PROPRIETE
+% durée estimée : 5 min
+\begin{Propriete}[Calcul avec les puissances]
+Soient $a$ et $b$ deux réels non nuls et $n$ et $m$ deux entiers de $\N$. On a :
+\begin{itemize}
+    \item Puissance d'une \textbf{même base} : \quad
+        $a^n \times a^m = a^{n+m}
+        \qquad
+        \frac{a^n}{a^m} = a^{n-m}
+        \qquad
+        \big(a^n\big)^m = a^{n \times m}$
+    
+    \item Puissance d'un \textbf{même exposant} : \quad
+        $a^n \times b^n = (a \times b)^n
+        \qquad
+        \frac{a^n}{b^n} = \left(\frac{a}{b}\right)^n$
+    
+\end{itemize}
+\end{Propriete}
+
+%% APPLICATION
+\begin{Application}[][ min]
+Calculer :
+
+\begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](3)
+  \task $A = \dfrac{25 \times 5^{18} \times 6^{10} \times 3^{-4}}{2^9 \times (5^4)^5 \times 3^6}$
+  \task $B = \left(\left(\frac{3}{4} + \left(\frac{2}{3}\right)^{-2}\right)^3 - 28\right)^{-16}$
+  \task $C = \sqrt{3^2 - 2^2} \times \sqrt{3^2 \times 2^5} \times \sqrt{1000}$
+\end{tasks}
+\end{Application}
+
+%% SOLUTION_APPLICATION
+\begin{Solution}[APPLICATION][6]
+\begin{flalign*}
+\bullet~ \text{On a :} \quad A &= \frac{25 \times 5^{18} \times 6^{10} \times 3^{-4}}{2^9 \times (5^4)^5 \times 3^6} &\\
+                      &= \frac{5^2 \times 5^{18} \times (2 \times 3)^{10} \times 3^{-4}}{2^9 \times 5^{20} \times 3^6} &\\
+                      &= \frac{5^{20} \times 2^{10} \times 3^{10} \times 3^{-4}}{2^9 \times 5^{20} \times 3^6} &\\
+                      &= 2^{10-9} \times 5^{20-20} \times 3^{10-4-6} &\\
+                      &= 2^1 \times 1 \times 3^0 = 2 &\\[10pt]
+\bullet~\text{On a :} \quad B &= \left(\left(\frac{3}{4} + \left(\frac{2}{3}\right)^{-2}\right)^3 - 28\right)^{-16} &\\
+                      &= \left(\left(\frac{3}{4} + \frac{3^2}{2^2}\right)^3 - 28\right)^{-16} &\\
+                      &= \left(\left(\frac{3}{4} + \frac{9}{4}\right)^3 - 28\right)^{-16} &\\
+                      &= \left(3^3 - 28\right)^{-16} &\\
+                      &= \left(27 - 28\right)^{-16} = (-1)^{-16} = 1 &\\[10pt]
+\bullet~\text{On a :} \quad C &= \sqrt{3^2 - 2^2} \times \sqrt{3^2 \times 2^5} \times \sqrt{1000} &\\
+                      &= \sqrt{9 - 4} \times \sqrt{9 \times 32} \times \sqrt{1000} &\\
+                      &= \sqrt{5} \times \sqrt{288} \times \sqrt{1000} &\\
+                      &= \sqrt{5 \times 288 \times 1000} &\\
+                      &= \sqrt{1\,440\,000} = 1200 &
+\end{flalign*}
+
+Donc $A = 2$, $B = 1$ et $C = 1200$.
+\end{Solution}
+
+
+%% PROPRIETE
+\begin{Propriete}[Puissance de 10]
+Soit $n$ un entier naturel.
+\begin{itemize}
+    \item $10^n$ s'écrit avec un 1 suivi de $n$ zéros. 
+    $10^n = 1\underbrace{00\dots0}_{n \text{ zéros}}$
+    \item $10^{-n}$ s'écrit avec un 1 précédé de $n$ zéros.
+    $\quad 10^{-n} = \underbrace{0,0\dots0}_{n \text{ zéros}}1$
+\end{itemize}
+\end{Propriete}
+
+%% DEFINITION
+\begin{Definition}[Écriture scientifique]
+
+Tout nombre décimal positif peut s'écrire sous la forme $a \times 10^p$ où $a$ est un nombre décimal tel que $1 \leq a < 10$ et $p$ un entier relatif.
+\end{Definition}
+
+%% EXEMPLE
+% durée estimée :  min
+\begin{Exemple}[][ min]
+\begin{itemize}
+    \item L'écriture scientifique du nombre $0{,}00028$ est $2{,}8 \times 10^{-4}$.
+    \item L'écriture scientifique du nombre $11{,}0001$ est $1{,}10001 \times 10^{1}$.
+\end{itemize}
+\end{Exemple}
+
+%% REMARQUE
+% durée estimée :  min
+\begin{Remarque}
+Si le nombre est négatif, alors son écriture scientifique est :
+    $-a \times 10^p \quad \text{où} ~ a \in \mathbb{D} ~ \text{et} ~ 1 \leq a < 10, \text{et} ~ p \in \mathbb{Z}$
+\end{Remarque}
+
+
+%% APPLICATION
+\begin{Application}[][10 min]
+Écrire les nombres suivants en écriture scientifique :
+
+\[
+251{,}3 \quad ; \quad 0{,}095  \quad ; \quad 150 \times 10^{-3} \quad ; \quad -5248{,}3 \quad ; \quad -872{,}731 \times 10^{-4}
+\]
+\end{Application}
+
+%% SOLUTION_APPLICATION
+\begin{Solution}[APPLICATION][7]
+\begin{itemize}
+    \item $251{,}3 = 2{,}513 \times 10^{2}$
+    \item $0{,}095 = 9{,}5 \times 10^{-2}$
+    \item $150 \times 10^{-3} = 1{,}5 \times 10^{2} \times 10^{-3} = 1{,}5 \times 10^{-1}$
+    \item $-5248{,}3 = -5{,}2483 \times 10^{3}$
+    \item $-872{,}731 \times 10^{-4} = -8{,}72731 \times 10^{2} \times 10^{-4} = -8{,}72731 \times 10^{-2}$
+\end{itemize}
+\end{Solution}
+
+%% APPLICATION
+\begin{Application}[][15 min]
+Soit $a ; b \in \mathbb{R}^*$, on pose : \quad
+$E = \frac{a^{-2}b^{-5}\left(ab^2\right)^3 + a^3b^3}{a^2 + b^2}$
+\begin{enumerate}
+    \item Simplifier $E$.
+    \item Donner l'écriture scientifique de $E$ sachant que $a = 100000$ et $b = 0{,}04$.
+\end{enumerate}
+\end{Application}
+
+%% SOLUTION_APPLICATION
+\begin{Solution}[APPLICATION][1]
+\begin{enumerate}
+    \item \textbf{Simplification de $E$}
+    \begin{flalign*}
+\text{On a :} \quad E &= \frac{a^{-2}b^{-5}\left(ab^2\right)^3 + a^3b^3}{a^2 + b^2} &\\
+                      &= \frac{a^{-2}b^{-5} \cdot a^3b^6 + a^3b^3}{a^2 + b^2} &\\
+                      &= \frac{a^{-2+3} \cdot b^{-5+6} + a^3b^3}{a^2 + b^2} &\\
+                      &= \frac{a^1 b^1 + a^3b^3}{a^2 + b^2} &\\
+                      &= \frac{ab\left(1 + a^2b^2\right)}{a^2 + b^2} &
+\end{flalign*}
+Donc $E = \dfrac{ab(1 + a^2b^2)}{a^2 + b^2}$.
+
+    \item \textbf{Application numérique avec $a = 100000 = 10^5$ et $b = 0{,}04 = 4 \times 10^{-2}$}
+\begin{flalign*}
+ab           &= 10^5 \times 4 \times 10^{-2} = 4 \times 10^{3} &\\[6pt]
+a^2b^2       &= (ab)^2 = \left(4 \times 10^{3}\right)^2 = 16 \times 10^{6} &\\[6pt]
+1 + a^2b^2   &= 1 + 16 \times 10^{6} \approx 16 \times 10^{6} &\\[6pt]
+a^2          &= \left(10^5\right)^2 = 10^{10} &\\[6pt]
+b^2          &= \left(4 \times 10^{-2}\right)^2 = 16 \times 10^{-4} &\\[6pt]
+a^2 + b^2    &= 10^{10} + 16 \times 10^{-4} \approx 10^{10} &
+\end{flalign*}
+
+\begin{flalign*}
+\text{D'où :} \quad E &\approx \frac{4 \times 10^{3} \times 16 \times 10^{6}}{10^{10}} &\\
+                      &= \frac{64 \times 10^{9}}{10^{10}} &\\
+                      &= 64 \times 10^{-1} = 6{,}4 &
+\end{flalign*}
+
+Donc $E \approx 6{,}4$.
+\end{enumerate}
+
+
+
+\end{Solution}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+%% ACTIVITE
+\begin{Activite}[][ min]
 
 \end{Activite}
 
@@ -34,12 +654,12 @@
 \end{Propriete}
 
 %% EXEMPLE
-\begin{Exemple}[][10 min]
+\begin{Exemple}[][ min]
 
 \end{Exemple}
 
 %% APPLICATION
-\begin{Application}[][10 min]
+\begin{Application}[][ min]
 
 \end{Application}
 
@@ -63,7 +683,7 @@
 \end{Propriete}
 
 %% APPLICATION
-\begin{Application}[][10 min]
+\begin{Application}[][ min]
 
 \end{Application}
 
@@ -77,7 +697,7 @@
 % ────────────────────────────────────────────
 
 %% EXERCICE
-\begin{Exercice}[][20 min]
+\begin{Exercice}[][ min]
 
 \end{Exercice}
 
@@ -85,6 +705,10 @@
 \begin{Solution}[EXERCICE DE SYNTHÈSE][1]
 
 \end{Solution}
+
+
+
+
 
 
 \end{document}
