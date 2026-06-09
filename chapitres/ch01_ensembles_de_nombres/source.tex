@@ -95,11 +95,11 @@ Nombre réel      & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 
 \begin{Definition}[]
 \begin{itemize}[leftmargin=*,itemsep=0.5pt]
     \item On note l'ensemble des \textbf{entiers naturels} par $\N$, et on écrit : 
-    $\N = \{0, 1, 2, 3, \dots\}$.
+    $\N = \big\{0, 1, 2, 3, \dots\big\}$.
     \item On note l'ensemble des \textbf{entiers relatifs} par $\Z$ et on écrit :
-    $\Z = \{\dots, -2, -1, 0, 1, 2, \dots\}$.
+    $\Z = \big\{\dots, -2, -1, 0, 1, 2, \dots\big\}$.
     \item On note l'ensemble des \textbf{nombres décimaux} par $\D$, et on écrit : 
-    $\D = \{\frac{a}{10^n} / a \in \Z \text{ et } n \in \N\}$.
+    $\D = \left\{ \frac{a}{10^n} / a \in \Z \text{ et } n \in \N \right\}$.
     \item On note l'ensemble des \textbf{nombres rationnels} par $\Q$, et on écrit : 
     $\Q = \left\{ \frac{a}{b} / a \in \Z \text{ et } b \in \N^* \right\}$.
     \item On note l'ensemble des \textbf{nombres réels} par $\R$. C'est l'ensemble des nombres rationnels et irrationnels.
@@ -347,7 +347,7 @@ Quels que soient les réels $a$ et $b$, on a :
   \item $x^3 - 27 = x^3 - 3^3 = (x - 3)(x^2 + 3x + 3^2) 
           = (x - 3)(x^2 + 3x + 9)$
 
-\item $(2x)^3 + 1 = (2x + 1)\left((2x)^2 - (2x)(1) + 1^2\right) 
+\item $(2x)^3 + 1 = (2x + 1)\big((2x)^2 - (2x)(1) + 1^2\big)
              = (2x + 1)(4x^2 - 2x + 1)$
 \end{enumerate}
 \end{Exemple}
@@ -446,7 +446,7 @@ Soit $a$ un réel non nul, et $n$ un entier relatif non nul.
 \bullet~ \text{On a :} \quad B &= \left(\frac{-\sqrt{2}}{2}\right)^{-4} \times \left(\frac{4}{3}\right)^{-1} - (\pi - 3)^0 &\\
                       &= \left(\frac{2}{-\sqrt{2}}\right)^{4} \times \frac{3}{4} - 1 &\\
                       &= \left(\frac{2}{\sqrt{2}}\right)^{4} \times \frac{3}{4} - 1 &\\
-                      &= \left(\sqrt{2}\right)^{4} \times \frac{3}{4} - 1 &\\
+                      &= \big(\sqrt{2}\big)^{4} \times \frac{3}{4} - 1 &\\
                       &= 4 \times \frac{3}{4} - 1 &\\
                       &= 3 - 1 = 2 &
 \end{flalign*}
@@ -496,8 +496,8 @@ Calculer :
 \bullet~\text{On a :} \quad B &= \left(\left(\frac{3}{4} + \left(\frac{2}{3}\right)^{-2}\right)^3 - 28\right)^{-16} &\\
                       &= \left(\left(\frac{3}{4} + \frac{3^2}{2^2}\right)^3 - 28\right)^{-16} &\\
                       &= \left(\left(\frac{3}{4} + \frac{9}{4}\right)^3 - 28\right)^{-16} &\\
-                      &= \left(3^3 - 28\right)^{-16} &\\
-                      &= \left(27 - 28\right)^{-16} = (-1)^{-16} = 1 &\\[10pt]
+                      &= \big(3^3 - 28\big)^{-16} &\\
+                      &= \big(27 - 28\big)^{-16} = (-1)^{-16} = 1 &\\[10pt]
 \bullet~\text{On a :} \quad C &= \sqrt{3^2 - 2^2} \times \sqrt{3^2 \times 2^5} \times \sqrt{1000} &\\
                       &= \sqrt{9 - 4} \times \sqrt{9 \times 32} \times \sqrt{1000} &\\
                       &= \sqrt{5} \times \sqrt{288} \times \sqrt{1000} &\\
@@ -566,7 +566,7 @@ Si le nombre est négatif, alors son écriture scientifique est :
 %% APPLICATION
 \begin{Application}[][15 min]
 Soit $a ; b \in \mathbb{R}^*$, on pose : \quad
-$E = \frac{a^{-2}b^{-5}\left(ab^2\right)^3 + a^3b^3}{a^2 + b^2}$
+$E = \frac{a^{-2}b^{-5}\big(ab^2\big)^3 + a^3b^3}{a^2 + b^2}$
 \begin{enumerate}
     \item Simplifier $E$.
     \item Donner l'écriture scientifique de $E$ sachant que $a = 100000$ et $b = 0{,}04$.
@@ -574,25 +574,25 @@ $E = \frac{a^{-2}b^{-5}\left(ab^2\right)^3 + a^3b^3}{a^2 + b^2}$
 \end{Application}
 
 %% SOLUTION_APPLICATION
-\begin{Solution}[APPLICATION][1]
+\begin{Solution}[APPLICATION][8]
 \begin{enumerate}
     \item \textbf{Simplification de $E$}
     \begin{flalign*}
-\text{On a :} \quad E &= \frac{a^{-2}b^{-5}\left(ab^2\right)^3 + a^3b^3}{a^2 + b^2} &\\
+\text{On a :} \quad E &= \frac{a^{-2}b^{-5}\big(ab^2\big)^3 + a^3b^3}{a^2 + b^2} &\\
                       &= \frac{a^{-2}b^{-5} \cdot a^3b^6 + a^3b^3}{a^2 + b^2} &\\
                       &= \frac{a^{-2+3} \cdot b^{-5+6} + a^3b^3}{a^2 + b^2} &\\
                       &= \frac{a^1 b^1 + a^3b^3}{a^2 + b^2} &\\
-                      &= \frac{ab\left(1 + a^2b^2\right)}{a^2 + b^2} &
+                      &= \frac{ab\big(1 + a^2b^2\big)}{a^2 + b^2} &
 \end{flalign*}
 Donc $E = \dfrac{ab(1 + a^2b^2)}{a^2 + b^2}$.
 
     \item \textbf{Application numérique avec $a = 100000 = 10^5$ et $b = 0{,}04 = 4 \times 10^{-2}$}
 \begin{flalign*}
 ab           &= 10^5 \times 4 \times 10^{-2} = 4 \times 10^{3} &\\[6pt]
-a^2b^2       &= (ab)^2 = \left(4 \times 10^{3}\right)^2 = 16 \times 10^{6} &\\[6pt]
+a^2b^2       &= (ab)^2 = \big(4 \times 10^{3}\big)^2 = 16 \times 10^{6} &\\[6pt]
 1 + a^2b^2   &= 1 + 16 \times 10^{6} \approx 16 \times 10^{6} &\\[6pt]
-a^2          &= \left(10^5\right)^2 = 10^{10} &\\[6pt]
-b^2          &= \left(4 \times 10^{-2}\right)^2 = 16 \times 10^{-4} &\\[6pt]
+a^2          &= \big(10^5\big)^2 = 10^{10} &\\[6pt]
+b^2          &= \big(4 \times 10^{-2}\big)^2 = 16 \times 10^{-4} &\\[6pt]
 a^2 + b^2    &= 10^{10} + 16 \times 10^{-4} \approx 10^{10} &
 \end{flalign*}
 
@@ -605,106 +605,11 @@ a^2 + b^2    &= 10^{10} + 16 \times 10^{-4} \approx 10^{10} &
 Donc $E \approx 6{,}4$.
 \end{enumerate}
 
-
-
 \end{Solution}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\newpage
-
-%% ACTIVITE
-\begin{Activite}[][ min]
-
-\end{Activite}
-
-%% SOLUTION_ACTIVITE
-\begin{Solution}[ACTIVITÉ][1]
-
-\end{Solution}
-
-%% DEFINITION
-\begin{Definition}[]
-% durée estimée : 5 min
-\end{Definition}
-
-%% PROPRIETE
-\begin{Propriete}[]
-% durée estimée : 5 min
-\end{Propriete}
-
-%% EXEMPLE
-\begin{Exemple}[][ min]
-
-\end{Exemple}
-
-%% APPLICATION
-\begin{Application}[][ min]
-
-\end{Application}
-
-%% SOLUTION_APPLICATION
-\begin{Solution}[APPLICATION][1]
-
-\end{Solution}
-
-% ────────────────────────────────────────────
-%  2. [TITRE DEUXIÈME SECTION]
-% ────────────────────────────────────────────
-
-%% DEFINITION
-\begin{Definition}[]
-% durée estimée : 5 min
-\end{Definition}
-
-%% PROPRIETE
-\begin{Propriete}[]
-% durée estimée : 5 min
-\end{Propriete}
-
-%% APPLICATION
-\begin{Application}[][ min]
-
-\end{Application}
-
-%% SOLUTION_APPLICATION
-\begin{Solution}[APPLICATION][2]
-
-\end{Solution}
-
-% ────────────────────────────────────────────
-%  EXERCICE DE SYNTHÈSE
-% ────────────────────────────────────────────
-
-%% EXERCICE
-\begin{Exercice}[][ min]
-
-\end{Exercice}
-
-%% SOLUTION_EXERCICE
-\begin{Solution}[EXERCICE DE SYNTHÈSE][1]
-
-\end{Solution}
 
 
 
