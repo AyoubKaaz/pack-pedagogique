@@ -691,6 +691,109 @@ $M = \frac{x^{-2} y^3 \big(x^2 y^{-1}\big)^2}{x^3 y^{-2}}$
 \end{enumerate}
 \end{Exercice}
 
+%% SOLUTION_EXERCICE
+\begin{Solution}[EXERCICE DE SYNTHÈSE][1]
+\begin{enumerate}
+\item \textbf{Étude des nombres $A$ et $B$ :}
+\begin{enumerate}[itemsep=0.5pt]
+    \item \textbf{Simplifions $A$ :} \\
+    On a $(-12)^3 = -2^6 \times 3^3$ \; ; \; $10^{-2} = 2^{-2} \times 5^{-2}$ \; et \; $25 = 5^2$. Donc :
+\begin{flalign*}
+\text{On a :} \quad A &= \frac{(-12)^3 \times 5^4 \times 10^{-2}}{2^3 \times 3^2 \times 25} &\\
+                      &= \frac{-2^6 \times 3^3 \times 5^4 \times 2^{-2} \times 5^{-2}}{2^3 \times 3^2 \times 5^2} &\\
+                      &= \frac{-2^4 \times 3^3 \times 5^2}{2^3 \times 3^2 \times 5^2} &\\
+                      &= -2^{4-3} \times 3^{3-2} \times 5^{2-2} &\\
+                      &= -2 \times 3 = -6 &
+\end{flalign*}
+
+    \item \textbf{Écriture scientifique de $A$ et $B$ :}
+    \[
+        A = -6 = -6 \times 10^{0} \qquad ; \qquad B = 0{,}00032 = 3{,}2 \times 10^{-4}
+    \]
+
+    \item Le plus petit ensemble auquel appartient $A = -6$ est $\mathbb{Z}$ (entier relatif négatif). \\
+    Le plus petit ensemble auquel appartient $B = 3{,}2 \times 10^{-4}$ est $\mathbb{D}$ (nombre décimal).
+\end{enumerate}
+
+\item \textbf{Étude des expressions $E(x)$ et $F(x)$ :}
+\begin{enumerate}[itemsep=0.5pt]
+    \item \textbf{Développons et réduisons $F(x)$ :}
+\begin{flalign*}
+\text{On a :} \quad F(x) &= (x + 3)^3 - x(x - 2)^2 &\\
+                      &= \big(x^3 + 9x^2 + 27x + 27\big) - x\big(x^2 - 4x + 4\big) &\\
+                      &= x^3 + 9x^2 + 27x + 27 - x^3 + 4x^2 - 4x &\\
+                      &= 13x^2 + 23x + 27 &
+\end{flalign*}
+
+    \item \textbf{Factorisons $x^3 - 8$ :}
+    \[
+        x^3 - 8 = x^3 - 2^3 = (x - 2)\big(x^2 + 2x + 4\big)
+    \]
+
+    \item \textbf{Déduisons une factorisation de $E(x)$ :}
+\begin{flalign*}
+\text{On a :} \quad E(x) &= x^3 - 8 - 3(x - 2)(x + 1) &\\
+                      &= (x - 2)\big(x^2 + 2x + 4\big) - 3(x - 2)(x + 1) &\\
+                      &= (x - 2)\big[\big(x^2 + 2x + 4\big) - 3(x + 1)\big] &\\
+                      &= (x - 2)\big(x^2 + 2x + 4 - 3x - 3\big) &\\
+                      &= (x - 2)\big(x^2 - x + 1\big) &
+\end{flalign*}
+
+    \item \textbf{Développons et réduisons $E(x)$ :}
+\begin{flalign*}
+\text{On a :} \quad E(x) &= x^3 - 8 - 3(x - 2)(x + 1) &\\
+                      &= x^3 - 8 - 3\big(x^2 - x - 2\big) &\\
+                      &= x^3 - 8 - 3x^2 + 3x + 6 &\\
+                      &= x^3 - 3x^2 + 3x - 2 &
+\end{flalign*}
+
+    \item \textbf{Calculons $E(\sqrt{2})$ :} on utilise la forme factorisée.
+\begin{flalign*}
+\text{On a :} \quad E(\sqrt{2}) &= (\sqrt{2} - 2)\big((\sqrt{2})^2 - \sqrt{2} + 1\big) &\\
+                      &= (\sqrt{2} - 2)\big(3 - \sqrt{2}\big) &\\
+                      &= 3\sqrt{2} - 2 - 6 + 2\sqrt{2} &\\
+                      &= 5\sqrt{2} - 8 &
+\end{flalign*}
+
+\end{enumerate}
+
+\item \textbf{Étude du nombre $X = \sqrt{7 + 4\sqrt{3}} + \sqrt{7 - 4\sqrt{3}}$ :}
+\begin{enumerate}[itemsep=0.5pt]
+    \item \textbf{Calculons $X^2$ :} on a $\big(7 + 4\sqrt{3}\big)\big(7 - 4\sqrt{3}\big) = 49 - 48 = 1$. Donc :
+\begin{flalign*}
+\text{On a :} \quad X^2 &= \big(7 + 4\sqrt{3}\big) + \big(7 - 4\sqrt{3}\big) + 2\sqrt{\big(7 + 4\sqrt{3}\big)\big(7 - 4\sqrt{3}\big)} &\\
+                      &= 14 + 2\sqrt{1} &\\
+                      &= 16 &
+\end{flalign*}
+
+    \item $X$ est une somme de deux racines carrées, donc $X > 0$. \\
+    Comme $X^2 = 16$ et $X > 0$, on a $X = \sqrt{16} = 4$.
+\end{enumerate}
+
+\item \textbf{Étude du nombre $M = \frac{x^{-2} y^3 \big(x^2 y^{-1}\big)^2}{x^3 y^{-2}}$ :}
+\begin{enumerate}[leftmargin=*,itemsep=0.5pt]
+    \item \textbf{Simplifions $M$ :}
+\begin{flalign*}
+\text{On a :} \quad M &= \frac{x^{-2} y^3 \big(x^2 y^{-1}\big)^2}{x^3 y^{-2}} &\\
+                      &= \frac{x^{-2} y^3 \times x^4 y^{-2}}{x^3 y^{-2}} &\\
+                      &= \frac{x^2 y}{x^3 y^{-2}} &\\
+                      &= x^{2-3} \times y^{1-(-2)} &\\
+                      &= x^{-1} y^3 = \frac{y^3}{x} &
+\end{flalign*}
+
+    \item \textbf{Calcul de $M$ pour $x = 3 \times 10^2$ et $y = 3 \times 10^{-1}$ :}
+\begin{flalign*}
+\text{On a :} \quad M &= \frac{y^3}{x} = \frac{\big(3 \times 10^{-1}\big)^3}{3 \times 10^2} &\\
+                      &= \frac{27 \times 10^{-3}}{3 \times 10^2} &\\
+                      &= 9 \times 10^{-3-2} &\\
+                      &= 9 \times 10^{-5} &
+\end{flalign*}
+
+Donc $M = \frac{y^3}{x}$ et son écriture scientifique est $9 \times 10^{-5}$.
+\end{enumerate}
+\end{enumerate}
+\end{Solution}
+
 
 
 

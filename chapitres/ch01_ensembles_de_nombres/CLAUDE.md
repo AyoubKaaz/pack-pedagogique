@@ -14,7 +14,7 @@ karpathy-guidelines + correction-commune + domaine-algebre
 % TODO : compléter après rédaction des premières sections
 
 ## Corrections en cours
-Aucune
+- SOLUTION_EXERCICE (Exercice de synthèse, 4 questions) ✅ rédigée [2026-06-14]
 
 ## Limites absolues (rappel local)
 - \linewidth obligatoire dans les minipage — \textwidth interdit
