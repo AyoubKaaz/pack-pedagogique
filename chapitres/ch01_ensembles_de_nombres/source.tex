@@ -24,7 +24,7 @@
 %% FIN_HEADER_APERCU
 
 %% SECTION
-\section{Les ensembles $\mathbb{N} ~; \mathbb{Z} ~; \mathbb{D} ~; \mathbb{Q} ~; \mathbb{R}$ \duree{50min}}
+\section{Les ensembles $\mathbb{N} ~; \mathbb{Z} ~; \mathbb{D} ~; \mathbb{Q} ~; \mathbb{R}$ \duree{min}}
 
 %% ACTIVITE
 \begin{Activite}[][20 min]
@@ -157,6 +157,9 @@ Nombre réel      & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 
     \item Compléter par  $\subset$ ou  $\not\subset$ :
     $$\mathbb{N} \dots \mathbb{Z} \quad ; \quad \mathbb{R} \dots \mathbb{Q} \quad ; \quad \mathbb{D} \dots \mathbb{R} \quad ; \quad \mathbb{Z} \dots \mathbb{N} \quad ; \quad 
     \Z \dots \R^+    $$
+
+\item Simplifier les nombres suivants si possible, puis déterminer le plus petit ensemble auquel appartient chacun d'eux, en justifiant :
+$$ -7 ~;~ 3.14 ~;~ \dfrac{1}{3} ~;~ \pi ~;~ \dfrac{12}{11} ~;~ \sqrt{1.44} ~;~ \dfrac{-\sqrt{3}}{4} $$
 \end{enumerate}
 \end{Application}
 
@@ -169,18 +172,35 @@ Nombre réel      & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & 
     \item Complétons par $\subset$ ou $\not\subset$ :
     $$\mathbb{N} \subset \mathbb{Z} \quad ; \quad \mathbb{R} \not\subset \mathbb{Q} \quad ; \quad \mathbb{D} \subset \mathbb{R} \quad ; \quad \mathbb{Z} \not\subset \mathbb{N} \quad ; \quad
     \mathbb{Z} \not\subset \mathbb{R}^+$$
+
+    \item  \begin{itemize}[leftmargin=*,itemsep=0.5pt]
+\item  $-7 \in \mathbb{Z}$.
+
+\item On a $3{,}14 = \frac{314}{100} = \frac{314}{10^2}$. Donc $3{,}14 \in \mathbb{D}$.
+
+\item On a $\frac{1}{3} = 0{,}333\ldots$. ~ Son écriture décimale est infinie et périodique , ce n'est donc pas un nombre décimal. 
+Donc $\frac{1}{3} \in \mathbb{Q}$.
+
+\item $\pi$ est un nombre irrationnel, il ne s'écrit pas comme quotient de deux entiers. Donc $\pi \in \mathbb{R}$ et $\pi \notin \mathbb{Q}$.
+
+\item On a $\frac{12}{11} = 1.090909 ... $ ~ Son écriture décimale est infinie et périodique. Donc $\frac{12}{11} \in \mathbb{Q}$.
+
+\item On a $\sqrt{1{,}44} = \sqrt{\frac{144}{100}} = \frac{12}{10} = 1{,}2$. Donc $\sqrt{1{,}44} \in \mathbb{D}$.
+
+\item Puisque $\sqrt{3}$ est irrationnel, donc $\frac{-\sqrt{3}}{4}$ l'est aussi. D'où $\frac{-\sqrt{3}}{4} \in \mathbb{R}$ et $\frac{-\sqrt{3}}{4} \notin \mathbb{Q}$.
+\end{itemize}
 \end{enumerate}
 \end{Solution}
 
 
 %% SECTION
-\section{Opérations dans $\R$ \duree{2h05min}}
+\section{Opérations dans $\R$ \duree{}}
 
 %% PROPRIETE
 % durée estimée : 4 min
 \begin{Propriete}[Règle fondamentale de développement et de factorisation]
 
-Soient $a$, $b$ et $c$ des nombres réels. On a :
+Soient $a$, $b$, $c$  et $d$ des nombres réels. On a :
 \vspace{0.2cm}
 
     $\bullet~$  $a \times (b+c) = a \times b + a \times c$ \hfill
@@ -243,9 +263,14 @@ Soit $x$ un nombre réel.
         $B = (3x - 1)(-x + 7)$
         
         \item $C = \sqrt{12}x^2 - \sqrt{3}x$ \\
-        On sait que $\sqrt{12} = \sqrt{4 \times 3} = 2\sqrt{3}$. \\
+        $C = \sqrt{4 \times 3}x^2 - \sqrt{3}x$ \\
         $C = 2\sqrt{3}x^2 - \sqrt{3}x$ \\
         $C = \sqrt{3}x(2x - 1)$
+
+        \item $D = (x - 5)(2x + 3) - 4x + 20$ \\
+$D = (x - 5)(2x + 3) - 4(x - 5)$ \\
+$D = (x - 5)\big[(2x + 3) - 4\big]$ \\
+$D = (x - 5)(2x - 1)$
     \end{itemize}
 \end{enumerate}
 \end{Solution}
@@ -585,26 +610,29 @@ $A = \sqrt{19 + 6\sqrt{10}} \quad \text{et} \quad B = \sqrt{19 - 6\sqrt{10}}$
 
         \item \textbf{Déduisons les écritures simplifiées de $x$ et $y$ :}
 
-        $x = A + B$ est une somme de deux racines carrées, donc $x > 0$.
-        Comme $x^2 = 40$, on a $x = \sqrt{40} = 2\sqrt{10}$.
+        $x = A + B$ est une somme de deux racines carrées, donc $x > 0$. \\
+        Comme $x^2 = 40$, donc $x = \sqrt{40} = 2\sqrt{10}$.
 
-        De plus $19 + 6\sqrt{10} > 19 - 6\sqrt{10}$, donc $A > B$, d'où $y = A - B > 0$.
+        De plus $19 + 6\sqrt{10} > 19 - 6\sqrt{10}$, donc $A > B$ \\ d'où $y = A - B > 0$. \\
         Comme $y^2 = 36$, on a $y = \sqrt{36} = 6$.
     \end{enumerate}
 
     \item \textbf{Déterminons les écritures simplifiées de $A$ et $B$ :}
 
-    En remarquant que $A = \frac{x + y}{2}$ et $B = \frac{x - y}{2}$ :
-\begin{flalign*}
-\text{On a :} \quad A &= \frac{x + y}{2} = \frac{2\sqrt{10} + 6}{2} = \sqrt{10} + 3 &\\[10pt]
-\text{et :} \quad B &= \frac{x - y}{2} = \frac{2\sqrt{10} - 6}{2} = \sqrt{10} - 3 &
-\end{flalign*}
+On a : $\begin{cases} x = 2\sqrt{10} \\ y = 6 \end{cases}$ ; donc : $\begin{cases} A + B = 2\sqrt{10} \quad (1) \\ A - B = 6 \quad (2) \end{cases}$
+
+\smallskip
+En additionnant les égalités $(1)$ et $(2)$ membre à membre, on obtient : $2A = 6 + 2\sqrt{10}$, d'où : $A = 3 + \sqrt{10}$.
+
+\smallskip
+Par ailleurs : $B = A - 6$. Donc : $B = -3 + \sqrt{10}$.
+
 \end{enumerate}
 \end{Solution}
 
 
 %% SECTION
-\section{Les puissances - puissances de $10$ - Écriture scientifique \duree{2h05min}}
+\section{Les puissances - puissances de $10$ - Écriture scientifique \duree{}}
 
 
 %% DEFINITION
@@ -650,7 +678,7 @@ Donc $A = \frac{13}{3}$ et $B = 2$.
 %% PROPRIETE
 % durée estimée : 5 min
 \begin{Propriete}[Calcul avec les puissances]
-Soient $a$ et $b$ deux réels non nuls et $n$ et $m$ deux entiers de $\N$. On a :
+Soient $a$ et $b$ deux réels non nuls et $n$ et $m$ deux entiers relatifs. On a :
 \begin{itemize}
     \item Puissance d'une \textbf{même base} : \quad
         $a^n \times a^m = a^{n+m}
