@@ -29,3 +29,14 @@
 - Résultats : A=−6 (∈ℤ), B=3,2×10⁻⁴ (∈𝔻) ; F=13x²+23x+27 ;
   E(x)=(x−2)(x²−x+1) ; E(√2)=5√2−8 ; X=4 ; M=y³/x=9×10⁻⁵.
 - Restant : régénérer fiche_prof/td/td_correction via /generer ; compléter durées.
+## [2026-06-18] ch01_ensembles_de_nombres — Session 2
+- Fait : /generer — génération des 3 documents depuis source.tex.
+  fiche_prof (cours + 2 activités + 10 applications + 1 exercice),
+  td (13 énoncés en multicols), td_correction (13 SOLUTION en multicols).
+  Les corps des 3 fichiers étaient vides (templates non remplis) → peuplés.
+- Pré-check : 8 \mathbb{N} corrigés → macros \N \Z \D \Q \R \C (check-conventions OK).
+- Décision : en-têtes tcolorbox existants réutilisés verbatim ; extraction par balises %%.
+  Délimiteurs : 2 \left\{...\right\} conservés (contiennent \frac → exception conforme).
+- Vérif : source.tex compile EXIT=0 (12 pages) ; delta begin/end = 0 sur les 3 fichiers ;
+  aucun \textwidth ; fancyfoot[L] présent partout. index-concepts.md mis à jour (notions ch01).
+- Restant : pull Overleaf ; compléter masse horaire dans Page1.tex (warning non bloquant).

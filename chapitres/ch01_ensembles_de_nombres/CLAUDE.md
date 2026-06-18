@@ -5,10 +5,10 @@ Niveau : Tronc Commun Scientifique et Technologique | Masse horaire : 5h
 karpathy-guidelines + correction-commune + domaine-algebre
 
 ## Statut
-- source.tex       : ❌ non démarré
-- fiche_prof.tex   : ❌ non généré
-- td.tex           : ❌ non généré
-- td_correction.tex: ❌ non généré
+- source.tex       : ✅ complet (4 sections, 13 corrections)
+- fiche_prof.tex   : ✅ généré [2026-06-18]
+- td.tex           : ✅ généré [2026-06-18]
+- td_correction.tex: ✅ généré [2026-06-18]
 
 ## Notations spécifiques à ce chapitre
 % TODO : compléter après rédaction des premières sections
