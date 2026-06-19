@@ -99,10 +99,10 @@
 %% ACTIVITE
 \begin{Activite}[][15 min]
 Cocher les cases convenables :
-\medskip
 \renewcommand{\arraystretch}{1.5}
 \begin{center}
-\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
 \hline
 \textbf{\textcolor{PrimaryColor}{Ensemble}}
   & $13$
@@ -114,17 +114,18 @@ Cocher les cases convenables :
   & $\pi$
   & \textbf{\textcolor{PrimaryColor}{Notation}} \\
 \hline
-Entier naturel  & & & & & & & &  $\N$ \\
+Entier naturel  & & & & & & & & $\N$ \\
 \hline
-Entier relatif    & & & & & & &  & $\Z$ \\
+Entier relatif  & & & & & & & & $\Z$ \\
 \hline
-Nombre décimal    & & & & & & &  & $\D$ \\
+Nombre décimal  & & & & & & & & $\D$ \\
 \hline
-Nombre rationnel  & & & & & & &  & $\Q$ \\
+Nombre rationnel & & & & & & & & $\Q$ \\
 \hline
-Nombre réel       & & & & & & &  & $\R$ \\
+Nombre réel     & & & & & & & & $\R$ \\
 \hline
-\end{tabular}
+\end{tabular}%
+}
 \end{center}
 \renewcommand{\arraystretch}{1}
 \end{Activite}
@@ -133,14 +134,16 @@ Nombre réel       & & & & & & &  & $\R$ \\
 \begin{Application}[][20 min]
 \begin{enumerate}
     \item Compléter par  $\in$ ou $\notin$ :
-    $$15 \dots \N \quad ; \quad -8 \dots \N \quad ; \quad -8 \dots \Z \quad ; \quad \frac{1}{3} \dots \D \quad ; \quad \sqrt{7} \dots \Q \quad ; \quad \pi \dots \R$$
+    
+    $15 \dots \N \quad ; \quad -8 \dots \N \quad ; \quad -8 \dots \Z \quad ; \quad \frac{1}{3} \dots \D ~ ; ~ \sqrt{7} \dots \Q \quad ; ~ \pi \dots \R$
 
     \item Compléter par  $\subset$ ou  $\not\subset$ :
-    $$\N \dots \Z \quad ; \quad \R \dots \Q \quad ; \quad \D \dots \R \quad ; \quad \Z \dots \N \quad ; \quad 
-    \Z \dots \R^+    $$
+    
+    $\N \dots \Z \quad ; \quad \R \dots \Q \quad ; \quad \D \dots \R \quad ; \quad \Z \dots \N \quad ; \quad 
+    \Z \dots \R^+    $
 
 \item Simplifier les nombres suivants si possible, puis déterminer le plus petit ensemble auquel appartient chacun d'eux, en justifiant :
-$$ -7 ~;~ 3{,}14 ~;~ \frac{1}{3} ~;~ \pi ~;~ \frac{12}{11} ~;~ \sqrt{1{,}44} ~;~ \frac{-\sqrt{3}}{4} $$
+$$ -7 ~~;~~ 3{,}14 ~~;~~ \frac{1}{3} ~~;~~ \pi ~~;~~ \frac{12}{11} ~~;~~ \sqrt{1{,}44} ~~;~~ \frac{-\sqrt{3}}{4} $$
 \end{enumerate}
 \end{Application}
 
@@ -149,14 +152,14 @@ $$ -7 ~;~ 3{,}14 ~;~ \frac{1}{3} ~;~ \pi ~;~ \frac{12}{11} ~;~ \sqrt{1{,}44} ~;~
 Soit $x$ un nombre réel.
 \begin{enumerate}
     \item Développer puis réduire les expressions suivantes :
-    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](3)
+    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](1)
         \task $A = (2x + 3)(x - 4) + 5x$
         \task $B = 3x(x - 2) - (x - 1)(x + 5)$
         \task $C = \sqrt{2}(x\sqrt{2} - 3) - x(2 - \sqrt{2}x)$
     \end{tasks}
 
     \item Factoriser les expressions suivantes :
-    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](2)
+    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](1)
         \task $A = 7x^2 - 21x$
         \task $B = (3x - 1)(x + 2) - (3x - 1)(2x - 5)$
         \task $C = \sqrt{12}x^2 - \sqrt{3}x$
@@ -170,14 +173,14 @@ Soit $x$ un nombre réel.
 Soit $x$ un nombre réel.
 \begin{enumerate}
     \item Développer puis réduire les expressions suivantes :
-    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](3)
+    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](2)
         \task $A = (x + 5)^2  - (3x - 4)^2$
         \task $B = (\sqrt{5}x - 2)^2$
         \task $C = (\sqrt{2}x + 3)(\sqrt{2}x - 3)$
     \end{tasks}
 
     \item Factoriser les expressions suivantes  :
-    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](3)
+    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](2)
         \task $E = x^2 - 64$
         \task $F = 25x^2 + 30x + 9$
         \task $G = (2x - 1)^2 - (x + 3)^2$
@@ -231,8 +234,8 @@ Soit $x$ un réel.
 %% APPLICATION
 \begin{Application}[][15 min]
 On considère les deux nombres :
-$A = (\sqrt{5} - 2)^2 + \frac{20}{\sqrt{5}} - \frac{27\sqrt{3}}{\sqrt{27}}$ \quad et \quad
-$B = \frac{5\sqrt{7}}{\sqrt{2} - \sqrt{7}} + \frac{5\sqrt{2}}{\sqrt{2} + \sqrt{7}}$
+$$A = (\sqrt{5} - 2)^2 + \frac{20}{\sqrt{5}} - \frac{27\sqrt{3}}{\sqrt{27}} \quad \text{et} \quad
+B = \frac{5\sqrt{7}}{\sqrt{2} - \sqrt{7}} + \frac{5\sqrt{2}}{\sqrt{2} + \sqrt{7}}$$
 \begin{enumerate}
     \item Montrer que $A=0$.
     \item Montrer que $B$ est un entier relatif.
@@ -247,7 +250,7 @@ $B = \frac{5\sqrt{7}}{\sqrt{2} - \sqrt{7}} + \frac{5\sqrt{2}}{\sqrt{2} + \sqrt{7
 %% APPLICATION
 \begin{Application}[][20 min]
 On considère les nombres $A$ et $B$ tels que :
-$A = \sqrt{19 + 6\sqrt{10}} \quad \text{et} \quad B = \sqrt{19 - 6\sqrt{10}}$
+$$A = \sqrt{19 + 6\sqrt{10}} \quad \text{et} \quad B = \sqrt{19 - 6\sqrt{10}}$$
 \begin{enumerate}
 \item Montrer que $AB = 1$.
 \item On pose $x = A + B$ et $y = A - B$.
@@ -258,6 +261,11 @@ $A = \sqrt{19 + 6\sqrt{10}} \quad \text{et} \quad B = \sqrt{19 - 6\sqrt{10}}$
 \item Déterminer une écriture simplifiée de chacun des nombres $A$ et $B$.
 \end{enumerate}
 \end{Application}
+
+\end{multicols*}
+
+\newpage
+
 
 %% APPLICATION
 \begin{Application}[][10 min]
@@ -331,6 +339,5 @@ $M = \frac{x^{-2} y^3 \big(x^2 y^{-1}\big)^2}{x^3 y^{-2}}$
 \end{enumerate}
 \end{Exercice}
 
-\end{multicols*}
 
 \end{document}
