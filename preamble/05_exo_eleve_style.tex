@@ -1,0 +1,70 @@
+% ==========================================
+% 05_EXO_ELEVE_STYLE.TEX
+% Restyling des environnements Exercice ET Solution (Pack Élève TCS) :
+% sans bandeau coloré, filet gauche fin, titre gris, badges durée/difficulté.
+% Override de 02_style.tex (chargé APRÈS) : 02 et 03 NE SONT PAS modifiés.
+% Chargé APRÈS 03_macros.tex (dans source_exo.tex et dans le HEADER de
+% generate_eleve.py). Dépend uniquement de tcolorbox[most] + fontawesome5,
+% déjà chargés dans 01_packages.tex.
+% Auteur : Kaazouzi Ayyoub
+% ==========================================
+
+% Permet de taper ★ (plein) et ☆ (vide) littéralement dans l'argument difficulté.
+\DeclareUnicodeCharacter{2605}{\small\faStar}
+\DeclareUnicodeCharacter{2606}{{\color{CExer!30}\faStar}}
+
+% --- PALETTE DÉDIÉE ---
+\definecolor{ExoGris}{HTML}{888888}    % titre gris moyen (Exercice / Solution)
+\definecolor{ExoDureeBg}{HTML}{EEF3FA} % fond badge durée — alias MMfondbv (04)
+\definecolor{ExoDureeFg}{HTML}{0A367A} % texte badge durée — alias MMmarine (04/06)
+\definecolor{ExoVert}{HTML}{5DB544}    % étoiles difficulté + filet Solution — alias MMvert (04/06)
+% (filet Exercice = CExer = #004DA0, déjà défini dans 02_style.tex)
+
+% Badge durée : \tcbox inline, fond bleu très clair, texte bleu marine.
+\newcommand{\ExoBadgeDuree}[1]{%
+    \tcbox[on line, nobeforeafter, boxsep=0pt, boxrule=0pt, arc=2.5pt,
+           colback=ExoDureeBg, coltext=ExoDureeFg,
+           left=2.5pt, right=2.5pt, top=1.5pt, bottom=1.5pt,
+           fontupper=\footnotesize\bfseries\sffamily]{\faClock~#1}%
+}
+
+% Compteur dédié (cf. 02_style : compteur "tcb@cnt@Exercice" déjà déclaré).
+\newcounter{ExoEleve}
+
+% --- EXERCICE : sans bandeau, filet gauche bleu fin, titre gris ---
+%   #1 = titre   #2 = durée   #3 = difficulté  (tous optionnels, indépendants)
+\RenewTColorBox[use counter=ExoEleve]{Exercice}{ O{} O{} O{} }{
+    enhanced, breakable,
+    frame hidden, boxrule=0pt, colback=white,
+    borderline west={1.5pt}{0pt}{CExer},
+    boxsep=0pt, left=3mm, right=2mm, top=0.1mm, bottom=1.5mm,
+    before upper={%
+        \begin{minipage}{\linewidth}%
+            {\normalfont\sffamily\bfseries\color{PrimaryColor}Exercice \thetcbcounter
+                \ifstrempty{#1}{}{%
+                    \normalfont\sffamily\color{black!50}~ #1}}%
+            \ifstrempty{#2}{%
+                \ifstrempty{#3}{}{%
+                    \hfill{\color{ExoVert}#3}%
+                }%
+            }{%
+                \hfill\ExoBadgeDuree{#2}%
+                \ifstrempty{#3}{}{\hspace{1ex}{\color{ExoVert}#3}}%
+            }%
+        \end{minipage}\par\smallskip
+    }
+}
+
+% --- SOLUTION : override de 02_style, filet gauche vert fin, titre gris ---
+%   #1 = type (EXERCICE…)   #2 = numéro   (signature inchangée)
+\RenewTColorBox{Solution}{ O{} O{} }{
+    enhanced, breakable, parbox=false,
+    frame hidden, boxrule=0pt, colback=white,
+    borderline west={1.5pt}{0pt}{ExoVert},
+    boxsep=0pt, left=3mm, right=2mm, top=0.1mm, bottom=1.5mm,
+    before upper={%
+        {\normalfont\sffamily\bfseries\color{ExoVert}Solution%
+            \ifstrempty{#2}{}{\normalfont\sffamily\color{black!45}~| Exercice~#2}}%
+        \par\nointerlineskip\vspace{1.5mm}%
+    }
+}

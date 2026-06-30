@@ -1,0 +1,239 @@
+% ============================================================
+% fiche_exo_N1.TEX — Chapitre 1 : Ensembles de nombres
+% ============================================================
+% CONTENU INCLUS : Exercices progressifs
+% MISE EN PAGE   : 2 colonnes (multicols*{2})
+% ============================================================
+
+\documentclass[10pt, a4paper]{article}
+\input{preamble/01_packages}
+\input{preamble/02_style}
+\input{preamble/03_macros}
+\input{preamble/05_exo_eleve_style}
+\geometry{a4paper, left=0.5cm, right=0.5cm, top=0.5cm, bottom=1.6cm}
+
+
+\setlength{\columnsep}{0.5cm}
+
+
+\begin{document}
+\pagestyle{cours}
+\fancypagestyle{cours}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    \fancyfoot[L]{\small Ch 01. Ensembles de nombres}
+    \fancyfoot[C]{\small \thepage}
+    \fancyfoot[R]{\small Pr. Kaazouzi Ayyoub}
+}
+\pagestyle{cours}
+
+% ========== HEADER ==========
+\begin{tcolorbox}[
+    enhanced,
+    colback=PrimaryColor!15,
+    colframe=PrimaryColor,
+    boxrule=0.8pt,
+    arc=6pt,
+    left=4mm, right=4mm, top=1.5mm, bottom=1.5mm
+]
+\begin{minipage}[c]{0.1\linewidth}
+    \centering
+    {\mbox{}\includegraphics[height=1.7cm]{chapitres/Images/MEN LOGO 2.png}}
+\end{minipage}
+\hspace{3mm}
+\begin{minipage}[c]{0.6\linewidth}
+    {\fontsize{8}{10}\selectfont\sffamily\color{black!60}
+    \textls[120]{MATHÉMATIQUES · TRONC COMMUN SCIENTIFIQUE}}\\[2pt]
+    {\fontsize{15}{15}\selectfont\sffamily\scshape\bfseries\color{PrimaryColor}
+     Fiche des exercices progressifs N°1}\\[2pt]
+    {\fontsize{14}{14}\selectfont\sffamily\scshape\bfseries\color{black}
+    Chapitre 1 : ensembles de nombres}\\[2pt]
+    {\fontsize{9}{11}\selectfont\sffamily\scshape\color{black!60}
+    Pr. Kaazouzi Ayyoub \quad·\quad Lycée qualifiant Ibn Hazm}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.22\linewidth}
+    %\raggedleft
+
+  {\sffamily\small\color{PrimaryColor!90}\faList~Exercices progressifs}\par
+  \vspace{1mm}%
+  {\sffamily\small\color{PrimaryColor!90}\faStar~Niveaux : d\'{e}couverte $\rightarrow$ d\'{e}fi}\par
+  \vspace{1mm}%
+  {\sffamily\small\color{PrimaryColor!90}\faClock~Dur\'{e}es indicatives}%
+\end{minipage}
+\end{tcolorbox}
+% ============================
+
+\vspace{0.2cm}
+
+\begin{multicols*}{2}
+
+
+%% EXO_PROGRESSIF
+\begin{Exercice}[][20 min][★★]
+\begin{enumerate}
+    \item Montrer que $\dfrac{2^n}{5^m} \in \D$ pour tout $n$ et $m$ de $\N$.
+    \item Soit $n$ un entier naturel. Montrer que :
+        $\dfrac{\big(9^{n+1}+9^n\big)^2}{\big(3^{2n+1}-3^{2n}\big)^2} \in \N$
+
+    \item Montrer que $\dfrac{1}{3} \notin \D$.
+    
+\end{enumerate}
+\end{Exercice}
+%% EXO_PROGRESSIF
+
+%% EXO_PROGRESSIF
+\begin{Exercice}[][20 min][★★★]
+\begin{enumerate}
+    \item Soit $n$ un entier naturel non nul.
+    
+Le nombre $\sqrt{n^2 + n}$ peut-il appartenir à $\mathbb{N}$ ? Justifier.
+
+    \item Soit $n$ un entier naturel non nul. On pose $A = \frac{10^n + 3}{10^n}$.
+
+    Montrer que $A \notin \N$.
+    
+\end{enumerate}
+\end{Exercice}
+%% EXO_PROGRESSIF
+
+%% EXO_PROGRESSIF
+\begin{Exercice}[][20 min][★★]
+Développer puis réduire les expressions suivantes :
+    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](2)
+        \task $A = (7x-3y)^2$
+        \task $B = 2(x - 3)^2 - 3(x + 2)(x - 2)$
+        \task $C=(x+y)^2-(x-y)^2$
+        \task $D = \left(2x - \frac{1}{2}\right)^3$
+        \task $E = (x + 1)^3 - (x - 1)^3$
+        \task $F = \left((x - 1)(x+1)(x^2 + 1)\right)^2$
+    \end{tasks}
+\end{Exercice}
+%% EXO_PROGRESSIF
+
+
+%% EXO_PROGRESSIF
+\begin{Exercice}[][20 min][★★]
+Factoriser chaque expression :
+    \begin{tasks}[label=$\bullet$, label-width=5pt, item-indent=15pt](2)
+        \task $A = 5x^2 - 20$
+        \task $B = x^4 - 18x^2 + 81$
+        \task $C = x^3 - 8 - (x - 2)^2$
+        \task $D = 3x^3 - 27x$
+        \task $E = x^6 - 1$
+        \task $F = x^6 - y^6 - \big(x^2 - y^2\big)^3$
+    \end{tasks}
+\end{Exercice}
+%% EXO_PROGRESSIF
+
+
+%% EXO_PROGRESSIF
+\begin{Exercice}[][20 min][★★]
+Montrer que : \quad
+$ \left( \frac{\sqrt{85}+1}{2} \right)^3 - \left( \frac{\sqrt{85}-1}{2} \right)^3 = 64$
+\end{Exercice}
+%% EXO_PROGRESSIF
+
+%% EXO_PROGRESSIF
+\begin{Exercice}[][20 min][★★★]
+Soient $a$ et $b$ deux nombres réels tels que :
+\begin{equation*}
+    a+b=3   ~~~~\text{et}~~~~  a^2+b^2=11
+\end{equation*}
+\begin{enumerate}
+    \item Montrer que : $ab=-1$
+    \item Calculer : $a^3+b^3~~;~~a^4+b^4~$ ~~et~~ $a^6+b^6$
+\end{enumerate}
+\end{Exercice}
+%% EXO_PROGRESSIF
+
+%% EXO_PROGRESSIF
+\begin{Exercice}[][20 min][★★★]
+\begin{enumerate}
+    \item Soit $x$ un nombre réel. Montrer que :
+    \[ 1 - x^6 = (1 - x)\big(1 + x + x^2 + x^3 + x^4 + x^5\big) \]
+    \item En utilisant la relation précédente, calculer $A$ et $B$ où :
+    \[ A = 1 + \frac{1}{2} + \frac{1}{4} + \dots + \frac{1}{32} \quad \text{et} \quad B = 1 + \frac{2}{3} + \frac{4}{9} + \dots + \frac{32}{243} \]
+\end{enumerate}
+\end{Exercice}
+%% EXO_PROGRESSIF
+
+%% EXO_PROGRESSIF
+\begin{Exercice}[][20 min][★★]
+On considère le nombre réel : $a=1+\sqrt{2}$
+\vspace{0.2cm} \\
+Calculer ~~ $a+\dfrac{1}{a}$ ~~~et~~~ $a^2+\dfrac{1}{a^2}$
+\end{Exercice}
+%% EXO_PROGRESSIF
+
+
+
+
+%% EXO_PROGRESSIF
+\begin{Exercice}[][20 min][★★]
+Soient $a$ et $b$ deux réels non nuls distincts, et $n$ de $\Z$.
+
+On pose : $B = \dfrac{a^{2n} - a^nb^n}{b^{2n} - a^nb^n} \times \left(\dfrac{b}{a}\right)^n$ ~et~~ $C = \left(\dfrac{a^{n+1} - a^nb}{b^{n+1} - ab^n}\right)^2 \times \left(\dfrac{b}{a}\right)^{2n}$
+\vspace{0.2cm}\\
+Montrer que $B=-1$ et $C=1$.
+\end{Exercice}
+%% EXO_PROGRESSIF
+
+
+%% EXO_PROGRESSIF
+\begin{Exercice}[][20 min][★★]
+Soit $a$ et $b$ deux réels tels que :
+\begin{equation*}
+    a=1+\sqrt{4-\frac{3}{2}\sqrt{7}} ~~~\text{et}~~~ b=1+\sqrt{4+\frac{3}{2}\sqrt{7}}
+\end{equation*}
+\begin{enumerate}
+    \item Vérifier que :
+    \vspace{0.2cm} \\
+    $(3-\sqrt{7})^2=4\left(4-\frac{3}{2}\sqrt{7}\right)$
+    ~~~\text{et}~~~ $(3+\sqrt{7})^2=4\left(4+\frac{3}{2}\sqrt{7}\right)$
+    \item Montrer que : $a+b=5$
+    \item Montrer que : $(a-1)(b-1)=\frac{1}{2}$
+    \item En déduire la valeur du produit $ab$.
+\end{enumerate}
+\end{Exercice}
+%% EXO_PROGRESSIF
+
+%% EXO_PROGRESSIF
+\begin{Exercice}[][20 min][★★]
+Soit $x$ un nombre réel tel que :~~ $x \ge 1 \quad \text{et} \quad x^2 + \dfrac{1}{x^2} = 7$
+\begin{enumerate}
+    \item Montrer que ~ $x + \dfrac{1}{x} = 3$
+
+    \item Justifier que $x - \dfrac{1}{x} \ge 0$ puis déduire que
+    $x - \dfrac{1}{x} = \sqrt{5}$
+
+    \item En déduire la valeur exacte de $x$.
+
+    \item Montrer que $x^3 + \frac{1}{x^3} = 18$
+
+    \item Déterminer la valeur exacte de $x^2 - \dfrac{1}{x^2}$
+\end{enumerate}
+\end{Exercice}
+%% EXO_PROGRESSIF
+
+%% EXO_PROGRESSIF
+\begin{Exercice}[][20 min][★★★]
+Soient $x$ et $y$ deux réels strictement positifs tels que $x > y$ et :
+$$ \sqrt{\frac{x}{y}} - \sqrt{\frac{y}{x}} = \sqrt{2} $$
+\begin{enumerate}
+    \item Montrer que $\frac{x}{y} + \frac{y}{x} = 4$
+
+    \item En déduire que $x^2 + y^2 = 4xy$
+
+    \item Calculer la valeur exacte de l'expression $A = \frac{x+y}{x-y}$
+
+    \item On suppose que $xy = 2$. Déduire les valeurs de $x$ et $y$.
+\end{enumerate}
+\end{Exercice}
+%% EXO_PROGRESSIF
+
+
+\end{multicols*}
+
+\end{document}
